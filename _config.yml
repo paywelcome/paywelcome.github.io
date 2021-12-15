@@ -1,18 +1,19 @@
-repository: tomjoht/documentation-theme-jekyll
+repository: welcomepay/welcomepay.github.io
+
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Jekyll Documentation Theme
+topnav_title: WelcomePayments
 # this appears on the top navigation bar next to the home button
 
-site_title: Jekyll theme for documentation
+site_title: WP DOCS
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: Copyright 2021 Google LLC
+company_name:  COPYRIGHTS ⓒ Welcome Payments co.,Ltd. ALL RIGHTS RESERVED
 # this appears in the footer
 
-github_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
+github_editme_path: welcomepay/welcomepay.github.io/blob/master/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
@@ -21,7 +22,7 @@ github_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-host: 127.0.0.1
+host: localhost
 # the preview server used. Leave as is.
 
 port: 4000
@@ -32,8 +33,6 @@ exclude:
   - .gitignore
   - vendor
 # these are the files and directories that jekyll will exclude from the build
-
-feedback_subject_line: Jekyll documentation theme
 
 feedback_email: tomjoht@gmail.com
 # used as a contact email for the Feedback link in the top navigation bar
@@ -112,9 +111,4 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 # needed for sitemap.xml file only
 # url: http://idratherbewriting.com
 # baseurl: /documentation-theme-jekyll
-
-
-github: [metadata]
-
-
 # Copyright 2021 Google LLC
