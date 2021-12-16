@@ -1,0 +1,49 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+  - title: Sidebar
+    product: payapi
+    version: 1.0
+    folders:
+
+      - title: 1. PayAPI서비스
+        output: web
+        folderitems:
+          - title: 상점 연동시 주의사항
+            url: /payapi01.html#11상점-연동시-주의사항
+            output: web
+
+          - title: PayAPI 서비스 흐름도
+            url: /payapi01.html#12-payapi-서비스-흐름도
+            output: web, pdf
+
+          - title: Sample 2
+            url: /p1_sample2.html
+            output: web, pdf
+
+          - title: Sample 3
+            url: /p1_sample3.html
+            output: web, pdf
+
+      - title: Another heading
+        output: web, pdf
+
+        folderitems:
+          - title: Sample 4
+            url: /p1_sample4.html
+            output: web, pdf
+
+          - title: Sample 5
+            url: /p1_sample5.html
+            output: web, pdf
+
+          - title: Sample 6
+            url: /p1_sample6.html
+            output: web, pdf
+
+          - title: Sample 7
+            url: /p1_sample7.html
+            output: web, pdf
+
+# Copyright 2021 Google LLC
