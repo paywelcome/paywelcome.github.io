@@ -4,9 +4,9 @@ topnav:
 - title: Topnav
   items:
     - title: PC
-      url: /news
+      url: /pc
     - title: MOBILE
-      url: /
+      url: /mobile
     - title: PAYAPI
-      url: /
+      url: /payapi01.html
 # Copyright 2021 Google LLC
