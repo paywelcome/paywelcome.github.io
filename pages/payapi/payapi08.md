@@ -16,7 +16,7 @@ var request = require('request');
 var api_url = 'https://payapi.paywelcome.co.kr/cancel/cancel';
 var request_body = '';
 request_body += 'payType=&';
-request_body += 'mid=welcometst';
+request_body += 'mid=xxxxxxxxxx';
 request_body += 'tid=INIMX_VBNKINIWelTest20190904111111111111&';
 request_body += 'price=&';
 request_body += 'currency=&';
@@ -46,7 +46,7 @@ try {
 	String apiURL = "https://payapi.paywelcome.co.kr/cancel/cancel";
 	String request_body = "";
 	request_body += "payType=card&";
-	request_body += "mid=welcometst
+	request_body += "mid=xxxxxxxxxx
 	request_body += "tid=StdpayCARDINIWelTest20190904115758995708&";
 	request_body += "price=1000&";
 	request_body += "currency=WON&";
@@ -96,7 +96,7 @@ try {
 	
 	$request_body = "";
 	$request_body .= "payType=card&";
-	$request_body .= "mid=welcometst
+	$request_body .= "mid=xxxxxxxxxx
 	$request_body .= "tid=StdpayCARDINIWelTest20190904115758995708&";
 	$request_body .= "price=1000&";
 	$request_body .= "currency=WON&";
@@ -134,7 +134,7 @@ try {
 dim xmlhttp, request_body
 
 request_body = "payType=card&"
-request_body = request_body & "mid=welcometst
+request_body = request_body & "mid=xxxxxxxxxx
 request_body = request_body & "tid=StdpayCARDINIWelTest20190904115758995708&"
 request_body = request_body & "price=1000&"
 request_body = request_body & "currency=WON&"
