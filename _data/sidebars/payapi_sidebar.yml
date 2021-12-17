@@ -3,8 +3,8 @@
 
 entries:
   - title: Sidebar
-    product: payapi
-    version: 1.0
+    product: PAYAPI
+    version:
     folders:
 
       - title: 1. PayAPI서비스
@@ -31,7 +31,7 @@ entries:
             output: web
 
           - title: 부분취소 API
-            url: /payapi02.html#21-부분-취소-api
+            url: /payapi02.html#22-부분-취소-api
             output: web
             
       - title: 3. 빌링결제 API
@@ -78,31 +78,51 @@ entries:
         output: web
 
         folderitems:
-          - title: 신용카드 빌키 발급 API
+          - title: 에스크로 배송등록 API
             url: /payapi06.html
             output: web
 
-          - title: 신용카드 빌키 발급 API
-            url: /payapi06.html#1
+          - title: 에스크로 구매확정 API
+            url: /payapi06.html#62-에스크로-구매확정-api
             output: web
 
-          - title: 신용카드 빌키 발급 API
-            url: /payapi06.html#2
+          - title: 에스크로 구매거절 API
+            url: /payapi06.html#63-에스크로-구매거절-api
             output: web
 
-          - title: 신용카드 빌키 발급 API
-            url: /payapi06.html#3
+          - title: 에스크로 구매거절 확인 API
+            url: /payapi06.html#64-에스크로-구매거절-확인-api
             output: web
 
-          - title: 신용카드 빌키 발급 API
-            url: /payapi06.html#4
+          - title: 에스크로 상태조회 API
+            url: /payapi06.html#65-에스크로-상태조회-api
             output: web
 
-      - title: 7. SMS결제용 단축 URL 생성 API API
+      - title: 7. SMS결제용 단축 URL 생성 API
         output: web
 
         folderitems:
-          - title: SMS결제용 단축 URL 생성 API API
+          - title: SMS결제용 단축 URL 생성 API
             url: /payapi07.html
+            output: web
+
+      - title: 8. 샘플소스
+        output: web
+
+        folderitems:
+          - title: Node.js
+            url: /payapi08.html
+            output: web
+
+          - title: JAVA
+            url: /payapi08.html#82-java
+            output: web
+
+          - title: PHP
+            url: /payapi08.html#83-PHP
+            output: web
+
+          - title: ASP
+            url: /payapi08.html#84-ASP
             output: web
 # Copyright 2021 Google LLC

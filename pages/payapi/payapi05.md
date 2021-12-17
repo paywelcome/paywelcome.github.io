@@ -9,7 +9,7 @@ toc: false
 # 5. 신용카드 PREFIX 조회 API
 
 ## 5.1 신용카드 PREFIX 조회 API
-
+<br/>
 신용카드 PREFIX 조회 시 사용하는 서비스입니다.
 
 [//]: # (부분 취소 API URL)

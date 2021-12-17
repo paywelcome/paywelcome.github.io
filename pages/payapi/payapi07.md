@@ -9,7 +9,7 @@ toc: false
 # 7. SMS결제용 단축URL생성 API
 
 ## 7.1 SMS결제용 단축URL생성 API
-
+<br/>
 SMS 결제용 단축 URL을 생성하는 서비스입니다.
 
 - SMS결제URL은 72시간 동안 유효합니다.
