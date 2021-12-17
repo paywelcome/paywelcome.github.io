@@ -23,47 +23,101 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 제품의 개요
+    - title: 1. 제품의 개요
       url: /stdweb01.html#11-제품의-개요
       output: web, pdf
       type: web
 
-    - title: 제품의 특징
+    - title: 2. 제품의 특징
       url: /stdweb01.html#12-제품의-특징
       output: web, pdf
 
-    - title: 지불수단
+    - title: 3. 지불수단
       url: /stdweb01.html#13-지불수단
       output: web, pdf
 
       subfolders:
-      - title: 구조와 결제 처리 흐름
+      - title: 4. 구조와 결제 처리 흐름
         output: web
         subfolderitems:
   
-        - title: 결제요청
+        - title: 4-1. 결제요청
           url:  /stdweb01.html#141-결제요청
           output: web
 
-  - title: Release Notes
+  - title: 설치
     output: web, pdf
     folderitems:
 
-    - title: 6.0 Release notes
-      url: /mydoc_release_notes_60.html
+    - title: 1. 설치 가능한 운영체제
+      url: /stdweb02.html#21-설치-가능한-운영체제
       output: web, pdf
 
-    - title: 5.0 Release notes
-      url: /mydoc_release_notes_50.html
+    - title: 2. 소프트웨어 요구사항
+      url: /stdweb02.html#22-소프트웨어-요구사항
       output: web, pdf
 
-  - title: Installation
+    - title: 3. 하드웨어 요구사항
+      url: /stdweb02.html#23-하드웨어-요구사항
+      output: web, pdf
+
+    - title: 4. 방화벽 설정
+      url: /stdweb02.html#24-방화벽-설정
+      output: web, pdf
+
+      subfolders:
+      - title: 5. 샘플소스
+        output: web
+        subfolderitems:
+  
+        - title: 5-1. JAVA
+          url:  /stdweb02.html#251-java
+          output: web
+
+        - title: 5-2. ASP.net
+          url:  /stdweb02.html#252-aspnet
+          output: web
+
+        - title: 5-3. ASP
+          url:  /stdweb02.html#253-asp
+          output: web
+
+        - title: 5-4. PHP
+          url:  /stdweb02.html#254-php
+          output: web
+
+    - title: 6. 승인 테스트
+      url: /stdweb02.html#26-승인-테스트
+      output: web, pdf
+
+    - title: 7. 상점 연동시 주의사항
+      url: /stdweb02.html#27-상점-연동시-주의사항
+      output: web, pdf
+
+  - title: 결제 연동
     output: web, pdf
     folderitems:
 
-    - title: About Ruby, Gems, Bundler, etc.
-      url: /mydoc_about_ruby_gems_etc.html
+    - title: 1. 결제 요청 페이지 작성
+      url: /stdweb03.html
       output: web, pdf
+
+      subfolders:
+      - title: 2. 리턴 페이지 작성
+        output: web
+        subfolderitems:
+  
+        - title: 2-1. 인증결과 수신
+          url:  /stdweb02.html#251-java
+          output: web
+
+        - title: 2-2. 승인API 요청
+          url:  /stdweb02.html#251-java
+          output: web
+
+        - title: 2-3. 승인API 결과(결제완료)
+          url:  /stdweb02.html#251-java
+          output: web
 
     - title: Install Jekyll on Mac
       url: /mydoc_install_jekyll_on_mac.html

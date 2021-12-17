@@ -66,9 +66,9 @@ toc: false
 
 > **Welpay0_Sample_v1.4.jar : 해당 라이브러리는 샘플페이지 구동을 위한 라이브러리로 참고만 부탁드리며, 실제 반영시엔 가맹점 환경에 맞게 직접 생성 부탁드립니다.**
 > **샘플 라이브러리만을 이용하여 연동시, 가맹점 환경에 따른 오작동은 당사 확인이 어려울수 있습니다.**
-- **WelpayStdSample : HTML, JSP Sample 이 위치하는 폴더 입니다.**
+**WelpayStdSample : HTML, JSP Sample 이 위치하는 폴더 입니다.**
 
- ### 2.5.2 ASP.net
+### 2.5.2 ASP.net
 - WelStdweb_ASP.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.
 - WelStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.
 - INIcrypto.dll, INIpayNet.dll: 암복호화에 사용하는 dll 파일

@@ -6,7 +6,6 @@ folder: stdweb
 toc: false
 ---
 
-
 # 3. 결제 연동
 ## 3.1 결제 요청 페이지 작성(PayRequest)
 ### 3.1.1 결제 요청 데이터
@@ -21,11 +20,11 @@ String mid = "welcometst"; // 가맹점 ID(가맹점 수정후 고정)
 // 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
 String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 ```
-#### signkey 발급 방법
+### signkey 발급 방법
 - 관리자 페이지의 상점정보 :arrow_forward: 계약정보 :arrow_forward: 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후
   팝업창에서 생성 버튼 클릭 후 해당 값 소스에 반영하시기 바랍니다.
 
-#### 표준결제 스크립트 Import
+### 표준결제 스크립트 Import
 - 실서버( 실반영시 반드시 수정)
 
   `<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/INIStdPay.js" charset="UTF-8"></script>`
@@ -45,24 +44,25 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 ```
 
-#### Iframe, Popup 사이즈
+### Iframe, Popup 사이즈
 - iframe의 경우 ( 사용 권장)
   `width:820px; height=600px;`
 - popup 의 경우 ( 팝업 사용을 권장하지 않으며, 브라우저별 이슈 발생 시 대응불가 )
   `width=820px;height=600px`
 
-#### Popup 허용 여부 체크 기능
+### Popup 허용 여부 체크 기능
 - 팝업 허용 설정이 안되어 있을 경우, 가맹점의 요청페이지가 허용시 리프레시됨으로, 로딩 완료 후 가 팝업을 띄워주는 기능
 - `<body ... onload="INIStdPay.allowpopup();">` 추가
-#### INIStdpay.pay 함수호출
+### INIStdpay.pay 함수호출
 - INIStdpay.pay 함수 호출은 submit 이 아닌 단순 action 형태로 진행
   `<button onclick="INIStdPay.pay('SendPayForm_id')" style="padding:10px">결제요청</button>`
-#### Form에 결제 요청 데이터 생성
+### Form에 결제 요청 데이터 생성
 - Form Tag에 ID설정(결제요청 스크립트 실행시 사용됨)
 - 필드명 대소문자 구분
   (일부 가맹점에서 필요에 의해 사용자가 변경하는 경우를 제외하고 모두 type="hidden"을 사용)
 
 - 아래 요청데이터 / Sample Source를 참조
+
 ```javascript
 <form id=" SendPayForm_id" name="SendPayForm_name" method="POST">
   <input type="hidden" name="mid" value="welcometst"/>
@@ -76,36 +76,266 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 - 결제 인증 기본 요청데이터 필드는 아래와 같습니다.
 
+<style>
+  		div {
+				overflow-x: auto;
+			}
+  table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+  }
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+</style>
+
 #### [TABLE 1-1] 기본 요청데이터 필드
-|     필드명      | 한글명칭              | Data Type | 예시 / `기본값`                               | 설명                                       | 필수여부       | 크기(최대)        |
-| :----------: | ----------------- | --------- | ---------------------------------------- | ---------------------------------------- | ---------- | ------------- |
-|   version    | 버전                | String    | "1.0"                                    | 전문 버전                                    | Yes        | 20 Byte       |
-|     mid      | 상점아이디             | String    | "welcometst"                             | 제공된 mid<br>10자리 고정                       | Yes(위변조검증) | 10 Byte Fixed |
-|     oid      | 주문번호              | String    | "welcometst_1335233672723"               | 주문단위 unique한 값<br>( mid+"_"+timestamp )  | Yes        | 40 Byte       |
-|   goodname   | 상품명               | String    | "키보드/마우스"                                | 한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte+…으로 자동 변환 | Yes        | 80 Byte       |
-|    price     | 결제금액              | Number    | 1004                                     | 숫자만 입력<br>1달러는 100으로 시작                  | Yes(위변조검증) | 8Byte         |
-|     tax      | 부가세               | Number    | 1004                                     | 숫자만 입력<br>대상: '부가세업체정함' 설정업체에 한함<br>주의: 전체금액의 10%이하로 설정<br>가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨 | No         | 8Byte         |
-|   taxfree    | 비과세               | Number    | 1004                                     | 숫자만 입력<br>대상: '부가세업체정함' 설정업체에 한함과세되지 않는 금액 | No         | 8Byte         |
-|   currency   | 통화구분              | String    | "WON"<br>[WON:한화,USD:달러]                 | \* USD는 카드 결제만 가능(ISP는 결제안됨)             | Yes        | 3 Byte        |
-|  buyername   | 구매자명              | String    | "홍길동"                                    | 한글/특수기호 입력가능\* 30Byte 초과 요청시 27Byte+…으로 자동 변환 | Yes        | 30 Byte       |
-|   buyertel   | 구매자Mobile번호       | String    | "010-2000-1234"                          | 숫자와 "-"만 허용                              | Yes        | 20 Byte       |
-|  buyeremail  | 구매자Email          | String    | "buyer@example.com"                      | 이메일 형식에 맞도록                              | No         | 60 Byte       |
-| parentemail  | 보호자Email          | String    | "parent@example.com"                     | 14세 미만 필수                                |            | 60 Byte       |
-|  timestamp   | 타임스탬프             | Number    | 1335233672723                            | TimeInMillis(Long형)<br>→ 제공라이브러로 생성가능(샘플소스참조) | Yes(위변조검증) | 20 Byte       |
-|  signature   | signature         | String    | "8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3" | 위변조 방지 SHA256 Hash 값<br>[TABLE 1-3] signature 생성 대상(Target) 필드 참조 | Yes        | 64 ByteFixed  |
-|  returnUrl   | 리턴Url(인증결과수신Url)  | String    | "HTTPS://www.exsample.com/INIpayStandardSample/INIpayResult.jsp" | 결제창을 통해 인증완료된 결과를 수신받고 승인요청을 해서 결과를 표시할 페이지 URL→ 3.3 리턴 페이지(인증수신/승인API) 작성(PayReturn) 참조 | Yes        | N/A           |
-|     mKey     | signkey에 대한 hash값 | String    | "3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33" | signkey에 대한 검증값                          | Yes        | N/A           |
-| gopaymethod  | 요청결제수단표시          | String    | "Card"<br>별첨 "A.2 gopaymethod 옵션" 참조     | 결제 수단 중 선택적 표시<br>옵션생략시 전체 결제 수단 표시      | No         | N/A           |
-| offerPeriod  | 제공기간              | String    | "20130101-20130331"<br>[Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일] | 가맹점에서 판매상품에 대한 제공기한 설정                   | No         | N/A           |
-| languageView | 초기 표시 언어          | String    | "ko"<br>[ko:한국어, en:영어]                  | 결제창 표시 언어<br>PC는 결제창내 언어변경 버튼 존재         | No         | 2Byte         |
-|   charset    | 결과 인코딩            | String    | "UTF-8" / [`UTF-8`, EUC-KR]              | 결과 수신 charset                            | No         | 5Byte         |
-| payViewType  | 결제창 표시방법          | String    | [overlay]                                | Default:overlay                          | No         | N/A           |
-|   closeUrl   | 결제창 닫기처리Url       | String    | "HTTPS://www.exsample.com/inipaysmart/close.jsp" | close.jsp 샘플사용(소스 수정 불필요)                | Yes        | N/A           |
-|   popupUrl   | 팝업처리Url           | String    | "HTTPS://www.exsample.com/inipaysmart/popup.jsp" | popup.jsp 샘플사용(소스 수정 불필요 : 비권장)          | Yes        | N/A           |
-| merchantData | 가맹점데이터            | String    | "a=A&b=B"                                | 인증 성공시 가맹점으로 리턴                          | No         | 2000Byte      |
-| acceptmethod | acceptmethod      | String    | CARDPOINT:va_receipt:vbank(20150425):SKIN(ORIGINAL):FONT(ORIGINAL): poptargetself | 결제수단별 추가 옵션값                             | No         | N/A           |
-
-
+<table>
+<thead>
+<tr>
+<th style="text-align:center">필드명</th>
+<th>한글명칭</th>
+<th>Data Type</th>
+<th>예시 / <code>기본값</code></th>
+<th>설명</th>
+<th>필수여부</th>
+<th>크기(최대)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">version</td>
+<td>버전</td>
+<td>String</td>
+<td>&quot;1.0&quot;</td>
+<td>전문 버전</td>
+<td>Yes</td>
+<td>20 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">mid</td>
+<td>상점아이디</td>
+<td>String</td>
+<td>&quot;welcometst&quot;</td>
+<td>제공된 mid<br>10자리 고정</td>
+<td>Yes(위변조검증)</td>
+<td>10 Byte Fixed</td>
+</tr>
+<tr>
+<td style="text-align:center">oid</td>
+<td>주문번호</td>
+<td>String</td>
+<td>&quot;welcometst_1335233672723&quot;</td>
+<td>주문단위 unique한 값<br>( mid+&quot;_&quot;+timestamp )</td>
+<td>Yes</td>
+<td>40 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">goodname</td>
+<td>상품명</td>
+<td>String</td>
+<td>&quot;키보드/마우스&quot;</td>
+<td>한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte+…으로 자동 변환</td>
+<td>Yes</td>
+<td>80 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">price</td>
+<td>결제금액</td>
+<td>Number</td>
+<td>1004</td>
+<td>숫자만 입력<br>1달러는 100으로 시작</td>
+<td>Yes(위변조검증)</td>
+<td>8Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">tax</td>
+<td>부가세</td>
+<td>Number</td>
+<td>1004</td>
+<td>숫자만 입력<br>대상: &#39;부가세업체정함&#39; 설정업체에 한함<br>주의: 전체금액의 10%이하로 설정<br>가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨</td>
+<td>No</td>
+<td>8Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">taxfree</td>
+<td>비과세</td>
+<td>Number</td>
+<td>1004</td>
+<td>숫자만 입력<br>대상: &#39;부가세업체정함&#39; 설정업체에 한함과세되지 않는 금액</td>
+<td>No</td>
+<td>8Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">currency</td>
+<td>통화구분</td>
+<td>String</td>
+<td>&quot;WON&quot;<br>[WON:한화,USD:달러]</td>
+<td>* USD는 카드 결제만 가능(ISP는 결제안됨)</td>
+<td>Yes</td>
+<td>3 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">buyername</td>
+<td>구매자명</td>
+<td>String</td>
+<td>&quot;홍길동&quot;</td>
+<td>한글/특수기호 입력가능* 30Byte 초과 요청시 27Byte+…으로 자동 변환</td>
+<td>Yes</td>
+<td>30 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">buyertel</td>
+<td>구매자Mobile번호</td>
+<td>String</td>
+<td>&quot;010-2000-1234&quot;</td>
+<td>숫자와 &quot;-&quot;만 허용</td>
+<td>Yes</td>
+<td>20 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">buyeremail</td>
+<td>구매자Email</td>
+<td>String</td>
+<td>&quot;buyer@example.com&quot;</td>
+<td>이메일 형식에 맞도록</td>
+<td>No</td>
+<td>60 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">parentemail</td>
+<td>보호자Email</td>
+<td>String</td>
+<td>&quot;parent@example.com&quot;</td>
+<td>14세 미만 필수</td>
+<td></td>
+<td>60 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">timestamp</td>
+<td>타임스탬프</td>
+<td>Number</td>
+<td>1335233672723</td>
+<td>TimeInMillis(Long형)<br>→ 제공라이브러로 생성가능(샘플소스참조)</td>
+<td>Yes(위변조검증)</td>
+<td>20 Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">signature</td>
+<td>signature</td>
+<td>String</td>
+<td>&quot;8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3&quot;</td>
+<td>위변조 방지 SHA256 Hash 값<br>[TABLE 1-3] signature 생성 대상(Target) 필드 참조</td>
+<td>Yes</td>
+<td>64 ByteFixed</td>
+</tr>
+<tr>
+<td style="text-align:center">returnUrl</td>
+<td>리턴Url(인증결과수신Url)</td>
+<td>String</td>
+<td>&quot;HTTPS://www.exsample.com/INIpayStandardSample/INIpayResult.jsp&quot;</td>
+<td>결제창을 통해 인증완료된 결과를 수신받고 승인요청을 해서 결과를 표시할 페이지 URL→ 3.3 리턴 페이지(인증수신/승인API) 작성(PayReturn) 참조</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">mKey</td>
+<td>signkey에 대한 hash값</td>
+<td>String</td>
+<td>&quot;3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33&quot;</td>
+<td>signkey에 대한 검증값</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">gopaymethod</td>
+<td>요청결제수단표시</td>
+<td>String</td>
+<td>&quot;Card&quot;<br>별첨 &quot;A.2 gopaymethod 옵션&quot; 참조</td>
+<td>결제 수단 중 선택적 표시<br>옵션생략시 전체 결제 수단 표시</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">offerPeriod</td>
+<td>제공기간</td>
+<td>String</td>
+<td>&quot;20130101-20130331&quot;<br>[Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일]</td>
+<td>가맹점에서 판매상품에 대한 제공기한 설정</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">languageView</td>
+<td>초기 표시 언어</td>
+<td>String</td>
+<td>&quot;ko&quot;<br>[ko:한국어, en:영어]</td>
+<td>결제창 표시 언어<br>PC는 결제창내 언어변경 버튼 존재</td>
+<td>No</td>
+<td>2Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">charset</td>
+<td>결과 인코딩</td>
+<td>String</td>
+<td>&quot;UTF-8&quot; / [<code>UTF-8</code>, EUC-KR]</td>
+<td>결과 수신 charset</td>
+<td>No</td>
+<td>5Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">payViewType</td>
+<td>결제창 표시방법</td>
+<td>String</td>
+<td>[overlay]</td>
+<td>Default:overlay</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">closeUrl</td>
+<td>결제창 닫기처리Url</td>
+<td>String</td>
+<td>&quot;HTTPS://www.exsample.com/inipaysmart/close.jsp&quot;</td>
+<td>close.jsp 샘플사용(소스 수정 불필요)</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">popupUrl</td>
+<td>팝업처리Url</td>
+<td>String</td>
+<td>&quot;HTTPS://www.exsample.com/inipaysmart/popup.jsp&quot;</td>
+<td>popup.jsp 샘플사용(소스 수정 불필요 : 비권장)</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">merchantData</td>
+<td>가맹점데이터</td>
+<td>String</td>
+<td>&quot;a=A&amp;b=B&quot;</td>
+<td>인증 성공시 가맹점으로 리턴</td>
+<td>No</td>
+<td>2000Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">acceptmethod</td>
+<td>acceptmethod</td>
+<td>String</td>
+<td>CARDPOINT:va_receipt:vbank(20150425):SKIN(ORIGINAL):FONT(ORIGINAL): poptargetself</td>
+<td>결제수단별 추가 옵션값</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 
 #### [TABLE 1-2] acceptmethod 공통 추가 옵션
 |     필드명      | 한글명칭        | Data Type | 예시            | 설명                                       | 필수여부 |
