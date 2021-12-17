@@ -3,47 +3,126 @@
 
 entries:
   - title: Sidebar
-    product: payapi
-    version: 1.0
+    product: PAYAPI
+    version:
     folders:
 
       - title: 1. PayAPI서비스
         output: web
         folderitems:
-          - title: 상점 연동시 주의사항
-            url: /payapi01.html#11상점-연동시-주의사항
+          - title: 1.1 상점 연동시 주의사항
+            url: /payapi01.html
             output: web
 
-          - title: PayAPI 서비스 흐름도
+          - title: 1.2 PayAPI 서비스 흐름도
             url: /payapi01.html#12-payapi-서비스-흐름도
-            output: web, pdf
+            output: web
 
-          - title: Sample 2
-            url: /p1_sample2.html
-            output: web, pdf
+          - title: 1.3 PayAPI 서비스 개요
+            url: /payapi01.html#13-payapi-개요
+            output: web
 
-          - title: Sample 3
-            url: /p1_sample3.html
-            output: web, pdf
-
-      - title: Another heading
-        output: web, pdf
+      - title: 2. 결제취소 API
+        output: web
 
         folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
+          - title: 전체취소 API
+            url: /payapi02.html
+            output: web
 
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
+          - title: 부분취소 API
+            url: /payapi02.html#22-부분-취소-api
+            output: web
+            
+      - title: 3. 빌링결제 API
+        output: web
 
-          - title: Sample 6
-            url: /p1_sample6.html
-            output: web, pdf
+        folderitems:
+          - title: 신용카드 빌키 발급 API
+            url: /payapi03.html
+            output: web
 
-          - title: Sample 7
-            url: /p1_sample7.html
-            output: web, pdf
+          - title: 신용카드 비인증 빌키 발급 API
+            url: /payapi03.html#32-신용카드-비인증-빌키-발급-api
+            output: web
 
+          - title: 신용카드 빌링 승인 API
+            url: /payapi03.html#33-신용카드-빌링-승인-api
+            output: web
+
+          - title: 신용카드 빌키 삭제 API
+            url: /payapi03.html#34-신용카드-빌키-삭제-api
+            output: web
+
+          - title: 휴대폰 빌키 승인 API
+            url: /payapi03.html#35-휴대폰-빌키-승인-api
+            output: web
+
+      - title: 4. 신용카드 키인승인 API
+        output: web
+
+        folderitems:
+          - title: 신용카드 키인승인 API
+            url: /payapi04.html
+            output: web
+
+      - title: 5. 신용카드 PREFIX 조회 API
+        output: web
+
+        folderitems:
+          - title: 신용카드 PREFIX 조회 API
+            url: /payapi05.html
+            output: web
+
+      - title: 6. 에스크로 API
+        output: web
+
+        folderitems:
+          - title: 에스크로 배송등록 API
+            url: /payapi06.html
+            output: web
+
+          - title: 에스크로 구매확정 API
+            url: /payapi06.html#62-에스크로-구매확정-api
+            output: web
+
+          - title: 에스크로 구매거절 API
+            url: /payapi06.html#63-에스크로-구매거절-api
+            output: web
+
+          - title: 에스크로 구매거절 확인 API
+            url: /payapi06.html#64-에스크로-구매거절-확인-api
+            output: web
+
+          - title: 에스크로 상태조회 API
+            url: /payapi06.html#65-에스크로-상태조회-api
+            output: web
+
+      - title: 7. SMS결제용 단축 URL 생성 API
+        output: web
+
+        folderitems:
+          - title: SMS결제용 단축 URL 생성 API
+            url: /payapi07.html
+            output: web
+
+      - title: 8. 샘플소스
+        output: web
+
+        folderitems:
+          - title: Node.js
+            url: /payapi08.html
+            output: web
+
+          - title: JAVA
+            url: /payapi08.html#82-java
+            output: web
+
+          - title: PHP
+            url: /payapi08.html#83-PHP
+            output: web
+
+          - title: ASP
+            url: /payapi08.html#84-ASP
+            output: web
 # Copyright 2021 Google LLC
