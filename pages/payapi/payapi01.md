@@ -19,7 +19,7 @@ PayAPI는 HTTPS 요청으로 활용할 수 있는 다양한 서비스를 제공�
 
 ## 1.2 PayAPI 서비스 흐름도
 
-사진
+{% include image.html file="payapi_img01.png" %}
 
 ## 1.3 PayAPI 개요
 
