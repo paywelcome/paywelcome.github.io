@@ -119,10 +119,10 @@ entries:
             output: web
 
           - title: PHP
-            url: /payapi08.html#83-PHP
+            url: /payapi08.html#83-php
             output: web
 
           - title: ASP
-            url: /payapi08.html#84-ASP
+            url: /payapi08.html#84-asp
             output: web
 # Copyright 2021 Google LLC
