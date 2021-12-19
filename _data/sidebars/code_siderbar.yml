@@ -1,0 +1,26 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: code
+  version: 1.0
+  folders:
+
+  - title: 기관 코드
+    output: web, pdf
+    folderitems:
+
+    - title: 1. 카드사 코드
+      url: /code01.html#승인-시-카드사-코드
+      output: web, pdf
+      type: web
+
+    - title: 2. 은행(증권사) 코드
+      url: /code01.html#승인-시-카드사-코드
+      output: web, pdf
+      type: web
+
+    - title: 3. 에스크로 배송등록 택배사 코드
+      url: /code01.html#승인-시-카드사-코드
+      output: web, pdf
+      type: web

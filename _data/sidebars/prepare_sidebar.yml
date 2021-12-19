@@ -1,0 +1,15 @@
+
+entries:
+- title: sidebar
+  product: Prepare
+  version: 1.0
+  folders:
+
+  - title: Signature 생성
+    output: web, pdf
+    folderitems:
+
+    - title: 1. Signature 개요
+      url: /stdweb01.html#11-제품의-개요
+      output: web, pdf
+      type: web

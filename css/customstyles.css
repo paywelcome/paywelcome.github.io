@@ -1,4 +1,19 @@
+@font-face {
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: OTWelcomeRA;
     font-size:15px;
 }
 
@@ -80,7 +95,8 @@ h5[id],
 h6[id],
 dt[id]{
 padding-top: 60px;
-margin-top: -40px
+margin-top: -40px;
+font-family: OTWelcomeBA;
 }
 
 .post-content img {
@@ -141,13 +157,13 @@ table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid white;
 }
 table > thead > tr > th {
-    vertical-align: bottom;
+    vertical-align: middle;
     border-bottom: 2px solid #ddd;
     text-transform: none;
-    background-color: #777;
+    background-color: #EA002C;
     color: white;
     text-align: left;
 }
