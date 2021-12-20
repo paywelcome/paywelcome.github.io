@@ -270,5 +270,5 @@ toc: false
 #### 예시
 ```javascript
 <input type="hidden" name="gopaymethod" value="onlyvbanknone">
-<input type="hidden" name="acceptmethod" value="va\_bankcd(20):va\_receipt(1)">
+<input type="hidden" name="acceptmethod" value="va_bankcd(20):va_receipt(1)">
 ```
