@@ -47,18 +47,18 @@ toc: false
 #### 띄어쓰기 및 & 중복의 경우
 ##### 원본 
 
-|mKey=welcometst&amp;oid=1231231&amp;price=10000 **&amp; &amp;** timestamp=1335247243103   |
+|mKey=xxxxx&amp;oid=1231231&amp;price=10000 **&amp; &amp;** timestamp=1335247243103   |
 
 ##### 수정   
 
-| mKey=welcometst&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 |
+| mKey=xxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 |
 
 #### 마지막에 & 가 붙는 경우
 ##### 원본 
 
-| mKey=welcometst&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 **&amp;** |
+| mKey=xxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 **&amp;** |
 
 ##### 수정 
 
-| mKey=welcometst&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 | 
+| mKey=xxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 | 
 

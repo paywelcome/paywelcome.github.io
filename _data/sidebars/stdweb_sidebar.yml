@@ -164,15 +164,63 @@ entries:
     folderitems:
 
     - title: 1. 결제수단코드(gopaymethod)
-      url: /stdweb04.html#41-결제수단코드-gopaymethod
+      url: /stdweb04.html#a1-결제수단코드-gopaymethod
       output: web, pdf
 
     - title: 2. 결제수단코드(paymethod)
-      url: /stdweb04.html#42-결제수단코드-paymethod
+      url: /stdweb04.html#a2-결제수단코드-paymethod
       output: web, pdf
 
     - title: 3. gopaymethod 옵션
-      url: /stdweb04.html#43-gopaymethod-옵션
+      url: /stdweb04.html#a3-gopaymethod-옵션
+      output: web, pdf
+
+    - title: 4. 카드사 승인코드
+      url: /stdweb04.html#a4-카드사-승인코드
+      output: web, pdf
+
+    - title: 5. 카드사 코드(결제창 호출시 제어코드)
+      url: /stdweb04.html#a5-카드사-코드결제창-호출시-제어코드
+      output: web, pdf
+
+    - title: 6. 카드 발급사(은행) 코드
+      url: /stdweb04.html#a6-카드-발급사은행-코드
+      output: web, pdf
+
+    - title: 7. 은행(증권사) 코드
+      url: /stdweb04.html#a7-은행증권사-코드
+      output: web, pdf
+
+    - title: 8. 신용카드 간편결제 코드
+      url: /stdweb04.html#a8-신용카드-간편결제-코드
+      output: web, pdf
+
+    - title: 9. 카드 이벤트 적용 코드
+      url: /stdweb04.html#a9-카드-이벤트-적용-코드
+      output: web, pdf
+
+    - title: 10. 인증 결과코드
+      url: /stdweb04.html#a10-인증-결과코드
+      output: web, pdf
+
+    - title: 11. 승인 결과코드
+      url: /stdweb04.html#a11-승인-결과코드
+      output: web, pdf
+
+    - title: 12. 카드결제 직접호출
+      url: /stdweb04.html#a12-카드결제-직접호출
+      output: web, pdf
+
+    - title: 13. 간편결제 직접호출
+      url: /stdweb04.html#a13-간편결제-직접호출
+      output: web, pdf
+
+    - title: 14. PHP연동 시 SSL 통신 오류 조치
+      url: /stdweb04.html#a14-PHP연동-시-SSL-통신-오류-조치
+      output: web, pdf
+
+    - title: 15. 가상계좌 NONE UI 방식 호출
+      url: /stdweb04.html#a15-가상계좌-NONE-UI-방식-호출
       output: web, pdf
 
 # Copyright 2021 Google LLC

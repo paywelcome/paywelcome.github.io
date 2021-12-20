@@ -703,6 +703,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 | cd_rslt  | 결과코드  |  Char(4)   | 0000:정상처리, 9999:처리실패 |
 | msg_rslt | 결과메세지 | Char(1000) | 처리실패시 상세 오류 메세지      |
 
+---
 ## 3.4 가상계좌 입금통보 (노티 수신) 사용 방법 
 > 상점 입금통보 수신 페이지는 고객이 가상계좌이체 서비스를 사용하여 가상계좌를 발급받은 후 무통장 입금을 하였을 때,<br> 은행으로부터 통보된 입금결과를 상점으로 전송해 주기 위해 상점 측에 필요한 페이지입니다.<br>고객이 보는 결제 화면과는 무관하며, HTTP/HTTPS 모두 지원합니다.
 
@@ -801,9 +802,10 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 성공 메시지가 나오면 상점으로 socket 송신을 완료한 상태입니다.
 상점 내 수신 로그 및 DB상태를 확인하세요.
 
+---
 ## 3.6	 웹표준 결제 취소
 
 웹표준 결제는 거래 취소 기능을 지원하지 않습니다.
 따라서, 결제 취소는 별도의 PayAPI 서비스 연동하시어 취소기능을 활용하셔야 합니다.  
-자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.
-기술지원 문의  (mainpg_support@welcomepayments.co.kr)
+자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.<br>
+기술지원 문의 (mainpg_support@welcomepayments.co.kr)
