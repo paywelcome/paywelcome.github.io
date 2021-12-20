@@ -58,4 +58,58 @@ entries:
           - title: P_NOTI_URL  수신 후 ,  처리방법
             url: /mobile04.html#44-p_noti_url--수신-후---처리방법
             output: web
+
+      - title: 5. 연동시 주의사항
+        output: web
+
+        folderitems:
+          - title: Form Encode issue
+            url: /mobile05.html
+            output: web
+          - title: Urlencode issue
+            url: /mobile05.html#52-urlencode-issue
+            output: web
+          - title: Iframe-issue
+            url: /mobile05.html#53-iframe-issue
+            output: web
+          - title: Parameter issue
+            url: /mobile05.html#54-parameter-issue
+            output: web
+          - title: 가상계좌 채번시 P_NOTI_URL issue
+            url: /mobile05.html#55-가상계좌-채번시--p_noti_url-issue
+            output: web
+          - title: 모바일 거래 결제취소 issue
+            url: /mobile05.html#56-모바일-거래-결제취소-issue
+            output: web
+          - title: DNS 설정관련 issue
+            url: /mobile05.html#57-dns-설정관련-issue
+            output: web
+          - title: 인증결과 수신 및 승인결과 수신 시 issue
+            url: /mobile05.html#58-인증결과-수신-및-승인결과-수신-시-issue
+            output: web
+          - title: P_NEXT_URL의 Scheme issue
+            url: /mobile05.html#59-p_next_url의-scheme-issue
+            output: web
+          - title: 브라우저 환경에서의 쿠키허용 issue
+            url: /mobile05.html#510-브라우저-환경에서의-쿠키허용-issue
+            output: web
+          - title: 인증결과 수신 시 Method issue
+            url: /mobile05.html#511-인증결과-수신-시-method-issue
+            output: web
+          - title: 네이버/카카오톡 앱 환경 최적화 issue
+            url: /mobile05.html#512-네이버카카오톡-앱-환경-최적화-issue
+            output: web
+          - title: 안드로이드/IOS 앱 USER AGENT 수정
+            url: /mobile05.html#513-안드로이드ios-앱-user-agent-수정
+            output: web
+          - title: 아이폰 3rd party( 제 3 공급자) 앱브라우져 결제 issue
+            url: /mobile05.html#514-아이폰-3rd-party-제-3-공급자-앱브라우져-결제-issue
+            output: web
+          - title: 결제 요청 시 주의사항
+            url: /mobile05.html#515-결제-요청-시-주의사항
+            output: web
+          - title: 주문요청 시 유의사항
+            url: /mobile05.html#516-주문요청-시-유의사항
+            output: web
+
 # Copyright 2021 Google LLC
