@@ -155,7 +155,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
+    <td class="tg-0lax"><a href="/code01.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>

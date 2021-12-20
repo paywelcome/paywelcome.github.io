@@ -1,34 +1,40 @@
 
 entries:
 - title: sidebar
-  product: Prepare
-  version: 1.0
+  product: 연동 준비하기
+  version:
   folders:
 
-  - title: Signature 생성
-    output: web, pdf
+  - title: 연동 준비하기
+    output: web
     folderitems:
 
-    - title: 1. PC Signature 생성
-      url: /prepare01.html#11-signature-개요
-      output: web, pdf
+    - title: 상점 연동시 주의사항
+      url: /prepare01.html
+      output: web
       type: web
 
-    - title: 2. Mobile Signature 생성
-      url: /prepare02.html#11-p_signature-생성
-      output: web, pdf
+    - title: signature 개요
+      url: /prepare01.html#12-signature-개요
+      output: web
       type: web
 
-    - title: 3. PAYAPI Signature 생성
-      url: /prepare03.html#11-signature-생성
-      output: web, pdf
+    - title: signature 첨부 대상
+      url: /prepare01.html#13-signature-첨부-대상
+      output: web
       type: web
 
-    - title: 4. 잘못된 Signature 생성
-      url: /prepare03.html#11-signature-생성
-      output: web, pdf
+    - title: signature 생성 방법
+      url: /prepare01.html#14-signature-생성-방법
+      output: web
       type: web
 
-  - title: 연동시 주의사항
-    output: web, pdf
-    folderitems:
+    - title: signature 생성 샘플(결제요청)
+      url: /prepare01.html#15-signature-생성-샘플결제요청
+      output: web
+      type: web
+
+    - title: 서비스별 Signature 생성
+      url: /prepare01.html#16-서비스별-signature-생성
+      output: web
+      type: web
