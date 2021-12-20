@@ -14,11 +14,11 @@
 }
 
 .nav > li.active > a {
-    background-color: #347DBE;
+    background-color:#EA002C;
 }
 
 .nav > li > a:hover {
-    background-color: #248ec2;
+    background-color: #ff1d48;
 }
 
 div.navbar-collapse .dropdown-menu > li > a:hover {

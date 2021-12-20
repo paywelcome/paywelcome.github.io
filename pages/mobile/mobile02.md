@@ -73,6 +73,10 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 양식 예시 : <input type="hidden" name="필드명" value="값 예시" />;
 ```
 
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
+
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
 <col style="width: 15%;">
@@ -221,15 +225,22 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 전용 필드
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
+    <col style="width: 25%;">
+    <col style="width: 15%;">
+    <col style="width: 10%;">
+    <col style="width: 20%;">
+    <col style="width: 35%;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
@@ -278,15 +289,22 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 3) 휴대폰 전용 필드
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
+<col style="width: 25%;">
 <col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
+<col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 40%;">
+<col style="width: 35%;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
@@ -308,15 +326,22 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 4) 가상계좌 전용 필드
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
+<col style="width: 25%;">
 <col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
+<col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 40%;">
+<col style="width: 35%;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
@@ -345,7 +370,6 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
-
 >P_VBANK_DT=20180518, P_VBANK_TM=0000 으로 설정하시는 경우  2018.05.18 23 시  59 분  59 초까지로 설정됩니다.
 ><br>ex) P_VBANK_DT=20180518, P_VBANK_TM=0000 : 2018.05.18 23시 59분 59초까지
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P_VBANK_DT=20180517, P_VBANK_TM=2359 : 2018.05.17 23시 59분 00초까지
@@ -354,15 +378,22 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 ><br>
 >**단 ,  결제요청일자와  P_VBANK_DT 가 같은 경우  V_VBANK_TM=0000  설정 불가능하며  P_VBANK_TM=2359 으로 설정하셔야 정상 승인 가능합니다.**
 
+</div>
+</details>
+
 #### 5) 기타 옵션 필드
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
+<col style="width: 25%;">
 <col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
+<col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 40%;">
+<col style="width: 35%;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
@@ -384,7 +415,14 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 6) 복합 필드
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -492,6 +530,8 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </table>
 <p style="font-size: 80%">(상기 기능 외, 옵션에 대하여는 별도 문의 바랍니다)</p>
 
+</div>
+</details>
 
 앱 내 WebView 로 구현하는 경우, P_RESERVED 옵션이 추가됩니다.
 ( 2장. 앱 환경의 설치방법(안드로이드)의 2.B. ISP 연동방법 ) 를 참고하십시오. 
@@ -513,6 +553,19 @@ _( __이어서…__ )_
 {% include image.html file="mobile_img05.png" %}
 
 &lt;apprun_check=Y 사용시 &gt; - ISP 앱이 없다면, 앱 스토어 이동 및 설치 후, 결제를 이어서 진행할 수 있습니다.
+
+[카카오페이 /L.Pay/ 페이코 직연동]
+- 간편결제 직연동을 원하신다면 해당 호출 값을 활용하시기 바랍니다.
+- 간편결제 직연동 시, 웰컴페이먼츠 계약담당자와 사전 협의가 이루어져야 합니다.
+- 간편결제 직연동 시, 전자금융거래 이용약관은 가맹점 페이지에서 동의 받아 주셔야 합니다.
+- 이 외 정보는 상기 본 메뉴얼과 동일합
+- 간편결제 직접호출
+
+```html
+<input type="hidden" name="P_RESERVED" value="d_kakaopay=Y&" />
+<input type="hidden" name="P_RESERVED" value="d_payco=Y&" />
+<input type="hidden" name="P_RESERVED" value="d_lpay=Y&" />
+```
 
 ## 2.3 결제 페이지 구성 예제
 

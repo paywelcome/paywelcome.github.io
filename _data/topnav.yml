@@ -4,7 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/welcomepay
+      external_url: https://github.com/paywelcome
     - title: PC
       url: /stdweb01.html
     - title: MOBILE
