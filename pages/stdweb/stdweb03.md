@@ -696,7 +696,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
       <th style="text-align: center; width: 15%">필드명</th>
       <th style="text-align: center; width: 15%">한글명칭</th>
       <th style="text-align: center; width: 10%">Data<br>Type</th>
-      <th  style="width: 40%">설명</th>
+      <th style="width: 40%">설명</th>
       <th style="text-align: center; width: 10%">필수여부</th>
       <th style="text-align: center; width: 10%">크기(최대)</th>
     </tr>
@@ -823,18 +823,90 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 ### [TABLE 2-5] 승인결과 데이터(신용카드)
 
-|       필드명        |         한글명칭          | Data Type | 설명                                       | 크기(최대)  |
-| :--------------: | :-------------------: | :-------: | ---------------------------------------- | ------- |
-|    CARD\_Num     |        신용카드번호.        |  String   | 신용카드번호.                                  | 16 Byte |
-|  CARD\_Interest  |         할부여부          |  String   | 카드 할부여부 ("1"이면 무이자할부)                   | 1 Byte  |
-|   CARD\_Quota    |       카드 할부기간.        |  String   | 카드 할부기간.                                 | 2 Byte  |
-|    CARD_Code    | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드) |  String   | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드)  | 2 Byte  |
-| CARD\_PRTC\_CODE |       부분취소 가능여부       |  String   | 부분취소 가능여부 (1:가능, 0:불가능)                  | 1 Byte  |
-|  CARD_BankCode  |         카드발급사         |  String   | 카드발급사(은행) 코드. [별첨정보 참조]카드사 직발행 카드가 아닌 계열카드인 경우,<br> 2자리 신용카드사 코드와 더불어 자세한 카드 정보를 나타냅니다 (직발행 카드인 경우 "00"으로 반환됩니다).<br>CARD_Code가 "11", CARD\_BankCode가 "23"인 경우 – 제일은행에서 발급한 BC카드 | 2 Byte  |
-|  CARD\_SrcCode   |      간편(앱)결제 구분       |  String   | C : PAYCO<br> B : 삼성페이<br>D : 삼성페이(체크)<br> G : SSGPAY<br>O : KAKAOPAY<br>L : LPAY<br>K : 국민앱카드<br>A : KPAY | 1 Byte  |
-|   CARD\_Point    |      카드포인트 사용여부       |  String   | ": 카드 포인트 사용안함"1" : 카드 포인트 사용            | 1Byte   |
-|     currency     |         통화코드          |  String   | 달러결제 정보, 통화코드.                           | 3 Byte  |
-|     OrgPrice     |        달러 환전금액        |  String   | 해외카드 + 달러(USD) 결제 일 경우 환전금액(국내카드로 달러 결제 시 환전금액으로 표기X) | 20 Byte |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data Type</th>
+      <th style="text-align: center; width: 50%">설명</th>
+      <th style="text-align: center; width: 10%">크기(최대)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">CARD_Num</td>
+      <td style="text-align: center">신용카드번호</td>
+      <td style="text-align: center">String</td>
+      <td>신용카드번호</td>
+      <td>16 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_Interest</td>
+      <td style="text-align: center">할부여부</td>
+      <td style="text-align: center">String</td>
+      <td>카드 할부여부<br>("1"이면 무이자할부)</td>
+      <td>1 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_Quota</td>
+      <td style="text-align: center">카드 할부기간</td>
+      <td style="text-align: center">String</td>
+      <td>카드 할부기간</td>
+      <td>2 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_Code</td>
+      <td style="text-align: center">카드사 코드<br>
+      <td style="text-align: center">String</td>
+      <td>카드사 코드<br>
+</td>
+      <td>2 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_PRTC_CODE</td>
+      <td style="text-align: center">부분취소 가능여부</td>
+      <td style="text-align: center">String</td>
+      <td>부분취소 가능여부 (1:가능, 0:불가능)</td>
+      <td>1 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_BankCode</td>
+      <td style="text-align: center">카드발급사</td>
+      <td style="text-align: center">String</td>
+      <td>카드발급사(은행) 코드 [별첨 참조]카드사 직발행 카드가 아닌 계열카드인 경우,<br> 2자리 신용카드사 코드와 더불어 자세한 카드 정보를 나타냅니다 (직발행 카드인 경우 “00”으로 반환됩니다).<br>CARD_Code가 “11”, CARD_BankCode가 “23”인 경우 – 제일은행에서 발급한 BC카드</td>
+      <td>2 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_SrcCode</td>
+      <td style="text-align: center">간편(앱)결제 구분</td>
+      <td style="text-align: center">String</td>
+      <td>C : PAYCO<br> B : 삼성페이<br>D : 삼성페이(체크)<br> G : SSGPAY<br>O : KAKAOPAY<br>L : LPAY<br>K : 국민앱카드<br>A : KPAY</td>
+      <td>1 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARD_Point</td>
+      <td style="text-align: center">카드포인트 사용여부</td>
+      <td style="text-align: center">String</td>
+      <td>”: 카드 포인트 사용안함”1” : 카드 포인트 사용</td>
+      <td>1Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">currency</td>
+      <td style="text-align: center">통화코드</td>
+      <td style="text-align: center">String</td>
+      <td>달러결제 정보, 통화코드.</td>
+      <td>3 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">OrgPrice</td>
+      <td style="text-align: center">달러 환전금액</td>
+      <td style="text-align: center">String</td>
+      <td>해외카드 + 달러(USD) 결제 일 경우 환전금액(국내카드로 달러 결제 시 환전금액으로 표기X)</td>
+      <td>20 Byte</td>
+    </tr>
+  </tbody>
+</table>
 
 ### [TABLE 2-6] 승인결과 데이터(무통장)
 
