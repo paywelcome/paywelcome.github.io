@@ -96,7 +96,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">version</td>
 <td style="text-align:center">버전</td>
 <td style="text-align:center">String</td>
-<td>전문 버전<br>`"1.0"`</td>
+<td>전문 버전<br>><code class="language-plaintext highlighter-rouge">"1.0"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">20 Byte</td>
 </tr>
@@ -104,7 +104,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">mid</td>
 <td>상점아이디</td>
 <td>String</td>
-<td>제공된 mid, 10자리 고정<br>`"xxxxx"`</td>
+<td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxx"</code></td>
 <td style="text-align:center">Yes<br>(위변조검증)</td>
 <td style="text-align:center">10 Byte Fixed</td>
 </tr>
@@ -240,7 +240,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">languageView</td>
 <td style="text-align:center">초기 표시 언어</td>
 <td style="text-align:center">String</td>
-<td>결제창 표시 언어, PC는 결제창내 언어변경 버튼 존재<br>`"ko"`, [ko:한국어, en:영어]</td>
+<td>결제창 표시 언어, PC는 결제창내 언어변경 버튼 존재<br><code class="language-plaintext highlighter-rouge">"ko"</code>, [ko:한국어, en:영어]</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">2Byte</td>
 </tr>
@@ -248,7 +248,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">charset</td>
 <td style="text-align:center">결과 인코딩</td>
 <td style="text-align:center">String</td>
-<td>결과 수신 charset <br>`"UTF-8"` / [UTF-8, EUC-KR]</td>
+<td>결과 수신 charset <br><code class="language-plaintext highlighter-rouge">"UTF-8"</code>/ [UTF-8, EUC-KR]</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">5Byte</td>
 </tr>
