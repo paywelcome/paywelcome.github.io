@@ -4,7 +4,7 @@
 entries:
   - title: Sidebar
     product: MOBILE
-    version: 1.0
+    version:
     folders:
 
       - title: 1. 기본적인 설치 방법
@@ -26,7 +26,7 @@ entries:
             url: /mobile02.html
             output: web
 
-          - title: 전 지불수단 공통 필드
+          - title: 결제페이지 요청필드
             url: /mobile02.html#22-결제창-open-주문정보-전달---결제페이지-요청필드
             output: web
 
@@ -110,6 +110,94 @@ entries:
             output: web
           - title: 주문요청 시 유의사항
             url: /mobile05.html#516-주문요청-시-유의사항
+            output: web
+
+      - title: 6. 앱 환경의 설치방법(안드로이드)
+        output: web
+
+        folderitems:
+          - title: 기본적인 설치방법
+            url: /mobile06.html
+            output: web
+          - title: ISP 연동방법 (1)
+            url: /mobile06.html#62-isp-연동방법---앱-미설치-체크로직-직접구현-or-자동체크
+            output: web
+          - title: ISP 연동방법 (2)
+            url: /mobile06.html#63-isp-연동방법---인증결과-전송
+            output: web
+          - title: 안심클릭 결제 시, 카드사 백신 앱 연동
+            url: /mobile06.html#64-안심클릭-결제-시-카드사-백신-앱-연동
+            output: web
+          - title: 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
+            url: /mobile06.html#65-결제-금액이-30-만원-이상일-때의-공인인증-앱-연동-방법
+            output: web
+          - title: Android API Level 21 이상 체크사항
+            url: /mobile06.html#66-android-api-level-21--이상-일-때---체크사항
+            output: web
+
+      - title: 7. 앱 환경의 설치방법(IOS)
+        output: web
+
+        folderitems:
+          - title: 기본적인 설치방법
+            url: /mobile07.html
+            output: web
+          - title: 신용카드 ISP, 계좌이체 연동방법
+            url: /mobile07.html#72-신용카드--isp--계좌이체-연동방법
+            output: web
+          - title: 안심클릭 결제 시, 카드사 백신 앱 연동
+            url: /mobile07.html#73-안심클릭-결제-시-카드사-백신-앱-연동
+            output: web
+          - title: 카드사 앱 연동 방법
+            url: /mobile07.html#74-카드사-앱-연동-방법
+            output: web
+          - title: 쿠키 설정
+            url: /mobile07.html#75-쿠키-설정
+            output: web
+          - title: IOS9 버전 Application 구현 시, 주의 사항
+            url: /mobile07.html#76-ios9-버전-application-구현-시-주의-사항
+            output: web
+
+      - title: 8. 계좌이체 연동 유의사항 안내
+        output: web
+
+        folderitems:
+          - title: 계좌이체 연동시 유의사항
+            url: /mobile08.html#81-계좌이체-연동시-유의사항
+            output: web
+          - title: 안드로이드 연동 시 유의사항
+            url: /mobile08.html#82-안드로이드-연동-시-유의사항
+            output: web
+          - title: IOS 연동 시 유의사항
+            url: /mobile08.html#83-ios-연동-시-유의사항
+            output: web
+          - title: 계좌이체 연동 시 권장 옵션
+            url: /mobile08.html#84-계좌이체-연동-시-권장-옵션
+            output: web
+
+      - title: 9. 모바일 에스크로 사용방법 안내
+        output: web
+
+        folderitems:
+          - title: 모바일 에스크로 사용가능 지불수단
+            url: /mobile09.html
+            output: web
+          - title: 모바일 에스크로 구매결정 연동
+            url: /mobile09.html#92-모바일-에스크로-구매결정-연동
+            output: web
+          - title: 에스크로 상태변경 노티 수신
+            url: /mobile09.html#93-에스크로-상태변경-노티-수신
+            output: web
+          - title: 에스크로 관련 코드
+            url: /mobile09.html#94-에스크로-관련-코드
+            output: web
+
+      - title: 10. 노티 수신 사용방법 안내
+        output: web
+
+        folderitems:
+          - title: 노티를 받을 때 전달되는 파라미터
+            url: /mobile10.html
             output: web
 
 # Copyright 2021 Google LLC
