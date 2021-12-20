@@ -9,7 +9,26 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 1. Signature 개요
-      url: /stdweb01.html#11-제품의-개요
+    - title: 1. PC Signature 생성
+      url: /prepare01.html#11-signature-개요
       output: web, pdf
       type: web
+
+    - title: 2. Mobile Signature 생성
+      url: /prepare02.html#11-p_signature-생성
+      output: web, pdf
+      type: web
+
+    - title: 3. PAYAPI Signature 생성
+      url: /prepare03.html#11-signature-생성
+      output: web, pdf
+      type: web
+
+    - title: 4. 잘못된 Signature 생성
+      url: /prepare03.html#11-signature-생성
+      output: web, pdf
+      type: web
+
+  - title: 연동시 주의사항
+    output: web, pdf
+    folderitems:

@@ -86,8 +86,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <th style="text-align:center; width: 15%">필드명</th>
 <th style="text-align:center; width: 13%">한글명칭</th>
 <th style="text-align:center; width: 9%">Data<br>Type</th>
-<th style="text-align:center; width: 15%">예시 / <code>기본값</code></th>
-<th style="width: 30%">설명</th>
+<th style="width: 40%">설명<br>예시</th>
 <th style="text-align:center; width: 9%">필수여부</th>
 <th style="text-align:center; width: 9%">크기(최대)</th>
 </tr>
@@ -95,38 +94,33 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <tbody>
 <tr>
 <td style="text-align:center">version</td>
-<td>버전</td>
-<td>String</td>
-<td>&quot;1.0&quot;</td>
-<td>전문 버전</td>
-<td>Yes</td>
-<td>20 Byte</td>
+<td style="text-align:center">버전</td>
+<td style="text-align:center">String</td>
+<td>전문 버전<br>`"1.0"`</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">20 Byte</td>
 </tr>
 <tr>
 <td style="text-align:center">mid</td>
 <td>상점아이디</td>
 <td>String</td>
-<td>"xxx"</td>
-<td>제공된 mid<br>10자리 고정</td>
-<td>Yes<br>(위변조검증)</td>
-<td>10 Byte Fixed</td>
+<td>제공된 mid, 10자리 고정<br>`"xxxxx"`</td>
+<td style="text-align:center">Yes<br>(위변조검증)</td>
+<td style="text-align:center">10 Byte Fixed</td>
 </tr>
 <tr>
 <td style="text-align:center">oid</td>
-<td>주문번호
-</td>
-<td>String</td>
-<td>&quot;xxx_1335233672723&quot;</td>
-<td>주문단위 unique한 값<br>( mid+&quot;_&quot;+timestamp )</td>
-<td>Yes</td>
-<td>40 Byte</td>
+<td style="text-align:center">주문번호</td>
+<td style="text-align:center">String</td>
+<td>주문단위 unique한 값 ( mid+&quot;_&quot;+timestamp ) <br>`"xxx_1335233672723"`</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">40 Byte</td>
 </tr>
 <tr>
 <td style="text-align:center">goodname</td>
-<td>상품명</td>
-<td>String</td>
-<td>&quot;키보드/마우스&quot;</td>
-<td>한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte+…으로 자동 변환</td>
+<td style="text-align:center">상품명</td>
+<td style="text-align:center">String</td>
+<td>한글/특수기호 입력가능, 40Byte 초과 요청시 37Byte+…으로 자동 변환<br>`“키보드/마우스”`</td>
 <td>Yes</td>
 <td>80 Byte</td>
 </tr>
