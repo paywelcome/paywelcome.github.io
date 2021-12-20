@@ -7,6 +7,8 @@ toc: false
 ---
 
 # 3. 결제 연동
+---
+
 ## 3.1 결제 요청 페이지 작성(PayRequest)
 ### 3.1.1 결제 요청 데이터
 
@@ -16,12 +18,12 @@ toc: false
 - 웹 표준 결제 이용시 패스워드 기능을 하는 코드로 MID 번호별로 부여됩니다.
 
 ```java
-String mid = "welcometst"; // 가맹점 ID(가맹점 수정후 고정)
+String mid = "xxx"; // 가맹점 ID(가맹점 수정후 고정)
 // 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
 String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 ```
 ### signkey 발급 방법
-- 관리자 페이지의 상점정보 > 계약정보 > 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후
+- 관리자 페이지의 상점정보 > 계약정보 > 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후<br>
   팝업창에서 생성 버튼 클릭 후 해당 값 소스에 반영하시기 바랍니다.
 
 ### 표준결제 스크립트 Import
@@ -35,7 +37,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 - head Tag안에 설정
 - 페이지 인코딩에 관계없이 고정 charset="UTF-8"(실 테스트 용 구분 후 사용)
 
-```javascript
+``` javascript
 <head>
 ….
 <script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/INIStdPay.js" charset="UTF-8"></script>
@@ -65,7 +67,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 ```javascript
 <form id=" SendPayForm_id" name="SendPayForm_name" method="POST">
-  <input type="hidden" name="mid" value="welcometst"/>
+  <input type="hidden" name="mid" value="xxx"/>
   <input type="hidden" name="price" value="1004"/>
    ……….. 
 </form>
@@ -78,16 +80,16 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 #### [TABLE 1-1] 기본 요청데이터 필드
 
-<table>
+<table style = "table-layout: auto; width: 100%; table-layout: fixed;" >
 <thead>
 <tr>
-<th style="text-align:center">필드명</th>
-<th>한글명칭</th>
-<th>Data Type</th>
-<th>예시 / <code>기본값</code></th>
-<th>설명</th>
-<th>필수여부</th>
-<th>크기(최대)</th>
+<th style="text-align:center; width: 15%">필드명</th>
+<th style="text-align:center; width: 13%">한글명칭</th>
+<th style="text-align:center; width: 9%">Data<br>Type</th>
+<th style="text-align:center; width: 15%">예시 / <code>기본값</code></th>
+<th style="width: 30%">설명</th>
+<th style="text-align:center; width: 9%">필수여부</th>
+<th style="text-align:center; width: 9%">크기(최대)</th>
 </tr>
 </thead>
 <tbody>
@@ -102,19 +104,19 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 </tr>
 <tr>
 <td style="text-align:center">mid</td>
-<td><span data-tooltip-text="THIS IS TOOLTIP!!">상점아이디</span></td>
+<td>상점아이디</td>
 <td>String</td>
-<td>&quot;welcometst&quot;</td>
+<td>"xxx"</td>
 <td>제공된 mid<br>10자리 고정</td>
-<td>Yes(위변조검증)</td>
+<td>Yes<br>(위변조검증)</td>
 <td>10 Byte Fixed</td>
 </tr>
 <tr>
 <td style="text-align:center">oid</td>
-<td title="John Smith lives in New York.">주문번호
+<td>주문번호
 </td>
 <td>String</td>
-<td>&quot;welcometst_1335233672723&quot;</td>
+<td>&quot;xxx_1335233672723&quot;</td>
 <td>주문단위 unique한 값<br>( mid+&quot;_&quot;+timestamp )</td>
 <td>Yes</td>
 <td>40 Byte</td>
@@ -306,7 +308,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td>&quot;a=A&amp;b=B&quot;</td>
 <td>인증 성공시 가맹점으로 리턴</td>
 <td>No</td>
-<td>2000Byte</td>
+<td>2000<br>Byte</td>
 </tr>
 <tr>
 <td style="text-align:center">acceptmethod</td>
@@ -332,12 +334,47 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 #### [TABLE 1-3] signature 생성 대상(Target) 필드
 
-| 필드명       | 한글명칭  | 예시                                       | 비고                                       | 필수여부 |
-| --------- | :---: | ---------------------------------------- | ---------------------------------------- | -------- |
-| mKey      |  검증값  | 346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3 | SHA256방식으로 생성한 값<br>\* 제공라이브러리로 생성가능     | Yes      |
-| oid       | 주문번호  | welcometst_1335247243103                 |                                          | Yes      |
-| price     |  가격   | 10000                                    | 가맹점 주문번호 / 결제단위 Unique                   | Yes      |
-| timestamp | 타임스탬프 | 1335247243103                            | TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능 | Yes      |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 13%">필드명</th>
+      <th style="text-align: center; width: 10%">한글명칭</th>
+      <th>예시</th>
+      <th>비고</th>
+      <th style="text-align: center; width: 8%">필수여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">mKey</td>
+      <td style="text-align: center">검증값</td>
+      <td>346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3</td>
+      <td>SHA256방식으로 생성한 값<br>* 제공라이브러리로 생성가능</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">oid</td>
+      <td style="text-align: center">주문번호</td>
+      <td>xxx_1335247243103</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">price</td>
+      <td style="text-align: center">가격</td>
+      <td>10000</td>
+      <td>가맹점 주문번호 / 결제단위 Unique</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: center">타임스탬프</td>
+      <td>1335247243103</td>
+      <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+  </tbody>
+</table>
 
 - Signature 생성방법은 아래의 [3.3 signature 생성] 참조
   기본 요청데이터 외에 다음과 같이 결제 수단별로 옵션 값을 추가하여 결제 요청할 수 있습니다.
@@ -347,7 +384,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 |     필드명      |       하위필드       | 한글명칭            | Data Type | 예시, **`기본값`**                            | 설명                                       |
 | :----------: | :--------------: | --------------- | :-------: | :--------------------------------------- | ---------------------------------------- |
 |  quotabase   |                  | 할부 개월           |  String   | "2:3:4", "2:0"<br>* 개월수를 `:` 로 구분된 값     | 일시불은 기본적으로 표시, 생략시 일시불만<br>현대카드 1만원,그 외 5만원 이상시에만 동작 |
-|  nointerest  |                  | 가맹점 부담 무이자 할부설정 |  String   | "11-2:3:5:6,34-2:6", "04-2:6"<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이 `,`로 구분 | \* 5만원 이상시에만 동작 / 카드사 무이자와 무관<br>[→ 별첨 "A.4카드사코드" 참조] |
+|  nointerest  |                  | 가맹점 부담 무이자 할부설정 |  String   | "11-2:3:5:6,34-2:6", "04-2:6"<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이 `,`로 구분 | 5만원 이상시에만 동작 / 카드사 무이자와 무관<br>[→ 별첨 "A.4카드사코드" 참조] |
 | acceptmethod |    below1000     | 1000원이하 결제      |  String   | " below1000"                             | 기본적으로 1000원이하 결제 불가능                     |
 |     ^^       | ini_onlycardcode | 결제 카드사 선택       |  String   | "01:03:04:06"\* 카드사코드를 ":"로 구분된 값        | 생략 시 결제 가능한 모든 카드사 표시<br>[→ 별첨"A.4카드사코드"참조] |
 |     ^^       | onlyeasypaycode  | 결제 간편결제 선택      |  String   | "kakaopay:lpay:payco"\* 간편결제코드를 ":"로 구분된 값 | 생략 시 결제 가능한 모든 간편결제 표시<br>[→ 별첨 "A.7 신용카드 간편결제코드" 참조] |
@@ -381,6 +418,8 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 | acceptmethod | vbank       | 입금기한 및 입금시간 (초 설정 불가) | String    | "vbank(20150416)&#39; | 입금기한 및 입금 시간 설정 옵션<br> EX) vbank(20211216) 또는 vbank(202112261900) 시분까지지정 |
 | ^^ | va\_receipt | 현금영수증 발급 UI 옵션        | String    | "va\_receipt"         | 현금영수증 발급 UI 표시 옵션<br> (CASHRECEIPT 옵션이 기준정보에 있는 경우)<br>–주민번호만 표시 |
 | ^^           | va\_ckprice | 주민번호 채번 시 금액 확인       | String    | "va\_ckprice"         | 주민번호 채번시 금액 체크 기능                        |
+
+---
 
 ## 3.2 리턴 페이지 (인증수신/승인 API) 작성 (PayReturn)
 - 작성시Sample Source를 참고하여 작성하시기 바랍니다.
@@ -417,7 +456,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 |    필드명    |   한글명칭    | Data Type | 예시, **`기본값`**                            | 설명                                       | 필수 여부        | 크기(최대)       |
 | :-------: | :-------: | :-------: | ---------------------------------------- | ---------------------------------------- | ------------ | ------------ |
-|    mid    |  가맹점 id   |  String   | "welcometst"                             | 가맹점 아이디                                  | Yes          | 10 Bytefixed |
+|    mid    |  가맹점 id   |  String   | "xxx"                             | 가맹점 아이디                                  | Yes          | 10 Bytefixed |
 | authToken |  인증 결과코드  |  String   | "sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu ……." | 인증 결과에 대한 위변조 검증값                        | Yes(위변조검증)   | --           |
 |   price   |   인증가격    |           | "1000"                                   | 인증 가격 결과에 대한 위변조 확인용                     | Yes(가격위변조검증) | 64Bytes      |
 | timestamp |   타임스템프   |  Number   | 1335233672723                            | TimeInMillis(Long형)→제공라이브러로 생성가능(샘플소스참조) | Yes(위변조검증)   | 20 Byte      |
@@ -432,8 +471,9 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 |    필드명    | 한글명칭                | 예시                                       | 비고                                       | 필수 여부 |
 | :-------: | :------------------ | ---------------------------------------- | ---------------------------------------- | :---: |
 | authToken | 인증 결과 수신 후 생성된 토큰 값 | sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu ……. | 인증결과 수신한 authToken                       |  Yes  |
-| timestamp | 타임스탬프               | 1335247243103                            | TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러로 생성가능 |  Yes  |
-||Target 데이터 예시 : authToken=sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/iT……  ||
+| timestamp | 타임스탬프               | 1335247243103 | TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러로 생성가능 |  Yes  |
+
+##### Target 데이터 예시 : `authToken=sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/iT…… `
 
 #### Signature 생성방법은 아래의 [3.3 signature 생성] 참조
 
@@ -472,7 +512,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 |    CARD\_Num     |        신용카드번호.        |  String   | 신용카드번호.                                  | 16 Byte |
 |  CARD\_Interest  |         할부여부          |  String   | 카드 할부여부. ("1"이면 무이자할부)                   | 1 Byte  |
 |   CARD\_Quota    |       카드 할부기간.        |  String   | 카드 할부기간.                                 | 2 Byte  |
-|    CARD_Code    | 카드사 코드. [**별첨정보 참조**] |  String   | 카드사 코드. [**별첨정보 참조**]                    | 2 Byte  |
+|    CARD_Code    | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드) |  String   | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드)  | 2 Byte  |
 | CARD\_PRTC\_CODE |       부분취소 가능여부       |  String   | 부분취소 가능여부 (1:가능, 0:불가능)                  | 1 Byte  |
 |  CARD_BankCode  |         카드발급사         |  String   | 카드발급사(은행) 코드. [별첨정보 참조]카드사 직발행 카드가 아닌 계열카드인 경우,<br> 2자리 신용카드사 코드와 더불어 자세한 카드 정보를 나타냅니다 (직발행 카드인 경우 "00"으로 반환됩니다).<br>CARD_Code가 "11", CARD\_BankCode가 "23"인 경우 – 제일은행에서 발급한 BC카드 | 2 Byte  |
 |  CARD\_SrcCode   |      간편(앱)결제 구분       |  String   | C : PAYCO<br> B : 삼성페이<br>D : 삼성페이(체크)<br> G : SSGPAY<br>O : KAKAOPAY<br>L : LPAY<br>K : 국민앱카드<br>A : KPAY | 1 Byte  |
@@ -539,8 +579,8 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
   <goodName>PRODUCT</goodName>
   <gwCode>A</gwCode>
   <memberNum/>
-  <mid> welcometst </mid>
-  <oid> welcometst_1418273735611</oid>
+  <mid> xxxxx </mid>
+  <oid> xxxxx_1418273735611</oid>
   <parentEmail/>
   <payDevice>PC</payDevice>
   <payMethod>Card</payMethod>
@@ -577,7 +617,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 #### NVP /  ContentType=text/plain
 
 ```text
-applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=홍길동&buyerTel=01020001234&currency=WON&custEmail=sample@welcomepg.co.kr&goodName=PRODUCT&mid=welcometst&oid=welcometst_1361259979159&parentEmail=&payDevice=Mobile&payMethod=VBank&price=1004&resultCode=0000&resultMsg=정상처리되었습니다.&tid=StdpayVBNKINIWelTest20130219164630729304&vactBankCode=11&vactBankName=농협중앙회&vactDate=20130228&vactInputName=홍길동&vactName=웰컴페이먼츠&vactNum=01443364911441&vactTime=235900
+applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=홍길동&buyerTel=01020001234&currency=WON&custEmail=sample@welcomepg.co.kr&goodName=PRODUCT&mid=xxxxx&oid=xxxxx_1361259979159&parentEmail=&payDevice=Mobile&payMethod=VBank&price=1004&resultCode=0000&resultMsg=정상처리되었습니다.&tid=StdpayVBNKINIWelTest20130219164630729304&vactBankCode=11&vactBankName=농협중앙회&vactDate=20130228&vactInputName=홍길동&vactName=웰컴페이먼츠&vactNum=01443364911441&vactTime=235900
 ```
 
 ## 3.3 에스크로 결제
@@ -612,8 +652,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 |     필드명     |    한글명칭    | Data Type | 예시, **`기본값`**                            | 설명                                       |    필수여부    |    크기(최대)     |
 | :---------: | :--------: | :-------: | ---------------------------------------- | ---------------------------------------- | :--------: | :-----------: |
 |   version   |     버전     |  String   | "1.0"[1.0]                               | 전문버전                                     |    Yes     |    20 Byte    |
-|     mid     |   상점아이디    |  String   | "welcometst"                             | 제공된mid<br>10자리고정                         | Yes(위변조검증) | 10 Byte Fixed |
-|     tid     |    거래번호    |  String   | "welcometst_1335233672723"               | 승인 성공시 응답 받은 거래번호                        |    Yes     |    40 Byte    |
+|     mid     |   상점아이디    |  String   | "xxx"                             | 제공된mid<br>10자리고정                         | Yes(위변조검증) | 10 Byte Fixed |
+|     tid     |    거래번호    |  String   | "xxx_1335233672723"               | 승인 성공시 응답 받은 거래번호                        |    Yes     |    40 Byte    |
 |  currency   |     통화     |  String   | "WON" [**`WON:한화`**,USD:달러]              | USD는 카드 결제만 가능(ISP는 결제안됨)                |    Yes     |    3 Byte     |
 |  timestamp  |    시간변환    |  Number   | 1335233672723                            | TimeInMillis(Long형)<br>제공라이브러로생성가능(샘플소스참조) | Yes(위변조검증) |    20 Byte    |
 |    mkey     |    암호화키    |  String   | "3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33" | signkey에 대한 검증값                          |    Yes     |      N/A      |
@@ -743,7 +783,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
   `웰컴페이먼츠(https://www.welcomepayments.co.kr) > 고객센터 > 입금통보테스트`
   테스트 결제창에서 가상계좌 결제방식으로 결제 진행 후 해당내역 확인 가능
 
-1. 결제창 연동 후 mid는 welcometst로 가상계좌 번호를 채번
+1. 결제창 연동 후 mid는 xxx로 가상계좌 번호를 채번
 2. 채번이 완료되면 웰컴페이먼츠 홈페이지의 입금통보테스트 화면에서 채번 플랫폼 선택 후 은행코드, 계좌번호, 금액, 가상계좌 입금정보를 받을 URL을 입력합니다.
 3. 채번 정보를 입력 후 입금통보 버튼을 누를시 결과 메시지가 생성됩니다.
   이때의 결과 메시지는 입금통보 테스트가 성공했는지를 보여주는 것이며 실제 거래와는 무관합니다.

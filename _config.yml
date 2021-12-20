@@ -114,3 +114,7 @@ jekyll-spaceship:
   processors:
     - table-processor
     - emoji-processor
+  emoji-processor:
+    css:
+      class: emoji
+    src: https://github.githubassets.com/images/icons/emoji/

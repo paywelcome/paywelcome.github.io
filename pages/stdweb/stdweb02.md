@@ -15,34 +15,66 @@ toc: false
 
 ---
 ## 2.2. 소프트웨어 요구사항
-> Web Server 웹서버 (또는 웹 컨테이너)<br>
+> `Web Server 웹서버 (또는 웹 컨테이너)`<br>
 SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서버<br><br>
 >
->DBMS<br>
+>`DBMS`<br>
 거래내역 및 처리결과를 데이터베이스에 저장하길 원하신다면, 데이터베이스 소프트웨어가 별도로 필요합니다.<br>
 Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 포함되어 있지 않습니다.<br>(데이터베이스 연동을 위한 지불 결과 데이터만 제공)
 
-- - -
+---
 ## 2.3. 하드웨어 요구사항
 일반적인 서버 운영체제의 운용환경에 준하며, 특별한 하드웨어 요구사항은 없습니다.
 
+---
 ## 2.4. 방화벽 설정
 이용 가맹점 서버 앞에 방화벽이 있는 경우 반드시 결제승인, 결제취소에 대한 통신이 가능하도록 방화벽 설정을 해야 합니다.<br>
   
 ### 결제 인증
 
-|              연결대상            | 프로토콜 | 포트번호 |       연결방향        |
-| :-----------------------------: | :------: | :-----: | :---------------: |
-| https://stdpay.paywelcome.co.kr |   HTTPS  |    443  | INBOUND, OUTBOUND |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 30%" >연결대상</th>
+      <th style="text-align: center">프로토콜</th>
+      <th style="text-align: center">포트번호</th>
+      <th style="text-align: center">연결방향</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">https://stdpay.paywelcome.co.kr</td>
+      <td style="text-align: center">HTTPS</td>
+      <td style="text-align: center">443</td>
+      <td style="text-align: center">INBOUND, OUTBOUND</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 결제승인
 
-|              연결대상               | 프로토콜  | 포트번호 |       연결방향        |
-| :-----------------------------: | :---: | :--: | :---------------: |
-| https://stdpay.paywelcome.co.kr | HTTPS | 443  | INBOUND, OUTBOUND |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 30%">연결대상</th>
+      <th style="text-align: center">프로토콜</th>
+      <th style="text-align: center">포트번호</th>
+      <th style="text-align: center">연결방향</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">https://stdpay.paywelcome.co.kr</td>
+      <td style="text-align: center">HTTPS</td>
+      <td style="text-align: center">443</td>
+      <td style="text-align: center">INBOUND, OUTBOUND</td>
+    </tr>
+  </tbody>
+</table>
 
 
-## 2.5 샘플소스
+- - -
+## 2.5. 샘플소스
 샘플소스는 가맹점의 환경에 맞도록 수정하여 사용할 수 있습니다. Web Standard서비스는 표준 웹 통신만을 사용합니다.<br>
 결제요청시에는 페이지이동(Form POST Action), API통신시에는 httpClient 통신을 이용합니다.<br>
 `POST Action Content-Type : application/x-www-form-urlencoded; charset=UTF-8` <br>
@@ -160,9 +192,12 @@ Ie11의 경우 localhost로 진행할 경우 팝업창의 문제가 발생 할 �
 ## 2.7 상점 연동시 주의사항
 1. 해킹 시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해와 IP차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다.
 
+
 | 업체명(MID)          | 접속 국가 | 접속 공인IP(대역)     | 요청사항          |
 | ----------------- | ----- | --------------- | ------------- |
-| xxxxx(welcometst) | 중국    | 111.111.111.111 | 해외아이피 차단해제 요청 |
+| xxxxx(<a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>) | 중국    | 111.111.111.111 | 해외아이피 차단해제 요청 |
+
+
 
 2. 승인 테스트를 위해 필수 값 및 기본 옵션 값을 매뉴얼을 참조 후 확인 후 결제 요청 버튼을 누릅니다.
 3. 설치 과정 없이 지불 방법을 선택 후 필요한 정보를 기입하고 "확인"을 눌러 진행합니다. (해당 사이트 팝업을 사용으로 하지 않을 시 초기화면으로 로딩 될 수 있습니다. )

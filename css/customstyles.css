@@ -145,12 +145,17 @@ caption {
     text-align: left;
 }
 th {
-    text-align: left;
+    text-align: center;
 }
 table {
-    max-width: 90%;
+
+    table-layout: fixed;
+    max-width: 100%;
+    width: 100%;
     margin-bottom: 20px;
+    word-break: break-all;
     border: 1px solid #dedede;
+
 }
 
 table > thead > tr > th,
@@ -570,11 +575,12 @@ a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
 
 hr.faded {
     border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    margin: 30px 0px;
+    width: 90%;
+    background-image: -webkit-linear-gradient(left, #999, #999, #999);
+    background-image:    -moz-linear-gradient(left, #999, #999, #999);
+    background-image:     -ms-linear-gradient(left, #999, #999, #999);
+    background-image:      -o-linear-gradient(left, #999, #999, #999);
 }
 
 hr.shaded {
@@ -678,7 +684,7 @@ div.tags {padding: 10px 5px;}
 }
 
 hr {
-    background: #999;
+    background: #eee;
     margin: 30px 0px;
     width: 90%;
     margin-left: auto;
