@@ -177,7 +177,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html#94-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌키 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
+    <td class="tg-0lax"><a href="/payapi09.html#91-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌키 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
   </tr>
   <tr>
     <td class="tg-0lax">13</td>
@@ -267,7 +267,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
+    <td class="tg-0lax"><a href="/code01.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
@@ -483,7 +483,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html#94-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌링 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
+    <td class="tg-0lax"><a href="/payapi09.html#91-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌링 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
   </tr>
   <tr>
     <td class="tg-0lax">11</td>
@@ -573,7 +573,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
+    <td class="tg-0lax"><a href="/code01.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>

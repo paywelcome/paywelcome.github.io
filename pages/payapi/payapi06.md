@@ -147,7 +147,7 @@ toc: false
     <td class="tg-0lax">O</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html#95-에스크로-배송등록-택배사-코드">별첨 에스크로 배송등록 택배사 코드 참고</a></td>
+    <td class="tg-0lax"><a href="/payapi09.html#92-에스크로-배송등록-택배사-코드">별첨 에스크로 배송등록 택배사 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">10</td>
@@ -694,7 +694,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax"><a href="/payapi09.html#92-카드-발급사은행사-코드">* 별첨 카드/발급사(은행사) 코드</a></td>
+    <td class="tg-0lax"><a href="/code01.html#92-카드-발급사은행사-코드">* 별첨 카드/발급사(은행사) 코드</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">7</td>

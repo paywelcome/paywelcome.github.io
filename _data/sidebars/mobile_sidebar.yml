@@ -200,19 +200,19 @@ entries:
             url: /mobile10.html
             output: web
 
-
-      - title: 11. 별첨
-        output: web
-
-        folderitems:
-          - title: 카드사(매입사) 코드
-            url: /mobile11.html
-            output: web
-          - title: 카드 발급사(은행사) 코드
-            url: /mobile11.html#112-카드-발급사은행사-코드
-            output: web
-          - title: 웰컴페이먼츠 카드 코드
-            url: /mobile11.html#113-웰컴페이먼츠-카드-코드
-            output: web
+# 코드번호 통합
+#      - title: 11. 별첨
+#        output: web
+#
+#        folderitems:
+#          - title: 카드사(매입사) 코드
+#            url: /mobile11.html
+#            output: web
+#          - title: 카드 발급사(은행사) 코드
+#            url: /mobile11.html#112-카드-발급사은행사-코드
+#            output: web
+#          - title: 웰컴페이먼츠 카드 코드
+#            url: /mobile11.html#113-웰컴페이먼츠-카드-코드
+#            output: web
 
 # Copyright 2021 Google LLC
