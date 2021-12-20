@@ -10,7 +10,7 @@ toc: false
 
 기본 통신코드는 서비스와 상관 없이 동일하며, URL과 요청 파라미터 값만 다릅니다. 다음의 샘플 코드는 취소 API를 기본으로 하고 있으니 참고만 하시기 바랍니다.
 
-## 8.1 Node.js
+## 8.1 node.js
 ```node
 var request = require('request');
 var api_url = 'https://payapi.paywelcome.co.kr/cancel/cancel';
@@ -40,7 +40,7 @@ request.post({
 );
 ```
 
-## 8.2 JAVA
+## 8.2 java
 ```java
 try {
 	String apiURL = "https://payapi.paywelcome.co.kr/cancel/cancel";
@@ -85,7 +85,7 @@ try {
 }
 ```
 
-## 8.3 PHP
+## 8.3 php
 
 ```PHP
 <?php
@@ -126,7 +126,7 @@ try {
 ?>
 ```
 
-## 8.4 ASP
+## 8.4 asp
 
 ```ASP
 <%@Language="VBScript" CODEPAGE="949" %>

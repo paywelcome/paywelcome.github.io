@@ -135,7 +135,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">모바일 망취소일 경우 사용\모바일망취소:C</td>
+    <td class="tg-0lax">모바일 망취소일 경우 사용<br>모바일망취소:C</td>
   </tr>
 </tbody>
 </table>
@@ -250,12 +250,8 @@ toc: false
 </tbody>
 </table>
 
-***
-
 ## 2.2 부분 취소 API  
-<br/>
 승인 완료 후, 해당 승인 건에 대해 부분 취소 시 사용하는 서비스입니다. 부분취소 후 남은 금액 취소는 부분취소 API, Tid (거래ID) 를 사용합니다.
-
 
 [//]: # (부분 취소 API URL)
 <table class="tg" style="width: 100%">
@@ -275,9 +271,9 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 전체 취소 요청 파라미터
+#### 1) 부분 취소 요청 파라미터
 
-[//]: # (전체취소 요청)
+[//]: # (부분취소 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
 <col style="width: 8%">
@@ -370,7 +366,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함부가세 금액 미입력시 비과세 금액으로 표시됨</td>
+    <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함<br/>부가세 금액 미입력시 비과세 금액으로 표시됨</td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -380,7 +376,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함과세되지 않는 금액</td>
+    <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함<br/>과세되지 않는 금액</td>
   </tr>
   <tr>
     <td class="tg-0lax">9</td>
@@ -500,7 +496,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">성공 시에만 전달<br>(YYYYMMDD)</td>
+    <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>

@@ -125,4 +125,28 @@ entries:
           - title: ASP
             url: /payapi08.html#84-asp
             output: web
+
+      - title: 9. 별첨
+        output: web
+
+        folderitems:
+          - title: 카드사(매입사) 코드
+            url: /payapi09.html
+            output: web
+
+          - title: 카드 발급사(은행사) 코드
+            url: /payapi09.html#92-카드-발급사은행사-코드
+            output: web
+
+          - title: 카드 코드(결제창 內 제어 카드코드)
+            url: /payapi09.html#93-카드-코드결제창-제어-카드코드
+            output: web
+
+          - title: 결제 주기 코드
+            url: /payapi09.html#94-결제-주기-코드
+            output: web
+
+          - title: 에스크로 배송등록 택배사 코드
+            url: /payapi09.html#95-에스크로-배송등록-택배사-코드
+            output: web
 # Copyright 2021 Google LLC

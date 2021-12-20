@@ -73,25 +73,21 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 양식 예시 : <input type="hidden" name="필드명" value="값 예시" />;
 ```
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
-<div markdown="1">
-
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
 <col style="width: 20%;">
-<col style="width: 40%;">
+<col style="width: 15%;">
+<col style="width: 14%;">
+<col style="width: 16%;">
+<col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>크&nbsp;&nbsp;기</th>
-    <th>필수여부</th>
-    <th>부가설명 및 주의사항</th>
+  <tr>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">크&nbsp;&nbsp;기</th>
+    <th style="text-align: center;">필수여부</th>
+    <th style="text-align: center;">부가설명 및 주의사항</th>
   </tr>
 </thead>
 <tbody>
@@ -225,30 +221,28 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </tbody>
 </table>
 
-</div>
-</details>
-
 #### 2) 신용카드 전용 필드
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
 <div markdown="1">
 
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
-    <col style="width: 25%;">
-    <col style="width: 15%;">
-    <col style="width: 10%;">
     <col style="width: 20%;">
-    <col style="width: 35%;">
+    <col style="width: 15%;">
+    <col style="width: 14%;">
+    <col style="width: 16%;">
+    <col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>크&nbsp;&nbsp;기</th>
-    <th>필수여부</th>
-    <th>부가설명 및 주의사항</th>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">크&nbsp;&nbsp;기</th>
+    <th style="text-align: center;">필수여부</th>
+    <th style="text-align: center;">부가설명 및 주의사항</th>
   </tr>
 </thead>
 <tbody>
@@ -298,21 +292,21 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
 <div markdown="1">
 
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 15%;">
 <col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 35%;">
+<col style="width: 35%; text-align: left;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>크&nbsp;&nbsp;기</th>
-    <th>필수여부</th>
-    <th>부가설명 및 주의사항</th>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">크&nbsp;&nbsp;기</th>
+    <th style="text-align: center;">필수여부</th>
+    <th style="text-align: center;">부가설명 및 주의사항</th>
   </tr>
 </thead>
 <tbody>
@@ -335,21 +329,21 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
 <div markdown="1">
 
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 15%;">
 <col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 35%;">
+<col style="width: 35%; text-align: left;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>크&nbsp;&nbsp;기</th>
-    <th>필수여부</th>
-    <th>부가설명 및 주의사항</th>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">크&nbsp;&nbsp;기</th>
+    <th style="text-align: center;">필수여부</th>
+    <th style="text-align: center;">부가설명 및 주의사항</th>
   </tr>
 </thead>
 <tbody>
@@ -387,21 +381,21 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
 <div markdown="1">
 
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 15%;">
 <col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 35%;">
+<col style="width: 35%; text-align: left;">
 </colgroup>
 <thead>
   <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>크&nbsp;&nbsp;기</th>
-    <th>필수여부</th>
-    <th>부가설명 및 주의사항</th>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">크&nbsp;&nbsp;기</th>
+    <th style="text-align: center;">필수여부</th>
+    <th style="text-align: center;">부가설명 및 주의사항</th>
   </tr>
 </thead>
 <tbody>
@@ -418,25 +412,25 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 </div>
 </details>
 
-#### 6) 복합 필드
+#### 6) 복합 필드 (P_RESERVED)
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
 <div markdown="1">
 
-<table class="tg" style="table-layout: fixed; width: 100%; text-align: center">
+<table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
 <col style="width: 15%;">
 <col style="width: 15%;">
 <col style="width: 30%;">
-<col style="width: 40%;">
+<col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
-    <th>필드명</th>
-    <th>목&nbsp;&nbsp;적</th>
-    <th>Variable</th>
-    <th>Value 및 부가설명</th>
+  <tr>
+    <th style="text-align: center;">필드명</th>
+    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
+    <th style="text-align: center;">Variable</th>
+    <th style="text-align: center;">Value 및 부가설명</th>
   </tr>
 </thead>
 <tbody>
@@ -532,7 +526,7 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
 
 </div>
 </details>
-
+<br/>
 앱 내 WebView 로 구현하는 경우, P_RESERVED 옵션이 추가됩니다.
 ( 2장. 앱 환경의 설치방법(안드로이드)의 2.B. ISP 연동방법 ) 를 참고하십시오. 
 
