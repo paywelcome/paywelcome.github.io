@@ -84,11 +84,11 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <thead>
 <tr>
 <th style="text-align:center; width: 15%">필드명</th>
-<th style="text-align:center; width: 13%">한글명칭</th>
-<th style="text-align:center; width: 9%">Data<br>Type</th>
+<th style="text-align:center; width: 15%">한글명칭</th>
+<th style="text-align:center; width: 10%">Data<br>Type</th>
 <th style="width: 40%">설명<br>예시</th>
-<th style="text-align:center; width: 9%">필수여부</th>
-<th style="text-align:center; width: 9%">크기(최대)</th>
+<th style="text-align:center; width: 10%">필수여부</th>
+<th style="text-align:center; width: 10%">크기(최대)</th>
 </tr>
 </thead>
 <tbody>
@@ -96,23 +96,23 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">version</td>
 <td style="text-align:center">버전</td>
 <td style="text-align:center">String</td>
-<td>전문 버전<br>><code class="language-plaintext highlighter-rouge">"1.0"</code></td>
+<td>전문 버전<br><code class="language-plaintext highlighter-rouge">"1.0"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">20 Byte</td>
 </tr>
 <tr>
 <td style="text-align:center">mid</td>
-<td>상점아이디</td>
-<td>String</td>
+<td style="text-align:center">상점아이디</td>
+<td style="text-align:center">String</td>
 <td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxx"</code></td>
-<td style="text-align:center">Yes<br>(위변조검증)</td>
-<td style="text-align:center">10 Byte Fixed</td>
+<td style="text-align:center">Yes<br>위변조<br>검증</td>
+<td style="text-align:center">10 Byte<br>Fixed</td>
 </tr>
 <tr>
 <td style="text-align:center">oid</td>
 <td style="text-align:center">주문번호</td>
 <td style="text-align:center">String</td>
-<td>주문단위 unique한 값 ( mid+&quot;_&quot;+timestamp ) <br>`"xxx_1335233672723"`</td>
+<td>주문단위 unique한 값 ( mid+&quot;_&quot;+timestamp ) <br><code class="language-plaintext highlighter-rouge">"xxx_1335233672723"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">40 Byte</td>
 </tr>
@@ -120,31 +120,36 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">goodname</td>
 <td style="text-align:center">상품명</td>
 <td style="text-align:center">String</td>
-<td>한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte + …으로 자동 변환<br>`“키보드/마우스”`</td>
+<td>한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte + …으로 자동 변환<br><code class="language-plaintext highlighter-rouge">“키보드/마우스”</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">80 Byte</td>
 </tr>
+
 <tr>
 <td style="text-align:center">price</td>
 <td style="text-align:center">결제금액</td>
 <td style="text-align:center">Number</td>
-<td>숫자만 입력, 1달러는 100으로 시작<br>`1004`</td>
-<td style="text-align:center">Yes(위변조검증)</td>
+<td>숫자만 입력, 1달러는 100으로 시작<br><code class="language-plaintext highlighter-rouge">1004</code></td>
+<td style="text-align:center">Yes<br>위변조<br>검증</td>
 <td style="text-align:center">8Byte</td>
 </tr>
+
 <tr>
 <td style="text-align:center">tax</td>
 <td style="text-align:center">부가세</td>
 <td style="text-align:center">Number</td>
-<td>숫자만 입력<br>대상: `부가세업체정함`설정업체에 한함<br>주의: 전체금액의 10%이하로 설정, 가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨<br>`1004`</td>
+<td>숫자만 입력<br>대상: <code class="language-plaintext highlighter-rouge">부가세업체정함</code>설정업체에 한함
+<br>주의: 전체금액의 10%이하로 설정, 가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨
+<br><code class="language-plaintext highlighter-rouge">1004</code></td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">8Byte</td>
 </tr>
+
 <tr>
 <td style="text-align:center">taxfree</td>
 <td style="text-align:center">비과세</td>
 <td style="text-align:center">Number</td>
-<td>숫자만 입력<br>대상: &#39;부가세업체정함&#39; 설정업체에 한함과세되지 않는 금액 <br>`1004`</td>
+<td>숫자만 입력<br>대상: &#39;부가세업체정함&#39; 설정업체에 한함과세되지 않는 금액 <br><code class="language-plaintext highlighter-rouge">1004</code></td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">8Byte</td>
 </tr>
@@ -152,7 +157,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">currency</td>
 <td style="text-align:center">통화구분</td>
 <td style="text-align:center">String</td>
-<td>USD는 카드 결제만 가능(ISP는 결제안됨)<br>`“WON”`[WON:한화,USD:달러]</td>
+<td>USD는 카드 결제만 가능(ISP는 결제안됨)<br><code class="language-plaintext highlighter-rouge">“WON”</code>[WON:한화,USD:달러]</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">3 Byte</td>
 </tr>
@@ -160,7 +165,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">buyername</td>
 <td style="text-align:center">구매자명</td>
 <td style="text-align:center">String</td>
-<td>한글/특수기호 입력가능* 30Byte 초과 요청시 27Byte + …으로 자동 변환<br>`홍길동`</td>
+<td>한글/특수기호 입력가능* 30Byte 초과 요청시 27Byte + …으로 자동 변환<br><code class="language-plaintext highlighter-rouge">"홍길동"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">30 Byte</td>
 </tr>
@@ -168,7 +173,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">buyertel</td>
 <td style="text-align:center">구매자Mobile번호</td>
 <td style="text-align:center">String</td>
-<td>숫자와 &quot;-&quot;만 허용 <br>`010-2000-1234`</td>
+<td>숫자와 "-"만 허용 <br><code class="language-plaintext highlighter-rouge">010-2000-1234</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">20 Byte</td>
 </tr>
@@ -176,7 +181,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">buyeremail</td>
 <td style="text-align:center">구매자Email</td>
 <td style="text-align:center">String</td>
-<td>이메일 형식에 맞도록 <br> `buyer@example.com`</td>
+<td>이메일 형식에 맞도록 <br><code class="language-plaintext highlighter-rouge">buyer@example.com</code></td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">60 Byte</td>
 </tr>
@@ -184,7 +189,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">parentemail</td>
 <td style="text-align:center">보호자Email</td>
 <td style="text-align:center">String</td>
-<td>14세 미만 필수 `parent@example.com`</td>
+<td>14세 미만 필수 <code class="language-plaintext highlighter-rouge">parent@example.com</code></td>
 <td></td>
 <td style="text-align:center">60 Byte</td>
 </tr>
@@ -192,23 +197,23 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">timestamp</td>
 <td style="text-align:center">타임스탬프</td>
 <td style="text-align:center">Number</td>
-<td>TimeInMillis(Long형)<br>→ 제공라이브러로 생성가능(샘플소스참조)<br>`1335233672723`</td>
-<td style="text-align:center">Yes(위변조검증)</td>
+<td>TimeInMillis(Long형)<br>→ 제공라이브러로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
+<td style="text-align:center">Yes<br>위변조<br>검증</td>
 <td style="text-align:center">20 Byte</td>
 </tr>
 <tr>
 <td style="text-align:center">signature</td>
 <td style="text-align:center">signature</td>
 <td style="text-align:center">String</td>
-<td>위변조 방지 SHA256 Hash 값 [참조](stdweb03.html#table-1-3-signature-생성-대상target-필드)<br>`"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3`"</td>
+<td>위변조 방지 SHA256 Hash 값 [참조](stdweb03.html#table-1-3-signature-생성-대상target-필드)<br><code class="language-plaintext highlighter-rouge">"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3"</code></td>
 <td style="text-align:center">Yes</td>
-<td style="text-align:center">64 ByteFixed</td>
+<td style="text-align:center">64 Byte<br>Fixed</td>
 </tr>
 <tr>
 <td style="text-align:center">returnUrl</td>
 <td style="text-align:center">리턴Url(인증결과수신Url)</td>
 <td style="text-align:center">String</td>
-<td>결제창을 통해 인증완료된 결과를 수신받고 승인요청을 해서 결과를 표시할 페이지 URL [참조](stdweb03.html#32-리턴-페이지-인증수신승인-api-작성-payreturn)<br>`"HTTPS://www.exsample.com/INIpayStandardSample/INIpayResult.jsp"`</td>
+<td>결제창을 통해 인증완료된 결과를 수신받고 승인요청을 해서 결과를 표시할 페이지 URL [참조](stdweb03.html#32-리턴-페이지-인증수신승인-api-작성-payreturn)<br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/INIpayStandardSample/INIpayResult.jsp"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -216,7 +221,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">mKey</td>
 <td style="text-align:center">signkey에 대한 hash값</td>
 <td style="text-align:center">String</td>
-<td>signkey에 대한 검증값<br>`"3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33"`</td>
+<td>signkey에 대한 검증값<br><code class="language-plaintext highlighter-rouge">"3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -232,7 +237,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">offerPeriod</td>
 <td style="text-align:center">제공기간</td>
 <td style="text-align:center">String</td>
-<td>가맹점에서 판매상품에 대한 제공기한 설정<br>`"20130101-20130331"`<br>[Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일]</td>
+<td>가맹점에서 판매상품에 대한 제공기한 설정<br><code class="language-plaintext highlighter-rouge">"20130101-20130331"</code><br>[Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일]</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -264,7 +269,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">closeUrl</td>
 <td style="text-align:center">결제창 닫기처리Url</td>
 <td style="text-align:center">String</td>
-<td>close.jsp 샘플사용(소스 수정 불필요)<br>`"HTTPS://www.exsample.com/inipaysmart/close.jsp"`</td>
+<td>close.jsp 샘플사용(소스 수정 불필요)<br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/inipaysmart/close.jsp"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -272,7 +277,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">popupUrl</td>
 <td style="text-align:center">팝업처리Url</td>
 <td style="text-align:center">String</td>
-<td>popup.jsp 샘플사용(소스 수정 불필요 : 비권장)<br>`"HTTPS://www.exsample.com/inipaysmart/popup.jsp"`</td>
+<td>popup.jsp 샘플사용(소스 수정 불필요 : 비권장)<br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/inipaysmart/popup.jsp"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -280,7 +285,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">merchantData</td>
 <td style="text-align:center">가맹점데이터</td>
 <td style="text-align:center">String</td>
-<td>인증 성공시 가맹점으로 리턴 <br> `"a=A&b=B"`</td>
+<td>인증 성공시 가맹점으로 리턴 <br> <code class="language-plaintext highlighter-rouge">"a=A&b=B"</code></td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">2000<br>Byte</td>
 </tr>
@@ -288,7 +293,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <td style="text-align:center">acceptmethod</td>
 <td style="text-align:center">acceptmethod</td>
 <td style="text-align:center">String</td>
-<td>결제수단별 추가 옵션값<br>`CARDPOINT:va_receipt:vbank(20150425):SKIN(ORIGINAL):FONT(ORIGINAL): poptargetself`</td>
+<td>결제수단별 추가 옵션값<br><code class="language-plaintext highlighter-rouge">CARDPOINT:va_receipt:vbank(20150425):SKIN(ORIGINAL):FONT(ORIGINAL): poptargetself</code></td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">N/A</td>
 </tr>
@@ -297,11 +302,40 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 #### [TABLE 1-2] acceptmethod 공통 추가 옵션
 
-|     필드명      | 한글명칭        | Data Type | 예시            | 설명                                       | 필수여부 |
-| :---------: | ----------- | --------- | ------------- | ---------------------------------------- | ---- |
-|       acceptmethod    | 배경색상        | String    | SKIN(BLUE)    | 결제창의 배경 색상을 변경 / 색상표 값으로 설정 가능(미 설정 시 기본값 : #c1272c) | NO   |
-| ^^ | 인증 결과 처리 방식 | String    | poptargetself | 인증완료 후 returnUrl 호출 시 타켓을 self로 변경 결제창 내에서 페이지 전환 옵션(미 설정 시 기본값 : top) | NO   |
-| ^^       | 에스크로결제여부    | String    | useescrow     | 설정시"에스크로약관동의"와"구매자본인확인"페이지가포함된에스크로결제창을호출합니다.(미설정시일반거래,에스크로사용설정된가맹점만사용가능합니다.) | NO   |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 15%">Data Type</th>
+      <th style="text-align: center; width: 45%">설명</th>
+      <th style="text-align: center; width: 10%">필수여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center" rowspan="3">acceptmethod
+<br><br>
+</td>
+      <td style="text-align: center">배경색상</td>
+      <td style="text-align: center">String</td>
+      <td>결제창의 배경 색상을 변경 / 색상표 값으로 설정 가능(미 설정 시 기본값 : #c1272c)<br><code class="language-plaintext highlighter-rouge">SKIN(BLUE)</code></td>
+      <td style="text-align: center">NO</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">인증 결과 처리 방식</td>
+      <td style="text-align: center">String</td>
+      <td>인증완료 후 returnUrl 호출 시 타켓을 self로 변경 결제창 내에서 페이지 전환 옵션<br>(미 설정 시 기본값 : top)<br><code class="language-plaintext highlighter-rouge">poptargetself</code></td>
+      <td style="text-align: center">NO</td>
+    </tr>
+    <tr>  
+      <td style="text-align: center">에스크로 결제여부</td>
+      <td style="text-align: center">String</td>
+      <td>설정 시 ”에스크로 약관동의”와”구매자 본인확인”페이지가 포함된 에스크로결제창을 호출합니다.<br>(미설정시 일반거래,에스크로 사용 설정된 가맹점만 사용가능합니다.)<br><code class="language-plaintext highlighter-rouge">useescrow</code></td>
+      <td style="text-align: center">NO</td>
+    </tr>
+  </tbody>
+</table>
 
 - 기본 요청데이터의 signature필드의 구성은 다음과 같습니다.
 
@@ -310,40 +344,40 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 <table>
   <thead>
     <tr>
-      <th style="text-align: center; width: 13%">필드명</th>
+      <th style="text-align: center; width: 15%">필드명</th>
       <th style="text-align: center; width: 10%">한글명칭</th>
-      <th>예시</th>
-      <th>비고</th>
-      <th style="text-align: center; width: 8%">필수여부</th>
+      <th style="width: 65%">비고</th>
+      <th style="text-align: center; width: 10%">필수여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: center">mKey</td>
       <td style="text-align: center">검증값</td>
-      <td>346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3</td>
-      <td>SHA256방식으로 생성한 값<br>제공라이브러리로 생성가능</td>
+      <td>SHA256방식으로 생성한 값 → 제공라이브러리로 생성가능
+      <br><code class="language-plaintext highlighter-rouge">"346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3"
+      </code>
+      </td>
       <td style="text-align: center">Yes</td>
     </tr>
     <tr>
       <td style="text-align: center">oid</td>
       <td style="text-align: center">주문번호</td>
       <td>xxx_1335247243103</td>
-      <td> </td>
       <td style="text-align: center">Yes</td>
     </tr>
     <tr>
       <td style="text-align: center">price</td>
       <td style="text-align: center">가격</td>
-      <td>10000</td>
-      <td>가맹점 주문번호 / 결제단위 Unique</td>
+      <td>가맹점 주문번호 / 결제단위 Unique <br>
+      <code class="language-plaintext highlighter-rouge">"10000"</code>
+      </td>
       <td style="text-align: center">Yes</td>
     </tr>
     <tr>
       <td style="text-align: center">timestamp</td>
       <td style="text-align: center">타임스탬프</td>
-      <td>1335247243103</td>
-      <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능</td>
+      <td>TimeInMillis(Long형)<br>→ 제공라이브러리로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
       <td style="text-align: center">Yes</td>
     </tr>
   </tbody>
@@ -353,44 +387,211 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
   기본 요청데이터 외에 다음과 같이 결제 수단별로 옵션 값을 추가하여 결제 요청할 수 있습니다.
 
 #### [TABLE 1-4] 신용카드 추가 요청필드 (선택)
-
-|     필드명      |       하위필드       | 한글명칭            | Data Type | 예시, **`기본값`**                            | 설명                                       |
-| :----------: | :--------------: | --------------- | :-------: | :--------------------------------------- | ---------------------------------------- |
-|  quotabase   |                  | 할부 개월           |  String   | "2:3:4", "2:0"<br>* 개월수를 `:` 로 구분된 값     | 일시불은 기본적으로 표시, 생략시 일시불만<br>현대카드 1만원,그 외 5만원 이상시에만 동작 |
-|  nointerest  |                  | 가맹점 부담 무이자 할부설정 |  String   | "11-2:3:5:6,34-2:6", "04-2:6"<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이 `,`로 구분 | 5만원 이상시에만 동작 / 카드사 무이자와 무관<br>[→ 별첨 "A.4카드사코드" 참조] |
-| acceptmethod |    below1000     | 1000원이하 결제      |  String   | " below1000"                             | 기본적으로 1000원이하 결제 불가능                     |
-|     ^^       | ini_onlycardcode | 결제 카드사 선택       |  String   | "01:03:04:06"\* 카드사코드를 ":"로 구분된 값        | 생략 시 결제 가능한 모든 카드사 표시<br>[→ 별첨"A.4카드사코드"참조] |
-|     ^^       | onlyeasypaycode  | 결제 간편결제 선택      |  String   | "kakaopay:lpay:payco"\* 간편결제코드를 ":"로 구분된 값 | 생략 시 결제 가능한 모든 간편결제 표시<br>[→ 별첨 "A.7 신용카드 간편결제코드" 참조] |
-|     ^^       |    CARDPOINT     | 카드포인트 사용유무      |  String   | "cardpoint"                              | 포인트를 사용하는 카드를 선택시 신용카드 메인 화면에 카드포인트를 사용할지에 대한 선택창이 표시된다. |
-|     ^^       |    SLIMQUOTA     | 부분무이자설정         |  String   | "SLIMQUOTA (11-2:3^34-2:3)"              | 슬림할부를 지정한다.<br>SLIMQUOTA(코드-개월:개월) 로 사용한다.<br>`^`구분자로 카드코드를 구분한다. |
-|     ^^       |     PAYPOPUP     | 안심클릭 뷰옵션        |  String   | "PAYPOPUP"                               | 안심클릭을 Popup 형태로 서비스를 제공한다.<br>Edge의 경우 자동 설정됩니다. |
-|     ^^       |     hidebar      | 프로그래스바뷰옵션       |  String   | "hidebar"                                | 결제진행시 노출되는 프로그래스 바를 안보이도록 설정된다.          |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 20%">하위필드</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th style="text-align: center; width: 40%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">quotabase</td>
+      <td style="text-align: center"> </td>
+      <td>할부 개월</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: left"> 일시불은 기본적으로 표시, 생략시 일시불만<br>현대카드 1만원,그 외 5만원 이상시에만 동작<br>“2:3:4”, “2:0”<br>* 개월수를 <code class="language-plaintext highlighter-rouge">:</code> 로 구분된 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">nointerest</td>
+      <td style="text-align: center"> </td>
+      <td>가맹점 부담 무이자 할부설정</td>
+      <td style="text-align: center">String</td>
+      <td>5만원 이상시에만 동작 / 카드사 무이자와 무관 [별첨](/stdweb04.html#a4-카드사-승인코드)<br>
+      “11-2:3:5:6,34-2:6”, “04-2:6”<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이 <code class="language-plaintext highlighter-rouge">,</code>로 구분</td>
+    </tr>
+    <tr>
+      <td style="text-align: center" rowspan="7">acceptmethod</td>
+      <td style="text-align: center">below1000</td>
+      <td>1000원이하 결제</td>
+      <td style="text-align: center">String</td>
+      <td>기본적으로 1000원이하 결제 불가능<br><code class="language-plaintext highlighter-rouge">"below1000"</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ini_onlycardcode</td>
+      <td>결제 카드사 선택</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: left"> 생략 시 결제 가능한 모든 카드사 표시 [별첨](/stdweb04.html#a4-카드사-승인코드)<br>
+      카드사코드를 “:”로 구분된 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">onlyeasypaycode</td>
+      <td>결제 간편결제 선택</td>
+      <td style="text-align: center">String</td>
+      <td>생략 시 결제 가능한 모든 간편결제 표시 [별첨](/stdweb04.html#a4-카드사-승인코드)<br>
+      <code class="language-plaintext highlighter-rouge">“kakaopay:lpay:payco”</code><br>간편결제코드를 “:”로 구분된 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CARDPOINT</td>
+      <td>카드포인트 사용유무</td>
+      <td style="text-align: center">String</td>
+      <td>포인트를 사용하는 카드를 선택시 신용카드 메인 화면에 카드포인트를 사용할지에 대한 선택창이 표시된다.
+      <br><code class="language-plaintext highlighter-rouge">“cardpoint”</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">SLIMQUOTA</td>
+      <td>부분무이자설정</td>
+      <td style="text-align: center">String</td>
+      <td>슬림할부를 지정한다.<br>SLIMQUOTA(코드-개월:개월) 로 사용한다.<br><code class="language-plaintext highlighter-rouge">^</code>구분자로 카드코드를 구분한다.
+      <br><code class="language-plaintext highlighter-rouge">“SLIMQUOTA (11-2:3^34-2:3)”</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PAYPOPUP</td>
+      <td>안심클릭 뷰옵션</td>
+      <td style="text-align: center">String</td>
+      <td>안심클릭을 Popup 형태로 서비스를 제공한다. Edge의 경우 자동 설정됩니다.
+      <br><code class="language-plaintext highlighter-rouge">“PAYPOPUP”</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hidebar</td>
+      <td>프로그래스바뷰옵션</td>
+      <td style="text-align: center">String</td>
+      <td>결제진행시 노출되는 프로그래스 바를 안보이도록 설정된다.
+      <br><code class="language-plaintext highlighter-rouge">“hidebar”</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ### [TABLE 1-5] 휴대폰결제 추가 요청필드 (선택)
 
-|     필드명      |      하위필드      |      한글명칭      | Data Type | 예시, **`기본값`**                       | 설명                                       |
-| :----------: | :------------: | :------------: | --------- | ----------------------------------- | ---------------------------------------- |
-| : acceptmethod : |      HPP       |  휴대폰 결제 상품 유형  | String    | "HPP(1)"[1:컨텐츠,2:실물,4:빌링컨텐츠,5:빌링실물] | 휴대폰 결제 상품 유형<br>컨텐츠/실물/빌링컨텐츠/빌링실물여부는 계약담당자에게 확인요 |
-|      ^^       |  hppablecorp   |  표시될 통신사 리스트   | String    | "hppablecorp(SKT:KTF:LGT:MVNO)"     | SKT : S텔레콤, KTF : KT, LGT : LG U+, MVNO : 알뜰폰<br>MVNO중일부만 설정 시 MVNO 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택 |
-|      ^^      | hppdefaultcorp |   휴대폰통신사기본선택   | String    | "hppdefaultcorp(SKT)"               | 통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVNO 중 하나만 설정 가능<br>MVNO 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음 |
-|      ^^      |    hppnofix    | 휴대폰 번호 수정불가여부  | String    | hppnofix(N)                         | 휴대폰 번호 수정불가여부<br>N : 수정가능, Y : 수정불가능     |
-|      ^^      |  hppauthtype   | 휴대폰 결제 인증방법 선택 | String    | hppauthtype(ARS)                    | 휴대폰 결제시 문자/ARS 인증 선택(옵션없을시 SMS)<br>ARS : ARS인증, SMS : 문자인증(해당 옵션은 모빌리언스만 가능) |
-|      ^^      |    billauth    |   휴대폰 빌키 발급    | String    | billauth(HPP)                       | 휴대폰 빌키 발급시 사용상품유형 HPP(4) 또는 HPP(5)로 설정 필요<br>휴대폰 빌링 사용은 별도 사용 설정 필요 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">하위필드</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th style="text-align: center; width: 45%" >설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center" rowspan="6">acceptmethod
+<br><br><br><br><br>
+</td>
+      <td style="text-align: center">HPP</td>
+      <td style="text-align: center">휴대폰 결제<br>상품 유형</td>
+      <td>String</td>
+      <td>휴대폰 결제 상품 유형<br>컨텐츠/실물/빌링컨텐츠/빌링실물여부는 계약담당자에게 확인요<br>
+      <code class="language-plaintext highlighter-rouge">“HPP(1)”[1:컨텐츠,2:실물,4:빌링컨텐츠,5:빌링실물]</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hppablecorp</td>
+      <td style="text-align: center">표시될 통신사<br>리스트</td>
+      <td>String</td>
+      <td>SKT : S텔레콤, KTF : KT, LGT : LG U+, MVNO : 알뜰폰<br>MVNO중일부만 설정 시 MVNO 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택
+      <br><code class="language-plaintext highlighter-rouge">“hppablecorp(SKT:KTF:LGT:MVNO)”</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hppdefaultcorp</td>
+      <td style="text-align: center">휴대폰통신사<br>기본선택</td>
+      <td>String</td>
+      <td>통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVNO 중 하나만 설정 가능<br>MVNO 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음
+      <br><code class="language-plaintext highlighter-rouge">“hppdefaultcorp(SKT)”</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hppnofix</td>
+      <td style="text-align: center">휴대폰 번호<br>수정불가여부</td>
+      <td>String</td>
+      <td>휴대폰 번호 수정불가여부<br>N : 수정가능, Y : 수정불가능
+      <br><code class="language-plaintext highlighter-rouge">hppnofix(N)</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hppauthtype</td>
+      <td style="text-align: center">휴대폰 결제<br>인증방법 선택</td>
+      <td>String</td>
+      <td>휴대폰 결제시 문자/ARS 인증 선택(옵션없을시 SMS)<br>ARS : ARS인증, SMS : 문자인증(해당 옵션은 모빌리언스만 가능)
+      <br><code class="language-plaintext highlighter-rouge">hppauthtype(ARS)</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">billauth</td>
+      <td style="text-align: center">휴대폰<br>빌키 발급</td>
+      <td>String</td>
+      <td>휴대폰 빌키 발급시 사용상품유형 HPP(4) 또는 HPP(5)로 설정 필요<br>휴대폰 빌링 사용은 별도 사용 설정 필요
+      <br><code class="language-plaintext highlighter-rouge">billauth(HPP)</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ### [TABLE 1-6] 계좌이체 추가 요청필드 (선택)
 
-| 필드명          | 하위필드       | 한글명칭      | Data Type | 예시, **`기본값`** | 설명                                       |
-| ------------ | ---------- | --------- | --------- | ------------- | ---------------------------------------- |
-| acceptmethod | no_receipt | 현금영수증 미발행 | String    | "no\_receipt" | 현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">하위필드</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th style="text-align: center; width: 45%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>acceptmethod</td>
+      <td>no_receipt</td>
+      <td>현금영수증 미발행</td>
+      <td>String</td>
+      <td>현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 <br>“no_receipt”</td>
+    </tr>
+  </tbody>
+</table>
 
 ### [TABLE 1-7] 가상계좌 추가 요청필드 (선택)
 
-| 필드명          | 하위필드        | 한글명칭                  | Data Type | 예시, **`기본값`**         | 설명                                       |
-| ------------ | ----------- | --------------------- | --------- | --------------------- | ---------------------------------------- |
-| INIregno     |             | 주민번호 설정 기능            | String    | "201504161111111"     | 13자리(주민번호),10자리(사업자번호),미입력시(화면에서입력가능)    |
-| acceptmethod | vbank       | 입금기한 및 입금시간 (초 설정 불가) | String    | "vbank(20150416)&#39; | 입금기한 및 입금 시간 설정 옵션<br> EX) vbank(20211216) 또는 vbank(202112261900) 시분까지지정 |
-| ^^ | va\_receipt | 현금영수증 발급 UI 옵션        | String    | "va\_receipt"         | 현금영수증 발급 UI 표시 옵션<br> (CASHRECEIPT 옵션이 기준정보에 있는 경우)<br>–주민번호만 표시 |
-| ^^           | va\_ckprice | 주민번호 채번 시 금액 확인       | String    | "va\_ckprice"         | 주민번호 채번시 금액 체크 기능                        |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">하위필드</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data Type</th>
+      <th style="text-align: center; width: 45%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INIregno</td>
+      <td></td>
+      <td>주민번호 설정 기능</td>
+      <td>String</td>
+      <td>13자리(주민번호),10자리(사업자번호),미입력시(화면에서입력가능)<br><code class="language-plaintext highlighter-rouge">“201504161111111”</code></td>
+    </tr>
+    <tr>
+      <td rowspan="3">acceptmethod
+<br><br>
+</td>
+      <td>vbank</td>
+      <td>입금기한 및 입금시간 (초 설정 불가)</td>
+      <td>String</td>
+      <td>입금기한 및 입금 시간 설정 옵션<br> EX) vbank(20211216) 또는 vbank(202112261900) 시분까지지정<br><code class="language-plaintext highlighter-rouge">"vbank(20150416)"</code></td>
+    </tr>
+    <tr>
+      <td>va_receipt</td>
+      <td>현금영수증 발급 UI 옵션</td>
+      <td>String</td>
+      <td>현금영수증 발급 UI 표시 옵션<br> (CASHRECEIPT 옵션이 기준정보에 있는 경우)<br>–주민번호만 표시<br><code class="language-plaintext highlighter-rouge">“va_receipt”</code></td>
+    </tr>
+    <tr>
+      <td>va_ckprice</td>
+      <td>주민번호 채번 시 금액 확인</td>
+      <td>String</td>
+      <td>주민번호 채번시 금액 체크 기능<br><code class="language-plaintext highlighter-rouge">“va_ckprice”</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -402,19 +603,82 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
   인증 결과 데이터 필드는 아래와 같습니다.
 
 ### [TABLE 2-1] 인증결과 데이터
-
-|     필드명      |   한글명칭    | Data Type | 설명                                       | 크기 (최대)  |
-| :----------: | :-------: | :-------: | ---------------------------------------- | :------: |
-|  resultCode  |   결과코드    |  String   | [`0000` : 정상, 기타 : 실패]                   | 10 Byte  |
-|  resultMsg   |   결과메세지   |  String   | 성공시 : `OK`, 실패시 : 기타 오류 메시지              | 100 Byte |
-|     mid      |  가맹점 ID   |  String   |                                          | 10 Byte  |
-| orderNumber  | 가맹점 주문번호  |  String   |                                          | 40 Byte  |
-|  authToken   |   승인요청    |  String   | 승인요청검증토큰                                 |          |
-|   authUrl    | 승인요청 Url  |  String   | 해당 URL로 HTTPS API Request(httpClient 통신)<br> 승인 요청(POST) |          |
-| netCancelUrl | 망취소요청 Url |  String   | 승인요청 후 인증결과 수신 실패 / DB저장 실패 시 해당 URL로 HTTPS API Request(httpClient 통신) 승인 요청(POST) |          |
-|   charset    | 인증결과 인코딩  |  String   | 가맹점에서 결제요청시 전달한 charset값 생략시 UTF-8       |  5 Byte  |
-| merchantData |  가맹점 데이터  |  String   | 가맹점 관리데이터                                | 2000Byte |
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th style="width: 50%">설명</th>
+      <th style="text-align: center; width: 10%">크기 (최대)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">resultCode</td>
+      <td style="text-align: center">결과코드</td>
+      <td style="text-align: center">String</td>
+      <td>[<code class="language-plaintext highlighter-rouge">0000</code> : 정상, 기타 : 실패]</td>
+      <td style="text-align: center">10 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">resultMsg</td>
+      <td style="text-align: center">결과메세지</td>
+      <td style="text-align: center">String</td>
+      <td>성공시 : <code class="language-plaintext highlighter-rouge">OK</code>, 실패시 : 기타 오류 메시지</td>
+      <td style="text-align: center">100 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">mid</td>
+      <td style="text-align: center">가맹점 ID</td>
+      <td style="text-align: center">String</td>
+      <td> </td>
+      <td style="text-align: center">10 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">orderNumber</td>
+      <td style="text-align: center">가맹점 주문번호</td>
+      <td style="text-align: center">String</td>
+      <td> </td>
+      <td style="text-align: center">40 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">authToken</td>
+      <td style="text-align: center">승인요청</td>
+      <td style="text-align: center">String</td>
+      <td>승인요청검증토큰</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">authUrl</td>
+      <td style="text-align: center">승인요청 Url</td>
+      <td style="text-align: center">String</td>
+      <td>해당 URL로 HTTPS API Request(httpClient 통신)<br> 승인 요청(POST)</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">netCancelUrl</td>
+      <td style="text-align: center">망취소요청 Url</td>
+      <td style="text-align: center">String</td>
+      <td>승인요청 후 인증결과 수신 실패 / DB저장 실패 시 해당 URL로 HTTPS API Request(httpClient 통신) 승인 요청(POST)</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">charset</td>
+      <td style="text-align: center">인증결과 인코딩</td>
+      <td style="text-align: center">String</td>
+      <td>가맹점에서 결제요청시 전달한 charset값 생략시 UTF-8</td>
+      <td style="text-align: center">5 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">merchantData</td>
+      <td style="text-align: center">가맹점 데이터</td>
+      <td style="text-align: center">String</td>
+      <td>가맹점 관리데이터</td>
+      <td style="text-align: center">2000Byte</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 3.2.2 승인API 요청
 
@@ -426,25 +690,104 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 - 결제 승인 요청데이터는 필드는 아래와 같습니다.
 
 ### [TABLE 2-2] 승인요청 데이터
-
-|    필드명    |   한글명칭    | Data Type | 예시, **`기본값`**                            | 설명                                       | 필수 여부        | 크기(최대)       |
-| :-------: | :-------: | :-------: | ---------------------------------------- | ---------------------------------------- | ------------ | ------------ |
-|    mid    |  가맹점 id   |  String   | "xxx"                             | 가맹점 아이디                                  | Yes          | 10 Bytefixed |
-| authToken |  인증 결과코드  |  String   | "sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu ……." | 인증 결과에 대한 위변조 검증값                        | Yes(위변조검증)   | --           |
-|   price   |   인증가격    |           | "1000"                                   | 인증 가격 결과에 대한 위변조 확인용                     | Yes(가격위변조검증) | 64Bytes      |
-| timestamp |   타임스템프   |  Number   | 1335233672723                            | TimeInMillis(Long형)→제공라이브러로 생성가능(샘플소스참조) | Yes(위변조검증)   | 20 Byte      |
-| signature | signature |  String   | "11f65eea829cc2c165874b104dbfd4965fc30d5ef9292405413bb8504cc5997d" | 위변조 방지 SHA256 Hash 값\*결제요청 동일한 방법으로 signature와 생성→ "[TABLE 2-3] 승인요청 signature 생성 대상(Target) 필드" 참조 | Yes          | 64 Byte      |
-|  charset  |  리턴 인코딩   |  String   | "EUC-KR"[**`UTF-8`**, EUC-KR]            | 결과 수신 charset                            |              | 5 Byte       | 
-| format | 리턴 형식 | String | "JSON"[**`XML`**, JSON, NVP]  | 결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴<br>[TABLE 2-13] 리턴 형식별 승인결과 예시 참조 |  | 5 Byte |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th  style="width: 40%">설명</th>
+      <th style="text-align: center; width: 10%">필수여부</th>
+      <th style="text-align: center; width: 10%">크기(최대)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">mid</td>
+      <td style="text-align: center">가맹점 id</td>
+      <td style="text-align: center">String</td>
+      <td>가맹점 아이디</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">10 Byte<br>fixed</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">authToken</td>
+      <td style="text-align: center">인증 결과코드</td>
+      <td style="text-align: center">String</td>
+      <td>인증 결과에 대한 위변조 검증값</td>
+      <td style="text-align: center">Yes<br>위변조<br>검증</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">price</td>
+      <td style="text-align: center">인증가격</td>
+      <td style="text-align: center">Number</td>
+      <td>인증 가격 결과에 대한 위변조 확인용</td>
+      <td style="text-align: center">Yes<br>위변조<br>검증</td>
+      <td style="text-align: center">64Bytes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: center">타임스템프</td>
+      <td style="text-align: center">Number</td>
+      <td>TimeInMillis(Long형)→제공라이브러리로 생성가능</td>
+      <td style="text-align: center">Yes<br>위변조<br>검증</td>
+      <td style="text-align: center">20 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">signature</td>
+      <td style="text-align: center">signature</td>
+      <td style="text-align: center">String</td>
+      <td>위변조 방지 SHA256 Hash 값*결제요청 동일한 방법으로 signature와 생성→ “[TABLE 2-3] 승인요청 signature 생성 대상(Target) 필드” 참조</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">64 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">charset</td>
+      <td style="text-align: center">리턴 인코딩</td>
+      <td style="text-align: center">String</td>
+      <td>결과 수신 charset</td>
+      <td> </td>
+      <td style="text-align: center">5 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">format</td>
+      <td style="text-align: center">리턴 형식</td>
+      <td style="text-align: center">String</td>
+      <td>결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴<br>\[TABLE 2-13] 리턴 형식별 승인결과 예시 참조</result></td>
+      <td></td>
+      <td style="text-align: center">5 Byte</td>
+    </tr>
+  </tbody>
+</table>
 
 - 결제 승인 요청데이터의 signature필드의 구성은 다음과 같습니다.
 
 ### [TABLE 2-3] 승인요청 signature 생성 대상(Target) 필드
-
-|    필드명    | 한글명칭                | 예시                                       | 비고                                       | 필수 여부 |
-| :-------: | :------------------ | ---------------------------------------- | ---------------------------------------- | :---: |
-| authToken | 인증 결과 수신 후 생성된 토큰 값 | sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu ……. | 인증결과 수신한 authToken                       |  Yes  |
-| timestamp | 타임스탬프               | 1335247243103 | TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러로 생성가능 |  Yes  |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center; width: 15%">필드명</th>
+      <th style="text-align:center; width: 20%">한글명칭</th>
+      <th style="width: 55%">비고</th>
+      <th style="text-align: center; width: 10%">필수 여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">authToken</td>
+      <td style="text-align: left">인증 결과 수신 후 생성된 토큰 값</td>
+      <td>인증결과 수신한 authToken<br>sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu …….</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: left">타임스탬프</td>
+      <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능<br>1335247243103</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+  </tbody>
+</table>
 
 ##### Target 데이터 예시 : `authToken=sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/iT…… `
 
@@ -465,16 +808,16 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 |    tid     |    거래번호     |  String   | 거래 번호                         | 40 Byte  |
 | resultCode |    결과코드     |  String   | [0000 : 정상, 기타 : 실패]승인결과코드 참조 | 10 Byte  |
 | resultMsg  |    결과메세지    |  String   | 결과 메세지                        | 100 Byte |
-| EventCode  |    이벤트코드    |  String   | 카드 할부 및 행사 적용 코드.[별첨정보 참조]    |  3 Byte  |
+| EventCode  |    이벤트코드    |  String   | 카드 할부 및 행사<br>적용 코드[별첨 참조](stdweb04.html#a9-카드-이벤트-적용-코드)    |  3 Byte  |
 |  TotPrice  |    거래금액     |  String   | 결제결과 금액                       | 20 Byte  |
 |    MOID    |    주문번호     |  String   | 상점주문번호. 결제 요청시 "oid"필드에 설정된값  | 12 Byte  |
 | payMethod  |    지불수단     |  String   | 결제 방법                         | 10 Byte  |
 |  applNum   |    승인번호     |  String   | 결제수단에 따리 미전송                  | 16 Byte  |
 |  applDate  |    승인일자     |  String   | YYYYMMDD                      |  8 Byte  |
 |  applTime  |    승인시간     |  String   | hh24miss                      |  6 Byte  |
-| buyerEmail |  구매자Email   |  String   | &lt;예&gt; "buyer@example.com" | 60 Byte  |
-|  buyerTel  | 구매자Mobile번호 |  String   | &lt;예&gt; "010-2000-1234"     | 20 Byte  |
-| buyerName  |    구매자명     |  String   | &lt;예&gt; "홍길동"               | 30 Byte  |
+| buyerEmail |  구매자Email   |  String   | "buyer@example.com" | 60 Byte  |
+|  buyerTel  | 구매자Mobile번호 |  String   | "010-2000-1234"     | 20 Byte  |
+| buyerName  |    구매자명     |  String   | "홍길동"               | 30 Byte  |
 
 - 결제수단에 따라 승인 결과가 추가로 수신됩니다. 데이터는 다음과 같습니다.
 
@@ -483,7 +826,7 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 |       필드명        |         한글명칭          | Data Type | 설명                                       | 크기(최대)  |
 | :--------------: | :-------------------: | :-------: | ---------------------------------------- | ------- |
 |    CARD\_Num     |        신용카드번호.        |  String   | 신용카드번호.                                  | 16 Byte |
-|  CARD\_Interest  |         할부여부          |  String   | 카드 할부여부. ("1"이면 무이자할부)                   | 1 Byte  |
+|  CARD\_Interest  |         할부여부          |  String   | 카드 할부여부 ("1"이면 무이자할부)                   | 1 Byte  |
 |   CARD\_Quota    |       카드 할부기간.        |  String   | 카드 할부기간.                                 | 2 Byte  |
 |    CARD_Code    | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드) |  String   | 카드사 코드<br>[**[별첨 참조]**](code01.html#승인-시-카드사-코드)  | 2 Byte  |
 | CARD\_PRTC\_CODE |       부분취소 가능여부       |  String   | 부분취소 가능여부 (1:가능, 0:불가능)                  | 1 Byte  |
@@ -497,12 +840,12 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 
 |       필드명       |  한글명칭  | Data Type | 설명                                       | 크기(최대)  |
 | :-------------: | :----: | :-------: | ---------------------------------------- | ------- |
-|    VACT\_Num    | 입금계좌번호 |  String   | 무통장입금 가상계좌번호                             | 20 Byte |
-| VACT\_BankCode  | 입금은행코드 |  String   | [→ **별첨** **"**** A4 **** 은행코드 ****"** **참조**](#%EB%B3%84%EC%B2%A8_%EC%9D%80%ED%96%89%EC%BD%94%EB%93%9C) | 2 Byte  |
-|   VACT\_Name    |  예금주명  |  String   | 예금주명                                     | 20 Byte |
-| VACT\_InputName |  송금자명  |  String   | 입금 시 고객명                                 | 20 Byte |
-|   VACT\_Date    | 송금 일자  |  String   | 송금 일자                                    | 8 Byte  |
-|   VACT\_Time    | 송금 시각  |  String   | 송금 시각                                    | 6 Byte  |
+|    VACT_Num    | 입금계좌번호 |  String   | 무통장입금 가상계좌번호                             | 20 Byte |
+| VACT_BankCode  | 입금은행코드 |  String   | [**[별첨 참조]**](/stdweb04.html#a7-은행증권사-코드) | 2 Byte  |
+|   VACT_Name    |  예금주명  |  String   | 예금주명                                     | 20 Byte |
+| VACT_InputName |  송금자명  |  String   | 입금 시 고객명                                 | 20 Byte |
+|   VACT_Date    | 송금 일자  |  String   | 송금 일자                                    | 8 Byte  |
+|   VACT_Time    | 송금 시각  |  String   | 송금 시각                                    | 6 Byte  |
 |  vactBankName   | 입금은행명  |  String   | 무통장 입금 은행명                               | 20 Byte |
 
 ##### [TABLE 2-7] 승인결과데이터(계좌이체)
@@ -622,19 +965,108 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ##### [TABLE 3-1] 구매확인요청파라미터
 
-|     필드명     |    한글명칭    | Data Type | 예시, **`기본값`**                            | 설명                                       |    필수여부    |    크기(최대)     |
-| :---------: | :--------: | :-------: | ---------------------------------------- | ---------------------------------------- | :--------: | :-----------: |
-|   version   |     버전     |  String   | "1.0"[1.0]                               | 전문버전                                     |    Yes     |    20 Byte    |
-|     mid     |   상점아이디    |  String   | "xxx"                             | 제공된mid<br>10자리고정                         | Yes(위변조검증) | 10 Byte Fixed |
-|     tid     |    거래번호    |  String   | "xxx_1335233672723"               | 승인 성공시 응답 받은 거래번호                        |    Yes     |    40 Byte    |
-|  currency   |     통화     |  String   | "WON" [**`WON:한화`**,USD:달러]              | USD는 카드 결제만 가능(ISP는 결제안됨)                |    Yes     |    3 Byte     |
-|  timestamp  |    시간변환    |  Number   | 1335233672723                            | TimeInMillis(Long형)<br>제공라이브러로생성가능(샘플소스참조) | Yes(위변조검증) |    20 Byte    |
-|    mkey     |    암호화키    |  String   | "3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33" | signkey에 대한 검증값                          |    Yes     |      N/A      |
-|   charset   |    인코딩     |  String   | "UTF-8" [**`UTF-8`**, EUC-KR]            | 결과 수신 charset                            |     No     |      N/A      |
-| payViewType |  결체창표시방법   |  String   | default = **`ovelay`**                   | 결제 호출 방식을 결정                             |     No     |      N/A      |
-|  returnUrl  |   응답URL    |  String   | "HTTPS://www.exsample.com/inipaysmart/StdPayReturn.jsp" | 구매확인 또는 거절 후 결과 전문을 받기 위한 URL            |    Yes     |      N/A      |
-|  closeUrl   | 결제창닫기처리URL |  String   | "HTTPS://www.exsample.com/inipaysmart/close.jsp" | 결제 창을 닫기위한 URL                           |     No     |      N/A      |
-|  popupUrl   |  팝업처리URL   |  String   | "HTTPS://www.exsample.com/inipaysmart/popup.jsp" | 결체창 팝업 진행시 사용 하는 URL<br>(비권장)            |     No     |      N/A      |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 15%">한글명칭</th>
+      <th style="text-align: center; width: 10%">Data<br>Type</th>
+      <th style="width: 40%">설명</th>
+      <th style="text-align: center; width: 10%">필수여부</th>
+      <th style="text-align: center; width: 10%">크기(최대)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">version</td>
+      <td style="text-align: center">버전</td>
+      <td style="text-align: center">String</td>
+      <td>전문 버전<br><code class="language-plaintext highlighter-rouge">"1.0"</code></td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">20 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">mid</td>
+      <td style="text-align: center">상점아이디</td>
+      <td style="text-align: center">String</td>
+      <td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxx"</code></td>
+      <td style="text-align: center">Yes(위변조검증)</td>
+      <td style="text-align: center">10 Byte Fixed</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tid</td>
+      <td style="text-align: center">거래번호</td>
+      <td style="text-align: center">String</td>
+      <td>승인 성공시 응답 받은 거래번호<code class="language-plaintext highlighter-rouge">"xxx_1335233672723"</code></td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">40 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">currency</td>
+      <td style="text-align: center">통화</td>
+      <td style="text-align: center">String</td>
+      <td>USD는 카드 결제만 가능(ISP는 결제안됨)<br><code class="language-plaintext highlighter-rouge">“WON”</code>[WON:한화,USD:달러]</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">3 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: center">시간변환</td>
+      <td style="text-align: center">Number</td>
+      <td>TimeInMillis(Long형)<br>제공라이브러로생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">"1335233672723"</code></td>
+      <td style="text-align: center">Yes(위변조검증)</td>
+      <td style="text-align: center">20 Byte</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">mkey</td>
+      <td style="text-align: center">암호화키</td>
+      <td style="text-align: center">String</td>
+      <td>signkey에 대한 검증값<br><code class="language-plaintext highlighter-rouge">"3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33"</code></td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">charset</td>
+      <td style="text-align: center">인코딩</td>
+      <td style="text-align: center">String</td>
+      <td>결과 수신 charset<br><code class="language-plaintext highlighter-rouge">"UTF-8"/ [UTF-8, EUC-KR]</code></td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">payViewType</td>
+      <td style="text-align: center">결체창표시방법</td>
+      <td style="text-align: center">String</td>
+      <td>결제 호출 방식을 결정</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">returnUrl</td>
+      <td style="text-align: center">응답URL</td>
+      <td style="text-align: center">String</td>
+      <td>구매확인 또는 거절 후 결과 전문을 받기 위한 URL</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">closeUrl</td>
+      <td style="text-align: center">결제창닫기처리URL</td>
+      <td style="text-align: center">String</td>
+      <td>결제 창을 닫기위한 URL</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">popupUrl</td>
+      <td style="text-align: center">팝업처리URL</td>
+      <td style="text-align: center">String</td>
+      <td>결체창 팝업 진행시 사용 하는 URL<br>(비권장)</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+  </tbody>
+</table>
 
 ##### [TABLE 3-2] 구매확인요청파라미터
 
