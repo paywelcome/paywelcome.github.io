@@ -6,16 +6,16 @@ folder: payapi
 toc: false
 ---
 
-# 7. SMS결제용 단축URL생성 API
+# 7. SMS결제용 단축 URL생성 API
 
-## 7.1 SMS결제용 단축URL생성 API
-<br/>
+## 7.1 SMS결제용 단축 URL생성 API
+
 SMS 결제용 단축 URL을 생성하는 서비스입니다.
 
 - SMS결제URL은 72시간 동안 유효합니다.
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 
-[//]: # (부분 취소 API URL)
+[//]: # (SMS결제용 단축 URL생성 URL)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">
@@ -33,18 +33,18 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
   </tbody>
 </table>
 
-#### 1) 키인결제 요청 파라미터
+#### 1) SMS결제용 단축 URL생성 요청 파라미터
 
-[//]: # (키인결제 요청)
+[//]: # (SMS결제용 단축 URL생성 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -82,16 +82,6 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
   </tr>
   <tr>
     <td class="tg-0lax">3</td>
-    <td class="tg-0lax">timestamp</td>
-    <td class="tg-0lax">타임스탬프</td>
-    <td class="tg-0lax">14</td>
-    <td class="tg-0lax">O</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
-    <td class="tg-0lax">예) 20190906110100</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">3</td>
     <td class="tg-0lax">P_GOODS</td>
     <td class="tg-0lax">상품명</td>
     <td class="tg-0lax">40</td>
@@ -118,7 +108,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax">O</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">예) 20190906110100</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">6</td>
@@ -128,7 +118,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">컨텐츠 :1, 실물:2(휴대폰 결제시만 사용)</td>
+    <td class="tg-0lax">컨텐츠 :1, 실물:2<br/>(휴대폰 결제시만 사용)</td>
   </tr>
   <tr>
     <td class="tg-0lax">7</td>
@@ -138,7 +128,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">50,000원 이상 결제 시, 할부기간 지정 (36개월 MAX)Ex. 01:02:03:04.. 01은 일시불, 02는 2개월, 99 는 일시불 제거 등등</td>
+    <td class="tg-0lax">50,000원 이상 결제 시, 할부기간 지정 (36개월 MAX)<br/>Ex. 01:02:03:04.. 01은 일시불, 02는 2개월, 99 는 일시불 제거 등등</td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -148,7 +138,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">결제수단 가상계좌 입금 확인API요청 업체시 필요(가맹점 관리자연동시 필요X)</td>
+    <td class="tg-0lax">결제수단 가상계좌 입금 확인API<br/>요청 업체시 필요<br/>(가맹점 관리자연동시 필요X)</td>
   </tr>
   <tr>
     <td class="tg-0lax">9</td>
@@ -158,7 +148,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax">O</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">API요청 업체시 필요(가맹점 관리자연동시 &quot;https://{test}m.paywelcome.co.kr/smsNextUrl.jsp&quot; 로 처리함)</td>
+    <td class="tg-0lax">API요청 업체시 필요<br/>(가맹점 관리자연동시 필요X)</td>
   </tr>
   <tr>
     <td class="tg-0lax">10</td>
@@ -168,7 +158,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax">O</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">API요청 업체시 필요(가맹점 관리자연동시 &quot;https://{test}m.paywelcome.co.kr/smsNextUrl.jsp&quot; 로 처리함)</td>
+    <td class="tg-0lax">API요청 업체시 필요<br/>(가맹점 관리자연동시<br/>&quot;https://{test}m.paywelcome.co.kr/smsNextUrl.jsp&quot; 로 처리함)</td>
   </tr>
   <tr>
     <td class="tg-0lax">11</td>
@@ -188,7 +178,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">default : euc-kr인증/승인결과를 utf8로 받기를 원할시 utf8</td>
+    <td class="tg-0lax">default : euc-kr<br/>인증/승인결과를 utf8로 받기를 원할시 utf8</td>
   </tr>
   <tr>
     <td class="tg-0lax">13</td>
@@ -213,18 +203,18 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
 </tbody>
 </table>
 
-#### 2) SMS결제용 단축URL 생성 응답 파라미터
+#### 2) SMS결제용 단축 URL생성 응답 파라미터
 
-[//]: # (SMS결제용 단축URL 생성 응답 파라미터)
+[//]: # (SMS결제용 단축 URL생성 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>

@@ -9,7 +9,7 @@ toc: false
 # 6. 에스크로 API
 
 ## 6.1 에스크로 배송등록 API
-<br/>
+
 에스크로 배송등록시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -37,13 +37,13 @@ toc: false
 [//]: # (에스크로 배송등록 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -143,11 +143,11 @@ toc: false
     <td class="tg-0lax">9</td>
     <td class="tg-0lax">exCode</td>
     <td class="tg-0lax">택배사코드</td>
-    <td class="tg-0lax">40</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">O</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 에스크로 배송등록 택배사 코드 참고</td>
+    <td class="tg-0lax"><a href="/payapi09.html#95-에스크로-배송등록-택배사-코드">별첨 에스크로 배송등록 택배사 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">10</td>
@@ -337,13 +337,13 @@ toc: false
 [//]: # (에스크로 배송등록 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -403,7 +403,7 @@ toc: false
 </table>
 
 ## 6.2 에스크로 구매확정 API
-<br/>
+
 에스크로 구매확정시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -431,13 +431,13 @@ toc: false
 [//]: # (에스크로 구매확정 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -521,13 +521,13 @@ toc: false
 [//]: # (에스크로 구매확정 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -587,7 +587,7 @@ toc: false
 </table>
 
 ## 6.3 에스크로 구매거절 API
-<br/>
+
 에스크로 구매거절시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -614,13 +614,13 @@ toc: false
 
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -659,7 +659,7 @@ toc: false
   <tr>
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">originalTid</td>
-    <td class="tg-0lax">거래TID</td>
+    <td class="tg-0lax">거래ID</td>
     <td class="tg-0lax">40</td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">X</td>
@@ -694,7 +694,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드/발급사(은행사) 코드</td>
+    <td class="tg-0lax"><a href="/payapi09.html#92-카드-발급사은행사-코드">* 별첨 카드/발급사(은행사) 코드</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">7</td>
@@ -743,13 +743,13 @@ toc: false
 
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -809,7 +809,7 @@ toc: false
 </table>
 
 ## 6.4 에스크로 구매거절 확인 API
-<br/>
+
 에스크로 구매거절 확인시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -837,13 +837,13 @@ toc: false
 [//]: # (에스크로 구매거절 확인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -882,7 +882,7 @@ toc: false
   <tr>
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">originalTid</td>
-    <td class="tg-0lax">거래TID</td>
+    <td class="tg-0lax">거래ID</td>
     <td class="tg-0lax">40</td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">X</td>
@@ -927,13 +927,13 @@ toc: false
 [//]: # (에스크로 구매거절 확인 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -993,7 +993,7 @@ toc: false
 </table>
 
 ## 6.5 에스크로 상태조회 API
-<br/>
+
 에스크로 상태조회시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -1023,13 +1023,13 @@ toc: false
 [//]: # (에스크로 상태조회 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1068,7 +1068,7 @@ toc: false
   <tr>
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">tid</td>
-    <td class="tg-0lax">거래TID</td>
+    <td class="tg-0lax">거래ID</td>
     <td class="tg-0lax">40</td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">X</td>
@@ -1103,13 +1103,13 @@ toc: false
 [//]: # (에스크로 상태조회 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1149,7 +1149,7 @@ toc: false
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">idMerchant</td>
     <td class="tg-0lax">가맹점ID</td>
-    <td class="tg-0lax">10</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
@@ -1159,7 +1159,7 @@ toc: false
     <td class="tg-0lax">4</td>
     <td class="tg-0lax">noOid</td>
     <td class="tg-0lax">주문번호</td>
-    <td class="tg-0lax">40</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>

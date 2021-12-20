@@ -9,10 +9,10 @@ toc: false
 # 5. 신용카드 PREFIX 조회 API
 
 ## 5.1 신용카드 PREFIX 조회 API
-<br/>
+
 신용카드 PREFIX 조회 시 사용하는 서비스입니다.
 
-[//]: # (부분 취소 API URL)
+[//]: # (신용카드 PREFIX API URL)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">
@@ -30,18 +30,18 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 키인결제 요청 파라미터
+#### 1) 신용카드 PREFIX 요청 파라미터
 
-[//]: # (키인결제 요청)
+[//]: # (신용카드 PREFIX 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -105,13 +105,13 @@ toc: false
 [//]: # (신용카드 PREFIX 조회 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -155,7 +155,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드사(매입사) 코드 참고</td>
+    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
@@ -165,7 +165,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">0:신용카드1:체크카드2:기프트카드</td>
+    <td class="tg-0lax">0:신용카드<br/>1:체크카드<br/>2:기프트카드</td>
   </tr>
   <tr>
     <td class="tg-0lax">5</td>

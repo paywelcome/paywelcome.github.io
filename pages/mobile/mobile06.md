@@ -113,8 +113,8 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 
 ```
 
-ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 될 것이며,
-ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.
+3. ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 될 것이며,
+4. ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.
 23 페이지의 예시[shouldOverrideUrlLoading 부] 의 에 대하여 true 혹은 false 를 설정하는 것은 하기의 표를 참고하십시요.
 
 <table style="width: 100%;">
@@ -142,7 +142,7 @@ ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서�
     <tr>
       <td style="text-align: center">N or  미설정</td>
       <td style="text-align: center">ISP,  계좌이체앱<br>? appScheme  작동</td>
-      <td>하기 그림 1  과 같이  Display  됨</td>
+      <td>하기 [그림 1]  과 같이  Display  됨</td>
       <td style="text-align: center">false</td>
     </tr>
   </tbody>
@@ -151,7 +151,8 @@ ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서�
 - [shouldOverrideUrlLoading 부] 의 을 true 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라집니다.
   따라서, app Scheme 형태로 결제 앱을 호출할 경우에는 &quot;그림 1&quot; 과 같이 오류 페이지가 Display 되기 때문에, WebView 를 remove 하는 것이 좋습니다.
 
-[그림 1]
+{% include image.html file="mobile_img10.jpg" %}
+[그림1] 
 
 - [shouldOverrideUrlLoading 부] 의 을 false 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라지지 않기 때문에,
   apprun_check=Y 를 통해 현 결제 페이지가 유지되는 방식을 사용 하는 것이 좋습니다. 이 방법을 자동체크방식이라 합니다.
@@ -279,9 +280,8 @@ private class SampleWebViewClient extends WebViewClient {
 
 ## 6.5 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
 
-만약 상점에서의 판매가격이 30만원 이상일 수 있고 카드로 결제할 경우, 사용자는 공인인증서 서명과정을 거쳐야 합니다.<br>
-안드로이드의 경우, 개별 카드사 앱에서 공인인증서 서명을 할 수 있습니다. 이에, 카드사 창 내에서 호출하는 intent 혹은 app Scheme 를 허용할 수 있도록 가맹점 앱에서 처리해줘야 합니다.<br>
-이는 (3.B . 안심클릭 결제 시, 카드사 백신 앱 연동)의 코드를 반영하면 해결됩니다.
+- 만약 상점에서의 판매가격이 30만원 이상일 수 있고 카드로 결제할 경우, 사용자는 공인인증서 서명과정을 거쳐야 합니다.<br>
+- 안드로이드의 경우, 개별 카드사 앱에서 공인인증서 서명을 할 수 있습니다. 이에, 카드사 창 내에서 호출하는 intent 혹은 app Scheme 를 허용할 수 있도록 가맹점 앱에서 처리해줘야 합니다.<br>이는 (3.B . 안심클릭 결제 시, 카드사 백신 앱 연동)의 코드를 반영하면 해결됩니다.
 
 ## 6.6 Android API Level 21  이상 일 때 ,  체크사항
 
