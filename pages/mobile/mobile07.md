@@ -179,7 +179,12 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 
 &lt;2021.09.06 Custom Scheme List&gt;
 
-##### 지불수단 : 신용카드
+#### Custom Scheme List (지불수단 : 신용카드)
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 40%;">
@@ -302,3 +307,6 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
     </tr>
   </tbody>
 </table>
+
+</div>
+</details>

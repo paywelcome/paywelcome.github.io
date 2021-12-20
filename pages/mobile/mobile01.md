@@ -12,16 +12,19 @@ toc: false
 
 Mobile Web 서비스는 복잡한 카드사와의 연계를 당사에서 처리하고, 가맹점에는 통일화 된 규격을 제시함에 따라, 보다 편리하게 모바일 결제시스템을 구축할 수 있게 합니다. &quot;인증/승인분리 방식 (이하 2 Transaction 이라 명명) &quot; 을 기본 Flow 로 하며, 일부 지불수단에 한하여, &quot;인증/승인통합 방식 (이하 1 Transaction 이라 명명) 을 사용합니다.
 
+<br>
+
 [2 Transaction  방식  Flow,  신용카드 ,  휴대폰 ,  계좌이체]
 
 {% include image.html file="mobile_img01.png" %}
+
+<br>
 
 [1 Transaction  방식  Flow,  가상계좌]
 
 {% include image.html file="mobile_img02.png" %}
 
-
-- 상점 연동을 위한 테스트 MID
+#### 상점 연동을 위한 테스트 MID
 
 [//]: # (MID 연동 table)
 <table class="tg" style="table-layout: fixed; width: 100%">

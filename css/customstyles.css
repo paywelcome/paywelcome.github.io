@@ -10,6 +10,7 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-size: 120%;
 }
 
 body {
@@ -175,7 +176,7 @@ table > thead > tr > th {
     text-transform: none;
     background-color: #EA002C;
     color: white;
-    text-align: left;
+    /*text-align: left;*/
 }
 table > caption + thead > tr:first-child > th,
 table > colgroup + thead > tr:first-child > th,

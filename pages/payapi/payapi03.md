@@ -9,7 +9,6 @@ toc: false
 # 3. 빌링결제 API
 
 ## 3.1 신용카드 빌키 발급 API
-<br/>
 신용카드 빌링 결제에 필요한 빌키 발급 시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
@@ -38,13 +37,13 @@ toc: false
 [//]: # (신용카드 빌키 발급 API 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -128,7 +127,7 @@ toc: false
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">SHA256<br>(mid+mkey+timestamp)</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -178,7 +177,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 결제주기코드표 참고실제 빌키 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
+    <td class="tg-0lax"><a href="/payapi09.html#94-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌키 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
   </tr>
   <tr>
     <td class="tg-0lax">13</td>
@@ -218,13 +217,13 @@ toc: false
 [//]: # (신용카드 빌키 발급 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -268,7 +267,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드사(매입사) 코드 참고</td>
+    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
@@ -333,13 +332,10 @@ toc: false
 </tbody>
 </table>
 
-***
-
 ## 3.2 신용카드 비인증 빌키 발급 API  
-<br/>
 빌링 결제에 필요한 빌키 발급 시 사용하는 서비스입니다.
 
-발급 받은 빌키로 승인은 3.3.3. 빌링 승인 API로 진행해 주시기 바랍니다.
+발급 받은 빌키로 승인은 3.3 빌링 승인 API로 진행해 주시기 바랍니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 - 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
@@ -362,18 +358,18 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 비인증 빌키 발급 요청 파라미터
+#### 1) 신용카드 비인증 빌키 발급 요청 파라미터
 
-[//]: # (비인증 빌키 발급 요청 파라미터)
+[//]: # (신용카드 비인증 빌키 발급 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -457,7 +453,7 @@ toc: false
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">SHA256<br>(mid+mkey+timestamp)</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -487,7 +483,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 결제주기코드표 참고실제 빌링 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
+    <td class="tg-0lax"><a href="/payapi09.html#94-결제-주기-코드">*별첨 결제주기코드표 참고</a><br/>실제 빌링 승인 요청시에는 사용되지 않고 가맹점관리자에서 조회시에 참고용으로 입력하는 코드임</td>
   </tr>
   <tr>
     <td class="tg-0lax">11</td>
@@ -522,20 +518,18 @@ toc: false
 </tbody>
 </table>
 
-***
-
 #### 2) 신용카드 비인증 빌키 발급 응답 파라미터  
 
 [//]: # (신용카드 빌키 발급 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -579,7 +573,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드사(매입사) 코드 참고</td>
+    <td class="tg-0lax"><a href="/payapi09.html">* 별첨 카드사(매입사) 코드 참고</a></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
@@ -634,16 +628,13 @@ toc: false
 </tbody>
 </table>
 
-***
-
 ## 3.3 신용카드 빌링 승인 API  
-<br/>
 발급된 빌키를 사용하여 승인하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 - 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
 
-[//]: # (빌링 승인 API)
+[//]: # (신용카드 빌링 승인 API)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">
@@ -661,18 +652,18 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 빌링 승인 요청 파라미터
+#### 1) 신용카드 빌링 승인 요청 파라미터
 
-[//]: # (빌링 승인 요청 파라미터)
+[//]: # (신용카드 빌링 승인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -712,7 +703,7 @@ toc: false
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">goodsName</td>
     <td class="tg-0lax">상품명</td>
-    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">80</td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
@@ -736,7 +727,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함주의: 전체금액의 10%이하로 설정가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨</td>
+    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함<br/>주의: 전체금액의 10%이하로 설정가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨</td>
   </tr>
   <tr>
     <td class="tg-0lax">6</td>
@@ -756,7 +747,7 @@ toc: false
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">SHA256<br>(mid+mkey+timestamp)</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -831,18 +822,18 @@ toc: false
 </tbody>
 </table>
 
-#### 2) 빌링 승인 응답 파라미터
+#### 2) 신용카드 빌링 승인 응답 파라미터
 
-[//]: # (빌링 승인 응답)
+[//]: # (신용카드 빌링 승인 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -886,7 +877,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드사(매입사) 코드 참고</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
@@ -931,16 +922,13 @@ toc: false
 </tbody>
 </table>
 
-***
-
 ## 3.4 신용카드 빌키 삭제 API  
-<br/>
 발급된 빌키 삭제 시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 - 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
 
-[//]: # (빌키 삭제 API)
+[//]: # (신용카드 빌키 삭제 API)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">
@@ -958,18 +946,18 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 빌키 삭제 요청 파라미터
+#### 1) 신용카드 빌키 삭제 요청 파라미터
 
-[//]: # (빌키 삭제 요청 파라미터)
+[//]: # (신용카드 빌키 삭제 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1028,18 +1016,18 @@ toc: false
 </tbody>
 </table>
 
-#### 2) 빌키 삭제 응답 파라미터
+#### 2) 신용카드 빌키 삭제 응답 파라미터
 
 [//]: # (빌키 삭제 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1078,10 +1066,7 @@ toc: false
 </tbody>
 </table>
 
-***
-
-## 3.5 휴대폰 빌키 승인 API  
-<br/>
+## 3.5 휴대폰 빌키 승인 API
 휴대폰 빌키 발급은 PC Web이나 Mobile Web을 통해서 진행한 후 발급된 빌키를 사용하여 승인하는 서비스입니다. 휴대폰 빌링은 빌키 발급시에 요청한 일자기준 매월 요청시에 전후 5일 이내(예: 1월 5일 발급시에 2월 5일 전후 5일 이내 요청 필요), 요청한 금액과 동일한 금액으로 승인 요청주셔야 정상 승인 처리 됩니다. (일자 및 금액 변경해서 요청할 경우 별도 심사가 필요하므로 영업담당자에 문의 바랍니다.)
 
 - 휴대폰 빌키 승인 테스트 MID :<a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a> (빌키 발급이후 가능)
@@ -1095,11 +1080,11 @@ toc: false
   <tbody>
     <tr>
       <td class="tg-0lax">운영</td>
-      <td class="tg-0lax">https://payapi.paywelcome.co.kr/billing/billpay</td>
+      <td class="tg-0lax">https://payapi.paywelcome.co.kr/billing/hppbillpay</td>
     </tr>
     <tr>
       <td class="tg-0lax">테스트</td>
-      <td class="tg-0lax">https://tpayapi.paywelcome.co.kr/billing/billpay</td>
+      <td class="tg-0lax">https://tpayapi.paywelcome.co.kr/billing/hppbillpay</td>
     </tr>
   </tbody>
 </table>
@@ -1109,13 +1094,13 @@ toc: false
 [//]: # (휴대폰 빌키 승인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1155,7 +1140,7 @@ toc: false
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">goodsName</td>
     <td class="tg-0lax">상품명</td>
-    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">80</td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
@@ -1199,7 +1184,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">SHA256<br>(mid+mkey+timestamp)</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">8</td>
@@ -1239,13 +1224,13 @@ toc: false
 [//]: # (휴대폰 빌키 승인 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -1289,7 +1274,7 @@ toc: false
     <td class="tg-0lax">△</td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">별첨 카드사(매입사) 코드 참고</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>

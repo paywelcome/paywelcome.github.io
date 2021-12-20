@@ -5,17 +5,17 @@ sidebar: payapi_sidebar
 folder: payapi
 toc: false
 ---
-
+``
 # 4. 신용카드 키인결제  API
 
 ## 4.1 신용카드 키인결제 API
-<br/>
+
 신용카드 수기 승인시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 - 키인결제 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
 
-[//]: # (부분 취소 API URL)
+[//]: # (신용카드 키인결제 API URL)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">
@@ -33,18 +33,18 @@ toc: false
   </tbody>
 </table>
 
-#### 1) 키인결제 요청 파라미터
+#### 1) 신용카드 키인결제 요청 파라미터
 
 [//]: # (키인결제 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -108,7 +108,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">생년월일 6자리/ 사업자번호구인증(카유생) 설정 업체만 필수(담당자 확인필요)</td>
+    <td class="tg-0lax">생년월일 6자리/사업자번호<br/>구인증(카유생) 설정 업체만<br/>필수(담당자 확인필요)</td>
   </tr>
   <tr>
     <td class="tg-0lax">6</td>
@@ -118,7 +118,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">○</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">앞 2자리구인증(카유생비) 설정 업체만 필수(담당자 확인 필요)</td>
+    <td class="tg-0lax">앞 2자리<br/>구인증(카유생비) 설정 업체만<br/>필수(담당자 확인 필요)</td>
   </tr>
   <tr>
     <td class="tg-0lax">7</td>
@@ -168,7 +168,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함주의: 전체금액의 10%이하로 설정가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨</td>
+    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함<br/>주의: 전체금액의 10%이하로 설정가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨</td>
   </tr>
   <tr>
     <td class="tg-0lax">12</td>
@@ -178,7 +178,7 @@ toc: false
     <td class="tg-0lax"></td>
     <td class="tg-0lax">X</td>
     <td class="tg-0lax">String</td>
-    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함과세되지 않는 금액</td>
+    <td class="tg-0lax">대상: &#39;부가세업체정함&#39; 설정업체에 한함<br/>과세되지 않는 금액</td>
   </tr>
   <tr>
     <td class="tg-0lax">13</td>
@@ -243,18 +243,18 @@ toc: false
 </tbody>
 </table>
 
-#### 2) 키인결제 응답 파라미터
+#### 2) 신용카드 키인결제 응답 파라미터
 
-[//]: # (키인결제 응답 파라미터)
+[//]: # (신용카드 키인결제 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 6%; text-align: center">
+<col style="width: 6%; text-align: center">
+<col style="width: 8%; text-align: center">
 <col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
 <col style="width: 26%">
 </colgroup>
 <thead>
