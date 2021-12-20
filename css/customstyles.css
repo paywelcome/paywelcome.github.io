@@ -17,6 +17,11 @@ body {
     font-size:15px;
 }
 
+code {
+    font-family: OTWelcomeRA;
+    font-size:15px;
+}
+
 .bs-callout {
     padding: 20px;
     margin: 20px 0;

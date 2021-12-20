@@ -21,7 +21,7 @@ String mid = "welcometst"; // 가맹점 ID(가맹점 수정후 고정)
 String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 ```
 ### signkey 발급 방법
-- 관리자 페이지의 상점정보 :arrow_forward: 계약정보 :arrow_forward: 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후
+- 관리자 페이지의 상점정보 > 계약정보 > 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후
   팝업창에서 생성 버튼 클릭 후 해당 값 소스에 반영하시기 바랍니다.
 
 ### 표준결제 스크립트 Import
@@ -71,16 +71,11 @@ String signKey = "QjZXWDZDRmxYUXJPYnMvelEvSjJ5QT09";
 </form>
 ```
 
-| :warning: | Web Standard 서비스는 Form Post로 결제 요청되며, `<form>` 태그에 action 속성 설정 / submit 등의 모든 동작은 Import 된 스크립트에 의해서 자동 처리됩니다 |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+<img src="../images/stdweb/img05.png"><br>
 
-- 결제 인증 기본 요청데이터 필드는 아래와 같습니다.
-<style>
-th {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
+ 결제 인증 기본 요청데이터 필드는 아래와 같습니다.<br>
+
+
 #### [TABLE 1-1] 기본 요청데이터 필드
 
 <table>
@@ -328,10 +323,10 @@ th {
 #### [TABLE 1-2] acceptmethod 공통 추가 옵션
 
 |     필드명      | 한글명칭        | Data Type | 예시            | 설명                                       | 필수여부 |
-| :----------: | ----------- | --------- | ------------- | ---------------------------------------- | ---- |
-| acceptmethod | 배경색상        | String    | SKIN(BLUE)    | 결제창의 배경 색상을 변경 / 색상표 값으로 설정 가능(미 설정 시 기본값 : #c1272c) | NO   |
-|      ^^       | 인증 결과 처리 방식 | String    | poptargetself | 인증완료 후 returnUrl 호출 시 타켓을 self로 변경 결제창 내에서 페이지 전환 옵션(미 설정 시 기본값 : top) | NO   |
-|      ^^       | 에스크로결제여부    | String    | useescrow     | 설정시"에스크로약관동의"와"구매자본인확인"페이지가포함된에스크로결제창을호출합니다.(미설정시일반거래,에스크로사용설정된가맹점만사용가능합니다.) | NO   |
+| :---------: | ----------- | --------- | ------------- | ---------------------------------------- | ---- |
+|       acceptmethod    | 배경색상        | String    | SKIN(BLUE)    | 결제창의 배경 색상을 변경 / 색상표 값으로 설정 가능(미 설정 시 기본값 : #c1272c) | NO   |
+| ^^ | 인증 결과 처리 방식 | String    | poptargetself | 인증완료 후 returnUrl 호출 시 타켓을 self로 변경 결제창 내에서 페이지 전환 옵션(미 설정 시 기본값 : top) | NO   |
+| ^^       | 에스크로결제여부    | String    | useescrow     | 설정시"에스크로약관동의"와"구매자본인확인"페이지가포함된에스크로결제창을호출합니다.(미설정시일반거래,에스크로사용설정된가맹점만사용가능합니다.) | NO   |
 
 - 기본 요청데이터의 signature필드의 구성은 다음과 같습니다.
 
@@ -354,23 +349,23 @@ th {
 |  quotabase   |                  | 할부 개월           |  String   | "2:3:4", "2:0"<br>* 개월수를 `:` 로 구분된 값     | 일시불은 기본적으로 표시, 생략시 일시불만<br>현대카드 1만원,그 외 5만원 이상시에만 동작 |
 |  nointerest  |                  | 가맹점 부담 무이자 할부설정 |  String   | "11-2:3:5:6,34-2:6", "04-2:6"<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이 `,`로 구분 | \* 5만원 이상시에만 동작 / 카드사 무이자와 무관<br>[→ 별첨 "A.4카드사코드" 참조] |
 | acceptmethod |    below1000     | 1000원이하 결제      |  String   | " below1000"                             | 기본적으로 1000원이하 결제 불가능                     |
-|      "       | ini_onlycardcode | 결제 카드사 선택       |  String   | "01:03:04:06"\* 카드사코드를 ":"로 구분된 값        | 생략 시 결제 가능한 모든 카드사 표시<br>[→ 별첨"A.4카드사코드"참조] |
-|      "       | onlyeasypaycode  | 결제 간편결제 선택      |  String   | "kakaopay:lpay:payco"\* 간편결제코드를 ":"로 구분된 값 | 생략 시 결제 가능한 모든 간편결제 표시<br>[→ 별첨 "A.7 신용카드 간편결제코드" 참조] |
-|      "       |    CARDPOINT     | 카드포인트 사용유무      |  String   | "cardpoint"                              | 포인트를 사용하는 카드를 선택시 신용카드 메인 화면에 카드포인트를 사용할지에 대한 선택창이 표시된다. |
-|      "       |    SLIMQUOTA     | 부분무이자설정         |  String   | "SLIMQUOTA (11-2:3^34-2:3)"              | 슬림할부를 지정한다.<br>SLIMQUOTA(코드-개월:개월) 로 사용한다.<br>`^`구분자로 카드코드를 구분한다. |
-|      "       |     PAYPOPUP     | 안심클릭 뷰옵션        |  String   | "PAYPOPUP"                               | 안심클릭을 Popup 형태로 서비스를 제공한다.<br>Edge의 경우 자동 설정됩니다. |
-|      "       |     hidebar      | 프로그래스바뷰옵션       |  String   | "hidebar"                                | 결제진행시 노출되는 프로그래스 바를 안보이도록 설정된다.          |
+|     ^^       | ini_onlycardcode | 결제 카드사 선택       |  String   | "01:03:04:06"\* 카드사코드를 ":"로 구분된 값        | 생략 시 결제 가능한 모든 카드사 표시<br>[→ 별첨"A.4카드사코드"참조] |
+|     ^^       | onlyeasypaycode  | 결제 간편결제 선택      |  String   | "kakaopay:lpay:payco"\* 간편결제코드를 ":"로 구분된 값 | 생략 시 결제 가능한 모든 간편결제 표시<br>[→ 별첨 "A.7 신용카드 간편결제코드" 참조] |
+|     ^^       |    CARDPOINT     | 카드포인트 사용유무      |  String   | "cardpoint"                              | 포인트를 사용하는 카드를 선택시 신용카드 메인 화면에 카드포인트를 사용할지에 대한 선택창이 표시된다. |
+|     ^^       |    SLIMQUOTA     | 부분무이자설정         |  String   | "SLIMQUOTA (11-2:3^34-2:3)"              | 슬림할부를 지정한다.<br>SLIMQUOTA(코드-개월:개월) 로 사용한다.<br>`^`구분자로 카드코드를 구분한다. |
+|     ^^       |     PAYPOPUP     | 안심클릭 뷰옵션        |  String   | "PAYPOPUP"                               | 안심클릭을 Popup 형태로 서비스를 제공한다.<br>Edge의 경우 자동 설정됩니다. |
+|     ^^       |     hidebar      | 프로그래스바뷰옵션       |  String   | "hidebar"                                | 결제진행시 노출되는 프로그래스 바를 안보이도록 설정된다.          |
 
 ### [TABLE 1-5] 휴대폰결제 추가 요청필드 (선택)
 
 |     필드명      |      하위필드      |      한글명칭      | Data Type | 예시, **`기본값`**                       | 설명                                       |
 | :----------: | :------------: | :------------: | --------- | ----------------------------------- | ---------------------------------------- |
-| acceptmethod |      HPP       |  휴대폰 결제 상품 유형  | String    | "HPP(1)"[1:컨텐츠,2:실물,4:빌링컨텐츠,5:빌링실물] | 휴대폰 결제 상품 유형<br>컨텐츠/실물/빌링컨텐츠/빌링실물여부는 계약담당자에게 확인요 |
-|      "       |  hppablecorp   |  표시될 통신사 리스트   | String    | "hppablecorp(SKT:KTF:LGT:MVNO)"     | SKT : S텔레콤, KTF : KT, LGT : LG U+, MVNO : 알뜰폰<br>MVNO중일부만 설정 시 MVNO 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택 |
-|      "       | hppdefaultcorp |   휴대폰통신사기본선택   | String    | "hppdefaultcorp(SKT)"               | 통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVNO 중 하나만 설정 가능<br>MVNO 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음 |
-|      "       |    hppnofix    | 휴대폰 번호 수정불가여부  | String    | hppnofix(N)                         | 휴대폰 번호 수정불가여부<br>N : 수정가능, Y : 수정불가능     |
-|      "       |  hppauthtype   | 휴대폰 결제 인증방법 선택 | String    | hppauthtype(ARS)                    | 휴대폰 결제시 문자/ARS 인증 선택(옵션없을시 SMS)<br>ARS : ARS인증, SMS : 문자인증(해당 옵션은 모빌리언스만 가능) |
-|      "       |    billauth    |   휴대폰 빌키 발급    | String    | billauth(HPP)                       | 휴대폰 빌키 발급시 사용상품유형 HPP(4) 또는 HPP(5)로 설정 필요<br>휴대폰 빌링 사용은 별도 사용 설정 필요 |
+| : acceptmethod : |      HPP       |  휴대폰 결제 상품 유형  | String    | "HPP(1)"[1:컨텐츠,2:실물,4:빌링컨텐츠,5:빌링실물] | 휴대폰 결제 상품 유형<br>컨텐츠/실물/빌링컨텐츠/빌링실물여부는 계약담당자에게 확인요 |
+|      ^^       |  hppablecorp   |  표시될 통신사 리스트   | String    | "hppablecorp(SKT:KTF:LGT:MVNO)"     | SKT : S텔레콤, KTF : KT, LGT : LG U+, MVNO : 알뜰폰<br>MVNO중일부만 설정 시 MVNO 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택 |
+|      ^^      | hppdefaultcorp |   휴대폰통신사기본선택   | String    | "hppdefaultcorp(SKT)"               | 통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVNO 중 하나만 설정 가능<br>MVNO 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음 |
+|      ^^      |    hppnofix    | 휴대폰 번호 수정불가여부  | String    | hppnofix(N)                         | 휴대폰 번호 수정불가여부<br>N : 수정가능, Y : 수정불가능     |
+|      ^^      |  hppauthtype   | 휴대폰 결제 인증방법 선택 | String    | hppauthtype(ARS)                    | 휴대폰 결제시 문자/ARS 인증 선택(옵션없을시 SMS)<br>ARS : ARS인증, SMS : 문자인증(해당 옵션은 모빌리언스만 가능) |
+|      ^^      |    billauth    |   휴대폰 빌키 발급    | String    | billauth(HPP)                       | 휴대폰 빌키 발급시 사용상품유형 HPP(4) 또는 HPP(5)로 설정 필요<br>휴대폰 빌링 사용은 별도 사용 설정 필요 |
 
 ### [TABLE 1-6] 계좌이체 추가 요청필드 (선택)
 
@@ -384,8 +379,8 @@ th {
 | ------------ | ----------- | --------------------- | --------- | --------------------- | ---------------------------------------- |
 | INIregno     |             | 주민번호 설정 기능            | String    | "201504161111111"     | 13자리(주민번호),10자리(사업자번호),미입력시(화면에서입력가능)    |
 | acceptmethod | vbank       | 입금기한 및 입금시간 (초 설정 불가) | String    | "vbank(20150416)&#39; | 입금기한 및 입금 시간 설정 옵션<br> EX) vbank(20211216) 또는 vbank(202112261900) 시분까지지정 |
-| "            | va\_receipt | 현금영수증 발급 UI 옵션        | String    | "va\_receipt"         | 현금영수증 발급 UI 표시 옵션<br> (CASHRECEIPT 옵션이 기준정보에 있는 경우)<br>–주민번호만 표시 |
-| "            | va\_ckprice | 주민번호 채번 시 금액 확인       | String    | "va\_ckprice"         | 주민번호 채번시 금액 체크 기능                        |
+| ^^ | va\_receipt | 현금영수증 발급 UI 옵션        | String    | "va\_receipt"         | 현금영수증 발급 UI 표시 옵션<br> (CASHRECEIPT 옵션이 기준정보에 있는 경우)<br>–주민번호만 표시 |
+| ^^           | va\_ckprice | 주민번호 채번 시 금액 확인       | String    | "va\_ckprice"         | 주민번호 채번시 금액 체크 기능                        |
 
 ## 3.2 리턴 페이지 (인증수신/승인 API) 작성 (PayReturn)
 - 작성시Sample Source를 참고하여 작성하시기 바랍니다.
@@ -427,9 +422,8 @@ th {
 |   price   |   인증가격    |           | "1000"                                   | 인증 가격 결과에 대한 위변조 확인용                     | Yes(가격위변조검증) | 64Bytes      |
 | timestamp |   타임스템프   |  Number   | 1335233672723                            | TimeInMillis(Long형)→제공라이브러로 생성가능(샘플소스참조) | Yes(위변조검증)   | 20 Byte      |
 | signature | signature |  String   | "11f65eea829cc2c165874b104dbfd4965fc30d5ef9292405413bb8504cc5997d" | 위변조 방지 SHA256 Hash 값\*결제요청 동일한 방법으로 signature와 생성→ "[TABLE 2-3] 승인요청 signature 생성 대상(Target) 필드" 참조 | Yes          | 64 Byte      |
-|  charset  |  리턴 인코딩   |  String   | "EUC-KR"[**`UTF-8`**, EUC-KR]            | 결과 수신 charset                            |              | 5 Byte       |
-|  format   |   리턴 형식   |  String   | "JSON"[**`XML`**, JSON, NVP]             | 결과 수신 형태XML : \&lt;result\&gt;내의 XML 결과 리턴JSON : root 없이 json 결과 리턴NVP : name=value&amp;name=value으로 결과 리턴 **→****"**[TABLE 2-13] 리턴 형식별 승인결과 예시"**참조** |              | 5 Byte       |
-
+|  charset  |  리턴 인코딩   |  String   | "EUC-KR"[**`UTF-8`**, EUC-KR]            | 결과 수신 charset                            |              | 5 Byte       | 
+| format | 리턴 형식 | String | "JSON"[**`XML`**, JSON, NVP]  | 결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴<br>[TABLE 2-13] 리턴 형식별 승인결과 예시 참조 |  | 5 Byte |
 
 - 결제 승인 요청데이터의 signature필드의 구성은 다음과 같습니다.
 
@@ -478,9 +472,9 @@ th {
 |    CARD\_Num     |        신용카드번호.        |  String   | 신용카드번호.                                  | 16 Byte |
 |  CARD\_Interest  |         할부여부          |  String   | 카드 할부여부. ("1"이면 무이자할부)                   | 1 Byte  |
 |   CARD\_Quota    |       카드 할부기간.        |  String   | 카드 할부기간.                                 | 2 Byte  |
-|    CARD\_Code    | 카드사 코드. [**별첨정보 참조**] |  String   | 카드사 코드. [**별첨정보 참조**]                    | 2 Byte  |
+|    CARD_Code    | 카드사 코드. [**별첨정보 참조**] |  String   | 카드사 코드. [**별첨정보 참조**]                    | 2 Byte  |
 | CARD\_PRTC\_CODE |       부분취소 가능여부       |  String   | 부분취소 가능여부 (1:가능, 0:불가능)                  | 1 Byte  |
-|  CARD\_BankCode  |         카드발급사         |  String   | 카드발급사(은행) 코드. [**별첨정보 참조**]카드사 직발행 카드가 아닌 계열카드인 경우, 2자리 신용카드사 코드와 더불어 자세한 카드 정보를 나타냅니다(직발행 카드인 경우 "00"으로 반환됩니다).\&lt;예\&gt; CARD\_Code가 "11", CARD\_BankCode가 "23"인 경우 – 제일은행에서 발급한 BC카드 | 2 Byte  |
+|  CARD_BankCode  |         카드발급사         |  String   | 카드발급사(은행) 코드. [별첨정보 참조]카드사 직발행 카드가 아닌 계열카드인 경우,<br> 2자리 신용카드사 코드와 더불어 자세한 카드 정보를 나타냅니다 (직발행 카드인 경우 "00"으로 반환됩니다).<br>CARD_Code가 "11", CARD\_BankCode가 "23"인 경우 – 제일은행에서 발급한 BC카드 | 2 Byte  |
 |  CARD\_SrcCode   |      간편(앱)결제 구분       |  String   | C : PAYCO<br> B : 삼성페이<br>D : 삼성페이(체크)<br> G : SSGPAY<br>O : KAKAOPAY<br>L : LPAY<br>K : 국민앱카드<br>A : KPAY | 1 Byte  |
 |   CARD\_Point    |      카드포인트 사용여부       |  String   | ": 카드 포인트 사용안함"1" : 카드 포인트 사용            | 1Byte   |
 |     currency     |         통화코드          |  String   | 달러결제 정보, 통화코드.                           | 3 Byte  |
@@ -605,9 +599,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 - 3.1 참조하여결제페이지작성
 - 신용카드, 실시간계좌이체, 무통장입금(가상계좌)
 
-| :warning: | 에스크로 서비스를 이용하시려면 결제요청페이지안에 accepmethod 의 value 를 useescrow 로 추가하셔야 합니다. 값을 추가하지 않을 경우 일반결제로 진행됩니다.<br> `<input type=hidden name=acceptmethod value="SKIN(ORIGINAL):HPP(1): useescrow ">` |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
+<img src="../images/stdweb/img06.png"><br>
 
 ### 3.3.2 에스크로 구매확인 연동
 
@@ -648,7 +641,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 - 지불 수단 별,승인요청 시점의 주문번호를 기준으로 응답하며,배송등록 시점에 사용되는 주문번호와 동일하게 설정을 권장합니다.
 - 거래금액은 에스크로 상태에 따라 거래취소 시에는 취소금액,그 외는 승인금액입니다.
 - 원거래TID는 부분취소거래만 설정됩니다.
-- ​
+
 ##### [노티발송 웰컴페이먼츠 &gt; 가맹점]
 
 |     필드명      |  한글명칭   |    크기     | 설명                                       |
@@ -671,9 +664,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 | msg_rslt | 결과메세지 | Char(1000) | 처리실패시 상세 오류 메세지      |
 
 ## 3.4 가상계좌 입금통보 (노티 수신) 사용 방법 
-> - 상점 입금통보 수신 페이지는 고객이 가상계좌이체 서비스를 사용하여 가상계좌를 발급받은 후
->   무통장 입금을 하였을 때, 은행으로부터 통보된 입금결과를 상점으로 전송해 주기 위해 상점 측에 필요한 페이지입니다.
->   고객이 보는 결제 화면과는 무관하며, HTTP/HTTPS 모두 지원합니다.
+> 상점 입금통보 수신 페이지는 고객이 가상계좌이체 서비스를 사용하여 가상계좌를 발급받은 후 무통장 입금을 하였을 때,<br> 은행으로부터 통보된 입금결과를 상점으로 전송해 주기 위해 상점 측에 필요한 페이지입니다.<br>고객이 보는 결제 화면과는 무관하며, HTTP/HTTPS 모두 지원합니다.
 
 ### 3.4.1 노티를 받을 때 전달되는 파라미터
 
@@ -719,7 +710,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 ### 3.4.3 입금정보 수신 실패 사유 확인
 
 - 채번된 가상계좌로 정상 입금되었는지 확인
-  상점관리자 &gt; 거래내역 &gt; 가상계좌 &gt; 입금결과 조회
+  `상점관리자 > 거래내역 > 가상계좌 > 입금결과 조회`
 - 입금결과조회내역에서정상조회되며, 입금TID가생성된경우
   가상계좌&gt; 입금통보재전송메뉴에서가상계좌번호조회
 
@@ -748,15 +739,17 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ### 3.4.4 가상계좌 입금통보 테스트
 
-- 테스트 서버에서 진행한 가상계좌 입금통보 확인을 웰컴페이먼츠 홈페이지에서 조회 가능
-  웰컴페이먼츠(https://www.welcomepayments.co.kr) > 고객센터 > 입금통보테스트
+- 테스트 서버에서 진행한 가상계좌 입금통보 확인을 웰컴페이먼츠 홈페이지에서 조회 가능<br>
+  `웰컴페이먼츠(https://www.welcomepayments.co.kr) > 고객센터 > 입금통보테스트`
   테스트 결제창에서 가상계좌 결제방식으로 결제 진행 후 해당내역 확인 가능
+
 1. 결제창 연동 후 mid는 welcometst로 가상계좌 번호를 채번
 2. 채번이 완료되면 웰컴페이먼츠 홈페이지의 입금통보테스트 화면에서 채번 플랫폼 선택 후 은행코드, 계좌번호, 금액, 가상계좌 입금정보를 받을 URL을 입력합니다.
 3. 채번 정보를 입력 후 입금통보 버튼을 누를시 결과 메시지가 생성됩니다.
   이때의 결과 메시지는 입금통보 테스트가 성공했는지를 보여주는 것이며 실제 거래와는 무관합니다.
 4. 서버에 로그가 정상적으로 생성되었는지 확인합니다.
 5. DB에 정상적으로 데이터가 들어왔는지 확인합니다.
+
 ##### 결과 메시지 예시
 ```json
 {
