@@ -6,7 +6,7 @@ folder: code
 toc: false
 ---
 
-## 9.1 카드사(매입사) 코드
+## 1 카드사(매입사) 코드
 
 <table style="width: 100%">
 <colgroup>
@@ -75,7 +75,7 @@ toc: false
   </tbody>
 </table>
 
-## 9.2 카드 발급사(은행사) 코드
+## 2 카드 발급사(은행사) 코드
 
 <table style="width: 100%;">
 <colgroup>
@@ -318,7 +318,7 @@ toc: false
   </tbody>
 </table>
 
-## 9.3 카드 코드(결제창 제어 카드코드)
+## 3 카드 코드(결제창 제어 카드코드)
 
 <table style="width: 100%;">
 <colgroup>
@@ -413,6 +413,69 @@ toc: false
       <td style="text-align: center">우체국체크</td>
       <td style="text-align: center">95</td>
       <td style="text-align: center">저축은행체크</td>
+    </tr>
+  </tbody>
+</table>
+
+## 4 에스크로 배송등록 택배사 코드
+
+<table style="width: 100%;">
+<colgroup>
+    <col style="width: 20%;">
+    <col style="width: 30%;">
+    <col style="width: 20%;">
+    <col style="width: 30%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">코드</th>
+      <th style="text-align: center">카드사명</th>
+      <th style="text-align: center">코드</th>
+      <th style="text-align: center">카드사명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">9999</td>
+      <td style="text-align: center">기타택배</td>
+      <td style="text-align: center">kgb</td>
+      <td style="text-align: center">로젠택배</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cjgls</td>
+      <td style="text-align: center">CJ대한통운</td>
+      <td style="text-align: center">hyundai</td>
+      <td style="text-align: center">롯데택배(구 현대택배)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">registpost</td>
+      <td style="text-align: center">우편등기</td>
+      <td style="text-align: center">EPOST</td>
+      <td style="text-align: center">우체국택배</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hanjin</td>
+      <td style="text-align: center">한진택배</td>
+      <td style="text-align: center">kdexp</td>
+      <td style="text-align: center">경동택배</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">chunil</td>
+      <td style="text-align: center">천일택배</td>
+      <td style="text-align: center">daesin</td>
+      <td style="text-align: center">대신택배</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ilyang</td>
+      <td style="text-align: center">일양로지스</td>
+      <td style="text-align: center">honam</td>
+      <td style="text-align: center">호남택배</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cvsnet</td>
+      <td style="text-align: center">편의점택배</td>
+      <td style="text-align: center">hdexp</td>
+      <td style="text-align: center">합동택배</td>
     </tr>
   </tbody>
 </table>

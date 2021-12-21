@@ -16,11 +16,11 @@ entries:
       type: web
 
     - title: 2. 카드 발급사(은행사) 코드
-      url: /code01.html#92-카드-발급사은행사-코드
+      url: /code01.html#2-카드-발급사은행사-코드
       output: web
       type: web
 
     - title: 3. 카드 코드(결제창 제어 카드코드)
-      url: /code01.html#93-카드-코드결제창-제어-카드코드
+      url: /code01.html#3-카드-코드결제창-제어-카드코드
       output: web
       type: web
