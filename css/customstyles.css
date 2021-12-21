@@ -23,6 +23,8 @@ code {
     font-size:15px;
 }
 
+img.emoji {font-size: 1.5rem;}
+
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -106,7 +108,7 @@ font-family: OTWelcomeBA;
 }
 
 .post-content img {
-    margin: 12px 0px 3px 0px;
+    margin: 0px 0px 0px 0px;
     width: auto;
     height: auto;
     max-width: 100%;
@@ -174,7 +176,8 @@ table > thead > tr > th {
     vertical-align: middle;
     border-bottom: 2px solid #ddd;
     text-transform: none;
-    background-color: #EA002C;
+    /* background-color: #EA002C; 빨강 */
+    background-color: #f4811f;
     color: white;
     /*text-align: left;*/
 }
@@ -916,7 +919,7 @@ span.soft {
 
 
 .post-content img {
-    margin: 12px 0px 3px 0px;
+    margin: 0px 0px 0px 0px;
     width: auto;
     height: auto;
     max-width: 100%;
@@ -929,7 +932,7 @@ span.soft {
 
 
 .post-content img {
-    margin: 12px 0px 3px 0px;
+    margin: 0px 0px 0px 0px;
     width: auto;
     height: auto;
     max-width: 100%;

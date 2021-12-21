@@ -6,7 +6,7 @@ folder: stdweb
 toc: false
 ---
 
-# 4. 별첨
+# 4. 부록
 ## A.1 결제수단코드 (gopaymethod)
 
 | 지불수단 이름 | 키워드    |
@@ -31,7 +31,7 @@ toc: false
 ## A.3 gopaymethod 옵션
 
 | 지불수단 이름 | 키워드    |
-| ----------- | ---------- |
+| :-----------: | :----------: |
 | 신용카드(모든)    | Card       |
 | ---         | ---        |
 | 신용카드(안심결제)  | ACard      |
@@ -44,9 +44,8 @@ toc: false
 ## A.4 카드사 승인코드
 
 | 코드   | 카드사 이름 | 코드   | 카드사 이름 |
-| ---- | ------ | ---- | ------ |
+| :----: | :------: | :----: | :------: |
 | 01   | 하나(외한) | 03   | 롯데     |
-| ---  | ---    | ---  | ---    |
 | 04   | 현대     | 06   | 국민     |
 | 11   | BC     | 12   | 삼성     |
 | 14   | 신한     | 15   | 한미     |
@@ -58,9 +57,8 @@ toc: false
 ## A.5 카드사 코드(결제창 호출시 제어코드)
 
 | 코드   | 직접호출구분    | 카드사 이름 | 코드   | 직접호출 구분   | 카드사 이름    |
-| ---- | --------- | ------ | ---- | --------- | --------- |
+| :----: | :---------: | :------: | :----: | :---------: | :---------: |
 | 01   | onlyacard | 하나(외환) | 03   | onlyacard | 롯데        |
-| ---  | ---       | ---    | ---  | ---       | ---       |
 | 04   | onlyacard | 현대     | 06   | onlyvcard | 국민        |
 | 11   | onlyvcard | BC     | 12   | onlyacard | 삼성        |
 | 14   | onlyacard | 신한     | 21   | 미사용       | 해외 VISA   |
@@ -78,9 +76,8 @@ toc: false
 ## A.6 카드 발급사(은행) 코드
 
 | 코드   | 카드사 이름        | 코드   | 카드사 이름      |
-| ---- | ------------- | ---- | ----------- |
+| :----: | :-------------: | :----: | :-----------: |
 | 02   | 한국산업은행        | 03   | 기업은행        |
-| ---  | ---           | ---  | ---         |
 | 04   | 국민은행          | 05   | 하나은행 (구외환)  |
 | 06   | 국민은행 (구 주택)   | 07   | 수협중앙회       |
 | 11   | 농협중앙회         | 12   | 단위농협        |
@@ -101,9 +98,8 @@ toc: false
 ## A.7 은행(증권사) 코드
 
 | 코드   | 카드사 이름               | 코드   | 카드사 이름      |
-| ---- | -------------------- | ---- | ----------- |
+| :----: | :--------------------: | :----: | :-----------: |
 | 02   | 한국산업은행               | 03   | 기업은행        |
-| ---  | ---                  | ---  | ---         |
 | 04   | 국민은행                 | 05   | 하나은행 (구 외환) |
 | 06   | 국민은행 (구 주택)          | 07   | 수협중앙회       |
 | 11   | 농협중앙회                | 12   | 단위농협        |
@@ -145,28 +141,75 @@ toc: false
 | :--------: | :-------: | 
 | kakaopay | 카카오페이   |
 |  lpay | 엘페이     |
-| payco | 페이코 | | | 
+| payco | 페이코  | 
 
 ## A.9 카드 이벤트 적용 코드
 
-| 코드               |설명                               |
-| :---------------: | ---                              |
-| 1                 | 당사&amp;카드사부담 일반 무이자 할부 이벤트      |
-| 12                | 카드사부담 일반 무이자 + 상점 일반 할인 이벤트      |
-| 14                | 카드사부담 일반 무이자 + 카드번호별 할인 이벤트      |
-| 24                | 카드사부담 일반 무이자 + 카드 Prefix별 할인 이벤트 |
-| A1                | 상점부담 일반 무이자 할부 이벤트               |
-| A2                | 상점 일반 할인 이벤트                     |
-| A3                | 상점 무이자 + 상점 일반 할인 이벤트            |
-| A4                | 상점 무이자 + 카드번호별 할인 이벤트            |
-| A5                | 카드번호별 할인 이벤트                     |
-| B4                | 상점 무이자 + 카드 Prefix별 할인 이벤트       |
-| B5                | 카드 Prefix별 할인 이벤트                |
-| C0                | 당사&amp;카드사부담 특별 무이자 할부 이벤트       |
-| C1                | 상점부담 특별 무이자 할부 이벤트               |
-
-
 - 해당 코드는 참조용으로, 모든 에러코드에 대한 명시되 있지 않으며, 언제든이 변경될 수 있습니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width:20%">코드</th>
+      <th style="text-align: left; width:80%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">당사&amp;카드사부담 일반 무이자 할부 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: left">카드사부담 일반 무이자 + 상점 일반 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: left">카드사부담 일반 무이자 + 카드번호별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">24</td>
+      <td style="text-align: left">카드사부담 일반 무이자 + 카드 Prefix별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">A1</td>
+      <td style="text-align: left">상점부담 일반 무이자 할부 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">A2</td>
+      <td style="text-align: left">상점 일반 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">A3</td>
+      <td style="text-align: left">상점 무이자 + 상점 일반 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">A4</td>
+      <td style="text-align: left">상점 무이자 + 카드번호별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">A5</td>
+      <td style="text-align: left">카드번호별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B4</td>
+      <td style="text-align: left">상점 무이자 + 카드 Prefix별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">B5</td>
+      <td style="text-align: left">카드 Prefix별 할인 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">C0</td>
+      <td style="text-align: left">당사 &amp; 카드사부담 특별 무이자 할부 이벤트</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">C1</td>
+      <td style="text-align: left">상점부담 특별 무이자 할부 이벤트</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## A.10 인증 결과코드
 
@@ -174,14 +217,52 @@ toc: false
 
 `소스에 코딩하지 마시기 바랍니다.`
 
-| 구분          | 결과코드        | 사유                           | 비고                                    |
-| ----------- | ----------- | ---------------------------- | ------------------------------------- |
-| 인증성공        | 0000        | 성공                           | 정상적으로 결제창을 통해 인증이 완료된 경우(승인요청 가능)     |
-| 인증실패기타      | V000 ~ V099 | 결제 요청 실패                     | 필수 파라미터 누락, 규칙에 맞지 않는 파라미터, 주문번호 중복 등 |
-|^^| V100 ~ V199 | 결제창 표시 실패   | 표시가능 결제수단 없음 등               |                                       |
-|^^| V200 ~ V299 | 인증완료후 실패    | 인증완료후 가맹점 인증결과 전송중 실패 등      |                                       |
-|^^| V800 ~ V899 | 결제 종료       | 사용자 취소, 결제 요청 시간 초과, 위변조 시 등 |                                       |
-|^^| R900 ~ V999 | 기타          | 예상치 못한 실패 등                  | 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align :center; width: 20%">구분</th>
+      <th style="text-align :center; width: 20%">결과코드</th>
+      <th style="text-align :center; width: 20%">사유</th>
+      <th style="text-align :left; width: 40%">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align :center; vertical-align: middle">인증성공</td>
+      <td style="text-align :center">0000</td>
+      <td style="text-align :center">성공</td>
+      <td>정상적으로 결제창을 통해 인증이 완료된 경우<br>(승인요청 가능)</td>
+    </tr>
+    <tr>
+      <td rowspan="5" style="text-align :center; vertical-align: middle">인증실패기타
+<br><br><br><br>
+</td>
+      <td  style="text-align :center">V000 ~ V099</td>
+      <td  style="text-align :center">결제 요청 실패</td>
+      <td>필수 파라미터 누락, 규칙에 맞지 않는 파라미터, 주문번호 중복 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center">V100 ~ V199</td>
+      <td style="text-align :center">결제창 표시 실패</td>
+      <td>표시가능 결제수단 없음 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center">V200 ~ V299</td>
+      <td style="text-align :center">인증완료후 실패</td>
+      <td>인증완료후 가맹점 인증결과 전송중 실패 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center">V800 ~ V899</td>
+      <td style="text-align :center">결제 종료</td>
+      <td>사용자 취소, 결제 요청 시간 초과, 위변조 시 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center">R900 ~ V999</td>
+      <td style="text-align :center">기타</td>
+      <td>예상치 못한 실패 등</td>
+    </tr>
+  </tbody>
+</table>
 
 ## A.11 승인 결과코드
 
@@ -189,26 +270,88 @@ toc: false
 
 `소스에 코딩하지 마시기 바랍니다.`
 
-| 구분          | 결과코드        | 사유        | 비고                           |
-| ----------- | ----------- | --------- | ---------------------------- |
-| 승인성공        | 0000        |           | 정상적으로 승인이 완료된 경우             |
-| 승인 요청전실패    | R100 ~ R199 | 승인 요청 실패  | 필수 파라미터 누락, 규칙에 맞지 않는 파라미터 등 |
-|^^| R200 ~ R299 | 승인 처리 불가 실패 | 재승인 요청 등  |                              |
-|^^| R300 ~ R399 | 승인 처리중 실패   | 내부 장애 등   |                              |
-|^^| R900 ~ R999 | 기타          | 예상치 못한 실패 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align :center; width: 20%">구분</th>
+      <th style="text-align :center; width: 20%">결과코드</th>
+      <th style="text-align :center; width: 20%">사유</th>
+      <th style="text-align :left; width: 40%">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align :center;vertical-align: middle">승인성공</td>
+      <td style="text-align :center">0000</td>
+      <td> </td>
+      <td>정상적으로 승인이 완료된 경우</td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="text-align :center;vertical-align: middle">승인 요청전실패</td>
+      <td style="text-align :center;">R100 ~ R199</td>
+      <td style="text-align :center;">승인 요청 실패</td>
+      <td>필수 파라미터 누락, 규칙에 맞지 않는 파라미터 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center;">R200 ~ R299</td>
+      <td style="text-align :center;">승인 처리 불가 실패</td>
+      <td>재승인 요청 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center;">R300 ~ R399</td>
+      <td style="text-align :center;">승인 처리중 실패</td>
+      <td>내부 장애 등</td>
+    </tr>
+    <tr>
+      <td style="text-align :center;">R900 ~ R999</td>
+      <td style="text-align :center;">기타</td>
+      <td>예상치 못한 실패</td>
+    </tr>
+  </tbody>
+</table>
 
 ## A.12 카드결제 직접호출
 
 - 카드 결제 직접호출을 원하실 경우 해당 옵션을 설정하시기 바랍니다.
 - 이 외 정보는 상기 본 매뉴얼과 동일합니다.
 
-| 필드명             | 코드        | 설명                                       |
-| --------------- | --------- | ---------------------------------------- |
-| gopaymethod(택1) | onlyacard | 안심결제 결제창                                 |
-| onlyvcard       | ISP 결제창   |                                          |
-| acceptmethod    | cardonly  | 옵션추가                                     |
-| d\_card         | [String]  | 직접 호출할 카드사 코드 [**[참조]**](stdweb04.html#a4-카드사-승인코드) |
-| d\_quota        | [String]  | 직접호출 할부 설정,필수 입력, "00" 일시불도 필수 입력, "02" 2개월.. |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width:30%">필드명</th>
+      <th style="text-align: center; width:15%">코드</th>
+      <th style="text-align: left; width:55%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">gopaymethod(택1)</td>
+      <td style="text-align: center">onlyacard</td>
+      <td style="text-align: left">안심결제 결제창</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">onlyvcard</td>
+      <td style="text-align: center">ISP 결제창</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">acceptmethod</td>
+      <td style="text-align: center">cardonly</td>
+      <td style="text-align: left">옵션추가</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">d_card</td>
+      <td style="text-align: center">[String]</td>
+      <td style="text-align: left">직접 호출할 카드사 코드<a href="/stdweb04.html#a4-카드사-승인코드"><strong>[참조-카드사 승인코드]</strong></a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">d_quota</td>
+      <td style="text-align: center">[String]</td>
+      <td style="text-align: left">직접호출 할부 설정,필수 입력, “00” 일시불도 필수 입력, “02” 2개월..</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 예시
 ```javascript
@@ -226,7 +369,7 @@ toc: false
 - 이 외 정보는 상기 본 매뉴얼과 동일합니다.
 
 | 필드명                  | 코드           | 설명        |
-| -------------------- | ------------ | --------- |
+| :--------------------: | :------------: | :--------- |
 | gopaymethod(간편결제 택1) | onlykakaopay | 카카오페이 결제창 |
 | onlylpay             | 엘페이 결제창      |           |
 | onlypayco            | 페이코결제창       |           |
@@ -244,12 +387,36 @@ toc: false
 
 ## A.15 가상계좌 NONE UI 방식 호출
 
-| 필드명             | 코드                | 설명                                       |
-| --------------- | ----------------- | ---------------------------------------- |
-| gopaymethod(택1) | onlyvbanknone     | 가상계좌의 결제창없이 연동                           |
-| acceptmethod    | va\_bankcd(은행코드)  | 가상계좌 채번에 필요한 은행코드 은햅(코드값은 은행 코드 표 참고)    |
-|                 | va\_receipt(발급옵션) | va\_receipt(1) : 소득공제용va\_receipt(2) : 지출증빙용 |
-| INIregno        |                   | 현금영수증 발급을 위한 신분인식번호 입력(미입력시 자진 발급 처리)소득공제용 : 주민등록번호,카드번호,휴대폰 번호지출증빙용 : 사업자번호 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center; width:20%">필드명</th>
+      <th style="text-align: center; width:20%">코드</th>
+      <th style="text-align: left; width:60%">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">gopaymethod(택1)</td>
+      <td style="text-align: center">onlyvbanknone</td>
+      <td style="text-align: left">가상계좌의 결제창없이 연동</td>
+    </tr>
+    <tr>
+      <td  rowspan="2" style="text-align: center; vertical-align: middle">acceptmethod</td>
+      <td style="text-align: center">va_bankcd(은행코드)</td>
+      <td style="text-align: left">가상계좌 채번에 필요한 은행코드 은햅(코드값은 은행 코드 표 참고)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">va_receipt(발급옵션)</td>
+      <td style="text-align: left">va_receipt(1) : 소득공제용 / va_receipt(2) : 지출증빙용</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">INIregno</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">현금영수증 발급을 위한 신분인식번호 입력(미입력시 자진 발급 처리)<br>소득공제용 : 주민등록번호,카드번호,휴대폰 번호 / 지출증빙용 : 사업자번호</td>
+    </tr>
+  </tbody>
+</table>
 
 - 그외옵션은 기존가상계좌추가필드와 동일
 

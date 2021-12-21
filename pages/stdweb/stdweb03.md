@@ -323,7 +323,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center" rowspan="3">acceptmethod
+      <td style="text-align: center; vertical-align: middle" rowspan="3">acceptmethod
 <br><br>
 </td>
       <td style="text-align: center">배경색상</td>
@@ -346,56 +346,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </tbody>
 </table>
 
-- 기본 요청데이터의 signature필드의 구성은 다음과 같습니다.
-
-#### [1-3] signature 생성 대상(Target) 필드
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center; width: 15%">필드명</th>
-      <th style="text-align: center; width: 10%">한글명칭</th>
-      <th style="text-align: left; width: 65%">비고</th>
-      <th style="text-align: center; width: 10%">필수여부</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">mKey</td>
-      <td style="text-align: center">검증값</td>
-      <td>SHA256방식으로 생성한 값 → 제공라이브러리로 생성가능
-      <br><code class="language-plaintext highlighter-rouge">"346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3"
-      </code>
-      </td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">oid</td>
-      <td style="text-align: center">주문번호</td>
-      <td>xxx_1335247243103</td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">price</td>
-      <td style="text-align: center">가격</td>
-      <td>가맹점 주문번호 / 결제단위 Unique <br>
-      <code class="language-plaintext highlighter-rouge">"10000"</code>
-      </td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">timestamp</td>
-      <td style="text-align: center">타임스탬프</td>
-      <td>TimeInMillis(Long형) → 제공라이브러리로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-  </tbody>
-</table>
-
-- Signature 생성방법은 아래의 [3.3 signature 생성] 참조
-  기본 요청데이터 외에 다음과 같이 결제 수단별로 옵션 값을 추가하여 결제 요청할 수 있습니다.
-
-#### [1-4] 신용카드 추가 요청필드 (선택)
+#### [1-3] 신용카드 추가 요청필드 (선택)
 <table>
   <thead>
     <tr>
@@ -424,7 +375,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       “11-2:3:5:6,34-2:6”, “04-2:6”<br>* 카드사코드-할부개월:할부개월…<br>여러카드는 공백없이,로 구분</td>
     </tr>
     <tr>
-      <td style="text-align: center" rowspan="7">acceptmethod</td>
+      <td style="text-align: center; vertical-align: middle" rowspan="7">acceptmethod</td>
       <td style="text-align: center">below1000</td>
       <td style="text-align: center">1000원이하 결제</td>
       <td style="text-align: center">String</td>
@@ -478,7 +429,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </tbody>
 </table>
 
-#### [1-5] 휴대폰결제 추가 요청필드 (선택)
+#### [1-4] 휴대폰결제 추가 요청필드 (선택)
 
 <table>
   <thead>
@@ -539,7 +490,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </tbody>
 </table>
 
-#### [1-6] 계좌이체 추가 요청필드 (선택)
+#### [1-5] 계좌이체 추가 요청필드 (선택)
 
 <table>
   <thead>
@@ -562,7 +513,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </tbody>
 </table>
 
-#### [1-7] 가상계좌 추가 요청필드 (선택)
+#### [1-6] 가상계좌 추가 요청필드 (선택)
 
 <table>
   <thead>
@@ -728,7 +679,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <td style="text-align: center">String</td>
       <td>인증 결과에 대한 위변조 검증값</td>
       <td style="text-align: center">Yes<br>위변조<br>검증</td>
-      <td>–</td>
+      <td></td>
     </tr>
     <tr>
       <td style="text-align: center">price</td>
@@ -750,7 +701,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <td style="text-align: center">signature</td>
       <td style="text-align: center">signature</td>
       <td style="text-align: center">String</td>
-      <td>위변조 방지 SHA256 Hash 값, 결제요청 동일한 방법으로 signature와 생성
+      <td>위변조 방지 SHA256 Hash 값, 결제요청 동일한 방법으로 signature와 생성<br>
       <a href="2-3-승인요청-signature-생성-대상target-필드"><strong>[참조-승인요청 signature 생성 대상target필드]</strong></a></td>
       <td style="text-align: center">Yes</td>
       <td style="text-align: center">64 Byte</td>
@@ -760,52 +711,20 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <td style="text-align: center">리턴 인코딩</td>
       <td style="text-align: center">String</td>
       <td>결과 수신 charset</td>
-      <td> </td>
+      <td></td>
       <td style="text-align: center">5 Byte</td>
     </tr>
     <tr>
-      <td style="text-align: center">format</td>-
+      <td style="text-align: center">format</td>
       <td style="text-align: center">리턴 형식</td>
       <td style="text-align: center">String</td>
-      <td>결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴</result>
+      <td>결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴</result><br>
       <a href="2-13-리턴-형식별-승인결과-예시"><strong>[참조-리턴 형식별 승인결과 예시]</strong></a></td>
       <td></td>
       <td style="text-align: center">5 Byte</td>
     </tr>
   </tbody>
 </table>
-
-- 결제 승인 요청데이터의 signature필드의 구성은 다음과 같습니다.
-
-#### [2-3] 승인요청 signature 생성 대상(Target) 필드
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center; width: 15%">필드명</th>
-      <th style="text-align:center; width: 20%">한글명칭</th>
-      <th style="text-align:left; width: 55%">비고</th>
-      <th style="text-align:center; width: 10%">필수 여부</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">authToken</td>
-      <td style="text-align: left">인증 결과 수신 후 생성된 토큰 값</td>
-      <td>인증결과 수신한 authToken<br>sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu …….</td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">timestamp</td>
-      <td style="text-align: left">타임스탬프</td>
-      <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능<br>1335247243103</td>
-      <td style="text-align: center">Yes</td>
-    </tr>
-  </tbody>
-</table>
-
-##### Target 데이터 예시 : `authToken=sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/iT…… `
-
-#### Signature 생성방법은 아래의 [3.3 signature 생성] 참조
 
 ### 3.2.3. 승인API 결과(결제완료)
 
@@ -932,8 +851,8 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <th style="text-align: center; width: 20%">필드명</th>
       <th style="text-align: center; width: 16%">한글명칭</th>
       <th style="text-align: center; width: 10%">Data<br>Type</th>
-      <th style="text-align: left; width: 55%">설명</th>
-      <th style="text-align: center; width: 9%">크기(최대)</th>
+      <th style="text-align: left; width: 50%">설명</th>
+      <th style="text-align: center; width: 14%">크기(최대)</th>
     </tr>
   </thead>
   <tbody>
@@ -1030,7 +949,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 | CSHR_ResultCode | 현금영수증발행정상여부 | String    | 220000(정상처리)       | 10 Byte |
 | CSHR_Type       | 현금영수증구분     | String    | 0 = 소득공제 / 1 = 지출증빙 | 1 Byte  |
 
-##### [TABLE 2-8] 승인결과데이터(휴대폰결제)
+#### [2-8] 승인결과데이터(휴대폰결제)
 
 | 필드명          | 한글명칭   | Data Type | 설명               | 크기(최대)  |
 | :------------: | :------: | :---------: | :---------------- | :-------: |
