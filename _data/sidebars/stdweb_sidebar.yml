@@ -159,7 +159,7 @@ entries:
       url: /stdweb03.html#35-웹표준-결제-취소
       output: web
 
-  - title: 별첨
+  - title: 부록
     output: web, pdf
     folderitems:
 

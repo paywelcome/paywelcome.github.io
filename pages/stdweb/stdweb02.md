@@ -7,13 +7,11 @@ toc: false
 ---
 
 # 2. 설치
----
 
 ## 2.1. 설치 가능한 운영체제
 >Java, php, asp.net등 HTTPS 통신이 가능한 웹서버 환경의 모든 운영체제에서 사용이 가능합니다. <br>
 다만, 개인용 PC에서는 운영을 권장하지 않습니다.
 
----
 ## 2.2. 소프트웨어 요구사항
 > `Web Server 웹서버 (또는 웹 컨테이너)`<br>
 SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서버<br><br>
@@ -22,11 +20,9 @@ SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서�
 거래내역 및 처리결과를 데이터베이스에 저장하길 원하신다면, 데이터베이스 소프트웨어가 별도로 필요합니다.<br>
 Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 포함되어 있지 않습니다.<br>(데이터베이스 연동을 위한 지불 결과 데이터만 제공)
 
----
 ## 2.3. 하드웨어 요구사항
 일반적인 서버 운영체제의 운용환경에 준하며, 특별한 하드웨어 요구사항은 없습니다.
 
----
 ## 2.4. 방화벽 설정
 이용 가맹점 서버 앞에 방화벽이 있는 경우 반드시 결제승인, 결제취소에 대한 통신이 가능하도록 방화벽 설정을 해야 합니다.<br>
   
@@ -73,7 +69,6 @@ Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 �
 </table>
 
 
-- - -
 ## 2.5. 샘플소스
 샘플소스는 가맹점의 환경에 맞도록 수정하여 사용할 수 있습니다. Web Standard서비스는 표준 웹 통신만을 사용합니다.<br>
 결제요청시에는 페이지이동(Form POST Action), API통신시에는 httpClient 통신을 이용합니다.<br>
@@ -87,7 +82,7 @@ Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 �
 
 |         파일명          | 설명                                 |
 | :------------------: | ---------------------------------- |
-| INIStdPayRequest.xxx | 결제요청 샘플페이지                         |
+| WelStdPayRequest.xxx | 결제요청 샘플페이지                         |
 |      popup.xxx       | 결제창을 팝업으로 표시할 때 사용 (권장하지 않음)       |
 |      close.xxx       | 결제창(팝업,오버레이)을 닫을 때 사용 ( **수정금지** ) |
 | WelStdPayReturn.xxx  | 결제 인증결과 수신 / 승인요청 API 연동 샘플페이지     |
@@ -121,23 +116,23 @@ WelStdweb
 
 <pre>
 
-INIStdweb
+WelStdweb
 │   
 └───css
 │
 └───bin     
      └───bin 
-          ├── INIcrypto.dll
-          └── INIpayNet.dll
+          ├── Welpaycrypto.dll
+          └── WelpayNet.dll
 
 </pre>
 
 
-- `INIcrypto.dll, INIpayNet.dll` : 암복호화에 사용하는 dll 파일
+- `Welpaycrypto.dll, WelpayNet.dll` : 암복호화에 사용하는 dll 파일
 
 ### 2.5.3 ASP
-- INIStdweb_ASP_Sample_v2.x.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.
-- INIStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.
+- WelStdweb_ASP_Sample_v2.x.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.
+- WelStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.
 
 <pre>
 
@@ -185,7 +180,7 @@ WelStdweb
 4. 지불 과정중 필요에 따라 추가적인 모듈을 다운로드 하는 경우도 있습니다. 정상적으로 지불결과 메시지가 나타나는지 확인하십시오.<br>
 5. 계좌이체(뱅크페이)테스트 서버에서 테스트의 경우 지정된 테스트 정보로만 테스트 가능.
 - 웹결제 > 간편결제(X), **일반결제 (O)**
-- 테스트주민등록번호:  <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 테스트주민등록번호:  <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 - **취소/조회 테스트를 위해 거래번호(TID)를 기록해 두십시오.**
 
