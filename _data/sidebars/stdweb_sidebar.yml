@@ -90,10 +90,6 @@ entries:
       url: /stdweb02.html#26-승인-테스트
       output: web, pdf
 
-    - title: 7. 상점 연동시 주의사항
-      url: /stdweb02.html#27-상점-연동시-주의사항
-      output: web, pdf
-
   - title: 결제 연동
     output: web, pdf
     folderitems:
@@ -159,7 +155,7 @@ entries:
       url: /stdweb03.html#35-웹표준-결제-취소
       output: web
 
-  - title: 별첨
+  - title: 부록
     output: web, pdf
     folderitems:
 
