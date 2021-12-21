@@ -6,6 +6,11 @@ folder: stdweb
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/stdweb01.html">◀이전페이지</a>
+  <a style="float:right;" href="/stdweb03.html">다음페이지▶</a>
+</div>
+
 # 2. 설치
 
 ## 2.1. 설치 가능한 운영체제
@@ -183,3 +188,8 @@ WelStdweb
 - 테스트주민등록번호:  <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 - **취소/조회 테스트를 위해 거래번호(TID)를 기록해 두십시오.**
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/stdweb01.html">◀이전페이지</a>
+  <a style="float:right;" href="/stdweb03.html">다음페이지▶</a>
+</div>

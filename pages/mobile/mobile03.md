@@ -6,6 +6,10 @@ folder: mobile
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/mobile02.html">◀이전페이지</a>
+</div>
+
 # 부록
 
 ## 3.1 계좌이체 연동시 유의사항
@@ -458,3 +462,7 @@ ex) 카카오톡 앱에서 결제 진행 시
 ```javascript
 <form method="post" accept-charset="euc-kr">
 ```
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/mobile02.html">◀이전페이지</a>
+</div>

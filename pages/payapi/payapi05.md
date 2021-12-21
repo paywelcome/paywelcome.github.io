@@ -6,6 +6,11 @@ folder: payapi
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi04.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi06.html">다음페이지▶</a>
+</div>
+
 # 5. 신용카드 PREFIX 조회 API
 
 ## 5.1 신용카드 PREFIX 조회 API
@@ -179,3 +184,8 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi04.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi06.html">다음페이지▶</a>
+</div>

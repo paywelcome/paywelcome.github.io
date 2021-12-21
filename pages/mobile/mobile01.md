@@ -5,6 +5,9 @@ sidebar: mobile_sidebar
 folder: mobile
 toc: false
 ---
+<div style="display: inline-block; width: 100%;">
+  <a style="float:right;" href="/mobile02.html">다음페이지▶</a>
+</div>
 
 # 1. 기본적인 설치 방법
 
@@ -41,3 +44,7 @@ toc: false
 </table>
 
 `샘플로 제공되는 테스트  MID  전용으로 상용  MID 사용불가`
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:right;" href="/mobile02.html">다음페이지▶</a>
+</div>

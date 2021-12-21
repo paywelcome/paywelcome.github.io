@@ -6,6 +6,11 @@ folder: payapi
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi06.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi08.html">다음페이지▶</a>
+</div>
+
 # 7. SMS결제용 단축 URL생성 API
 
 ## 7.1 SMS결제용 단축 URL생성 API
@@ -262,3 +267,9 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
   </tr>
 </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi06.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi08.html">다음페이지▶</a>
+</div>
+

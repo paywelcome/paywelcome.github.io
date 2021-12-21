@@ -1,0 +1,19 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: 
+  version:
+  folders:
+
+  - title: 샘플코드
+    output: web
+    folderitems:
+    - title: 1. Signature 샘플코드
+      url: /sample01.html
+      output: web
+      type: web
+    - title: 2. PAYAPI 샘플코드
+      url: /sample01.html#2-payapi-샘플코드
+      output: web
+      type: web

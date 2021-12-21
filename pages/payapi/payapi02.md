@@ -6,6 +6,11 @@ folder: payapi
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi01.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi03.html">다음페이지▶</a>
+</div>
+
 # 2. 결제취소 API
 
 ## 2.1 전체 취소 API
@@ -520,3 +525,8 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi01.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi03.html">다음페이지▶</a>
+</div>

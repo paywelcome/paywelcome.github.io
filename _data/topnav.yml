@@ -13,6 +13,8 @@ topnav:
       url: /mobile01.html
     - title: PAYAPI
       url: /payapi01.html
-    - title: 별첨
+    - title: 공통코드
       url: /code01.html
+    - title: 샘플코드
+      url: /sample01.html
 # Copyright 2021 Google LLC

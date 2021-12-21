@@ -5,7 +5,12 @@ sidebar: payapi_sidebar
 folder: payapi
 toc: false
 ---
-``
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi03.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi05.html">다음페이지▶</a>
+</div>
+
 # 4. 신용카드 키인결제  API
 
 ## 4.1 신용카드 키인결제 API
@@ -342,3 +347,8 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi03.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi05.html">다음페이지▶</a>
+</div>

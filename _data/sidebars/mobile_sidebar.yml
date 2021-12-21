@@ -107,10 +107,12 @@ entries:
             url: /mobile02.html#29-노티수신p_noti_url-사용방법-안내
             output: web
 
+      # mobile03.md
       - title: 부록
         output: web
         folderitems:
           - title: 1. 계좌이체 연동 유의사항 안내
+            url: /mobile03.html
             output: web
             subfolderitems:
             subfolders:

@@ -6,148 +6,129 @@ folder: payapi
 toc: false
 ---
 
-# 8. 샘플소스
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
+</div>
 
-기본 통신코드는 서비스와 상관 없이 동일하며, URL과 요청 파라미터 값만 다릅니다. 다음의 샘플 코드는 취소 API를 기본으로 하고 있으니 참고만 하시기 바랍니다.
+# 9. 별첨
 
-## 8.1 node.js
-```node
-var request = require('request');
-var api_url = 'https://payapi.paywelcome.co.kr/cancel/cancel';
-var request_body = '';
-request_body += 'payType=&';
-request_body += 'mid=xxxxxxxxxx';
-request_body += 'tid=INIMX_VBNKINIWelTest20190904111111111111&';
-request_body += 'price=&';
-request_body += 'currency=&';
-request_body += 'timestamp=&';
-request_body += 'siganture=&';
+## 9.1 결제 주기 코드
 
-request.post({
-    url: api_url,
-    body: request_body,
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-    },
-    function (error, response, body) {
-        console.log('HTTP STATUS CODE: ' + response.statusCode);
-        console.log('HTTP HEADER:');
-        console.log(response.headers);
-        console.log('HTTP BODY:');
-        console.log(body);
-    }
-);
-```
+<table style="width: 100%;">
+<colgroup>
+    <col style="width: 20%;">
+    <col style="width: 30%;">
+    <col style="width: 20%;">
+    <col style="width: 30%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">코드</th>
+      <th style="text-align: center">주기</th>
+      <th style="text-align: center">코드</th>
+      <th style="text-align: center">주기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">M01</td>
+      <td style="text-align: center">매달1일</td>
+      <td style="text-align: center">M17</td>
+      <td style="text-align: center">매달 17일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M02</td>
+      <td style="text-align: center">매달 2일</td>
+      <td style="text-align: center">M18</td>
+      <td style="text-align: center">매달 18일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M03</td>
+      <td style="text-align: center">매달 3일</td>
+      <td style="text-align: center">M19</td>
+      <td style="text-align: center">매달 19일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M04</td>
+      <td style="text-align: center">매달 4일</td>
+      <td style="text-align: center">M20</td>
+      <td style="text-align: center">매달 20일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M05</td>
+      <td style="text-align: center">매달 5일</td>
+      <td style="text-align: center">M21</td>
+      <td style="text-align: center">매달 21일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M06</td>
+      <td style="text-align: center">매달 6일</td>
+      <td style="text-align: center">M22</td>
+      <td style="text-align: center">매달 22일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M07</td>
+      <td style="text-align: center">매달 7일</td>
+      <td style="text-align: center">M23</td>
+      <td style="text-align: center">매달 23일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M08</td>
+      <td style="text-align: center">매달 8일</td>
+      <td style="text-align: center">M24</td>
+      <td style="text-align: center">매달 24일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M09</td>
+      <td style="text-align: center">매달 9일</td>
+      <td style="text-align: center">M25</td>
+      <td style="text-align: center">매달 25일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M10</td>
+      <td style="text-align: center">매달 10일</td>
+      <td style="text-align: center">M26</td>
+      <td style="text-align: center">매달 26일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M11</td>
+      <td style="text-align: center">매달 11일</td>
+      <td style="text-align: center">M27</td>
+      <td style="text-align: center">매달 27일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M12</td>
+      <td style="text-align: center">매달 12일</td>
+      <td style="text-align: center">M28</td>
+      <td style="text-align: center">매달 28일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M13</td>
+      <td style="text-align: center">매달 13일</td>
+      <td style="text-align: center">M29</td>
+      <td style="text-align: center">매달 29일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M14</td>
+      <td style="text-align: center">매달 14일</td>
+      <td style="text-align: center">M30</td>
+      <td style="text-align: center">매달 30일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M15</td>
+      <td style="text-align: center">매달 15일</td>
+      <td style="text-align: center">M31</td>
+      <td style="text-align: center">매달 31일</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">M16</td>
+      <td style="text-align: center">매달 16일</td>
+      <td style="text-align: center"></td>
+      <td style="text-align: center"></td>
+    </tr>
+  </tbody>
+</table>
 
-## 8.2 java
-```java
-try {
-	String apiURL = "https://payapi.paywelcome.co.kr/cancel/cancel";
-	String request_body = "";
-	request_body += "payType=card&";
-	request_body += "mid=xxxxxxxxxx
-	request_body += "tid=StdpayCARDINIWelTest20190904115758995708&";
-	request_body += "price=1000&";
-	request_body += "currency=WON&";
-	request_body += "timestamp=&";
-	request_body += "signature=&";
-	
-	URL url = new URL(apiURL);
-	HttpURLConnection con = (HttpURLConnection)url.openConnection();
-	con.setRequestMethod("POST");
-	con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-	con.setDoOutput(true);
-			
-	DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-	wr.writeBytes(request_body);
-	wr.flush();
-	wr.close();
-	
-	int responseCode = con.getResponseCode();
-	BufferedReader br = null;
-	if(responseCode==200) {
-		br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
-	} else { 
-		br = new BufferedReader(new InputStreamReader(con.getErrorStream(), "UTF-8"));
-	}
-	
-	String inputLine = null;
-	StringBuffer response = new StringBuffer();
-	while ((inputLine = br.readLine()) != null) {
-		response.append(inputLine);
-	}
-	br.close();
-	
-	System.out.println(response.toString());
-} catch (Exception e) {
-	System.out.println(e);
-}
-```
-
-## 8.3 php
-
-```PHP
-<?php
-	$url = "https://payapi.paywelcome.co.kr/cancel/cancel";
-	
-	$headers = array();
-	$headers[] = "Content-Type: application/x-www-form-urlencoded; charset=UTF-8";
-	
-	$request_body = "";
-	$request_body .= "payType=card&";
-	$request_body .= "mid=xxxxxxxxxx
-	$request_body .= "tid=StdpayCARDINIWelTest20190904115758995708&";
-	$request_body .= "price=1000&";
-	$request_body .= "currency=WON&";
-	$request_body .= "timestamp=&";
-	$request_body .= "signature=&";
-	
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	//SSL 이슈가 있을 경우 하단에 주석 해제 후 확인
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $request_body);
-	
-	$response = curl_exec($ch);
-	$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	curl_close ($ch);
-	
-	echo "Status_code: ".$status_code."<br>";
-	
-	if($status_code == 200) {
-		echo $response;
-	} else {
-		echo "Error 내용:".$response."<br>";
-	}
-?>
-```
-
-## 8.4 asp
-
-```ASP
-<%@Language="VBScript" CODEPAGE="949" %>
-<%
-dim xmlhttp, request_body
-
-request_body = "payType=card&"
-request_body = request_body & "mid=xxxxxxxxxx
-request_body = request_body & "tid=StdpayCARDINIWelTest20190904115758995708&"
-request_body = request_body & "price=1000&"
-request_body = request_body & "currency=WON&"
-request_body = request_body & "timestamp=&"
-request_body = request_body & "signature=&"
-
-Set xmlHttp = Server.CreateObject("Msxml2.XMLHTTP")
-xmlhttp.Open "POST", "https://payapi.paywelcome.co.kr/cancel/cancel", False
-xmlhttp.setRequestHeader "Content-Type", "application/x-www-form-urlencoded; charset=UTF-8"
-xmlhttp.send request_body
-
-Response.Write xmlHttp.responseText
-
-set xmlhttp = nothing
-%> 
-```
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
+</div>
