@@ -10,7 +10,11 @@ toc: false
 
 ## 2.1 결제창 Open (주문정보 전달) - 접속 주소 및 일반필드
 
+> 주문정보 전달이란, 하기의 Step을 의미합니다.
+
 {% include image.html file="mobile_img03.png" %}
+
+<br/>
 
 상점 페이지에서 Mobile Web 서비스 접속 시, 지불수단 및 통신방식 별로 상이한 URL 을 사용합니다. 이에, 하기의 URL 을 참고하시기 바랍니다.
 
@@ -65,13 +69,12 @@ toc: false
 
 ## 2.2 결제창 Open (주문정보 전달) - 결제페이지 요청필드
 
-#### 1) 전 지불수단 공통 필드
-
-Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 하기 Parameter를 필요로 합니다.
-
+>Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 하기 Parameter를 필요로 합니다.
 ```javascript
 양식 예시 : <input type="hidden" name="필드명" value="값 예시" />;
 ```
+
+#### 1) 전 지불수단 공통 필드
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
@@ -94,8 +97,8 @@ Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 �
   <tr>
     <td>P_MID</td>
     <td>상점아이디</td>
-    <td>주문번호</td>
     <td>char(10)</td>
+    <td>필수</td>
     <td>계약된 당사발급 아이디</td>
   </tr>
   <tr>

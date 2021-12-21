@@ -14,10 +14,6 @@ entries:
             url: /mobile01.html
             output: web
 
-          - title: 상점 연동 시 주의사항
-            url: /mobile01.html#12-상점-연동-시-주의사항
-            output: web
-
       - title: 2. 상점 모바일 결제 연동
         output: web
 
