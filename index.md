@@ -1,10 +1,10 @@
 ---
-title: "WELCOMEPAYMENTS DOCUMENTS"
+title: ""
 keywords: sample homepage
 permalink: index.html
 toc: false
 hide_sidebar: true
 ---
 
-## 웰컴페이먼츠 연동메뉴얼에 오신걸 환영합니다.
+## 안전하고 편리한 웰컴페이먼츠 결제입니다.
 
