@@ -36,6 +36,17 @@ a[data-toggle="tooltip"] {
     font-style: italic;
     cursor: default;
 }
+summary::-webkit-details-marker {
+    outline: none;
+}
+
+summary:before{
+    content: "▶";
+}
+
+details[open] summary:before{
+    content: "▼";
+}
 
 /* .navbar-inverse {
     background-color: #347DBE;

@@ -11,7 +11,7 @@ entries:
         output: web
         folderitems:
           - title: 1. PayAPI 서비스 흐름도
-            url: /payapi01.html#11-payapi-서비스-흐름도
+            url: /payapi01.html
             output: web
           - title: 2. PayAPI 서비스 개요
             url: /payapi01.html#12-payapi-개요
@@ -26,7 +26,7 @@ entries:
           - title: 2. 부분취소 API
             url: /payapi02.html#22-부분-취소-api
             output: web
-            
+
       - title: 빌링결제 API
         output: web
         folderitems:
