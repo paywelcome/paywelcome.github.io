@@ -23,6 +23,10 @@ toc: false
 
 상점 페이지에서 Mobile Web 서비스 접속 시, 지불수단 및 통신방식 별로 상이한 URL 을 사용합니다. 이에, 하기의 URL 을 참고하시기 바랍니다.
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (URL table)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -71,6 +75,8 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
 
 ## 2.2 결제 요청 페이지작성 - 결제페이지 요청필드
 
@@ -80,6 +86,10 @@ toc: false
 ```
 
 ### 2.2.1 전 지불수단 공통 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
@@ -229,12 +239,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ### 2.2.2 신용카드 전용 필드
 
-<details onclick="detailEvent(this);" style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
-
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
@@ -296,8 +308,8 @@ toc: false
 
 ### 2.2.3 휴대폰 전용 필드
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
@@ -333,8 +345,8 @@ toc: false
 
 ### 2.2.4 가상계좌 전용 필드
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
@@ -385,8 +397,8 @@ toc: false
 
 ### 2.2.5 기타 옵션 필드
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
@@ -422,8 +434,8 @@ toc: false
 
 ### 2.2.6 복합 필드 (P_RESERVED)
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
@@ -622,6 +634,10 @@ function formSubmit(){
 
 2 Transaction 거래의 경우, [2-1. 결제 요청 페이지작성 - 접속 주소 및 일반필드](/mobile02.html) 에 기재된, P_NEXT_URL 로 인증결과를 전달합니다. 이때 Mobile Web 서비스에서 P_NEXT_URL 로 전달하는 Parameter 는 하기와 같습니다.
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
 <col style="width: 25%">
@@ -668,6 +684,9 @@ function formSubmit(){
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 또한, 당사에서 인증결과 송신 시 사용하는 Method 는 post, get 을 선택적으로 사용하오니, 두가지 방식을 모두 수용할 수 있도록 처리 바랍니다.
 
@@ -777,6 +796,11 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 ### 승인결과 수신필드 상세 (only 2 Transaction)
 
 #### 1) 공통 지불 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
 <col style="width: 30%;">
@@ -864,7 +888,15 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드U포인트 지불 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
 <col style="width: 30%;">
@@ -887,7 +919,14 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 3) 신용카드 지불 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -961,7 +1000,14 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 4) 계좌이체 지불 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -990,7 +1036,14 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 5) 휴대폰 지불 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -1024,7 +1077,14 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 6) 앱연동 결제구분 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -1048,7 +1108,14 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 7) 현금영수증 수신 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -1112,10 +1179,17 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### 8) 가상계좌 수신 필드 및 상세안내
 
 "가상계좌 방식" 과 "계좌이체 방식" 은 입금 통보 등의 과정을 필요로 하기 때문에, 상기에 안내한 방식과 다소 다른 점이 있습니다.
 하기에는 가상계좌와 계좌이체에서 각기 사용하는 "인증완료 후, 이동페이지" 와, "입금통보 혹은 승인완료 통보" 방식에 대하여 안내합니다.
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -1139,9 +1213,17 @@ if($P_STATUS=="00" && chkTid($P_TID)){
   </tbody>
 </table>
 
+</div>
+</details>
+
 하기에는 호출 된, P_NEXT_URL 에 전달될 파라미터 입니다.
 
 <p style="font-size: 80%">(1-8 . 승인결과 수신필드 상세 (only 2 Transaction) 의 공통 필드 )외 하기필드</p>
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
 <col style="width: 30%;">
@@ -1183,6 +1265,9 @@ if($P_STATUS=="00" && chkTid($P_TID)){
     </tr>
   </tbody>
 </table>
+
+</div>
+</details>
 
 P_NOTI_URL로 전송되는 승인결과는 하단의 노티 수신 사용법 안내에 대한 내용을 참고 바랍니다.
 _가상계좌_ _Flo_w 는 하기와 같습니다.
@@ -1717,8 +1802,8 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 
 #### Custom Scheme List (지불수단 : 신용카드)
 
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table style="width: 100%;">
@@ -1904,6 +1989,11 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </table>
 
 #### [구매결정 요청 파라메터]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 30%;">
@@ -1953,7 +2043,15 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [구매결정 응답 파라메터]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 30%">
@@ -1996,6 +2094,9 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 ### 2.8.3 에스크로 상태변경 노티 수신
 
 에스크로 주요 시점(예&gt;구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(NOTI CONFIRM)하여야합니다.<br>
@@ -2006,6 +2107,11 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 -원거래TID는 부분취소거래만 설정됩니다.
 
 [노티발송 웰컴페이먼츠 &gt; 가맹점]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%">
 <colgroup>
   <col style="width: 20%;">
@@ -2091,7 +2197,15 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 [노티응답 가맹점 &gt; 웰컴페이먼츠]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 20%;">
@@ -2123,9 +2237,17 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 ### 2.8.4 에스크로 관련 코드
 
 [구매결정 상태별 코드]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 30%;">
@@ -2177,7 +2299,15 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 [거래 상태별 응답]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 15%;">
@@ -2241,6 +2371,9 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tbody>
 </table>
 
+</div>
+</details>
+
 ## 2.9 노티수신(P_NOTI_URL) 사용방법 안내
 
 >웰컴페이먼츠 지불서버는 지불 결과를 실시간으로 회원사 측의 노티페이지를 호출하여 지불 결과를 통보합니다.<br>
@@ -2248,6 +2381,10 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 >노티페이지(P_NOTI_URL)페이지는 웰컴페이먼츠에서 백엔드(backend)로 호출을 하는 페이지로, 고객이 보는 결제 화면과는 무관합니다.<br>
 
 [노티를 받을 때 전달되는 파라미터]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style="width: 100%;">
 <colgroup>
@@ -2500,6 +2637,9 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 - 16, 18번 항목의 승인번호 및 카드번호의 경우 페이코포인트 전액, 카카오머니 거래의 경우 여신승인 대상이 아님으로 전달되지 않습니다.
 
