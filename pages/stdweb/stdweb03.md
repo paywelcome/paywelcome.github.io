@@ -347,6 +347,18 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 </table>
 
 #### [1-3] 신용카드 추가 요청필드 (선택)
+
+<style>
+
+details
+{
+    transition: height 1s ease;
+    overflow: hidden;
+}
+</style>
+
+<details open>
+
 <table>
   <thead>
     <tr>
@@ -428,6 +440,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
     </tr>
   </tbody>
 </table>
+</details>
 
 #### [1-4] 휴대폰결제 추가 요청필드 (선택)
 

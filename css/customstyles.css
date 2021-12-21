@@ -138,6 +138,14 @@ font-family: OTWelcomeBA;
     color: gray;
 }
 
+table > thead > tr > th.tg-02ax{
+    text-align: left; 
+}
+
+table > thead > tr > th.tg-01ax{
+    text-align: center; 
+}
+
 table {
     background-color: transparent;
 }
