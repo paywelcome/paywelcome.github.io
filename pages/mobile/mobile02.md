@@ -6,9 +6,9 @@ folder: mobile
 toc: false
 ---
 
-# 2. 상점 모바일 결제 연동
+# 2. 결제 연동
 
-## 2.1 결제창 Open (주문정보 전달) - 접속 주소 및 일반필드
+## 2.1 결제 요청 페이지작성 - 접속 주소 및 일반필드
 
 > 주문정보 전달이란, 하기의 Step을 의미합니다.
 
@@ -67,14 +67,14 @@ toc: false
 </table>
 
 
-## 2.2 결제창 Open (주문정보 전달) - 결제페이지 요청필드
+## 2.2 결제 요청 페이지작성 - 결제페이지 요청필드
 
 >Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 하기 Parameter를 필요로 합니다.
 ```javascript
 양식 예시 : <input type="hidden" name="필드명" value="값 예시" />;
 ```
 
-#### 1) 전 지불수단 공통 필드
+### 2.2.1 전 지불수단 공통 필드
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
@@ -224,7 +224,7 @@ toc: false
 </tbody>
 </table>
 
-#### 2) 신용카드 전용 필드
+### 2.2.2 신용카드 전용 필드
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
@@ -289,7 +289,7 @@ toc: false
 </div>
 </details>
 
-#### 3) 휴대폰 전용 필드
+### 2.2.3 휴대폰 전용 필드
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
@@ -326,7 +326,7 @@ toc: false
 </div>
 </details>
 
-#### 4) 가상계좌 전용 필드
+### 2.2.4 가상계좌 전용 필드
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
@@ -378,7 +378,7 @@ toc: false
 </div>
 </details>
 
-#### 5) 기타 옵션 필드
+### 2.2.5 기타 옵션 필드
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
@@ -415,7 +415,7 @@ toc: false
 </div>
 </details>
 
-#### 6) 복합 필드 (P_RESERVED)
+### 2.2.6 복합 필드 (P_RESERVED)
 
 <details style="cursor:pointer;">
 <summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
@@ -607,3 +607,1900 @@ function formSubmit(){
     <input type="button" onclick="formSubmit();" />
 </form>
 ```
+
+## 2.4 인증 결과 수신
+
+- 2.4 장은 2 Transaction 을 위한 설명 페이지 입니다.
+- 1 Transaction 방식은 [1-1. 연동 Flow장](/mobile01.html) 을 참고하세요.
+
+{% include image.html file="mobile_img06.png" %}
+
+2 Transaction 거래의 경우, [2-1. 결제 요청 페이지작성 - 접속 주소 및 일반필드](/mobile02.html) 에 기재된, P_NEXT_URL 로 인증결과를 전달합니다. 이때 Mobile Web 서비스에서 P_NEXT_URL 로 전달하는 Parameter 는 하기와 같습니다.
+
+<table class="tg" style="table-layout: fixed; width: 100%">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-0lax">필드명</th>
+    <th class="tg-0lax">목적</th>
+    <th class="tg-0lax">비고</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">P_STATUS</td>
+    <td class="tg-0lax">인증상태</td>
+    <td class="tg-0lax">성공 시 00, 그 외 실패</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P_RMESG1</td>
+    <td class="tg-0lax">결과메시지</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P_TID</td>
+    <td class="tg-0lax">인증거래번호</td>
+    <td class="tg-0lax">Char(40) / 성공시에만 반환</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P_REQ_URL</td>
+    <td class="tg-0lax">승인요청 Url</td>
+    <td class="tg-0lax">가맹점에서 Mobile Web 서비스로 승인요청을 할 때, 사용되는 Url 입니다.<br> 거래 건 마다 상이한 URL 이 전달됩니다.<br><red>따라서, 절대 고정하여 사용하지 마십시오.</red><br> Http Scheme 은 https 를 사용합니다.<br> <red>보안을 위해 https프로토콜 사용을 통한 통신만 지원하며, https 보안 프로토콜 적용이 불가능한IP 기반의 통신은 제공하지 않습니다.</red></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P_NOTI</td>
+    <td class="tg-0lax">기타주문정보</td>
+    <td class="tg-0lax">최초 거래 시 주문정보에 P_NOTI 를 설정하셨다면, 그 값을 전달받을 수 있습니다. 이 값은 P_NOTI 값을 그대로 리턴합니다.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P_AMT</td>
+    <td class="tg-0lax">거래금액</td>
+    <td class="tg-0lax">최초 거래 시 주문정보에 설정한 P_AMT 전달(주요 지불수단인 신용카드, 휴대폰, 계좌이체, 가상계좌 등 일부만 전달)</td>
+  </tr>
+</tbody>
+</table>
+
+또한, 당사에서 인증결과 송신 시 사용하는 Method 는 post, get 을 선택적으로 사용하오니, 두가지 방식을 모두 수용할 수 있도록 처리 바랍니다.
+
+## 2.5 승인 요청 송신 및 승인 처리 결과 수신
+
+### 2.5.1 승인 요청 송신
+
+>승인요청 및 결과 수신&quot; 이란, 하기의 Step을 의미합니다.
+
+{% include image.html file="mobile_img07.png" %}
+
+승인요청 시에 사용되는 P_REQ_URL(승인요청 Url) 은 Front-End 단에서 Submit 을 하지 않고, Http-Socket 통신을 통해 Back-End 단으로 요청하셔야 합니다.
+당사 P_REQ_URL 은 승인과정을 거친 후, 가맹점의 특정 Url 로 승인결과를 전송하지 않고, 페이지 상에, echo 를 통해 결과를 출력하기만 합니다.
+따라서, 승인결과 메시지는 Http-Socket 의 Receive-Data 로 수신받으셔야 합니다. 인증요청을 받은 후, 승인 요청하는 Flow 는 하기의 방식을 참고 하십시오.
+
+{% include image.html file="mobile_img08.png" %}
+
+승인요청 시, 사용하는 통신 규격은 하기와 같습니다.
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">통신수단</th>
+      <th style="text-align: center">통신방식</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Http-Socket</td>
+      <td style="text-align: center">post</td>
+    </tr>
+  </tbody>
+</table>
+
+승인요청 시, 하기의 필드를 반드시 첨부하셔야 합니다.
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_TID</td>
+      <td style="text-align: center">인증거래번호</td>
+      <td style="text-align: left">인증결과 수신 시, 포함된 인증거래번호(P_TID)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_MID</td>
+      <td style="text-align: center">상점아이디</td>
+      <td style="text-align: left">거래 시 사용된, 당사발급 아이디</td>
+    </tr>
+  </tbody>
+</table>
+
+Http-Socket 을 이용한 승인요청의 샘플 코드는 하기와 같습니다.
+_( __하기 코드 내 함수는 직접 구현하셔야 합니다__._ _하기 코드는 로직안내를 위해 작성된 예시입니다__)_
+
+```php
+$P_STATUS = $_POST[‘P_STATUS’];
+$P_REQ_URL = $_POST[‘P_REQ_URL’];
+$P_TID = $_POST[‘P_TID’];
+$P_MID = $_POST[‘P_MID’];
+
+function makeParam($P_TID, $P_MID){ 
+return “P_TID=”.$P_TID.”&P_MID=”.$P_MID;
+}
+function parseData($receiveMsg) { //승인결과 Parse
+	$returnArr = explode(“&”,$receiveMsg);
+	foreach($returnArr as $value){
+		$tmpArr = explode(“=”,$value);
+		$returnArr[] = $tmpArr;
+	}
+}
+function chkTid($P_TID);		//기승인 TID 여부 확인
+function saveTid($P_TID);		//승인된 TID 를 DB 에 저장
+function setSocket($host, $port); 	//소켓 생성
+function connectSocket($sock);		//소켓 연결
+function requestSocket($sock,$param);		//데이터 송신
+function responseSocket();		//데이터 수신
+
+if($P_STATUS=="00" && chkTid($P_TID)){
+    $sock = setSocket($P_REQ_URL,443);	//https connection
+    connectSocket($sock);
+    requestSocket($sock,makeParam($P_TID, $P_MID));
+    $returnData = responseSocket();
+    $returnDataArr = parseData($returnData);	//$returnDataArr 에 승인결과 저장
+    saveTid($P_TID);
+}
+?>
+```
+
+### 2.5.2 승인 결과 수신
+
+### 승인결과 수신필드 상세 (only 2 Transaction)
+
+#### 1) 공통 지불 수신 필드
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_STATUS</td>
+      <td style="text-align: center">거래상태</td>
+      <td style="text-align: left">성공: 00</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_TID</td>
+      <td style="text-align: center">거래번호</td>
+      <td style="text-align: left">char(40)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_TYPE</td>
+      <td style="text-align: center">지불수단</td>
+      <td style="text-align: left">char(10)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_TYPE</td>
+      <td style="text-align: center">지불수단</td>
+      <td style="text-align: left">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_AUTH_DT</td>
+      <td style="text-align: center">승인일자</td>
+      <td style="text-align: left">char(14)<br />YYYYmmddHHmmss</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_MID</td>
+      <td style="text-align: center">상점아이디</td>
+      <td style="text-align: left">char(10)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_OID</td>
+      <td style="text-align: center">상점주문번호</td>
+      <td style="text-align: left">char(100)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_AMT</td>
+      <td style="text-align: center">거래금액</td>
+      <td style="text-align: left">char(8)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_UNAME</td>
+      <td style="text-align: center">주문자명</td>
+      <td style="text-align: left">char(30)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_MNAME</td>
+      <td style="text-align: center">가맹점 이름</td>
+      <td style="text-align: left">주문정보에 입력한 값 반환</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_RMESG1</td>
+      <td style="text-align: center">메시지1</td>
+      <td style="text-align: left">char(500)<br />지불 결과 메시지</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_NOTI</td>
+      <td style="text-align: center">주문정보</td>
+      <td style="text-align: left">char(800)<br />주문정보에 입력한 값 반환</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_NOTEURL</td>
+      <td style="text-align: center">가맹점 전달 NOTI URL</td>
+      <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_NEXT_URL</td>
+      <td style="text-align: center">가맹점 전달 NEXT URL</td>
+      <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 2) 신용카드U포인트 지불 수신 필드
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_CARD_NUM</td>
+      <td style="text-align: center">카드번호</td>
+      <td style="text-align: left">계약관계에 따라 틀림</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 3) 신용카드 지불 수신 필드
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_CARD_ISSUER_CODE</td>
+      <td style="text-align: center">발급사 코드</td>
+      <td style="text-align: left">char(2)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CARD_MEMBER_NUM</td>
+      <td style="text-align: center">가맹점번호</td>
+      <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CARD_PURCHASE_CODE</td>
+      <td style="text-align: center">매입사 코드</td>
+      <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CARD_PRTC_CODE</td>
+      <td style="text-align: center">부분취소 가능여부</td>
+      <td style="text-align: left">부분취소가능 : 1 , 부분취소불가능 : 0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CARD_INTEREST</td>
+      <td style="text-align: center">무이자 할부여부</td>
+      <td style="text-align: left">0 : 일반, 1 : 무이자</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CARD_CHECKFLAG</td>
+      <td style="text-align: center">체크카드 여부</td>
+      <td style="text-align: left">0 : 신용카드,1 : 체크카드2 : 기프트카드</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_RMESG2</td>
+      <td style="text-align: center">메시지2</td>
+      <td style="text-align: left">char(500)<br />신용카드 할부 개월 수</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_FN_CD1</td>
+      <td style="text-align: center">카드코드</td>
+      <td style="text-align: left">char(4)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_AUTH_NO</td>
+      <td style="text-align: center">승인번호</td>
+      <td style="text-align: left">char(30)<br />신용카드거래에서만 사용합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_ISP_CARDCODE</td>
+      <td style="text-align: center">VP 카드코드</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_FN_NM</td>
+      <td style="text-align: center">결제카드한글명</td>
+      <td style="text-align: left">BC카드</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 4) 계좌이체 지불 수신 필드
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_FN_CD1</td>
+      <td style="text-align: center">은행코드</td>
+      <td style="text-align: left"></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_FN_NM</td>
+      <td style="text-align: center">카드번호</td>
+      <td style="text-align: left">결제은행한글명</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 5) 휴대폰 지불 수신 필드
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_HPP_CORP</td>
+      <td style="text-align: center">휴대폰통신사</td>
+      <td style="text-align: left">char(3)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_HPP_NUM</td>
+      <td style="text-align: center">결제 휴대폰 번호</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_HPP_BILLKEY</td>
+      <td style="text-align: center">휴대폰 빌키</td>
+      <td style="text-align: left">휴대폰 빌링 사용시 휴대폰 빌키( 승인은 PAYAPI 통해서 진행)</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 6) 앱연동 결제구분 수신 필드
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_SRC_CODE</td>
+      <td style="text-align: center">앱연동여부</td>
+      <td style="text-align: left">P : 페이핀<br />K : 국민앱카드<br />C: 페이코<br />B: 삼성페이<br />L: LPAY<br />O: 카카오페이<br />G: SSGPAY</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 7) 현금영수증 수신 필드
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필 드 명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비 고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_CSHR_CODE</td>
+      <td style="text-align: center">처리상태</td>
+      <td style="text-align: left">220000 : 정상, 그 외 : 오류</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_MSG</td>
+      <td style="text-align: center">처리메시지</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_AMT</td>
+      <td style="text-align: center">현금영수증 총 금액</td>
+      <td style="text-align: left">총금액 = 공급가액+세금+봉사료</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_SUP_AMT</td>
+      <td style="text-align: center">공급가액</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_TAX</td>
+      <td style="text-align: center">세금</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_SRVC_AMT</td>
+      <td style="text-align: center">봉사료</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_TYPE</td>
+      <td style="text-align: center">용도구분</td>
+      <td style="text-align: left">0:소득공제용, 1:지출증빙용</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_DT</td>
+      <td style="text-align: center">발행시간</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CSHR_AUTH_NO</td>
+      <td style="text-align: center">발행번호</td>
+      <td style="text-align: left">가상계좌의 경우,입금 완료 시, 생성되어 모바일 내 채번시에는 전달되지 않습니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 8) 가상계좌 수신 필드 및 상세안내
+
+"가상계좌 방식" 과 "계좌이체 방식" 은 입금 통보 등의 과정을 필요로 하기 때문에, 상기에 안내한 방식과 다소 다른 점이 있습니다.
+하기에는 가상계좌와 계좌이체에서 각기 사용하는 "인증완료 후, 이동페이지" 와, "입금통보 혹은 승인완료 통보" 방식에 대하여 안내합니다.
+
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>인증완료 후 이동 URL(Front단)</th>
+      <th>입금사실 통보 URL(Back 단)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>가상계좌</td>
+      <td>P_NEXT_URL(인증결과송신)</td>
+      <td>P_NOTI_URL(,채번정보송신, 입금완료송신)</td>
+    </tr>
+  </tbody>
+</table>
+
+하기에는 호출 된, P_NEXT_URL 에 전달될 파라미터 입니다.
+
+<p style="font-size: 80%">(1-8 . 승인결과 수신필드 상세 (only 2 Transaction) 의 공통 필드 )외 하기필드</p>
+<table style="table-layout: fixed; width: 100%; text-align: center">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">목 적</th>
+      <th style="text-align: left">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_VACT_NUM</td>
+      <td style="text-align: center">입금할 계좌 번호</td>
+      <td style="text-align: left">char(20)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_VACT_DATE</td>
+      <td style="text-align: center">입금마감일자</td>
+      <td style="text-align: left">char(8) : yyyymmdd</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_VACT_TIME</td>
+      <td style="text-align: center">입금마감시간</td>
+      <td style="text-align: left">char(6) hhmmss</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_VACT_NAME</td>
+      <td style="text-align: center">계좌주명</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_VACT_BANK_CODE</td>
+      <td style="text-align: center">은행코드</td>
+      <td style="text-align: left">char(2)</td>
+    </tr>
+  </tbody>
+</table>
+
+P_NOTI_URL로 전송되는 승인결과는 하단의 노티 수신 사용법 안내에 대한 내용을 참고 바랍니다.
+_가상계좌_ _Flo_w 는 하기와 같습니다.
+
+{% include image.html file="mobile_img09.png" %}
+
+가상계좌는 상기와 같이 채번 시 1회, 입금 확인 후 1회, 총 2회 노티를 통해 통보합니다.
+
+상기에 안내한 바와 같이, 가상계좌 방식과 계좌이체 방식, 그리고 기타 방식(신용카드 등) 의 차이점이 있사오니, 이점 유의 하시기 바랍니다.
+
+
+
+### 2.5.3 1 Transaction 방식에서 결제 완료 후 결과 수신
+
+P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사용방법 안내 내용을 참고하여 주시기 바랍니다.
+
+-  :warning:<red>P_NOTI_URL은 네트워크 사정에 따라 1회 이상 발생될 수 있사오니, 중복호출여부를 체크하는 루틴을 반드시 구현하십시오.</red>
+-  NOTI 를 통한 결과 송신은 하기의 조건에 따라 수행됩니다.
+   24시간 이내 재전송 가능 | 24시간 이후 시퀀스 종료 | 재전송 주기 약 10분
+
+
+### 2.5.4 P_NOTI_URL 수신 후, 처리방법
+
+당사 Back 단에서 전송된 Noti 는 하기의 조건을 충족하지 않을 경우, 재전송 루틴을 수행하게 됩니다.
+따라서, ([2.5.3.1 Transaction 방식에서 결제 완료 후 결과 수신](/mobile02.html#253-1-transaction-방식에서-결제-완료-후-결과-수신))장에서 안내한 바와 같이 중복체크 루틴을 반드시 구현하시고, 하기의 조건을 충족하여 주시기 바랍니다.
+
+- Noti 수신 후, P_NOTI_URL 에 OK 만 출력 요망.
+
+- <red>대문자 OK 외 html 및 공백, 개행문자 불허<red>
+
+## 2.6 앱 환경의 설치방법(안드로이드)
+
+### 2.6.1 기본적인 설치방법
+
+안드로이드 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
+Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( 1-13. 주의사항 &lt;UrlEncode issue&gt; ) 를 참조하셔 주십시오.<br>
+WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 (0.기본적인 설치 방법) 의 방법과 동일합니다.<br>
+이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.<br>
+
+### 2.6.2 ISP 연동방법 - 앱 미설치 체크로직 직접구현 or 자동체크
+
+- ISP 앱의 기본정보는 하기와 같습니다.
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 30%;">
+  <col style="width: 70%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>Application Scheme</th>
+      <th>iInstallUrl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ispmobile://</td>
+      <td>http://mobile.vpay.co.kr/jsp/MISP/andown.jsp</td>
+    </tr>
+  </tbody>
+</table>
+
+- 상기 Scheme 과 Install Url 정보로 구현가능한 안드로이드 코드는 하기와 같습니다.
+
+1. WebViewClient 를 상속받은 클래스를 구현하시고, shouldOverrideUrlLoading() 을 호출 하십시오.
+```java
+private class INIP2PWebView extends WebViewClient {
+    @Override     
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+    ….
+    }
+```
+
+2. 상기 shouldOverrideUrlLoading() 함수 내에, try{} catch{e} 를 통해, try 내에서는 startActivity(intent) 를 구현하시고, catch Event 발생 시, 앱 스토어로 이동할 수 있도록 조치하시면 됩니다.
+   하기에 안내되는 소스는 상기 방식에 대한 Full-Source 입니다.<br/>
+
+<p style="font-size: 80%">[shouldOverrideUrlLoading 부]</p>
+
+```java
+private class INIP2PWebView extends WebViewClient {
+@Override     
+public boolean shouldOverrideUrlLoading(WebView view, String url) {
+  ...   
+  Uri uri = Uri.parse(url);     
+  Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+  try{     
+    startActivity(intent); 
+    //삼성카드 안심클릭을 위해 추가
+    if( url.startsWith("ispmobile://")) finish();
+}
+catch(ActivityNotFoundException e)
+  {
+     //url prefix가 ispmobile 일겨우만 alert를 띄움
+     if( url.startsWith("ispmobile://"))
+     {
+        view.loadData("<html><body></body></html>", "text/html", "euc-kr"); 
+        alertIsp.show();
+        return true;
+     }
+  }
+  ...
+  return true;     
+  }
+
+```
+
+<p style="font-size: 80%">[ISP 앱스토어 이동처리 부] - alertIsp</p>
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+...
+alertIsp = new AlertDialog.Builder(PaymentView.this)
+.setIcon(android.R.drawable.ic_dialog_alert) 
+.setTitle("알림")
+.setMessage("모바일 ISP 어플리케이션이 설치되어 있지 않습니다. \n설치를 
+눌러 진행 해 주십시요.\n취소를 누르면 결제가 취소 됩니다.")     
+.setPositiveButton("설치", new DialogInterface.OnClickListener() { 
+     @Override
+     public void onClick(DialogInterface dialog, int which) { 
+            //ISP 설치 페이지 URL     
+            paymentView.loadUrl("http://mobile.vpay.co.kr/jsp/MISP/andown.jsp");
+            finish();
+        }
+ 
+})     
+  .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+     @Override
+     public void onClick(DialogInterface dialog, int which) {     
+        Toast.makeText(PaymentView.this, "(-1)결제를 취소 하셨습니다." , Toast.LENGTH_SHORT).show();     
+        finish();     
+     }
+}).create();     
+...
+}
+
+```
+
+3. ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 될 것이며,<br/>
+4. ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.
+   23 페이지의 예시[shouldOverrideUrlLoading 부] 의 에 대하여 true 혹은 false 를 설정하는 것은 하기의 표를 참고하십시요.
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 15%">
+  <col style="width: 30%">
+  <col style="width: 30%">
+  <col style="width: 25s%">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">apprun_check</th>
+      <th style="text-align: center">작동방식</th>
+      <th>앱 미설치 시, 앱스토어 이동 후 결제페이지 잔존여부</th>
+      <th style="text-align: center">true / false 설정</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Y</td>
+      <td style="text-align: center">ISP,  계좌이체앱<br>- intent  작동</td>
+      <td>상태 유지</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">N or  미설정</td>
+      <td style="text-align: center">ISP,  계좌이체앱<br>? appScheme  작동</td>
+      <td>하기 [그림 1]  과 같이  Display  됨</td>
+      <td style="text-align: center">false</td>
+    </tr>
+  </tbody>
+</table>
+
+- [shouldOverrideUrlLoading 부] 의 을 true 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라집니다.
+  따라서, app Scheme 형태로 결제 앱을 호출할 경우에는 &quot;그림 1&quot; 과 같이 오류 페이지가 Display 되기 때문에, WebView 를 remove 하는 것이 좋습니다.
+
+{% include image.html file="mobile_img10.jpg" %}
+[그림1]
+
+- [shouldOverrideUrlLoading 부] 의 을 false 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라지지 않기 때문에,
+  apprun_check=Y 를 통해 현 결제 페이지가 유지되는 방식을 사용 하는 것이 좋습니다. 이 방법을 자동체크방식이라 합니다.
+- 단, apprun_check 옵션을 통해 설치체크로직이 작동되므로, alertIsp 함수는 구현될 필요가 없습니다.
+  apprun_check 로직에 대하여 상세히 확인하시려면 ( 0.결제창 Open (주문정보 전달) ? 복합필드 ) 를 확인하여 주십시오. 또한, Intent 호출에 대하여 예외처리를 반드시 체크하셔야 합니다.
+
+### 2.6.3 ISP 연동방법 - 인증결과 전송
+
+- ISP 앱에서 인증과정이 완료되면, 다시 당사 모바일 결제창으로 돌아와서 하기의 이미지와 같이 &#39;확인&#39; 버튼을 클릭해야, 승인과정을 시작하게 됩니다.
+
+- 안드로이드는 운영체제 특성 상, 현재 앱이 종료될 경우, 이 앱을 실행시킨 이전 앱이 다시 자동으로 수행됩니다.
+  (LIFO 방식) 따라서, ISP 앱이 종료되면, 가맹점의 앱은 자동으로 다시 활성화될 것입니다.
+
+### 2.6.4 안심클릭 결제 시, 카드사 백신 앱 연동
+
+- Mobile Web 서비스는 BC 계열을 제외한, 나머지 카드사의 결제창은 카드사 페이지에서 결제가 이루어지고 있습니다.
+  이에, 카드사에서 개별적으로 사용하는 백신 앱의 경우, 가맹점 앱에서도 하기의 유의사항을 반드시 체크하셔야 합니다.
+
+1. WebView 내에서 http와 https URL, 그리고 App Url 을 분기하여 처리해야 함.
+2. shouldOverrideUrlLoading() 처리로직을 하기와 같이 구현함.
+
+<table style="width: 100%">
+<colgroup>
+  <col style="width: 50%">
+  <col style="width: 50%">
+</colgroup>
+  <thead>
+    <tr>
+      <th>App Url  일 경우</th>
+      <th>Web Url 일 경우</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>activity 호출</td>
+      <td>WebView 에서 Loading</td>
+    </tr>
+  </tbody>
+</table>
+
+상기의 유의사항을 고려한 샘플 코드는 하기와 같습니다. (_Kitkat_ _이하 정상구동여부 확인됨_)
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
+
+```java
+private class SampleWebViewClient extends WebViewClient {
+  @Override
+  public boolean shouldOverrideUrlLoading(WebView view, String url) {
+    Log.d("<INICIS_TEST>","URL : "+url);
+    /*
+    * URL별로 분기가 필요합니다. 어플리케이션을 로딩하는 것과
+    * WEB PAGE를 로딩하는 것을 분리하여 처리해야 합니다.
+    * 만일 가맹점 특정 어플 URL이 들어온다면 
+    * 조건을 더 추가하여 처리해 주십시요.
+    */
+    if( !url.startsWith("http://") && !url.startsWith("https://") && !url.startsWith("javascript:") )
+    {    		
+      Intent intent; 
+      try{
+        intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+        Log.d("<INICIS_TEST>", "intent getDataString : " + intent.getDataString());
+      } catch (URISyntaxException ex) {
+        Log.e("<INICIS_TEST>", "URI syntax error : " + url + ":" + ex.getMessage());
+        return false;
+      } 
+      try{ 
+        startActivity(intent); 
+      }catch(ActivityNotFoundException e){
+        /* ISP어플이 현재 폰에 없다면 아래 처리에서 
+        * 알림을 통해 처리하도록 하였습니다.
+        * 삼성카드 및 기타 안심클릭에서는 
+        * 카드사 웹페이지에서 알아서 처리하기때문에
+        * WEBVIEW에서는 별다른 처리를 하지 않아도 처리됩니다.
+        */
+        if( url.startsWith("ispmobile://"))
+        { 
+        //onCreateDialog에서 정의한 ISP 어플리케이션 알럿을 띄워줍니다.
+        //(ISP 어플리케이션이 없을 경우)
+          showDialog(DIALOG_ISP);
+          return false;
+        }else if (url.startsWith("intent")) {
+            //일부카드사의 경우 ,intent:// 형식의 intent 스키마를 내려주지 않음
+          //ex) 현대카드 intent:hdcardappcardansimclick://
+          try {
+            Intent tempIntent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+            String strParams = tempIntent.getDataString();
+            
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(strParams));
+            
+            startActivity(intent);
+            
+            return true;
+          } catch (Exception e) {
+            e.printStackTrace();
+            
+            Intent intent = null;
+            
+            try {
+              intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+              Intent marketIntent = new Intent(Intent.ACTION_VIEW);
+              marketIntent.setData(Uri.parse("market://details?id=" + intent.getPackage()));
+              startActivity(marketIntent);
+            } catch (Exception e1) {
+               e1.printStackTrace();
+            }
+            return true;
+          } 
+        }
+      } 
+    }
+    else
+    {	
+      view.loadUrl(url);
+      return false;
+    }
+    return true;
+  }
+}
+```
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+</details>
+
+### 2.6.5 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
+
+- 만약 상점에서의 판매가격이 30만원 이상일 수 있고 카드로 결제할 경우, 사용자는 공인인증서 서명과정을 거쳐야 합니다.<br>
+- 안드로이드의 경우, 개별 카드사 앱에서 공인인증서 서명을 할 수 있습니다. 이에, 카드사 창 내에서 호출하는 intent 혹은 app Scheme 를 허용할 수 있도록 가맹점 앱에서 처리해줘야 합니다.<br>이는 (3.B . 안심클릭 결제 시, 카드사 백신 앱 연동)의 코드를 반영하면 해결됩니다.
+
+### 2.6.6 Android API Level 21  이상 일 때 ,  체크사항
+
+- Android API Level 21 (Lollipop 출시 때 배포) 부터는 webview 에서 Insecurity Page 에 대한 Access 및 Mixed contents, Third party cookies 사용을 차단할 수 있게 업데이트 되었습니다.
+  먼저, Insecurity Page 에 대한 Access 차단으로 P_NEXT_URL 의 Scheme 을 Http 로 하는 경우, 페이지가 호출되지 않아 인증결과가 전달되지 않을 수 있습니다.
+  하기의 설정을 확인하십시오.
+
+<table style="width: 100%">
+<colgroup>
+  <col style="width: 30%">
+  <col style="width: 70%">
+</colgroup>
+  <thead>
+    <tr>
+      <th>상태</th>
+      <th>코드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Insecurity  페이지 차단</td>
+      <td><code class="language-plaintext highlighter-rouge">WebSettings web = paymentView.getSettings(); web.setMixedContentMode(web.MIXED_CONTENT_NEVER_ALLOW);</code></td>
+    </tr>
+    <tr>
+      <td>Insecurity  페이지 허용</td>
+      <td><code class="language-plaintext highlighter-rouge">WebSettings web = paymentView.getSettings(); web.setMixedContentMode(web.MIXED_CONTENT_ALWAYS_ALLOW);</code></td>
+    </tr>
+  </tbody>
+</table>
+
+- P_NEXT_URL 의 Scheme 이 Http 일 경우, 반드시 &quot;Insecurity 페이지 허용&quot; 으로 설정되어야 합니다.
+  또한, Third party cookies 사용의 차단으로 안심클릭 카드 결제 시, 보안 키보드를 불러오지 못 하는 이슈 등이 발생할 수 있으니 하기 설정을 확인하십시오.
+
+<table style="width: 100%">
+<colgroup>
+  <col style="width: 40%">
+  <col style="width: 60%">
+</colgroup>
+  <thead>
+    <tr>
+      <th>상태</th>
+      <th>코드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Third party cookies  허용</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">CookieManager cookieManager = CookieManager.getInstance();<br>cookieManager.setAcceptCookie(true);<br>cookieManager.setAcceptThirdPartyCookies(sampleWebView, true);</code><br> // false 설정 시 오류 발생</td>
+    </tr>
+  </tbody>
+</table>
+
+## 7. 앱 환경의 설치방법(IOS)
+
+### 2.7.1 기본적인 설치방법
+
+IOS 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
+Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( 1-13. 주의사항 &lt;UrlEncode issue&gt; ) 를 참조하셔 주십시오.<br>
+WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 (0.기본적인 설치 방법) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
+
+### 2.7.2 신용카드 ISP, 계좌이체 연동방법
+
+- 신용카드 ISP 및 계좌이체 앱이 종료 된 뒤, 가맹점 앱을 다시 띄우기 위한 조치사항을 안내합니다.
+- IOS 는 Android 계열과 다르게도 ISP 및 계좌이체 앱이 종료된 뒤, 가맹점 앱은 Background 에 머문 채, 바탕화면이 개제됩니다.
+  (IOS의 운영체제 특성에 기반) 이 때문에, 결제 앱이 종료되면서, 가맹점 appScheme 을 호출하도록 구성해야 합니다. 하기와 같이 셋팅 시, 요구사항과 같이 가맹점 앱이 다시 기동 됩니다. ( 신용카드, 계좌이체 동기옵션 사용시에만 설정 가능)
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 45%;">
+  <col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>신용카드</th>
+      <th>계좌이체</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P_RESERVED=app_scheme=가맹점스키마명://</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">P_RESERVED=iosapp=Y&amp;app_scheme=가맹점스키마명://</code><br> <code class="language-plaintext highlighter-rouge">P_RETURN_URL=가맹점스키마명://</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+- P_RESERVED 옵션에 대한 설명은 ([1-3. 결제-요청-페이지작성 - 복합필드](/mobile02.html#22-결제-요청-페이지작성---결제페이지-요청필드)) 를 참조 부탁 드립니다.<br>
+  더불어 상기 옵션 셋팅 시, 가맹점스키마명 뒤 ://은 필수로 입력해 주셔야 ISP 앱 종료 후 가맹점 앱이 호출 됩니다.<br>
+  (Ex. 가맹점 스키마명이 WelcomeMobile일 경우 app_scheme=WelcomeMobile:// 로 셋팅 해 주시면 됩니다.)
+
+### 2.7.3 안심클릭 결제 시, 카드사 백신 앱 연동
+
+IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니다.<br>
+따라서, 해당 부분은 체크하실 부분이 없습니다.
+
+### 2.7.4 카드사 앱 연동 방법
+
+- 안심클릭 결제 진행에 필요한 Application (앱카드 등의) 호출이 필요할 경우 아래 샘플코드를 참고 바랍니다.
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 45%;">
+  <col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>주 문 정 보</th>
+      <th>앱 내 소스</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/mobile02.html#226-복합-필드-p_reserved">[(결제 요청 페이지작성 - 복합필드)</a> 내 참조</td>
+      <td>하기 샘플 참조</td>
+    </tr>
+  </tbody>
+</table>
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
+
+```
+#pragma mark UIWebViewDelegate 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    //쿠키 강제 허용
+    NSHTTPCookieStorage *cookieSto = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    [cookieSto setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    
+    //웰컴페이먼츠를 통해 전달되는 URL   
+    NSString *URLString = [NSString stringWithString:[request.URL absoluteString]];
+        
+    
+    //URL을 읽어왔을 때 애플 스토어 주소인 경우 사파리에 해당 URL을 넘겨서 앱스토어에서 설치 할 수 있도록 유도
+    BOOL isStoreURL = ([URLString rangeOfString:@"phobos.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    BOOL isStoreURL2 = ([URLString rangeOfString:@"itunes.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
+        
+    //앱스토어 이동
+    if (isStoreURL || isStoreURL2) {
+        [[UIApplication sharedApplication]openURL:request.URL];
+        return NO;
+    }   
+    else if([URLString hasPrefix:@"http"] || [URLString hasPrefix:@"https"] || [URLString hasPrefix:@"about"] )      //일반적인 웹url 형태인 경우 진행
+    {
+        return YES;
+    }    
+    else{     //그 외의 값은 앱스키마로 간주하여 앱 호출
+        
+        NSURL *appURL = [NSURL URLWithString:URLString];    //NSString to NSURL      
+ 
+	//앱스키마인 경우 앱 호출
+        BOOL bAppScheme =  [[UIApplication sharedApplication] canOpenURL:appURL];   
+        
+        if (!bAppScheme) {
+//앱이 설치되지 않은 경우 앱스토어로 이동 또는 안내 알럿 표출   
+            
+            return NO;
+            
+        }
+        
+    }
+    
+    return YES;
+}
+
+```
+</div>
+</details>
+
+- 해당 샘플은 참고용으로 각 가맹점 앱에 맞게 구현하시면 됩니다.
+- 또한, 하기의 조건을 충족하는 경우에 결제가 가능하오니, 이점 유의 바랍니다.
+
+    1. 고객 단말기의 OS 버전이 4.x 이상인 경우
+    2. 가맹점 Application 이 Multi switching 이 지원되는 경우
+    3. OS 버전이 9.x 이상일 경우 하기 &#39;[1-6. IOS9 Application 구현 시, 확인사항](#76-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
+
+### 2.7.5 쿠키 설정
+
+Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서비스를 사용하는 경우,<br>
+세션만료 오류경고가 발생할 수 있습니다. 이에, 하기의 샘플과 같이 쿠키를 허용해야 합니다.
+
+```
+(BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions    
+{
+  [[NSHTTPCookieStorage sharedHTTPCookieStorage]
+  setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];  
+  ...
+  return YES;
+}
+```
+
+### 2.7.6 IOS9 버전 Application 구현 시, 주의 사항
+
+- IOS9 업데이트 이후, APP 내 보안정책 강화로 canOpenUrl 또는 openUrl 함수 사용 시, info.plist 파일에 LSApplicationQueriesSchemes 배열을 정의하여 호출할 App scheme list를 등록 해주셔야 합니다. (White List 등록)
+  아래는 LSApplicationQueriesSchemes 등록 예시이며, 기존 앱 스키마에서 `://` 부분을 제거 후, 등록하시면 됩니다.
+
+예시 1. XCODE info.plist
+```javascript
+<key> LSApplicationQueriesSchemes </key>
+     <array>
+           <string> fbapi </string>
+<string> fbauth2 </string>
+<string> fbshareextension </string>
+<string> fb-messenger-api </string>
+<string> twitter </string>
+<string> whatsapp </string>
+<string> wechat </string>
+<string> line </string>
+<string> instagram </string>
+<string> kakaotalk </string>
+<string> mqq </string>
+<string> vk </string>
+<string> mqq </string>
+     </array>
+```
+
+예시 2. XML info.plist
+
+- 아래 MOBILETX 에서 사용 중인 Custom Scheme List를 참고하셔서 지불수단 별, 필요한 부분사용 바랍니다.
+
+&lt;2021.09.06 Custom Scheme List&gt;
+
+#### Custom Scheme List (지불수단 : 신용카드)
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<div markdown="1">
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 40%;">
+  <col style="width: 60%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>App</th>
+      <th>custom scheme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>신한 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">shinhan-sr-ansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>신한 공인인증 앱<br>( 일반결제 )</td>
+      <td><code class="language-plaintext highlighter-rouge">smshinhanansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>현대 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">hdcardappcardansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>현대 공인인증 앱<br>( 일반결제 )</td>
+      <td><code class="language-plaintext highlighter-rouge">smhyundaiansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>삼성 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">mpocket.online.ansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>삼성 공인인증 앱<br>( 일반결제 )</td>
+      <td><code class="language-plaintext highlighter-rouge">scardcertiapp://</code></td>
+    </tr>
+    <tr>
+      <td>하나 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">cloudpay://</code></td>
+    </tr>
+    <tr>
+      <td>하나 공인인증 앱<br>( 일반결제 )</td>
+      <td><code class="language-plaintext highlighter-rouge">hanaskcardmobileportal://</code></td>
+    </tr>
+    <tr>
+      <td>농협 공인인증 앱<br>( 일반결제 )</td>
+      <td><code class="language-plaintext highlighter-rouge">nonghyupcardansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>국민 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">kb-acp://</code></td>
+    </tr>
+    <tr>
+      <td>롯데 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">lotteappcard://</code></td>
+    </tr>
+    <tr>
+      <td>롯데 스마트 페이</td>
+      <td><code class="language-plaintext highlighter-rouge">lottesmartpay://</code></td>
+    </tr>
+    <tr>
+      <td>KPAY</td>
+      <td><code class="language-plaintext highlighter-rouge">kpay://</code></td>
+    </tr>
+    <tr>
+      <td>ISP</td>
+      <td><code class="language-plaintext highlighter-rouge">ispmobile://</code></td>
+    </tr>
+    <tr>
+      <td>PayPin</td>
+      <td><code class="language-plaintext highlighter-rouge">paypin://</code></td>
+    </tr>
+    <tr>
+      <td>PAYCO</td>
+      <td><code class="language-plaintext highlighter-rouge">payco://</code></td>
+    </tr>
+    <tr>
+      <td>Syrup 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">tswansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>농협 앱카드<br>(  올원페이 )</td>
+      <td><code class="language-plaintext highlighter-rouge">nhallonepayansimclick://</code></td>
+    </tr>
+    <tr>
+      <td>씨티 앱카드</td>
+      <td><code class="language-plaintext highlighter-rouge">citimobileapp://</code></td>
+    </tr>
+    <tr>
+      <td>LPAY LPOINT</td>
+      <td><code class="language-plaintext highlighter-rouge">lpayapp:// lmslpay://</code></td>
+    </tr>
+    <tr>
+      <td>카카오페이</td>
+      <td><code class="language-plaintext highlighter-rouge">kakaotalk://</code></td>
+    </tr>
+    <tr>
+      <td>SSGPAY</td>
+      <td><code class="language-plaintext highlighter-rouge">shinsegaeeasypayment://</code></td>
+    </tr>
+    <tr>
+      <td>우리 WON 카드</td>
+      <td><code class="language-plaintext highlighter-rouge">com.wooricard.wcard://</code></td>
+    </tr>
+    <tr>
+      <td>Liiv(KB국민은행)</td>
+      <td><code class="language-plaintext highlighter-rouge">liivbank://</code></td>
+    </tr>
+    <tr>
+      <td>토스뱅크 ( 하나카드 )</td>
+      <td><code class="language-plaintext highlighter-rouge">supertoss://</code></td>
+    </tr>
+    <tr>
+      <td>KB 국민은행  Liiv Reboot</td>
+      <td><code class="language-plaintext highlighter-rouge">newliiv://</code></td>
+    </tr>
+    <tr>
+      <td>우리  WON  뱅킹</td>
+      <td><code class="language-plaintext highlighter-rouge">NewSmartPib://</code></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</details>
+
+## 2.8. 에스크로 사용방법 안내
+
+>Mobile Web 서비스 화면에서, 에스크로 서비스를 호출하는 옵션입니다.<br>
+>배송 등록, 결제 취소, 거절 확인은 PayAPI 모듈로 진행되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.<br>
+>가맹점에서 거래에 따라 일반 결제와 에스크로 결제의 구분 결제를 희망하시면 에스크로로 신규 또는 전환계약이 필요합니다. (단, 일부 호스팅 가맹점은 신 에스크로 설정에, 제한이 있을 수 있음)<br>
+>에스크로 계약에 문의가 있거나 자세한 사항은 계약 담당자에게 문의하여 주시기 바랍니다.
+
+### 2.8.1 에스크로 사용가능 지불수단
+
+- 신용카드
+- 계좌이체
+- 가상계좌
+
+**※ 에스크로 결제 진행 시에는 당사에서 제공하는 간편결제는 사용 불가합니다.**
+**(카드사 결제 창 내 제공하는 간편결제가 아닌 당사 결제페이지 내 노출되는 부분에 한함)**
+
+#### A. 설정 방법
+
+- 매뉴얼 결제창 Open (주문정보 전달) ? 복합필드섹션을 보면, P_RESERVED 파라미터 항목이 있습니다.
+  참고 하시어, 동일하게 상위의 옵션을 설정하시면 됩니다.
+
+>예) `<INPUT type=”hidden” name=”P_RESERVED” value=”useescrow=Y”/> `
+
+### 2.8.2 에스크로 구매결정 연동
+
+- 모바일 결제창을 통한 에스크로 구매결정 연동을 안내합니다.
+  가맹점 페이지내에 구며결정 버튼을 클릭하여 에스크로 구매결정 창이 호출되도록 구현하시면 됩니다.
+
+[구매결정 요청 URL]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 20%;">
+  <col style="width: 20%;">
+  <col style="width: 60%;">
+</colgroup>
+<tbody>
+  <tr>
+    <th rowspan="2">HOST</th>
+    <td>테스트</td>
+    <td>tmobile.paywelcome.co.kr</td>
+  </tr>
+  <tr>
+    <td>운영</td>
+    <td>mobile.paywelcome.co.kr</td>
+  </tr>
+  <tr>
+    <th>에스크로</th>
+    <td>구매결정</td>
+    <td>https://{HOST}/smart/escrow_confirm/</td>
+  </tr>
+  <tr>
+    <td colspan="3">ex) 에스크로 구매결정 연동 시 :<br>https://mobile.paywelcome.co.kr/smart/escrow_confirm/</td>
+  </tr>
+</tbody>
+</table>
+
+#### [구매결정 요청 파라메터]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 30%;">
+  <col style="width: 15%;">
+  <col style="width: 15%;">
+  <col style="width: 40%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">크 기</th>
+      <th style="text-align: center">필수여부</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_MID</td>
+      <td style="text-align: center">Char(10)</td>
+      <td style="text-align: center">필수</td>
+      <td>주문요청시 사용한 P_MID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_ESCROW_TID</td>
+      <td style="text-align: center">Char(40)</td>
+      <td style="text-align: center">필수</td>
+      <td>에스크로 결제 승인 TID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_NEXT_URL</td>
+      <td style="text-align: center">Char(800)</td>
+      <td style="text-align: center">필수</td>
+      <td>결과수신 URLhttps(http)가 포함된 전체 URL이며, URL내 get 방식의 파라미터는 사용불가 합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_NEXT_URL_TAGET</td>
+      <td style="text-align: center">Char(10)</td>
+      <td style="text-align: center">필수</td>
+      <td>결과 수신 URL선택 값 : socket, get, post(미입력 시 기본값:socket)<br>get,post 방식은 완료 후 가맹점 페이지로 해당 방식으로 전환되며, socket 방식은 NOTI로 해당 값을 통보하여, 사용자페이지는 닫힙니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_RESERVED</td>
+      <td style="text-align: center">Char(100)</td>
+      <td style="text-align: center">선택</td>
+      <td>복합파라미터정보P_RESERVED=escrow_purchase_opt=vertify(구매확인버튼만 표시) P_RESERVED=escrow_purchase_opt=deny(구매거절버튼만 표시)옵션 미지정 시 구매확인/거절 모두 표시</td>
+    </tr>
+  </tbody>
+</table>
+
+#### [구매결정 응답 파라메터]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 30%">
+  <col style="width: 30%">
+  <col style="width: 40%">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">설명</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P_ESCROW_TID</td>
+      <td style="text-align: center">전달된 에스크로 TID</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_CL_STATUS</td>
+      <td style="text-align: center">구매결정/구매거절여부</td>
+      <td>buyComplete / denyComplete</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_STATUS</td>
+      <td style="text-align: center">상태값</td>
+      <td>구매결정, 구매거절에 대한 코드값(하단 코드표 참조)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_RMESG1</td>
+      <td style="text-align: center">처리결과메세지</td>
+      <td>urlEncode 전달</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P_PG_IP</td>
+      <td style="text-align: center">처리된 승인서버 IP</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+### 2.8.3 에스크로 상태변경 노티 수신
+
+에스크로 주요 시점(예&gt;구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(NOTI CONFIRM)하여야합니다.<br>
+해당 기능을 이용하려면 계약 담당자를 통해, 수신 받을 상점 측 URL을 등록하셔야 합니다.<br>
+
+-지불수단별, 승인요청 시점의 주문번호를 기준으로 응답하며, 배송등록 시점에 사용되는 주문번호와 동일하게 설정을 권장합니다.
+-거래금액은 에스크로 상태에 따라 거래취소 시에는 취소금액, 그 외는 승인 금액입니다.
+-원거래TID는 부분취소거래만 설정됩니다.
+
+[노티발송 웰컴페이먼츠 &gt; 가맹점]
+<table style="width: 100%">
+<colgroup>
+  <col style="width: 20%;">
+  <col style="width: 20%;">
+  <col style="width: 15%;">
+  <col style="width: 45%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">필드</th>
+      <th style="text-align: center">필드명</th>
+      <th>크 기</th>
+      <th>부 가 설 명 및 주 의 사 항</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">id_merchant</td>
+      <td style="text-align: center">상점아이디</td>
+      <td>Char(10)</td>
+      <td>P_MID로 전달한 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">no_oid</td>
+      <td style="text-align: center">주문번호</td>
+      <td>Char(40)</td>
+      <td>가맹점주문번호</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">no_tid</td>
+      <td style="text-align: center">거래번호</td>
+      <td>Char(40)</td>
+      <td>승인 시 전달된 TID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cl_status</td>
+      <td style="text-align: center">에스크로 상태</td>
+      <td>Char(2)</td>
+      <td>배송등록(2), 구매확인(3), 자동구매확인(31), 강제구매확인(32), 구매거절(4), 거래취소(8), 거절확인(10)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">dt_req</td>
+      <td style="text-align: center">요청일자</td>
+      <td>Char(14)</td>
+      <td>YYYYMMDDhhmmss</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cl_paymethod</td>
+      <td style="text-align: center">결제수단</td>
+      <td>Char(2)</td>
+      <td>신용카드(0), ISP(1), 계좌이체(16), 가상계좌(17)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">msg_deny</td>
+      <td style="text-align: center">구매거절사유</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Char(256)</td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">price</td>
+      <td style="text-align: center">거래금액</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Char(12)</td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tid_org</td>
+      <td style="text-align: center">원거래 거래번호</td>
+      <td>Char(40)</td>
+      <td>부분취소시 원거래 거래번호</td>
+    </tr>
+  </tbody>
+</table>
+
+[노티응답 가맹점 &gt; 웰컴페이먼츠]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 20%;">
+  <col style="width: 20%;">
+  <col style="width: 15%;">
+  <col style="width: 45%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">파라미터</th>
+      <th style="text-align: center">설명</th>
+      <th>크기</th>
+      <th style="text-align: center">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">cd_rslt</td>
+      <td style="text-align: center">결과코드</td>
+      <td>Char(4)</td>
+      <td style="text-align: center">0000:정상처리, 9999:처리실패</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">msg_rslt</td>
+      <td style="text-align: center">결과메세지</td>
+      <td>Char(1000)</td>
+      <td style="text-align: center">처리실패시 상세 오류 메세지</td>
+    </tr>
+  </tbody>
+</table>
+
+### 2.8.4 에스크로 관련 코드
+
+[구매결정 상태별 코드]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 30%;">
+  <col style="width: 70%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">P_STATUS</th>
+      <th style="text-align: center">P_RMESGI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">정상처리완료</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">기 구매거절 거래</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310004</td>
+      <td style="text-align: center">결제 기통보 거래</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310006</td>
+      <td style="text-align: center">취소 불가 지불수단</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310014</td>
+      <td style="text-align: center">기 구매확인 거래</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310015</td>
+      <td style="text-align: center">구매확인 불가 거래상태</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310017</td>
+      <td style="text-align: center">구매거절 불가 거래상태</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310020</td>
+      <td style="text-align: center">구매결정 할 수 없는 상태</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">310026</td>
+      <td style="text-align: center">원거래 없음</td>
+    </tr>
+  </tbody>
+</table>
+
+[거래 상태별 응답]
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 15%;">
+  <col style="width: 30%;">
+  <col style="width: 10%;">
+  <col style="width: 25%;">
+  <col style="width: 20%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th style="text-align: center">기존상태</th>
+      <th style="text-align: center">처리 요청 상태</th>
+      <th style="text-align: center">P_STATUS</th>
+      <th style="text-align: center">P_CL_STATUS</th>
+      <th style="text-align: center">P_RMESG1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">미정</td>
+      <td style="text-align: center">구매결정 성공</td>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">buyComplete</td>
+      <td style="text-align: center">정상처리완료</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">미정</td>
+      <td style="text-align: center">구매결정실패, 구매거부실패</td>
+      <td style="text-align: center">에러코드</td>
+      <td style="text-align: center">buyComplete, denyComplete</td>
+      <td style="text-align: center">에러메세지, 가변적</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">미정</td>
+      <td style="text-align: center">구매거부성공</td>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">denyComplete</td>
+      <td style="text-align: center">정상처리완료</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">기 구매거부</td>
+      <td style="text-align: center">구매결정성공</td>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">buyComplete</td>
+      <td style="text-align: center">기 구매거절 거래</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">기 구매거부</td>
+      <td style="text-align: center">구매결정실패, 구매거부실패</td>
+      <td style="text-align: center">에러코드</td>
+      <td style="text-align: center">buyComplete, denyComplete</td>
+      <td style="text-align: center">에러메세지, 가변적</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">기 구매거부</td>
+      <td style="text-align: center">구매거부성공</td>
+      <td style="text-align: center">00</td>
+      <td style="text-align: center">denyComplete</td>
+      <td style="text-align: center">기 구매거절 거래</td>
+    </tr>
+  </tbody>
+</table>
+
+## 2.9 노티수신(P_NOTI_URL) 사용방법 안내
+
+>웰컴페이먼츠 지불서버는 지불 결과를 실시간으로 회원사 측의 노티페이지를 호출하여 지불 결과를 통보합니다.<br>
+>노티페이지(P_NOTI_URL)는 정상적으로 결제 데이터를 받을 때까지 반복 호출됩니다.<br>
+>노티페이지(P_NOTI_URL)페이지는 웰컴페이먼츠에서 백엔드(backend)로 호출을 하는 페이지로, 고객이 보는 결제 화면과는 무관합니다.<br>
+
+[노티를 받을 때 전달되는 파라미터]
+
+<table style="width: 100%;">
+<colgroup>
+    <col style="width: 10%;">
+    <col style="width: 20%;">
+    <col style="width: 20%;">
+    <col style="width: 10%;">
+    <col style="width: 40%;">
+</colgroup>
+<thead>
+  <tr>
+    <th>순번</th>
+    <th>필드</th>
+    <th>필드명</th>
+    <th>타입</th>
+    <th>비고</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>P_STATUS</td>
+    <td>거래상태</td>
+    <td>char(2)</td>
+    <td>성공: 00, 실패 : 01, 가상계좌 입금 통보 시 : 02</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>P_TID</td>
+    <td>거래번호</td>
+    <td>char(40)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>P_TYPE</td>
+    <td>지불수단</td>
+    <td>char(10)</td>
+    <td>ISP(신용카드  ISP), CARD(신용카드 안심클릭 및 국민앱카드), VBANK( 가상계좌 )</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>P_AUTH_DT</td>
+    <td>승인일자</td>
+    <td>char(14)</td>
+    <td>YYYYmmddHHmmss</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>P_MID</td>
+    <td>상점아이디</td>
+    <td>char(10)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>P_OID</td>
+    <td>상점 주문번호</td>
+    <td>char(100)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>P_FN_CD1</td>
+    <td>금융사코드</td>
+    <td>char(4)</td>
+    <td>계좌이체, 가상계좌: 은행코드(계좌이체 내 뱅크월렛 결제 건은 BW로 전달) <br> 카드:카드코드, 핸드폰결제: 핸드폰 번호 앞 3자리</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>P_FN_CD2</td>
+    <td>금융사코드</td>
+    <td>char(10)</td>
+    <td>계좌이체: 은행영문 코드 (계좌이체 내 뱅크월렛 결제 건은 BW로 전달) <br> 카드: P_FN_CD1과 동일 <br> 핸드폰결제: P_FN_CD1과 동일</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>P_FN_NM</td>
+    <td>금융사명</td>
+    <td>char(50)</td>
+    <td>은행명, 카드사명, 이동통신사명</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>P_AMT</td>
+    <td>거래금액</td>
+    <td>char(12)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>P_UNAME</td>
+    <td>주문자명</td>
+    <td>char(30)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>P_RMESG1</td>
+    <td>메시지1</td>
+    <td>char(500)</td>
+    <td>가상계좌 : 채번 된 가상계좌번호, 입금기한 예) <code>P_VACCT_NO=01440064018781P_EXP_DT=20100325</code></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>P_RMESG2</td>
+    <td>메시지2</td>
+    <td>char(500)</td>
+    <td>신용카드의 경우, 할부 결제 시 할부 개월 수 표시  예) 02 (02개월)</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>P_RMESG3</td>
+    <td>메시지3</td>
+    <td>char(500)</td>
+    <td>임의필드<code>(name^value|name^value|…)</code> <br> RM3_DISC_AMT : 할인금액 char(12)<br>RM3_PRICE : 실승인금액 char(12)<br>RM3_ORG_AMT : 원금액 char(12)<br>RM3_EVENT_CODE : 이벤트 코드 char(2)<br>RM3_INTEREST : 신용카드 무이자 여부 char(1)<br>RM3_ COUPONFLAG : 쿠폰사용여부 char(1)<br>RM3_COUPONPRICE : 쿠폰사용 실 승인금액 char(12)<br>RM3_COUPONDISCOUNT : 쿠폰 할인금액 char(12)</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>P_NOTI</td>
+    <td>주문정보</td>
+    <td>char(4000)</td>
+    <td>거래요청시 입력한 P_NOTI의 값을 **그대로 반환**합니다.</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>P_AUTH_NO</td>
+    <td>승인번호</td>
+    <td>char(30)</td>
+    <td>신용카드거래에서만 사용합니다.<br><strong>여신 승인거래에 대해서만 전달</strong></td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>P_CARD_ISSUER_CODE</td>
+    <td>발급사 코드</td>
+    <td>char(4)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>P_CARD_NUM</td>
+    <td>카드번호</td>
+    <td>char(16)</td>
+    <td>계약관계에 따라 틀림<br><strong>여신 승인거래에 대해서만 전달</strong></td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>P_CARD_MEMBER_NUM</td>
+    <td>가맹점번호</td>
+    <td>char(15)</td>
+    <td>자체 가맹점 일 경우만 해당</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>P_CARD_PURCHASE_CODE</td>
+    <td>매입사코드</td>
+    <td>char(2)</td>
+    <td>자체 가맹점 일 경우만 해당</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>P_PRTC_CODE</td>
+    <td>부분취소 가능여부</td>
+    <td>char(1)</td>
+    <td>부분취소가능 : 1, 부분취소불가능 : 0</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>P_SRC_CODE</td>
+    <td>앱 연동 결제 구분</td>
+    <td>char(3)</td>
+    <td>K : 국민앱카드</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>P_ISP_CARDCODE</td>
+    <td>VCARD코드</td>
+    <td>char(25)</td>
+    <td>ISP 발급사코드 및 기타 정보</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>P_CARD_PURCHASE_NAME</td>
+    <td>매입사명</td>
+    <td>char(22)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>P_CARD_ISSUER_NAME</td>
+    <td>발급사명</td>
+    <td>char(22)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>P_MERCHANT_RESERVED</td>
+    <td>임시필드</td>
+    <td>char(5000)</td>
+    <td>1. pg에서 임의로 사용하는 필드<br>- <code>name^value|name^value|..</code><br>2. 현대M포인트, BC TOP포인트 등 사용 내역 표시(char12)<br>- <code>dXNlcG9pbnQ9MCY=(Base64encode) usepoint=0&(Base64decode)</code></td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>P_CSHR_AMT</td>
+    <td>현금영수증 거래 금액</td>
+    <td>char(12)</td>
+    <td>계좌이체, 가상계좌 현금영수증 거래 금액<br><strong>※ 가상계좌 채번 결과에 전달</strong></td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>P_CSHR_SUP_AMT</td>
+    <td>현금영수증 공급가액</td>
+    <td>char(12)</td>
+    <td>계좌이체, 가상계좌 현금영수증 공급가액<br><strong>※ 가상계좌 채번 결과에 전달</strong></td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>P_CSHR_TAX</td>
+    <td>현금영수증 부가가치세</td>
+    <td>char(12)</td>
+    <td>계좌이체, 가상계좌 현금영수증 부가가치세<br><strong>※ 가상계좌 채번 결과에 전달</strong></td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>P_CSHR_SRVC_AMT</td>
+    <td>현금영수증 봉사료</td>
+    <td>char(12)</td>
+    <td>계좌이체, 가상계좌 현금영수증 부가가치세<br><strong>※ 가상계좌 채번 결과에 전달</strong></td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>P_CSHR_TYPE</td>
+    <td>현금영수증 거래자 구분</td>
+    <td>char(1)</td>
+    <td>0 : 소비자 소득공제용 / 1 : 사업자 지출증빙용계좌이체, 가상계좌 현금영수증 거래자 구분<br>※ 가상계좌 채번 결과에 전달</td>
+  </tr>
+  <tr>
+    <td>32</td>
+    <td>P_CSHR_DT</td>
+    <td>현금영수증 발행일자</td>
+    <td>char(14)</td>
+    <td>YYYYmmddHHmmss계좌이체, 가상계좌 현금영수증 발행일자※ 가상계좌 입금 결과에 전달</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>P_CSHR_AUTH_NO</td>
+    <td>현금영수증 발행승인번호</td>
+    <td>char(9)</td>
+    <td>계좌이체, 가상계좌 현금영수증 발행승인번호※ 가상계좌 입금 결과에 전달</td>
+  </tr>
+</tbody>
+</table>
+
+- 16, 18번 항목의 승인번호 및 카드번호의 경우 페이코포인트 전액, 카카오머니 거래의 경우 여신승인 대상이 아님으로 전달되지 않습니다.
+
+#### 주의사항
+
+- WEB 방식의 가상계좌를 이용하는 경우에도 입금통보를 위해 Receive 페이지를 구성하게 되는데,
+  입금통보 외에 가상 계좌 채번 시에도 P_NOTI_URL 로 설정된 주소로 결과가 전송되니 채번 시 전달되는 내용은 무시하시기 바랍니다.
+- 또한, 입금 통보 수신 시, 기 수신받은 P_TID 인지 반드시 체크하는 로직을 구성하시길 바랍니다.
+- 노티는 네트워크의 사정에 따라, 중복수신 될 수 있습니다.

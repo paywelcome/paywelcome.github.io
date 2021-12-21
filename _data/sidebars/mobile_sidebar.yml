@@ -6,209 +6,164 @@ entries:
     product: MOBILE
     version:
     folders:
-
-      - title: 1. 기본적인 설치 방법
+      # mobile01.md
+      - title: 설치
         output: web
         folderitems:
-          - title: 연동  Flow
+          - title: 모바일 연동  Flow
             url: /mobile01.html
             output: web
 
-      - title: 2. 상점 모바일 결제 연동
+      # mobile02.md
+      - title: 결제 연동
         output: web
-
         folderitems:
-          - title: 접속 주소 및 일반필드
+          - title: 1. 접속 주소 및 일반필드
             url: /mobile02.html
             output: web
-
-          - title: 결제페이지 요청필드
-            url: /mobile02.html#22-결제창-open-주문정보-전달---결제페이지-요청필드
+          - title: 2. 결제페이지 요청필드
+            url: /mobile02.html#22-결제-요청-페이지작성---결제페이지-요청필드
             output: web
-
-          - title: 결제 페이지 구성 예제
+          - title: 3. 결제 페이지 구성 예제
             url: /mobile02.html#23-결제-페이지-구성-예제
             output: web
+          - title: 4. 인증 결과 수신
+            url: /mobile02.html#24-인증-결과-수신
+            output: web
+            subfolders:
+              - title: 5. 승인 요청 송신 및 승인 처리 결과 수신
+                output: web
+                subfolderitems:
+                - title: 5-1. 승인 요청 송신
+                  url: /mobile02.html#251-승인-요청-송신
+                  output: web
+                - title: 5-2. 승인 결과 수신
+                  url: /mobile02.html#252-승인-결과-수신
+                  output: web
+                - title: 5-3. 1 Transaction 방식에서 결제 완료 후 결과 수신
+                  url: /mobile02.html#253-1-transaction-방식에서-결제-완료-후-결과-수신
+                  output: web
+                - title: 5.4. P_NOTI_URL  수신 후 ,  처리방법
+                  url: /mobile02.html#254-p_noti_url-수신-후-처리방법
+                  output: web
+              - title: 6. 앱 환경의 설치방법(안드로이드)
+                output: web
+                subfolderitems:
+                - title: 6-1. 기본적인 설치방법
+                  url: /mobile02.html#261-기본적인-설치방법
+                  output: web
+                - title: 6-2. ISP 연동방법 (1)
+                  url: /mobile02.html#262-isp-연동방법---앱-미설치-체크로직-직접구현-or-자동체크
+                  output: web
+                - title: 6-3. ISP 연동방법 (2)
+                  url: /mobile02.html#263-isp-연동방법---인증결과-전송
+                  output: web
+                - title: 6-4. 안심클릭 결제 시, 카드사 백신 앱 연동
+                  url: /mobile02.html#264-안심클릭-결제-시-카드사-백신-앱-연동
+                  output: web
+                - title: 6-5. 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
+                  url: /mobile02.html#265-결제-금액이-30-만원-이상일-때의-공인인증-앱-연동-방법
+                  output: web
+                - title: 6-6. Android API Level 21 이상 체크사항
+                  url: /mobile02.html#266-android-api-level-21--이상-일-때---체크사항
+                  output: web
+              - title: 7. 앱 환경의 설치방법(IOS)
+                output: web
+                subfolderitems:
+                - title: 7-1. 기본적인 설치방법
+                  url: /mobile02.html#271-기본적인-설치방법
+                  output: web
+                - title: 7-2. 신용카드 ISP, 계좌이체 연동방법
+                  url: /mobile02.html#272-신용카드-isp-계좌이체-연동방법
+                  output: web
+                - title: 7-3. 안심클릭 결제 시, 카드사 백신 앱 연동
+                  url: /mobile02.html#273-안심클릭-결제-시-카드사-백신-앱-연동
+                  output: web
+                - title: 7-4. 카드사 앱 연동 방법
+                  url: /mobile02.html#274-카드사-앱-연동-방법
+                  output: web
+                - title: 7-5. 쿠키 설정
+                  url: /mobile02.html#275-쿠키-설정
+                  output: web
+                - title: 7-6. IOS9 버전 Application 구현 시, 주의 사항
+                  url: /mobile02.html#276-ios9-버전-application-구현-시-주의-사항
+                  output: web
+              - title: 8. 에스크로 사용방법 안내
+                output: web
+                subfolderitems:
+                - title: 8-1. 에스크로 사용가능 지불수단
+                  url: /mobile02.html#281-에스크로-사용가능-지불수단
+                  output: web
+                - title: 8-2. 에스크로 구매결정 연동
+                  url: /mobile02.html#282-에스크로-구매결정-연동
+                  output: web
+                - title: 8-3. 에스크로 상태변경 노티 수신
+                  url: /mobile02.html#283-에스크로-상태변경-노티-수신
+                  output: web
+                - title: 8-4. 에스크로 관련 코드
+                  url: /mobile02.html#284-에스크로-관련-코드
+                  output: web
+          - title: 9. 노티 수신 사용방법 안내
+            url: /mobile02.html#29-노티수신p_noti_url-사용방법-안내
+            output: web
 
-      - title: 3. 모바일 결제 인증 수신
+      - title: 부록
         output: web
-
         folderitems:
-          - title: 인증 결과 수신
-            url: /mobile03.html
+          - title: 1. 계좌이체 연동 유의사항 안내
             output: web
-
-      - title: 4. 승인요청 송신 및 승인처리결과 수신
-        output: web
-
-        folderitems:
-          - title: 승인 요청 송신
-            url: /mobile04.html
-            output: web
-          - title: 승인 결과 수신
-            url: /mobile04.html#42-승인-결과-수신
-            output: web
-          - title: 1 Transaction 방식에서 결제 완료 후 결과 수신
-            url: /mobile04.html#43-1-transaction-방식에서-결제-완료-후-결과-수신
-            output: web
-          - title: P_NOTI_URL  수신 후 ,  처리방법
-            url: /mobile04.html#44-p_noti_url--수신-후---처리방법
-            output: web
-
-      - title: 5. 연동시 주의사항
-        output: web
-
-        folderitems:
-          - title: Form Encode issue
-            url: /mobile05.html
-            output: web
-          - title: Urlencode issue
-            url: /mobile05.html#52-urlencode-issue
-            output: web
-          - title: Iframe-issue
-            url: /mobile05.html#53-iframe-issue
-            output: web
-          - title: Parameter issue
-            url: /mobile05.html#54-parameter-issue
-            output: web
-          - title: 가상계좌 채번시 P_NOTI_URL issue
-            url: /mobile05.html#55-가상계좌-채번시--p_noti_url-issue
-            output: web
-          - title: 모바일 거래 결제취소 issue
-            url: /mobile05.html#56-모바일-거래-결제취소-issue
-            output: web
-          - title: DNS 설정관련 issue
-            url: /mobile05.html#57-dns-설정관련-issue
-            output: web
-          - title: 인증결과 수신 및 승인결과 수신 시 issue
-            url: /mobile05.html#58-인증결과-수신-및-승인결과-수신-시-issue
-            output: web
-          - title: P_NEXT_URL의 Scheme issue
-            url: /mobile05.html#59-p_next_url의-scheme-issue
-            output: web
-          - title: 브라우저 환경에서의 쿠키허용 issue
-            url: /mobile05.html#510-브라우저-환경에서의-쿠키허용-issue
-            output: web
-          - title: 인증결과 수신 시 Method issue
-            url: /mobile05.html#511-인증결과-수신-시-method-issue
-            output: web
-          - title: 네이버/카카오톡 앱 환경 최적화 issue
-            url: /mobile05.html#512-네이버카카오톡-앱-환경-최적화-issue
-            output: web
-          - title: 안드로이드/IOS 앱 USER AGENT 수정
-            url: /mobile05.html#513-안드로이드ios-앱-user-agent-수정
-            output: web
-          - title: 아이폰 3rd party( 제 3 공급자) 앱브라우져 결제 issue
-            url: /mobile05.html#514-아이폰-3rd-party-제-3-공급자-앱브라우져-결제-issue
-            output: web
-          - title: 결제 요청 시 주의사항
-            url: /mobile05.html#515-결제-요청-시-주의사항
-            output: web
-          - title: 주문요청 시 유의사항
-            url: /mobile05.html#516-주문요청-시-유의사항
-            output: web
-
-      - title: 6. 앱 환경의 설치방법(안드로이드)
-        output: web
-
-        folderitems:
-          - title: 기본적인 설치방법
-            url: /mobile06.html
-            output: web
-          - title: ISP 연동방법 (1)
-            url: /mobile06.html#62-isp-연동방법---앱-미설치-체크로직-직접구현-or-자동체크
-            output: web
-          - title: ISP 연동방법 (2)
-            url: /mobile06.html#63-isp-연동방법---인증결과-전송
-            output: web
-          - title: 안심클릭 결제 시, 카드사 백신 앱 연동
-            url: /mobile06.html#64-안심클릭-결제-시-카드사-백신-앱-연동
-            output: web
-          - title: 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
-            url: /mobile06.html#65-결제-금액이-30-만원-이상일-때의-공인인증-앱-연동-방법
-            output: web
-          - title: Android API Level 21 이상 체크사항
-            url: /mobile06.html#66-android-api-level-21--이상-일-때---체크사항
-            output: web
-
-      - title: 7. 앱 환경의 설치방법(IOS)
-        output: web
-
-        folderitems:
-          - title: 기본적인 설치방법
-            url: /mobile07.html
-            output: web
-          - title: 신용카드 ISP, 계좌이체 연동방법
-            url: /mobile07.html#72-신용카드--isp--계좌이체-연동방법
-            output: web
-          - title: 안심클릭 결제 시, 카드사 백신 앱 연동
-            url: /mobile07.html#73-안심클릭-결제-시-카드사-백신-앱-연동
-            output: web
-          - title: 카드사 앱 연동 방법
-            url: /mobile07.html#74-카드사-앱-연동-방법
-            output: web
-          - title: 쿠키 설정
-            url: /mobile07.html#75-쿠키-설정
-            output: web
-          - title: IOS9 버전 Application 구현 시, 주의 사항
-            url: /mobile07.html#76-ios9-버전-application-구현-시-주의-사항
-            output: web
-
-      - title: 8. 계좌이체 연동 유의사항 안내
-        output: web
-
-        folderitems:
-          - title: 계좌이체 연동시 유의사항
-            url: /mobile08.html#81-계좌이체-연동시-유의사항
-            output: web
-          - title: 안드로이드 연동 시 유의사항
-            url: /mobile08.html#82-안드로이드-연동-시-유의사항
-            output: web
-          - title: IOS 연동 시 유의사항
-            url: /mobile08.html#83-ios-연동-시-유의사항
-            output: web
-          - title: 계좌이체 연동 시 권장 옵션
-            url: /mobile08.html#84-계좌이체-연동-시-권장-옵션
-            output: web
-
-      - title: 9. 모바일 에스크로 사용방법 안내
-        output: web
-
-        folderitems:
-          - title: 모바일 에스크로 사용가능 지불수단
-            url: /mobile09.html
-            output: web
-          - title: 모바일 에스크로 구매결정 연동
-            url: /mobile09.html#92-모바일-에스크로-구매결정-연동
-            output: web
-          - title: 에스크로 상태변경 노티 수신
-            url: /mobile09.html#93-에스크로-상태변경-노티-수신
-            output: web
-          - title: 에스크로 관련 코드
-            url: /mobile09.html#94-에스크로-관련-코드
-            output: web
-
-      - title: 10. 노티 수신 사용방법 안내
-        output: web
-
-        folderitems:
-          - title: 노티를 받을 때 전달되는 파라미터
-            url: /mobile10.html
-            output: web
-
-# 코드번호 통합
-#      - title: 11. 별첨
-#        output: web
-#
-#        folderitems:
-#          - title: 카드사(매입사) 코드
-#            url: /mobile11.html
-#            output: web
-#          - title: 카드 발급사(은행사) 코드
-#            url: /mobile11.html#112-카드-발급사은행사-코드
-#            output: web
-#          - title: 웰컴페이먼츠 카드 코드
-#            url: /mobile11.html#113-웰컴페이먼츠-카드-코드
-#            output: web
+            subfolderitems:
+            subfolders:
+            - title: 2. 기타 연동시 주의사항
+              output: web
+              subfolderitems:
+              - title: 2-1. Form Encode issue
+                url: /mobile03.html#321-form-encode-issue
+                output: web
+              - title: 2-2. Urlencode issue
+                url: /mobile03.html#322-urlencode-issue
+                output: web
+              - title: 2-3. Iframe-issue
+                url: /mobile03.html#323-iframe-issue
+                output: web
+              - title: 2-4. Parameter issue
+                url: /mobile03.html#324-parameter-issue
+                output: web
+              - title: 2-5. 가상계좌 채번시 P_NOTI_URL issue
+                url: /mobile03.html#325-가상계좌-채번시--p_noti_url-issue
+                output: web
+              - title: 2-6. 모바일 거래 결제취소 issue
+                url: /mobile03.html#326-모바일-거래-결제취소-issue
+                output: web
+              - title: 2-7. DNS 설정관련 issue
+                url: /mobile03.html#327-dns-설정관련-issue
+                output: web
+              - title: 2-8. 인증결과 수신 및 승인결과 수신 시 issue
+                url: /mobile03.html#328-인증결과-수신-및-승인결과-수신-시-issue
+                output: web
+              - title: 2-9. P_NEXT_URL의 Scheme issue
+                url: /mobile03.html#329-p_next_url의-scheme-issue
+                output: web
+              - title: 2-10. 브라우저 환경에서의 쿠키허용 issue
+                url: /mobile03.html#3210-브라우저-환경에서의-쿠키허용-issue
+                output: web
+              - title: 2-11. 인증결과 수신 시 Method issue
+                url: /mobile03.html#3211-인증결과-수신-시-method-issue
+                output: web
+              - title: 2-12. 네이버/카카오톡 앱 환경 최적화 issue
+                url: /mobile03.html#3212-네이버카카오톡-앱-환경-최적화-issue
+                output: web
+              - title: 2-13. 안드로이드/IOS 앱 USER AGENT 수정
+                url: /mobile03.html#3213-안드로이드ios-앱-user-agent-수정
+                output: web
+              - title: 2-14. 아이폰 3rd party( 제 3 공급자) 앱브라우져 결제 issue
+                url: /mobile03.html#3214-아이폰-3rd-party-제-3-공급자-앱브라우져-결제-issue
+                output: web
+              - title: 2-15. 결제 요청 시 주의사항
+                url: /mobile03.html#3215-결제-요청-시-주의사항
+                output: web
+              - title: 2-16. 주문요청 시 유의사항
+                url: /mobile03.html#3216-주문요청-시-유의사항
+                output: web
 
 # Copyright 2021 Google LLC
