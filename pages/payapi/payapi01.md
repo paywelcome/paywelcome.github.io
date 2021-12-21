@@ -46,17 +46,17 @@ PAYAPI의 주요 응답 코드는 아래와 같습니다.
 
 <table class="tg" style="width: 100%">
   <colgroup>
-    <col style="width: 20%">
-    <col style="width: 20%">
-    <col style="width: 20%">
-    <col style="width: 40%">
+    <col style="text-align: center; width: 20%">
+    <col style="text-align: center; width: 20%">
+    <col style="text-align: center; width: 20%">
+    <col style="text-align: center; width: 40%">
   </colgroup>
   <thead>
     <tr>
       <th class="tg-0lax">PG 응답코드</th>
       <th class="tg-0lax">HTTP 상태 코드</th>
       <th class="tg-0lax">메시지</th>
-      <th class="tg-0lax">설명</th>
+      <th class="tg-02ax">설명</th>
     </tr>
   </thead>
   <tbody>
@@ -64,25 +64,23 @@ PAYAPI의 주요 응답 코드는 아래와 같습니다.
       <td class="tg-0lax">00</td>
       <td class="tg-0lax">200</td>
       <td class="tg-0lax">정상</td>
-      <td class="tg-0lax">처리 완료</td>
+      <td class="tg-01ax">처리 완료</td>
     </tr>
     <tr>
-      <td class="tg-0lax">그외</td>
+      <td class="tg-0lax" rowspan="3" style="text-align :center;vertical-align: middle">그외</td>
       <td class="tg-0lax">200</td>
       <td class="tg-0lax">실패</td>
       <td class="tg-0lax">처리 실패</td>
     </tr>
     <tr>
-      <td class="tg-0lax">-</td>
-      <td class="tg-0lax">4XX</td>
-      <td class="tg-0lax">잘못된 요청</td>
-      <td class="tg-0lax">API 요청 URL의 프로토콜, 파라미터 등에<br>오류가 있는지 확인합니다.</td>
+      <td class="tg-0lax" style="text-align: center; vertical-align: middle">4XX</td>
+      <td class="tg-0lax" style="text-align: center;">잘못된 요청</td>
+      <td class="tg-0lax">API 요청 URL의 프로토콜, 파라미터 등에 오류가 있는지 확인합니다.</td>
     </tr>
     <tr>
-      <td class="tg-0lax">-</td>
-      <td class="tg-0lax">5XX</td>
-      <td class="tg-0lax">서버 내부 오류</td>
-      <td class="tg-0lax">서버 내부에 오류가 발생했습니다<br>관리자에게 문의하세요.</td>
+      <td class="tg-0lax" style="text-align: center; vertical-align: middle">5XX</td>
+      <td class="tg-0lax" style="text-align: center;">서버 내부 오류</td>
+      <td class="tg-0lax">서버 내부에 오류가 발생했습니다.<br>관리자에게 문의하세요.</td>
     </tr>
   </tbody>
 </table>
