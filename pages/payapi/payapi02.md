@@ -35,14 +35,14 @@ toc: false
 [//]: # (전체취소 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 26%">
+<col style="text-align: center; width: 5%">
+<col style="text-align: center; width: 12%">
+<col style="text-align: center; width: 15%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 10%">
+<col style="text-align: left; width: 34%">
 </colgroup>
 <thead>
   <tr>
@@ -58,83 +58,83 @@ toc: false
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">payType</td>
-    <td class="tg-0lax">결제수단</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">1</td>
+    <td class="tg-0lax" style="text-align: center;">payType</td>
+    <td class="tg-0lax" style="text-align: center;">결제수단</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">예) card(신용카드), hpp(휴대폰), vbank(가상계좌), bank(계좌이체)</td>
   </tr>
   <tr>
-    <td class="tg-0lax">2</td>
-    <td class="tg-0lax">mid</td>
-    <td class="tg-0lax">가맹점ID</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">2</td>
+    <td class="tg-0lax" style="text-align: center;">mid</td>
+    <td class="tg-0lax" style="text-align: center;">가맹점ID</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">tid</td>
-    <td class="tg-0lax">거래ID</td>
-    <td class="tg-0lax">40</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">3</td>
+    <td class="tg-0lax" style="text-align: center;">tid</td>
+    <td class="tg-0lax" style="text-align: center;">거래ID</td>
+    <td class="tg-0lax" style="text-align: center;">40</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">4</td>
-    <td class="tg-0lax">price</td>
-    <td class="tg-0lax">취소 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">4</td>
+    <td class="tg-0lax" style="text-align: center;">price</td>
+    <td class="tg-0lax" style="text-align: center;">취소 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">콤마(,) 필히 제거</td>
   </tr>
   <tr>
-    <td class="tg-0lax">5</td>
-    <td class="tg-0lax">currency</td>
-    <td class="tg-0lax">통화</td>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;" >5</td>
+    <td class="tg-0lax" style="text-align: center;" >currency</td>
+    <td class="tg-0lax" style="text-align: center;" >통화</td>
+    <td class="tg-0lax" style="text-align: center;" >3</td>
+    <td class="tg-0lax" style="text-align: center;" >○</td>
+    <td class="tg-0lax" style="text-align: center;" >X</td>
+    <td class="tg-0lax" style="text-align: center;" >String</td>
     <td class="tg-0lax">WON / USD</td>
   </tr>
   <tr>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">timestamp</td>
-    <td class="tg-0lax">타임스탬프</td>
-    <td class="tg-0lax">14</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">timestamp</td>
+    <td class="tg-0lax" style="text-align: center;">타임스탬프</td>
+    <td class="tg-0lax" style="text-align: center;">14</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">예) 20190906110100</td>
   </tr>
   <tr>
-    <td class="tg-0lax">7</td>
-    <td class="tg-0lax">signature</td>
-    <td class="tg-0lax">검증값</td>
-    <td class="tg-0lax">N/A</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">7</td>
+    <td class="tg-0lax" style="text-align: center;">signature</td>
+    <td class="tg-0lax" style="text-align: center;">검증값</td>
+    <td class="tg-0lax" style="text-align: center;">N/A</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">SHA256<br>(mid+mkey+timestamp)</td>
   </tr>
   <tr>
-    <td class="tg-0lax">8</td>
-    <td class="tg-0lax">cancelType</td>
-    <td class="tg-0lax">망취소옵션</td>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">8</td>
+    <td class="tg-0lax" style="text-align: center;">cancelType</td>
+    <td class="tg-0lax" style="text-align: center;">망취소옵션</td>
+    <td class="tg-0lax" style="text-align: center;">1</td>
+    <td class="tg-0lax" style="text-align: center;"></td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">모바일 망취소일 경우 사용<br>모바일망취소:C</td>
   </tr>
 </tbody>
@@ -145,14 +145,14 @@ toc: false
 [//]: # (전체취소 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 26%">
+<col style="text-align: center; width: 5%">
+<col style="text-align: center; width: 12%">
+<col style="text-align: center; width: 15%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 10%">
+<col style="text-align: left; width: 34%">
 </colgroup>
 <thead>
   <tr>
@@ -168,83 +168,83 @@ toc: false
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">ResultCode</td>
-    <td class="tg-0lax">결과코드</td>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">1</td>
+    <td class="tg-0lax" style="text-align: center;">ResultCode</td>
+    <td class="tg-0lax" style="text-align: center;">결과코드</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">00: 정상, 그 외 실패</td>
   </tr>
   <tr>
-    <td class="tg-0lax">2</td>
-    <td class="tg-0lax">ResultMsg</td>
-    <td class="tg-0lax">결과메시지</td>
-    <td class="tg-0lax">100</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">2</td>
+    <td class="tg-0lax" style="text-align: center;">ResultMsg</td>
+    <td class="tg-0lax" style="text-align: center;">결과메시지</td>
+    <td class="tg-0lax" style="text-align: center;">100</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">Mid</td>
-    <td class="tg-0lax">가맹점 ID</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">3</td>
+    <td class="tg-0lax" style="text-align: center;">Mid</td>
+    <td class="tg-0lax" style="text-align: center;">가맹점 ID</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">4</td>
-    <td class="tg-0lax">Tid</td>
-    <td class="tg-0lax">거래ID</td>
-    <td class="tg-0lax">40</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">4</td>
+    <td class="tg-0lax" style="text-align: center;">Tid</td>
+    <td class="tg-0lax" style="text-align: center;">거래ID</td>
+    <td class="tg-0lax" style="text-align: center;">40</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">5</td>
-    <td class="tg-0lax">Moid</td>
-    <td class="tg-0lax">주문번호</td>
-    <td class="tg-0lax">64</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">5</td>
+    <td class="tg-0lax" style="text-align: center;">Moid</td>
+    <td class="tg-0lax" style="text-align: center;">주문번호</td>
+    <td class="tg-0lax" style="text-align: center;">64</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">Price</td>
-    <td class="tg-0lax">취소 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">Price</td>
+    <td class="tg-0lax" style="text-align: center;">취소 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">7</td>
-    <td class="tg-0lax">CancelDate</td>
-    <td class="tg-0lax">취소 날짜</td>
-    <td class="tg-0lax">8</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">7</td>
+    <td class="tg-0lax" style="text-align: center;">CancelDate</td>
+    <td class="tg-0lax" style="text-align: center;">취소 날짜</td>
+    <td class="tg-0lax" style="text-align: center;">8</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달<br>(YYYYMMDD)</td>
   </tr>
   <tr>
-    <td class="tg-0lax">8</td>
-    <td class="tg-0lax">CancelTime</td>
-    <td class="tg-0lax">취소 시간</td>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">8</td>
+    <td class="tg-0lax" style="text-align: center;">CancelTime</td>
+    <td class="tg-0lax" style="text-align: center;">취소 시간</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달<br>(hhmmss)</td>
   </tr>
 </tbody>
@@ -276,127 +276,127 @@ toc: false
 [//]: # (부분취소 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 26%">
+<col style="text-align: center; width: 5%">
+<col style="text-align: center; width: 12%">
+<col style="text-align: center; width: 15%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 10%">
+<col style="text-align: left; width: 34%">
 </colgroup>
 <thead>
   <tr>
-    <th class="tg-0lax">구분</th>
-    <th class="tg-0lax">필드</th>
-    <th class="tg-0lax">필드명</th>
-    <th class="tg-0lax">길이</th>
-    <th class="tg-0lax">필수</th>
-    <th class="tg-0lax">암호화</th>
-    <th class="tg-0lax">타입</th>
+    <th class="tg-0lax" >구분</th>
+    <th class="tg-0lax" >필드</th>
+    <th class="tg-0lax" >필드명</th>
+    <th class="tg-0lax" >길이</th>
+    <th class="tg-0lax" >필수</th>
+    <th class="tg-0lax" >암호화</th>
+    <th class="tg-0lax" >타입</th>
     <th class="tg-0lax">비고</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">payType</td>
-    <td class="tg-0lax">결제수단</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">1</td>
+    <td class="tg-0lax" style="text-align: center;">payType</td>
+    <td class="tg-0lax" style="text-align: center;">결제수단</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">예) card(신용카드), hpp(휴대폰), vbank(가상계좌), bank(계좌이체)</td>
   </tr>
   <tr>
-    <td class="tg-0lax">2</td>
-    <td class="tg-0lax">mid</td>
-    <td class="tg-0lax">가맹점ID</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">2</td>
+    <td class="tg-0lax" style="text-align: center;">mid</td>
+    <td class="tg-0lax" style="text-align: center;">가맹점ID</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">tid</td>
-    <td class="tg-0lax">거래ID</td>
-    <td class="tg-0lax">40</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">3</td>
+    <td class="tg-0lax" style="text-align: center;">tid</td>
+    <td class="tg-0lax" style="text-align: center;">거래ID</td>
+    <td class="tg-0lax" style="text-align: center;">40</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">4</td>
-    <td class="tg-0lax">cancelPrice</td>
-    <td class="tg-0lax">부분 취소 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">4</td>
+    <td class="tg-0lax" style="text-align: center;">cancelPrice</td>
+    <td class="tg-0lax" style="text-align: center;">부분 취소 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">콤마(,) 필히 제거</td>
   </tr>
   <tr>
-    <td class="tg-0lax">5</td>
-    <td class="tg-0lax">confirmPrice</td>
-    <td class="tg-0lax">취소 후남은 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">5</td>
+    <td class="tg-0lax" style="text-align: center;">confirmPrice</td>
+    <td class="tg-0lax" style="text-align: center;">취소 후남은 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">콤마(,) 필히 제거</td>
   </tr>
   <tr>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">currency</td>
-    <td class="tg-0lax">통화</td>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">currency</td>
+    <td class="tg-0lax" style="text-align: center;">통화</td>
+    <td class="tg-0lax" style="text-align: center;">3</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">WON / USD</td>
   </tr>
   <tr>
-    <td class="tg-0lax">7</td>
-    <td class="tg-0lax">tax</td>
-    <td class="tg-0lax">부가세</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">7</td>
+    <td class="tg-0lax" style="text-align: center;">tax</td>
+    <td class="tg-0lax" style="text-align: center;">부가세</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;"></td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함<br/>부가세 금액 미입력시 비과세 금액으로 표시됨</td>
   </tr>
   <tr>
-    <td class="tg-0lax">8</td>
-    <td class="tg-0lax">taxfree</td>
-    <td class="tg-0lax">비과세</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">8</td>
+    <td class="tg-0lax" style="text-align: center;">taxfree</td>
+    <td class="tg-0lax" style="text-align: center;">비과세</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;"></td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">대상: &#39;부가세 업체정함&#39; 설정업체에 한함<br/>과세되지 않는 금액</td>
   </tr>
   <tr>
-    <td class="tg-0lax">9</td>
-    <td class="tg-0lax">timestamp</td>
-    <td class="tg-0lax">타임스탬프</td>
-    <td class="tg-0lax">14</td>
-    <td class="tg-0lax">O</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">9</td>
+    <td class="tg-0lax" style="text-align: center;">timestamp</td>
+    <td class="tg-0lax" style="text-align: center;">타임스탬프</td>
+    <td class="tg-0lax" style="text-align: center;">14</td>
+    <td class="tg-0lax" style="text-align: center;">O</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">예) 20190906110100</td>
   </tr>
   <tr>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">signature</td>
-    <td class="tg-0lax">검증값</td>
-    <td class="tg-0lax">N/A</td>
-    <td class="tg-0lax">O</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
-    <td class="tg-0lax">Sha256<br>(mid+mkey+timestamp)</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">signature</td>
+    <td class="tg-0lax" style="text-align: center;">검증값</td>
+    <td class="tg-0lax" style="text-align: center;">N/A</td>
+    <td class="tg-0lax" style="text-align: center;">O</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
+    <td class="tg-0lax">Sha256 (mid+mkey+timestamp)</td>
   </tr>
 </tbody>
 </table>
@@ -406,14 +406,14 @@ toc: false
 [//]: # (부분취소 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 26%">
+<col style="text-align: center; width: 5%">
+<col style="text-align: center; width: 12%">
+<col style="text-align: center; width: 15%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 8%">
+<col style="text-align: center; width: 10%">
+<col style="text-align: left; width: 34%">
 </colgroup>
 <thead>
   <tr>
@@ -429,73 +429,73 @@ toc: false
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">ResultCode</td>
-    <td class="tg-0lax">결과코드</td>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">1</td>
+    <td class="tg-0lax" style="text-align: center;">ResultCode</td>
+    <td class="tg-0lax" style="text-align: center;">결과코드</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">00: 정상, 그 외 실패</td>
   </tr>
   <tr>
-    <td class="tg-0lax">2</td>
-    <td class="tg-0lax">ResultMsg</td>
-    <td class="tg-0lax">결과메시지</td>
-    <td class="tg-0lax">100</td>
-    <td class="tg-0lax">○</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">2</td>
+    <td class="tg-0lax" style="text-align: center;">ResultMsg</td>
+    <td class="tg-0lax" style="text-align: center;">결과메시지</td>
+    <td class="tg-0lax" style="text-align: center;">100</td>
+    <td class="tg-0lax" style="text-align: center;">○</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">Mid</td>
-    <td class="tg-0lax">가맹점 ID</td>
-    <td class="tg-0lax">10</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">3</td>
+    <td class="tg-0lax" style="text-align: center;">Mid</td>
+    <td class="tg-0lax" style="text-align: center;">가맹점 ID</td>
+    <td class="tg-0lax" style="text-align: center;">10</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">4</td>
-    <td class="tg-0lax">Tid</td>
-    <td class="tg-0lax">거래ID</td>
-    <td class="tg-0lax">40</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">4</td>
+    <td class="tg-0lax" style="text-align: center;">Tid</td>
+    <td class="tg-0lax" style="text-align: center;">거래ID</td>
+    <td class="tg-0lax" style="text-align: center;">40</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">5</td>
-    <td class="tg-0lax">C_Tid</td>
-    <td class="tg-0lax">취소거래ID</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">5</td>
+    <td class="tg-0lax" style="text-align: center;">C_Tid</td>
+    <td class="tg-0lax" style="text-align: center;">취소거래ID</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">6</td>
-    <td class="tg-0lax">Price</td>
-    <td class="tg-0lax">부분 취소 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">6</td>
+    <td class="tg-0lax" style="text-align: center;">Price</td>
+    <td class="tg-0lax" style="text-align: center;">부분 취소 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
-    <td class="tg-0lax">7</td>
-    <td class="tg-0lax">RmainPrice</td>
-    <td class="tg-0lax">취소 후 남은 금액</td>
-    <td class="tg-0lax">22</td>
-    <td class="tg-0lax">△</td>
-    <td class="tg-0lax">X</td>
-    <td class="tg-0lax">String</td>
+    <td class="tg-0lax" style="text-align: center;">7</td>
+    <td class="tg-0lax" style="text-align: center;">RmainPrice</td>
+    <td class="tg-0lax" style="text-align: center;">취소 후 남은 금액</td>
+    <td class="tg-0lax" style="text-align: center;">22</td>
+    <td class="tg-0lax" style="text-align: center;">△</td>
+    <td class="tg-0lax" style="text-align: center;">X</td>
+    <td class="tg-0lax" style="text-align: center;">String</td>
     <td class="tg-0lax">성공 시에만 전달</td>
   </tr>
   <tr>
