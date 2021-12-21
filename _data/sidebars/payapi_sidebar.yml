@@ -10,54 +10,44 @@ entries:
       - title: PayAPI서비스
         output: web
         folderitems:
-
           - title: 1. PayAPI 서비스 흐름도
             url: /payapi01.html#11-payapi-서비스-흐름도
             output: web
-
           - title: 2. PayAPI 서비스 개요
             url: /payapi01.html#12-payapi-개요
             output: web
 
       - title: 결제취소 API
         output: web
-
         folderitems:
           - title: 1. 전체취소 API
             url: /payapi02.html
             output: web
-
           - title: 2. 부분취소 API
             url: /payapi02.html#22-부분-취소-api
             output: web
             
       - title: 빌링결제 API
         output: web
-
         folderitems:
           - title: 1. 신용카드 빌키 발급 API
             url: /payapi03.html
             output: web
-
           - title: 2. 신용카드 비인증 빌키 발급 API
             url: /payapi03.html#32-신용카드-비인증-빌키-발급-api
             output: web
-
           - title: 3. 신용카드 빌링 승인 API
             url: /payapi03.html#33-신용카드-빌링-승인-api
             output: web
-
           - title: 4. 신용카드 빌키 삭제 API
             url: /payapi03.html#34-신용카드-빌키-삭제-api
             output: web
-
           - title: 5. 휴대폰 빌키 승인 API
             url: /payapi03.html#35-휴대폰-빌키-승인-api
             output: web
 
       - title: 신용카드 키인승인 API
         output: web
-
         folderitems:
           - title: 1. 신용카드 키인승인 API
             url: /payapi04.html
@@ -65,7 +55,6 @@ entries:
 
       - title: 신용카드 PREFIX 조회 API
         output: web
-
         folderitems:
           - title: 1. 신용카드 PREFIX 조회 API
             url: /payapi05.html
@@ -73,24 +62,19 @@ entries:
 
       - title: 에스크로 API
         output: web
-
         folderitems:
           - title: 1. 에스크로 배송등록 API
             url: /payapi06.html
             output: web
-
           - title: 2. 에스크로 구매확정 API
             url: /payapi06.html#62-에스크로-구매확정-api
             output: web
-
           - title: 3. 에스크로 구매거절 API
             url: /payapi06.html#63-에스크로-구매거절-api
             output: web
-
           - title: 4. 에스크로 구매거절 확인 API
             url: /payapi06.html#64-에스크로-구매거절-확인-api
             output: web
-
           - title: 5. 에스크로 상태조회 API
             url: /payapi06.html#65-에스크로-상태조회-api
             output: web
@@ -103,34 +87,11 @@ entries:
             url: /payapi07.html
             output: web
 
-# 메인메뉴로 빼기
-#      - title: 8. 샘플소스
-#        output: web
-#
-#        folderitems:
-#          - title: Node.js
-#            url: /payapi08.html
-#            output: web
-#
-#          - title: JAVA
-#            url: /payapi08.html#82-java
-#            output: web
-#
-#          - title: PHP
-#            url: /payapi08.html#83-php
-#            output: web
-#
-#          - title: ASP
-#            url: /payapi08.html#84-asp
-#            output: web
-
       - title: 부록
         output: web
-
         folderitems:
-
           - title: 1. 결제 주기 코드
-            url: /payapi09.html#91-결제-주기-코드
+            url: /payapi08.html
             output: web
 
 # Copyright 2021 Google LLC

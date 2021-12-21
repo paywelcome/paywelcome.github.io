@@ -6,6 +6,11 @@ folder: payapi
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi05.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi07.html">다음페이지▶</a>
+</div>
+
 # 6. 에스크로 API
 
 ## 6.1 에스크로 배송등록 API
@@ -1227,3 +1232,8 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/payapi05.html">◀이전페이지</a>
+  <a style="float:right;" href="/payapi07.html">다음페이지▶</a>
+</div>

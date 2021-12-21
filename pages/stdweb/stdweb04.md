@@ -6,6 +6,10 @@ folder: stdweb
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/stdweb03.html">◀이전페이지</a>
+</div>
+
 # 4. 부록
 ## A.1 결제수단코드 (gopaymethod)
 
@@ -425,3 +429,7 @@ toc: false
 <input type="hidden" name="gopaymethod" value="onlyvbanknone">
 <input type="hidden" name="acceptmethod" value="va_bankcd(20):va_receipt(1)">
 ```
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/stdweb03.html">◀이전페이지</a>
+</div>

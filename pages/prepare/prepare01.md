@@ -5,8 +5,6 @@ sidebar: prepare_sidebar
 folder: prepare
 toc: false
 ---
-<style>
-</style>
 
 ## 1.1 상점 연동시 주의사항
 
@@ -25,14 +23,223 @@ toc: false
 - signature는 form.submit 시 적용됩니다.signature생성은 Sample Source를 참고하여 작성하시기 바랍니다.
 
 ## 1.3 signature 첨부 대상
-  Web Standard 서비스의 모든 요청
-- 결제(인증), 승인APIsignature 생성 대상 필드(Target) 모든 요청의 signature의 생성방법 동일하며, 요청별로 생성 대상 필드가 다름
-- 요청별로 명시된 signature 생성 대상(Target)필드 를 참조
-- 인증요청(결제요청) : oid,price,timestamp
-  [[TABLE 1-3] signature 생성 대상(Target) 필드 참조](/stdweb03.html#table-1-3-signature-생성-대상target-필드)
-- 승인요청 : authToken, timestamp
-  [[TABLE 2-3] 승인요청 signature 생성 대상(Target) 필드 참조](/stdweb03.html#table-2-3-승인요청-signature-생성-대상target-필드) 
-  
+서비스 별로 Signature생성 방식이 상이하므로 아래의 표를 참고해주시기 바랍니다.<br/>
+**※ Signature 필드 생성 순서 중요**
+
+### Web Standard(PC) 서비스의 Signature 생성
+
+생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code><br/>
+필드 순서유지(알파벳순)
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 20%;">
+  <col style="width: 30%;">
+  <col style="width: 30%;">
+  <col style="width: 10%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>순번</th>
+      <th>필드명</th>
+      <th>승인필드명</th>
+      <th>설명</th>
+      <th>필수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>mkey</td>
+      <td></td>
+      <td>sha256(signkey)<br/>(signkey값은 담당자에게 문의 바랍니다.)</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>oid</td>
+      <td>oid(주문번호)</td>
+      <td>주문단위 unique한 값</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>price</td>
+      <td>price(금액)</td>
+      <td>가맹점 주문번호 / 결제단위 Unique</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>timestamp</td>
+      <td>timestamp(타임스탬프)</td>
+      <td>TimeInMillis(Long형)</td>
+      <td>필수</td>
+    </tr>
+  </tbody>
+</table>
+
+>Web Standard 서비스의 모든 요청<br/>
+>결제(인증), 승인APIsignature 생성 대상 필드(Target) 모든 요청의 signature의 생성방법 동일하며, 요청별로 생성 대상 필드가 다름<br/>
+>요청별로 명시된 signature 생성 대상(Target)필드 를 참조<br/>
+>인증요청(결제요청) : oid,price,timestamp<br/>
+>승인요청 : authToken, timestamp<br/>
+
+[//]: # (          <a href="/stdweb03.html#table-1-3-signature-생성-대상target-필드">[TABLE 1-3] signature 생성 대상&#40;Target&#41; 필드 참조]</a><br/>)
+[//]: # (          <a href="/stdweb03.html#table-2-3-승인요청-signature-생성-대상target-필드">[TABLE 2-3] 승인요청 signature 생성 대상&#40;Target&#41; 필드 참조]</a></td>)
+
+### MOBILE 서비스의 Signature 생성
+
+생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&P_AMT=&P_OID=&P_TIMESTAMP=</code><br/>
+필드 순서유지(명시된순으로)
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 20%;">
+  <col style="width: 30%;">
+  <col style="width: 30%;">
+  <col style="width: 10%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>순번</th>
+      <th>필드명</th>
+      <th>승인필드명</th>
+      <th>설명</th>
+      <th>필수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>mkey</td>
+      <td></td>
+      <td>sha256(signkey)<br/>(signkey값은 담당자에게 문의 바랍니다.)</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>P_AMT</td>
+      <td>P_AMT(금액)</td>
+      <td>가맹점 주문번호/결제단위 Unique</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>P_OID</td>
+      <td>P_OID(주문번호)</td>
+      <td>주문단위 unique한 값</td>
+      <td>필수</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>P_TIMESTAMP</td>
+      <td>P_TIMESTAMP(타임스탬프)</td>
+      <td>TimeInMillis(Long형)</td>
+      <td>필수</td>
+    </tr>
+  </tbody>
+</table>
+
+### PAYAPI 서비스의 Signature 생성
+
+필드 순서유지(API별로 명시된 순으로)
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 35%;">
+  <col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>순번</th>
+      <th>API명</th>
+      <th>Signature 생성 필드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>결제 전체 취소 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>결제 부분 취소 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>신용카드 빌키 발급 API</td>
+      <td>mid+mkey+cardNumber+timestamp</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>신용카드 비인증 빌키 발급 API</td>
+      <td>mid+mkey+cardNumber+timestamp</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>신용카드 빌링 승인 API</td>
+      <td>mid+mkey+oid+price+timestamp</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>신용카드 빌키 삭제 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>휴대폰 빌키 승인 API</td>
+      <td>mid+mkey+oid+price+timestamp</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>신용카드 키인결제 API</td>
+      <td>mid+mkey+oid+price+timestamp</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>신용카드 PREFIX 조회 API</td>
+      <td>mid+mkey+cardNumber+timestamp</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>에스크로 배송등록 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>에스크로 구매확정 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>에스크로 구매거절 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>에스크로 구매거절 확인 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>에스크로 상태조회 API</td>
+      <td>mid+mkey+timestamp</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>SMS결제용 단축 URL생성 API</td>
+      <td>mid+mkey+P_OID+P_AMT+timestamp</td>
+    </tr>
+  </tbody>
+</table>
+<strong>※자세한 필드는 각 API명세서를 참고 바랍니다.</strong>
+
 ## 1.4 signature 생성 방법
 - 위변조 방지를 위한 보안조치로서 필수 체크 데이터를 NVP 방식으로 연결한 데이터를SHA256으로 Hash한 값
 - NVP : nameandvalue parameters
@@ -69,90 +276,6 @@ toc: false
 
 ##### 수정 
 
-| mKey=xxxxxxxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 | 
+| mKey=xxxxxxxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 |
 
 
-### java
-```java
-// hash 알고리즘은 sha-256 사용
-String algorithm = "SHA-256"; 
-
-// hash 하기위한 plaintext를 변수에 담아준다.
-String data = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-
-// SHA를 사용하기 위해 MessageDigest 클래스로부터 인스턴스를 얻는다.
-MessageDigest md = MessageDigest.getInstance(algorithm); 
-
-// 해싱할 byte배열을 넘겨준다.
-// SHA-256의 경우 메시지로 전달할 수 있는 최대 bit 수는 2^64-1개 이다.
-md.update(data.getBytes("UTF-8")); 
-
-// 해싱된 byte 배열을 digest메서드의 반환값을 통해 얻는다.
-byte[] hashbytes = md.digest(); 
-
-// 보기 좋게 16진수로 만드는 작업
-StringBuilder signatureStr = new StringBuilder();
-for(int i=0 ; i&lt;hashbytes.length ; i++) { 
-    // %02x 부분은 0 ~ f 값 까지는 한자리 수이므로 두자리 수로 보정하는 역할을 한다. 
-    signatureStr.append(String.format("%02x", hashbytes[i] & 0xff));
-} 
-
-// signature 값 출력
-System.out.println(signatureStr .toString());
-```
-
-### node
-```javascript
-// hash 하기위한 plaintext를 변수에 담아준다.
-var plainText = "mid=xxxxxxxxxx&mkey=9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// node.js 내장 암호화 함수 호출
-var crypto = require('crypto'); 
-// sha-256의 알고리즘으로 암호화하여 signature값 생성
-var signature = crypto.createHash('sha256').update(plainText).digest('hex'); 
-// 해당 값 출력시 signature 값 출력
-console.log( signature); 
-```
-
-### php
-```php
-// hash 하기위한 plaintext를 변수에 담아준다.
-$plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// sha-256 알고리즘으로 plainText를 암호화 하여 signature값 생성
-$signature = hash("sha256", $plainText); 
-// 해당 값 출력시 signature 값 출력
-echo $signature;
-```
-
-### asp
-```asp
-// hash 알고리즘은 sha-256 사용
-plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// 샘플소스 ASP_MOBILE\include\signature.asp 내부함수의 MakeSignature(sMessage)를 참고
-MakeSignature(plainText);
-```
-
-## 1.6 서비스별 Signature 생성
-
-서비스 별로 Signature생성 방식이 상이하므로 아래의 표를 참고해주시기 바랍니다.<br/>
-**※ Signature 필드 생성 순서 중요** 
-
-<table style="width: 100%;">
-<colgroup>
-  <col style="width: 30%;">
-  <col style="width: 70%;">
-</colgroup>
-  <tbody>
-    <tr>
-      <th>PC</th>
-      <td><code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code></td>
-    </tr>
-    <tr>
-      <th>MOBILE</th>
-      <td><code class="language-plaintext highlighter-rouge">mkey=&P_AMT=&P_OID=&P_TIMESTAMP=</code></td>
-    </tr>
-    <tr>
-      <th>PAYAPI</th>
-      <td><code class="language-plaintext highlighter-rouge">각 API명세서의 Signature 항목을 참조</code></td>
-    </tr>
-  </tbody>
-</table>
