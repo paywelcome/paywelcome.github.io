@@ -10,9 +10,9 @@ toc: false
 
 해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
 
-| 업체명(MID)           | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
-|--------------------| --------- | ----------------- | ------------------------ |
-| xxxxx(xxxxxxxxmid) | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
+| 업체명(MID)    | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
+|-------------| --------- | ----------------- | ------------------------ |
+| 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
 
 ## 1.2 signature 개요
 
@@ -24,6 +24,9 @@ toc: false
 
 ## 1.3 signature 첨부 대상
 서비스 별로 Signature생성 방식이 상이하므로 아래의 표를 참고해주시기 바랍니다.<br/>
+
+Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도로 전달됩니다.
+
 **※ Signature 필드 생성 순서 중요**
 
 ### Web Standard(PC) 서비스의 Signature 생성
@@ -53,7 +56,7 @@ toc: false
       <td>1</td>
       <td>mkey</td>
       <td></td>
-      <td>sha256(signkey)<br/>(signkey값은 담당자에게 문의 바랍니다.)</td>
+      <td>sha256(signkey)<br/>(signkey값은 계약가맹점에 한해 별도 전달 예정)</td>
       <td>필수</td>
     </tr>
     <tr>
@@ -116,7 +119,7 @@ toc: false
       <td>1</td>
       <td>mkey</td>
       <td></td>
-      <td>sha256(signkey)<br/>(signkey값은 담당자에게 문의 바랍니다.)</td>
+      <td>sha256(signkey)<br/>(signkey값은 계약가맹점에 한해 별도 전달 예정)</td>
       <td>필수</td>
     </tr>
     <tr>
