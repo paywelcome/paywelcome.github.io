@@ -11,6 +11,7 @@ toc: false
 ## 1. Signature 샘플코드
 
 ### java
+
 ```java
 // hash 알고리즘은 sha-256 사용
 String algorithm = "SHA-256"; 
@@ -30,7 +31,7 @@ byte[] hashbytes = md.digest();
 
 // 보기 좋게 16진수로 만드는 작업
 StringBuilder signatureStr = new StringBuilder();
-for(int i=0 ; i&lt;hashbytes.length ; i++) { 
+for(int i=0 ; i < hashbytes.length ; i++) { 
     // %02x 부분은 0 ~ f 값 까지는 한자리 수이므로 두자리 수로 보정하는 역할을 한다. 
     signatureStr.append(String.format("%02x", hashbytes[i] & 0xff));
 } 
@@ -40,6 +41,7 @@ System.out.println(signatureStr .toString());
 ```
 
 ### node
+
 ```javascript
 // hash 하기위한 plaintext를 변수에 담아준다.
 var plainText = "mid=xxxxxxxxxx&mkey=9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
@@ -52,6 +54,7 @@ console.log( signature);
 ```
 
 ### php
+
 ```php
 // hash 하기위한 plaintext를 변수에 담아준다.
 $plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
@@ -62,7 +65,8 @@ echo $signature;
 ```
 
 ### asp
-```asp
+
+```php
 // hash 알고리즘은 sha-256 사용
 plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
 // 샘플소스 ASP_MOBILE\include\signature.asp 내부함수의 MakeSignature(sMessage)를 참고
@@ -74,7 +78,8 @@ MakeSignature(plainText);
 기본 통신코드는 서비스와 상관 없이 동일하며, URL과 요청 파라미터 값만 다릅니다. 다음의 샘플 코드는 취소 API를 기본으로 하고 있으니 참고만 하시기 바랍니다.
 
 ### node.js
-```node
+
+```javascript
 var request = require('request');
 var api_url = 'https://payapi.paywelcome.co.kr/cancel/cancel';
 var request_body = '';
@@ -104,12 +109,13 @@ request.post({
 ```
 
 ### java
+
 ```java
 try {
 	String apiURL = "https://payapi.paywelcome.co.kr/cancel/cancel";
 	String request_body = "";
 	request_body += "payType=card&";
-	request_body += "mid=xxxxxxxxxx
+	request_body += "mid=xxxxxxxxxx";
 	request_body += "tid=StdpayCARDINIWelTest20190904115758995708&";
 	request_body += "price=1000&";
 	request_body += "currency=WON&";
@@ -150,7 +156,7 @@ try {
 
 ### php
 
-```PHP
+```php
 <?php
 	$url = "https://payapi.paywelcome.co.kr/cancel/cancel";
 	
@@ -158,13 +164,13 @@ try {
 	$headers[] = "Content-Type: application/x-www-form-urlencoded; charset=UTF-8";
 	
 	$request_body = "";
-	$request_body .= "payType=card&";
-	$request_body .= "mid=xxxxxxxxxx
-	$request_body .= "tid=StdpayCARDINIWelTest20190904115758995708&";
-	$request_body .= "price=1000&";
-	$request_body .= "currency=WON&";
-	$request_body .= "timestamp=&";
-	$request_body .= "signature=&";
+	$request_body = "payType=card&";
+	$request_body = "mid=xxxxxxxxxx";
+	$request_body = "tid=StdpayCARDINIWelTest20190904115758995708&";
+	$request_body = "price=1000&";
+	$request_body = "currency=WON&";
+	$request_body = "timestamp=&";
+	$request_body = "signature=&";
 	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
@@ -191,13 +197,13 @@ try {
 
 ### asp
 
-```ASP
+```php
 <%@Language="VBScript" CODEPAGE="949" %>
 <%
 dim xmlhttp, request_body
 
 request_body = "payType=card&"
-request_body = request_body & "mid=xxxxxxxxxx
+request_body = request_body & "mid=xxxxxxxxxx"
 request_body = request_body & "tid=StdpayCARDINIWelTest20190904115758995708&"
 request_body = request_body & "price=1000&"
 request_body = request_body & "currency=WON&"
