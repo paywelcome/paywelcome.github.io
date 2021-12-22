@@ -470,7 +470,12 @@ span.projectTitle {
 }
 
 .footer {
+    text-align: left;
+}
+
+.footer2{
     text-align: right;
+    margin-top: 43px;
 }
 
 .footerMeta {
@@ -578,7 +583,7 @@ button.cursorNorm {
 }
 
 a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
-    margin-left: 10px;
+    margin-left: 9px;
 }
 
 .navbar a:focus {
