@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PayAPI 서비스
 permalink: payapi01.html
 sidebar: payapi_sidebar
 folder: payapi

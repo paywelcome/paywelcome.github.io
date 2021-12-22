@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 빌링결제 API
 permalink: payapi03.html
 sidebar: payapi_sidebar
 folder: payapi

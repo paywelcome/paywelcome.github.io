@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 신용카드 키인승인 API
 permalink: payapi04.html
 sidebar: payapi_sidebar
 folder: payapi

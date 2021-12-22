@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 신용카드 PREFIX 조회 API
 permalink: payapi05.html
 sidebar: payapi_sidebar
 folder: payapi

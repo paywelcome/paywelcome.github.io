@@ -1,5 +1,5 @@
 ---
-title: MOBILE
+title: 모바일 부록
 permalink: mobile03.html
 sidebar: mobile_sidebar
 folder: mobile

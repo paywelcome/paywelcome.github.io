@@ -1,5 +1,5 @@
 ---
-title: MOBILE
+title: 모바일 결제 연동
 permalink: mobile02.html
 sidebar: mobile_sidebar
 folder: mobile

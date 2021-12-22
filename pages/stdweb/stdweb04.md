@@ -1,5 +1,5 @@
 ---
-title: PC(웹표준)결제
+title: PC(웹표준)결제 부록
 permalink: stdweb04.html
 sidebar: stdweb_sidebar
 folder: stdweb
