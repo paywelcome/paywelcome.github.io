@@ -1467,7 +1467,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.<br>
 기술지원 문의 (mainpg_support@welcomepayments.co.kr)
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/stdweb02.html">◀이전페이지</a>
   <a style="float:right;" href="/stdweb04.html">다음페이지▶</a>
 </div>

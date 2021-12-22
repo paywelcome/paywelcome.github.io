@@ -129,6 +129,6 @@ toc: false
   </tbody>
 </table>
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
 </div>

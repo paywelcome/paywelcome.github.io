@@ -464,6 +464,6 @@ ex) 카카오톡 앱에서 결제 진행 시
 <form method="post" accept-charset="euc-kr">
 ```
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/mobile02.html">◀이전페이지</a>
 </div>

@@ -76,6 +76,6 @@ keywords: 개요, PC, 특징, 웹, 연동
 
 <img src="../images/stdweb/img03.png">
 
-<div style="display: inline-block; width: 100%;">
-  <a style="float:right;" href="/stdweb01.html">다음페이지▶</a>
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
+  <a style="float:right;" href="/stdweb02.html">다음페이지▶</a>
 </div>

@@ -362,7 +362,7 @@ toc: false
 </div>
 </details>
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/payapi03.html">◀이전페이지</a>
   <a style="float:right;" href="/payapi05.html">다음페이지▶</a>
 </div>

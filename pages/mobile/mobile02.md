@@ -2651,7 +2651,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 - 또한, 입금 통보 수신 시, 기 수신받은 P_TID 인지 반드시 체크하는 로직을 구성하시길 바랍니다.
 - 노티는 네트워크의 사정에 따라, 중복수신 될 수 있습니다.
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/mobile01.html">◀이전페이지</a>
   <a style="float:right;" href="/mobile03.html">다음페이지▶</a>
 </div>

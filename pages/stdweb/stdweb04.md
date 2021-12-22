@@ -431,6 +431,6 @@ keywords: 코드, 결제수단, 옵션
 <input type="hidden" name="acceptmethod" value="va_bankcd(20):va_receipt(1)">
 ```
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/stdweb03.html">◀이전페이지</a>
 </div>

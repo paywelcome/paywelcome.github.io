@@ -190,7 +190,7 @@ WelStdweb
 
 - **취소/조회 테스트를 위해 거래번호(TID)를 기록해 두십시오.**
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/stdweb01.html">◀이전페이지</a>
   <a style="float:right;" href="/stdweb03.html">다음페이지▶</a>
 </div>
