@@ -1,5 +1,5 @@
 ---
-title: 공통 코드
+title: 샘플 코드
 permalink: sample01.html
 sidebar: sample_siderbar
 folder: sample

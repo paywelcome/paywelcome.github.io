@@ -4,6 +4,7 @@ permalink: mobile02.html
 sidebar: mobile_sidebar
 folder: mobile
 toc: false
+keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, 인증, 스마트폰, 모바일 취소, 취소, 결제취소, 결제 취소, signkey, signKey, mid, 데이터, 공통, ios, Android, ANDROID, 안드로이드
 ---
 
 <div style="display: inline-block; width: 100%;">
@@ -632,7 +633,7 @@ function formSubmit(){
 
 {% include image.html file="mobile_img06.png" %}
 
-2 Transaction 거래의 경우, [2-1. 결제 요청 페이지작성 - 접속 주소 및 일반필드](/mobile02.html) 에 기재된, P_NEXT_URL 로 인증결과를 전달합니다. 이때 Mobile Web 서비스에서 P_NEXT_URL 로 전달하는 Parameter 는 하기와 같습니다.
+2 Transaction 거래의 경우, [2-1. 결제 요청 페이지작성 - 접속 주소 및 일반필드](/mobile02.html#221-전-지불수단-공통-필드) 에 기재된, P_NEXT_URL 로 인증결과를 전달합니다. 이때 Mobile Web 서비스에서 P_NEXT_URL 로 전달하는 Parameter 는 하기와 같습니다.
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -1218,7 +1219,7 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 
 하기에는 호출 된, P_NEXT_URL 에 전달될 파라미터 입니다.
 
-<p style="font-size: 80%">(1-8 . 승인결과 수신필드 상세 (only 2 Transaction) 의 공통 필드 )외 하기필드</p>
+([2.5.2 승인결과 수신필드 상세 (only 2 Transaction) 의 공통 필드](/mobile02.html#승인결과-수신필드-상세-only-2-transaction) )외 하기필드
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -1270,7 +1271,7 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </details>
 
 P_NOTI_URL로 전송되는 승인결과는 하단의 노티 수신 사용법 안내에 대한 내용을 참고 바랍니다.
-_가상계좌_ _Flo_w 는 하기와 같습니다.
+_가상계좌 Flow_ 는 하기와 같습니다.
 
 {% include image.html file="mobile_img09.png" %}
 
@@ -1303,8 +1304,8 @@ P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사�
 ### 2.6.1 기본적인 설치방법
 
 안드로이드 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
-Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( 1-13. 주의사항 &lt;UrlEncode issue&gt; ) 를 참조하셔 주십시오.<br>
-WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 (0.기본적인 설치 방법) 의 방법과 동일합니다.<br>
+Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
+WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html) 의 방법과 동일합니다.<br>
 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.<br>
 
 ### 2.6.2 ISP 연동방법 - 앱 미설치 체크로직 직접구현 or 자동체크
@@ -1344,7 +1345,7 @@ private class INIP2PWebView extends WebViewClient {
 2. 상기 shouldOverrideUrlLoading() 함수 내에, try{} catch{e} 를 통해, try 내에서는 startActivity(intent) 를 구현하시고, catch Event 발생 시, 앱 스토어로 이동할 수 있도록 조치하시면 됩니다.
    하기에 안내되는 소스는 상기 방식에 대한 Full-Source 입니다.<br/>
 
-<p style="font-size: 80%">[shouldOverrideUrlLoading 부]</p>
+#### [shouldOverrideUrlLoading 부]
 
 ```java
 private class INIP2PWebView extends WebViewClient {
@@ -1365,7 +1366,7 @@ catch(ActivityNotFoundException e)
      {
         view.loadData("<html><body></body></html>", "text/html", "euc-kr"); 
         alertIsp.show();
-        return true;
+        return true; //----------------------------------------------①
      }
   }
   ...
@@ -1407,7 +1408,7 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 
 3. ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 될 것이며,<br/>
 4. ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.
-   23 페이지의 예시[shouldOverrideUrlLoading 부] 의 에 대하여 true 혹은 false 를 설정하는 것은 하기의 표를 참고하십시요.
+   예시[shouldOverrideUrlLoading 부](/mobile02.html#shouldoverrideurlloading-부) 의 에 대하여 true 혹은 false 를 설정하는 것은 하기의 표를 참고하십시요.
 
 <table style="width: 100%;">
 <colgroup>
@@ -1433,23 +1434,23 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
     </tr>
     <tr>
       <td style="text-align: center">N or  미설정</td>
-      <td style="text-align: center">ISP,  계좌이체앱<br>? appScheme  작동</td>
+      <td style="text-align: center">ISP,  계좌이체앱<br>- appScheme  작동</td>
       <td>하기 [그림 1]  과 같이  Display  됨</td>
       <td style="text-align: center">false</td>
     </tr>
   </tbody>
 </table>
 
-- [shouldOverrideUrlLoading 부] 의 을 true 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라집니다.
+- [shouldOverrideUrlLoading 부](/mobile02.html#shouldoverrideurlloading-부) 의 ①을 true 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라집니다.
   따라서, app Scheme 형태로 결제 앱을 호출할 경우에는 &quot;그림 1&quot; 과 같이 오류 페이지가 Display 되기 때문에, WebView 를 remove 하는 것이 좋습니다.
 
 {% include image.html file="mobile_img10.jpg" %}
 [그림1]
 
-- [shouldOverrideUrlLoading 부] 의 을 false 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라지지 않기 때문에,
+- [shouldOverrideUrlLoading 부](/mobile02.html#shouldoverrideurlloading-부) 의 ①을 false 로 할 경우, Mobile Web 서비스를 띄운 WebView 는 사라지지 않기 때문에,
   apprun_check=Y 를 통해 현 결제 페이지가 유지되는 방식을 사용 하는 것이 좋습니다. 이 방법을 자동체크방식이라 합니다.
 - 단, apprun_check 옵션을 통해 설치체크로직이 작동되므로, alertIsp 함수는 구현될 필요가 없습니다.
-  apprun_check 로직에 대하여 상세히 확인하시려면 ( 0.결제창 Open (주문정보 전달) ? 복합필드 ) 를 확인하여 주십시오. 또한, Intent 호출에 대하여 예외처리를 반드시 체크하셔야 합니다.
+  apprun_check 로직에 대하여 상세히 확인하시려면 ( [2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved) ) 를 확인하여 주십시오. 또한, Intent 호출에 대하여 예외처리를 반드시 체크하셔야 합니다.
 
 ### 2.6.3 ISP 연동방법 - 인증결과 전송
 
@@ -1632,8 +1633,8 @@ private class SampleWebViewClient extends WebViewClient {
 ### 2.7.1 기본적인 설치방법
 
 IOS 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
-Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( 1-13. 주의사항 &lt;UrlEncode issue&gt; ) 를 참조하셔 주십시오.<br>
-WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 (0.기본적인 설치 방법) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
+Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
+WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html)) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
 
 ### 2.7.2 신용카드 ISP, 계좌이체 연동방법
 
@@ -1662,7 +1663,7 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
   </tbody>
 </table>
 
-- P_RESERVED 옵션에 대한 설명은 ([1-3. 결제-요청-페이지작성 - 복합필드](/mobile02.html#22-결제-요청-페이지작성---결제페이지-요청필드)) 를 참조 부탁 드립니다.<br>
+- P_RESERVED 옵션에 대한 설명은 ([2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved)) 를 참조 부탁 드립니다.<br>
   더불어 상기 옵션 셋팅 시, 가맹점스키마명 뒤 ://은 필수로 입력해 주셔야 ISP 앱 종료 후 가맹점 앱이 호출 됩니다.<br>
   (Ex. 가맹점 스키마명이 WelcomeMobile일 경우 app_scheme=WelcomeMobile:// 로 셋팅 해 주시면 됩니다.)
 
@@ -1751,7 +1752,7 @@ IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니�
 
     1. 고객 단말기의 OS 버전이 4.x 이상인 경우
     2. 가맹점 Application 이 Multi switching 이 지원되는 경우
-    3. OS 버전이 9.x 이상일 경우 하기 &#39;[1-6. IOS9 Application 구현 시, 확인사항](#76-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
+    3. OS 버전이 9.x 이상일 경우 하기 &#39;[2.7.6 IOS9 버전 Application 구현 시, 주의 사항](/mobile02.html#276-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
 
 ### 2.7.5 쿠키 설정
 
@@ -1950,7 +1951,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 
 #### A. 설정 방법
 
-- 매뉴얼 결제창 Open (주문정보 전달) ? 복합필드섹션을 보면, P_RESERVED 파라미터 항목이 있습니다.
+- 매뉴얼 결제창 [2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved)섹션을 보면, P_RESERVED 파라미터 항목이 있습니다.
   참고 하시어, 동일하게 상위의 옵션을 설정하시면 됩니다.
 
 >예) `<INPUT type=”hidden” name=”P_RESERVED” value=”useescrow=Y”/> `
