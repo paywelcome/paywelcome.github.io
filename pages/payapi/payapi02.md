@@ -37,6 +37,10 @@ toc: false
 
 #### 1) 전체 취소 요청 파라미터
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (전체취소 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -145,7 +149,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 1) 전체 취소 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (전체취소 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -255,6 +266,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 2.2 부분 취소 API  
 승인 완료 후, 해당 승인 건에 대해 부분 취소 시 사용하는 서비스입니다. 부분취소 후 남은 금액 취소는 부분취소 API, Tid (거래ID) 를 사용합니다.
 
@@ -277,6 +291,10 @@ toc: false
 </table>
 
 #### 1) 부분 취소 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (부분취소 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -406,7 +424,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 부분 취소 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (부분취소 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -525,6 +550,9 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 <div style="display: inline-block; width: 100%;">
   <a style="float:left;" href="/payapi01.html">◀이전페이지</a>

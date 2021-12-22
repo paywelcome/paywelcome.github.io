@@ -40,6 +40,10 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
 
 #### 1) SMS결제용 단축 URL생성 요청 파라미터
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (SMS결제용 단축 URL생성 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -208,7 +212,14 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) SMS결제용 단축 URL생성 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (SMS결제용 단축 URL생성 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -267,6 +278,9 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 <div style="display: inline-block; width: 100%;">
   <a style="float:left;" href="/payapi06.html">◀이전페이지</a>

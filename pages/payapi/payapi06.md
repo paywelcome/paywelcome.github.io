@@ -39,6 +39,10 @@ toc: false
 
 #### 1) 에스크로 배송등록 요청 파라미터
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (에스크로 배송등록 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -152,7 +156,7 @@ toc: false
     <td class="center-align">O</td>
     <td class="center-align">X</td>
     <td class="center-align">String</td>
-    <td class="left-align"><a href="/payapi09.html#92-에스크로-배송등록-택배사-코드">별첨 에스크로 배송등록 택배사 코드 참고</a></td>
+    <td class="left-align"><a href="/code01.html#4-에스크로-배송등록-택배사-코드">별첨 에스크로 배송등록 택배사 코드 참고</a></td>
   </tr>
   <tr>
     <td class="center-align">10</td>
@@ -337,7 +341,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 에스크로 배송등록 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 배송등록 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -407,6 +418,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 6.2 에스크로 구매확정 API
 
 에스크로 구매확정시 사용하는 서비스입니다.
@@ -432,6 +446,10 @@ toc: false
 </table>
 
 #### 1) 에스크로 구매확정 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 구매확정 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -521,7 +539,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 에스크로 구매확정 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 구매확정 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -591,6 +616,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 6.3 에스크로 구매거절 API
 
 에스크로 구매거절시 사용하는 서비스입니다.
@@ -616,6 +644,10 @@ toc: false
 </table>
 
 #### 1) 에스크로 구매거절 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -744,7 +776,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 에스크로 구매거절 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -813,6 +852,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 6.4 에스크로 구매거절 확인 API
 
 에스크로 구매거절 확인시 사용하는 서비스입니다.
@@ -838,6 +880,10 @@ toc: false
 </table>
 
 #### 1) 에스크로 구매거절 확인 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 구매거절 확인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -927,7 +973,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 에스크로 구매거절 확인 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 구매거절 확인 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -997,6 +1050,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 6.5 에스크로 상태조회 API
 
 에스크로 상태조회시 사용하는 서비스입니다.
@@ -1022,6 +1078,10 @@ toc: false
 </table>
 
 #### 1) 에스크로 상태조회 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 상태조회 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1101,7 +1161,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 에스크로 상태조회 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (에스크로 상태조회 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1230,6 +1297,9 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 <div style="display: inline-block; width: 100%;">
   <a style="float:left;" href="/payapi05.html">◀이전페이지</a>
