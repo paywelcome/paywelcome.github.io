@@ -4,6 +4,7 @@ permalink: stdweb04.html
 sidebar: stdweb_sidebar
 folder: stdweb
 toc: false
+keywords: 코드, 결제수단, 옵션
 ---
 
 <div style="display: inline-block; width: 100%;">

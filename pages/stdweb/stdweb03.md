@@ -4,6 +4,7 @@ permalink: stdweb03.html
 sidebar: stdweb_sidebar
 folder: stdweb
 toc: false
+keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signkey, signKey, mid, 데이터, 신용카드, 공통, 계좌이체, 핸드폰, 스마트폰, 가상계좌, 응답, 공통, 옵션
 ---
 
 <div style="display: inline-block; width: 100%;">
@@ -88,6 +89,10 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 
 
 #### [1-1] 기본 요청데이터 필드
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table style = "table-layout: auto; width: 100%; table-layout: fixed;" >
 <thead>
@@ -315,7 +320,14 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### [1-2] acceptmethod 공통 추가 옵션
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -352,18 +364,14 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [1-3] 신용카드 추가 요청필드 (선택)
 
-<style>
-
-details
-{
-    transition: height 1s ease;
-    overflow: hidden;
-}
-</style>
-
-<details open>
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -446,9 +454,15 @@ details
     </tr>
   </tbody>
 </table>
+
+</div>
 </details>
 
 #### [1-4] 휴대폰결제 추가 요청필드 (선택)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -509,7 +523,14 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [1-5] 계좌이체 추가 요청필드 (선택)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -532,7 +553,14 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [1-6] 가상계좌 추가 요청필드 (선택)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -576,6 +604,9 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 ## 3.2 리턴 페이지 (인증수신/승인 API) 작성 (PayReturn)
 - 작성시Sample Source를 참고하여 작성하시기 바랍니다.
 
@@ -584,6 +615,11 @@ details
   인증 결과 데이터 필드는 아래와 같습니다.
 
 #### [2-1] 인증결과 데이터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table>
   <thead>
     <tr>
@@ -661,6 +697,9 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 ### 3.2.2 승인API 요청
 
 - 인증결과가 성공일때 authUrl로 HTTPS API Request(httpClient 통신)를 통해 페이지 요청
@@ -671,6 +710,10 @@ details
 - 결제 승인 요청데이터는 필드는 아래와 같습니다.
 
 #### [2-2] 승인요청 데이터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -745,6 +788,9 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 ### 3.2.3. 승인API 결과(결제완료)
 
 - 승인 요청후 결제결과(responseBody)를 받아 요청타입(format)에 따라서 파싱 후에 내부처리(DB저장 등) 하시기 바랍니다.
@@ -754,6 +800,11 @@ details
 - 승인 결과 데이터 필드는 아래와 같습니다.
 
 #### [2-4] 승인결과 데이터(공통)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 <table>
   <thead>
     <tr>
@@ -859,10 +910,16 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 - 결제수단에 따라 승인 결과가 추가로 수신됩니다. 데이터는 다음과 같습니다.
 
 #### [2-5] 승인결과 데이터(신용카드)
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -948,7 +1005,14 @@ details
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [2-6] 승인결과 데이터(무통장)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 |       필드명       |  한글명칭  | Data Type | 설명                                       | 크기(최대)  |
 | :-------------: | :----: | :-------: | :---------------------------------------- | :-------: |
@@ -960,7 +1024,14 @@ details
 |   VACT_Time    | 송금 시각  |  String   | 송금 시각                                    | 6 Byte  |
 |  vactBankName   | 입금은행명  |  String   | 무통장 입금 은행명                               | 20 Byte |
 
+</div>
+</details>
+
 #### [2-7] 승인결과데이터(계좌이체)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 | 필드명              | 한글명칭        | Data Type | 설명                 | 크기(최대)  |
 | :----------------: | :-----------: | :---------: | :------------------ | :-------: |
@@ -968,13 +1039,23 @@ details
 | CSHR_ResultCode | 현금영수증발행정상여부 | String    | 220000(정상처리)       | 10 Byte |
 | CSHR_Type       | 현금영수증구분     | String    | 0 = 소득공제 / 1 = 지출증빙 | 1 Byte  |
 
+</div>
+</details>
+
 #### [2-8] 승인결과데이터(휴대폰결제)
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 | 필드명          | 한글명칭   | Data Type | 설명               | 크기(최대)  |
 | :------------: | :------: | :---------: | :---------------- | :-------: |
 | HPP_Num     | 휴대폰번호  | String    | 휴대폰번호            | 14 Byte |
 | payDevice    | 결제장치   | String    | PC               | 6 Byte  |
 | HPP_BillKey | 휴대폰 빌키 | String    | 휴대폰 빌링 사용시 빌키 발급 | 40 Byte |
+
+</div>
+</details>
 
 - 가맹점 설정에 따라 승인결과 형식(return content type)을 다양하게 수신하실 수 있습니다.
 - 승인결과 형식은 다음과 같습니다.
@@ -1076,6 +1157,10 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 - 매매보호서비스에서소비자의구매확정은반드시필요한기능입니다.
 
 #### [3-1] 구매확인요청파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -1180,7 +1265,14 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
   </tbody>
 </table>
 
+</div>
+</details>
+
 #### [3-2] 구매확인요청파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 <table>
   <thead>
@@ -1217,6 +1309,9 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
   </tbody>
 </table>
 
+</div>
+</details>
+
 ### 3.3.3 에스크로 상태변경 노티 수신
 
 - 에스크로 주요 시점 (예 >구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(NOTI CONFIRM)하여야합니다.
@@ -1226,6 +1321,10 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 - 원거래TID는 부분취소거래만 설정됩니다.
 
 ##### [노티발송 웰컴페이먼츠 &gt; 가맹점]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 |     필드명      |  한글명칭   |    크기     | 설명                                       |
 | :----------: | :-----: | :-------: | ---------------------------------------- |
@@ -1239,12 +1338,22 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 |    price     |  거래금액   | Char(12)  |                                          |
 |   tid_org    | 원거래거래번호 | Char(40)  | 부분취소시원거래거래번호                             |
 
+</div>
+</details>
+
 ##### [노티응답 가맹점  &gt; 웰컴페이먼츠 ]
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 |   필드명    | 한글명칭  |     크기     | 설명                   |
 | :------: | :---: | :--------: | -------------------- |
 | cd_rslt  | 결과코드  |  Char(4)   | 0000:정상처리, 9999:처리실패 |
 | msg_rslt | 결과메세지 | Char(1000) | 처리실패시 상세 오류 메세지      |
+
+</div>
+</details>
 
 ## 3.4 가상계좌 입금통보 (노티 수신) 사용 방법 
 > 상점 입금통보 수신 페이지는 고객이 가상계좌이체 서비스를 사용하여 가상계좌를 발급받은 후 무통장 입금을 하였을 때,<br> 은행으로부터 통보된 입금결과를 상점으로 전송해 주기 위해 상점 측에 필요한 페이지입니다.<br>고객이 보는 결제 화면과는 무관하며, HTTP/HTTPS 모두 지원합니다.
@@ -1252,6 +1361,10 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 ### 3.4.1 노티를 받을 때 전달되는 파라미터
 
 #### [3-1] 이체결과파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 |      필드명      | 한글명칭                      |     크기      |
 | :-----------: | :------------------------: | :---------: |
@@ -1278,6 +1391,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 | no_cshr\_appl | 현금영수증 발급번호                |  NUMBER(9)  |
 | no_cshr\_tid  | 현금영수증 발급TID               | VARCHAR(40) |
 
+</div>
+</details>
 
 ### 3.4.2 주의사항 
 

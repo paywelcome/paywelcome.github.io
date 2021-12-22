@@ -4,6 +4,7 @@ permalink: stdweb02.html
 sidebar: stdweb_sidebar
 folder: stdweb
 toc: false
+keywords: 설치, 구조, 방화벽, 방, 방화, 파일, 샘플
 ---
 
 <div style="display: inline-block; width: 100%;">

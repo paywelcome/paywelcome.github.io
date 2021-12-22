@@ -4,10 +4,11 @@ permalink: stdweb01.html
 sidebar: stdweb_sidebar
 folder: stdweb
 toc: false
+keywords: 개요, PC, 특징, 웹, 연동
 ---
 
 <div style="display: inline-block; width: 100%;">
-  <a style="float:right;" href="/stdweb01.html">다음페이지▶</a>
+  <a style="float:right;" href="/stdweb02.html">다음페이지▶</a>
 </div>
 
 # 1. 제품의 개요 및 특징 
@@ -41,7 +42,7 @@ toc: false
 
 신용카드사에서 인증서를 발급받아 신용카드 번호를 입력하지 않고 본인확인만으로 결제하는 보다 안전한 결제방식입니다.<br>
   이용금액은 신용카드와 동일하게 청구됩니다.<br>
-  자세한 내용은 [www.virtualcard.co.kr](http://www.virtualcard.co.kr) 을 참조하십시오.
+  자세한 내용은 [https://service.vp.co.kr/](https://service.vp.co.kr/) 을 참조하십시오.
 
 ### 무통장입금(가상계좌)
 

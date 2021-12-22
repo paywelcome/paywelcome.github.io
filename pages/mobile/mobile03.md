@@ -4,6 +4,7 @@ permalink: mobile03.html
 sidebar: mobile_sidebar
 folder: mobile
 toc: false
+keywords: 계좌이체, 유의사항, 주의사항, 사항, 주의, 
 ---
 
 <div style="display: inline-block; width: 100%;">
