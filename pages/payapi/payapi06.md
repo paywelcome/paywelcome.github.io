@@ -1003,8 +1003,6 @@ toc: false
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 
-20211216 확인필요
-
 [//]: # (에스크로 상태조회 API URL)
 <table class="tg" style="width: 100%">
   <colgroup>
