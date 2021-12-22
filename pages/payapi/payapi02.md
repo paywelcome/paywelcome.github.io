@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 결제취소 API
 permalink: payapi02.html
 sidebar: payapi_sidebar
 folder: payapi

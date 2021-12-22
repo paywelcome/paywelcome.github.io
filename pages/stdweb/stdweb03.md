@@ -1,5 +1,5 @@
 ---
-title: PC(웹표준)결제
+title: PC(웹표준)결제 결제 연동
 permalink: stdweb03.html
 sidebar: stdweb_sidebar
 folder: stdweb

@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 부록
 permalink: payapi08.html
 sidebar: payapi_sidebar
 folder: payapi
@@ -10,7 +10,7 @@ toc: false
   <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
 </div>
 
-# 9. 별첨
+# 9. 부록
 
 ## 9.1 결제 주기 코드
 

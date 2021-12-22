@@ -1,5 +1,5 @@
 ---
-title: MOBILE
+title: 모바일 설치
 permalink: mobile01.html
 sidebar: mobile_sidebar
 folder: mobile

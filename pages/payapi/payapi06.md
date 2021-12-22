@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI 에스크로 API
 permalink: payapi06.html
 sidebar: payapi_sidebar
 folder: payapi

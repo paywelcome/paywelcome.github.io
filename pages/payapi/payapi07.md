@@ -1,5 +1,5 @@
 ---
-title: PAYAPI
+title: PAYAPI SMS결제용 단축 URL생성 API
 permalink: payapi07.html
 sidebar: payapi_sidebar
 folder: payapi
