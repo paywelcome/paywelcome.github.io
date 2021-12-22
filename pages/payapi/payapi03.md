@@ -39,6 +39,10 @@ toc: false
 
 #### 1) 신용카드 빌키 발급 요청 파라미터
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (신용카드 빌키 발급 API 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -217,7 +221,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 빌키 발급 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 빌키 발급 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -337,6 +348,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 3.2 신용카드 비인증 빌키 발급 API  
 빌링 결제에 필요한 빌키 발급 시 사용하는 서비스입니다.
 
@@ -364,6 +378,10 @@ toc: false
 </table>
 
 #### 1) 신용카드 비인증 빌키 발급 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 비인증 빌키 발급 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -523,7 +541,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 비인증 빌키 발급 응답 파라미터  
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 빌키 발급 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -633,6 +658,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 3.3 신용카드 빌링 승인 API  
 발급된 빌키를 사용하여 승인하는 서비스입니다.
 
@@ -658,6 +686,10 @@ toc: false
 </table>
 
 #### 1) 신용카드 빌링 승인 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 빌링 승인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -827,7 +859,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 빌링 승인 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 빌링 승인 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -927,6 +966,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 3.4 신용카드 빌키 삭제 API  
 발급된 빌키 삭제 시 사용하는 서비스입니다.
 
@@ -952,6 +994,10 @@ toc: false
 </table>
 
 #### 1) 신용카드 빌키 삭제 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 빌키 삭제 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1021,7 +1067,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 빌키 삭제 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (빌키 삭제 응답)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1071,6 +1124,9 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 ## 3.5 휴대폰 빌키 승인 API
 휴대폰 빌키 발급은 PC Web이나 Mobile Web을 통해서 진행한 후 발급된 빌키를 사용하여 승인하는 서비스입니다. 휴대폰 빌링은 빌키 발급시에 요청한 일자기준 매월 요청시에 전후 5일 이내(예: 1월 5일 발급시에 2월 5일 전후 5일 이내 요청 필요), 요청한 금액과 동일한 금액으로 승인 요청주셔야 정상 승인 처리 됩니다. (일자 및 금액 변경해서 요청할 경우 별도 심사가 필요하므로 영업담당자에 문의 바랍니다.)
 
@@ -1095,6 +1151,10 @@ toc: false
 </table>
 
 #### 1) 휴대폰 빌키 승인 요청 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (휴대폰 빌키 승인 요청 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1224,7 +1284,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 휴대폰 빌키 승인 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (휴대폰 빌키 승인 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -1313,6 +1380,9 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 <div style="display: inline-block; width: 100%;">
   <a style="float:left;" href="/payapi02.html">◀이전페이지</a>

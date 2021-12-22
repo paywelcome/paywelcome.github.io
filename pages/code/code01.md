@@ -6,7 +6,7 @@ folder: code
 toc: false
 ---
 
-## 1 카드사(매입사) 코드
+## 1. 카드사(매입사) 코드
 
 <table style="width: 100%">
 <colgroup>
@@ -75,7 +75,7 @@ toc: false
   </tbody>
 </table>
 
-## 2 카드 발급사(은행사) 코드
+## 2. 카드 발급사(은행사) 코드
 
 <table style="width: 100%;">
 <colgroup>
@@ -318,7 +318,7 @@ toc: false
   </tbody>
 </table>
 
-## 3 카드 코드(결제창 제어 카드코드)
+## 3. 카드 코드(결제창 제어 카드코드)
 
 <table style="width: 100%;">
 <colgroup>
@@ -417,7 +417,7 @@ toc: false
   </tbody>
 </table>
 
-## 4 에스크로 배송등록 택배사 코드
+## 4. 에스크로 배송등록 택배사 코드
 
 <table style="width: 100%;">
 <colgroup>

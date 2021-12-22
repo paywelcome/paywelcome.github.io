@@ -24,3 +24,8 @@ entries:
       url: /code01.html#3-카드-코드결제창-제어-카드코드
       output: web
       type: web
+
+    - title: 4. 에스크로 배송등록 택배사 코드
+      url: /code01.html#4-에스크로-배송등록-택배사-코드
+      output: web
+      type: web

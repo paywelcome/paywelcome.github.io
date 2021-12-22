@@ -37,6 +37,10 @@ toc: false
 
 #### 1) 신용카드 PREFIX 요청 파라미터
 
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
+
 [//]: # (신용카드 PREFIX 요청)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <colgroup>
@@ -105,7 +109,14 @@ toc: false
 </tbody>
 </table>
 
+</div>
+</details>
+
 #### 2) 신용카드 PREFIX 조회 응답 파라미터
+
+<details style="cursor:pointer;" open>
+<summary><strong>&nbsp;상세보기</strong></summary>
+<div markdown="1">
 
 [//]: # (신용카드 PREFIX 조회 응답 파라미터)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -184,6 +195,9 @@ toc: false
   </tr>
 </tbody>
 </table>
+
+</div>
+</details>
 
 <div style="display: inline-block; width: 100%;">
   <a style="float:left;" href="/payapi04.html">◀이전페이지</a>
