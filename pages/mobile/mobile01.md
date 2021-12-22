@@ -27,7 +27,11 @@ toc: false
 
 {% include image.html file="mobile_img02.png" %}
 
+<br/>
+
 #### 상점 연동을 위한 테스트 MID
+
+mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 
 [//]: # (MID 연동 table)
 <table class="tg" style="table-layout: fixed; width: 100%">
@@ -43,6 +47,7 @@ toc: false
 </table>
 
 `샘플로 제공되는 테스트 MID 전용으로 상용 MID 사용불가`
+
 
 <div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:right;" href="/mobile02.html">다음페이지▶</a>

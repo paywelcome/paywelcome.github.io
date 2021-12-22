@@ -243,6 +243,8 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 </div>
 </details>
 
+<p style="color: red;"><strong>P_SIGNATURE 생성 방식에 따라서는 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
+
 ### 2.2.2 신용카드 전용 필드
 
 <details style="cursor:pointer;" open>

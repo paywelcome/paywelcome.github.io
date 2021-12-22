@@ -21,11 +21,12 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
 - 내부 처리용 데이터 별도 저장
 - form 데이터 처리가 필요한 경우 페이지 표시전에 별도로 DB 또는 세션 등에 저장해 두시기 바랍니다.
 
-#### signkey 값 설정
-- 웹 표준 결제 이용시 패스워드 기능을 하는 코드로 MID 번호별로 부여됩니다.
+#### mid, signkey 값 설정
+- 웹 표준 결제 이용시 패스워드 기능을 하는 코드로 MID 번호별로 부여됩니다. 
+- mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 
 ```java
-String mid = "xxxxx"; // 가맹점 ID(가맹점 수정후 고정)
+String mid = "xxxxxxxxxx"; // 가맹점 ID(가맹점 수정후 고정)
 // 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
 String signKey = "xxxxx";
 ```
@@ -39,10 +40,10 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 ### 표준결제 스크립트 Import
 - 실서버( 실반영시 반드시 수정)
 
-  `<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/INIStdPay.js" charset="UTF-8"></script>`
+  `<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/WelStdPay.js" charset="UTF-8"></script>`
 - 테스트 서버 연동(샘플로 제공 되는 테스트 MID 전용으로 상용 MID사용불가)
 
-   `<script language="javascript" type="text/javascript" src="HTTPS://tstdpay.paywelcome.co.kr/stdjs/INIStdPay.js" charset="UTF-8"></script>`
+   `<script language="javascript" type="text/javascript" src="HTTPS://tstdpay.paywelcome.co.kr/stdjs/WelStdPay.js" charset="UTF-8"></script>`
 
 - head Tag안에 설정
 - 페이지 인코딩에 관계없이 고정 charset="UTF-8"(실 테스트 용 구분 후 사용)
@@ -50,7 +51,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 ``` javascript
 <head>
 ….
-<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/INIStdPay.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/WelStdPay.js" charset="UTF-8"></script>
 ….
 </head>….
 
@@ -66,7 +67,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 - 팝업 허용 설정이 안되어 있을 경우, 가맹점의 요청페이지가 허용시 리프레시됨으로, 로딩 완료 후 가 팝업을 띄워주는 기능
 - `<body ... onload="INIStdPay.allowpopup();">` 추가
 
-### INIStdpay.pay 함수호출
+### WelStdpay.pay 함수호출
 - INIStdpay.pay 함수 호출은 submit 이 아닌 단순 action 형태로 진행
   `<button onclick="INIStdPay.pay('SendPayForm_id')" style="padding:10px">결제요청</button>`
 
@@ -77,7 +78,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 
 ```javascript
 <form id=" SendPayForm_id" name="SendPayForm_name" method="POST">
-  <input type="hidden" name="mid" value="xxx"/>
+  <input type="hidden" name="mid" value="xxxxxxxxxx"/>
   <input type="hidden" name="price" value="1004"/>
    ……….. 
 </form>
@@ -118,7 +119,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 <td style="text-align:center">mid</td>
 <td style="text-align:center">상점아이디</td>
 <td style="text-align:center">String</td>
-<td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxx"</code></td>
+<td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxxxxxxx"</code></td>
 <td style="text-align:center">Yes<br>위변조<br>검증</td>
 <td style="text-align:center">10 Byte<br>Fixed</td>
 </tr>
@@ -322,6 +323,8 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 
 </div>
 </details>
+
+<p style="color: red;"><strong>signature 생성 방식에 따라서는 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
 
 #### [1-2] acceptmethod 공통 추가 옵션
 

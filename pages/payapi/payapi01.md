@@ -45,7 +45,11 @@ PayAPI는 다음과 같은 사항을 기본으로 합니다.
 - 응답 결과값을 JSON 형식으로 반환합니다.
 - 응답 결과값은 서비스 별 응답 파라미터 내용을 참고하시기 바랍니다.
 
-#### 6) PAYAPI 응답코드
+#### 6) PAYAPI 요청시 Signature생성 
+
+<p style="color: red;"><strong>Signature 생성 방식에 따라서는 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
+
+#### 7) PAYAPI 응답코드
 
 PAYAPI의 주요 응답 코드는 아래와 같습니다.
 
