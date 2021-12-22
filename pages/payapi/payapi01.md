@@ -90,6 +90,6 @@ PAYAPI의 주요 응답 코드는 아래와 같습니다.
   </tbody>
 </table>
 
-<div style="display: inline-block; width: 100%;">
+<div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:right;" href="/payapi02.html">다음페이지▶</a>
 </div>
