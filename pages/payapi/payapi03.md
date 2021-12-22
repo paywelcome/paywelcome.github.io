@@ -4,6 +4,7 @@ permalink: payapi03.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
+keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌키 발급, 빌키 삭제, 삭제, 발급, 정기결제, 정기
 ---
 
 <div style="display: inline-block; width: 100%;">

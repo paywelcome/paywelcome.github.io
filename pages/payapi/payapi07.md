@@ -4,6 +4,7 @@ permalink: payapi07.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
+keywords: sms결제, url, sms, 문자
 ---
 
 <div style="display: inline-block; width: 100%;">

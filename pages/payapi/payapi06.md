@@ -4,6 +4,7 @@ permalink: payapi06.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
+keywords: 에스크로, 에스크로배송, 배송, 거절
 ---
 
 <div style="display: inline-block; width: 100%;">

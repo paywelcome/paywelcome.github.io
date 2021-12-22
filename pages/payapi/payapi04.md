@@ -4,6 +4,7 @@ permalink: payapi04.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
+keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결제
 ---
 
 <div style="display: inline-block; width: 100%;">

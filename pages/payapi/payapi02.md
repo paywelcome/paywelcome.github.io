@@ -4,6 +4,7 @@ permalink: payapi02.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
+keywords: 결제, 결제취소, 취소, 결제 취소, 부분 취소, 부분, 전체
 ---
 
 <div style="display: inline-block; width: 100%;">
