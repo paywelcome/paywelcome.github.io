@@ -3,7 +3,7 @@
 
 entries:
   - title: Sidebar
-    product: MOBILE
+    product: 모바일 결제
     version:
     folders:
       # mobile01.md
