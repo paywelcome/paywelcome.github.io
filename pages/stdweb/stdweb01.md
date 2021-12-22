@@ -35,7 +35,7 @@ keywords: 개요, PC, 특징, 웹, 연동
 
 국내 또는 해외에서 발급된 모든 신용카드를 사용하실 수 있습니다.
 
-:warning: <code class="language-plaintext highlighter-rouge">해외카드는 해외카드이용특약을 맺은 가맹점에서만 사용하실 수 있으며, 법인카드 및 직불형 신용카드는 할부이용이 불가합니다.</code>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">해외카드는 해외카드이용특약을 맺은 가맹점에서만 사용하실 수 있으며, 법인카드 및 직불형 신용카드는 할부이용이 불가합니다.</code>
 
 
 ### ISP(인터넷안전결제)
@@ -58,7 +58,7 @@ keywords: 개요, PC, 특징, 웹, 연동
 인터넷 뱅킹과 관련된 파일, 인증서 등이 설치된 PC에서 인터넷 뱅킹 시스템을 이용하여 계좌이체로 지불하는 방식이며,<br>
 금결원에서 제공하는 인증창을 이용하며, 이용금액은 고객의 계좌에서 실시간으로 차감됩니다.
 
-:warning: <code class="language-plaintext highlighter-rouge">인터넷 뱅킹에 가입한 사용자가 각 은행의 인터넷 뱅킹 이용 시간에만 이용할 수 있습니다.</code>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">인터넷 뱅킹에 가입한 사용자가 각 은행의 인터넷 뱅킹 이용 시간에만 이용할 수 있습니다.</code>
 
 ## 1.4 구조와 결제 처리 흐름
 > Web Standard서비스는 다음과 작은 작업을 수행합니다.
