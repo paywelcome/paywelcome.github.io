@@ -86,7 +86,7 @@ a.navbar-brand:hover {
 } */
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #248ec2 !important;
+    border-color: #ffffff !important;
 }
 
 .btn-primary {
@@ -135,11 +135,12 @@ li.sidebarTitle {
     margin-left: 5px;
 
 }
-
-/* .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-    background-color: #015CAE;
-} */
+/*토글버튼 배경색*/
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle{
+    border-color: #EA002C;
+    background-color: #EA002C;
+}
 
 .navbar-inverse .navbar-toggle {
-    border-color: #015CAE;
+    border-color: #EA002C;
 }
