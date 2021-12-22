@@ -493,9 +493,8 @@ span.projectTitle {
     text-align: left;
 }
 
-.footer2{
-    text-align: right;
-    margin-top: 43px;
+.footer > .footer-logo {
+    margin-bottom: 15px;
 }
 
 .footerMeta {
@@ -978,15 +977,18 @@ span.soft {
     border: 1px solid #dedede;
 }
 
-img.emoji{
-    max-width: 1.5rem;
-    max-width: 1.5rem;
-}
+
 
 @media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
         max-width: 700px;
         max-height: 700px;
+    }
+
+    img.emoji{
+        max-height: 1.5rem;
+        max-width: 1.5rem;
+        margin-top: -2px;
     }
 }
 

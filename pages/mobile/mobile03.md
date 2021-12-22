@@ -235,7 +235,7 @@ IOS 가맹점 앱에서 계좌이체 앱 실행을 위해서는 위의 스키마
     <tr>
       <td style="text-align: center">App</td>
       <td style="text-align: center">WebView</td>
-      <td style="text-align: center">:warning:<red>체크 요망</red></td>
+      <td style="text-align: center"><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><red>체크 요망</red></td>
     </tr>
     <tr>
       <td style="text-align: center">App</td>
