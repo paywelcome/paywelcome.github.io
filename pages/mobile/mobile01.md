@@ -33,17 +33,16 @@ toc: false
 <table class="tg" style="table-layout: fixed; width: 100%">
 <tbody>
   <tr>
-    <th class="tg-0lax">Test MID</th>
-    <th class="tg-0lax">signKey</th>
+    <th class="center-align">Test MID</th>
+    <th class="center-align">signKey</th>
   </tr>
   <tr>
-    <td class="tg-0lax">메일로 문의</td>
-    <td class="tg-0lax">메일로 문의</td>
+    <td style="text-align: center; vertical-align: middle" colspan="2"><a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a></td>
   </tr>
 </tbody>
 </table>
 
-`샘플로 제공되는 테스트  MID  전용으로 상용  MID 사용불가`
+`샘플로 제공되는 테스트 MID 전용으로 상용 MID 사용불가`
 
 <div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:right;" href="/mobile02.html">다음페이지▶</a>
