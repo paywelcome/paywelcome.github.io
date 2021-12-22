@@ -6,35 +6,22 @@ entries:
     version:
     folders:
 
-      - title:
-        output: pdf
-        type: frontmatter
-        folderitems:
-          - title:
-            url: /titlepage.html
-            output: pdf
-            type: frontmatter
-          - title:
-            url: /tocpage.html
-            output: pdf
-            type: frontmatter
-
       - title: 제품의 개요 및 특징
-        output: web, pdf
+        output: web
         folderitems:
 
           - title: 1. 제품의 개요
             url: /stdweb01.html
-            output: web, pdf
+            output: web
             type: web
 
           - title: 2. 제품의 특징
             url: /stdweb01.html#12-제품의-특징
-            output: web, pdf
+            output: web
 
           - title: 3. 지불수단
             url: /stdweb01.html#13-지불수단
-            output: web, pdf
+            output: web
 
             subfolders:
               - title: 4. 구조와 결제 처리 흐름
@@ -46,24 +33,24 @@ entries:
                     output: web
 
       - title: 설치
-        output: web, pdf
+        output: web
         folderitems:
 
           - title: 1. 설치 가능한 운영체제
-            url: /stdweb02.html#21-설치-가능한-운영체제
-            output: web, pdf
+            url: /stdweb02.html
+            output: web
 
           - title: 2. 소프트웨어 요구사항
             url: /stdweb02.html#22-소프트웨어-요구사항
-            output: web, pdf
+            output: web
 
           - title: 3. 하드웨어 요구사항
             url: /stdweb02.html#23-하드웨어-요구사항
-            output: web, pdf
+            output: web
 
           - title: 4. 방화벽 설정
             url: /stdweb02.html#24-방화벽-설정
-            output: web, pdf
+            output: web
 
             subfolders:
               - title: 5. 샘플소스
@@ -88,15 +75,15 @@ entries:
 
           - title: 6. 승인 테스트
             url: /stdweb02.html#26-승인-테스트
-            output: web, pdf
+            output: web
 
       - title: 결제 연동
-        output: web, pdf
+        output: web
         folderitems:
 
           - title: 1. 결제 요청 페이지 작성
             url: /stdweb03.html
-            output: web, pdf
+            output: web
 
             subfolders:
               - title: 2. 리턴 페이지 작성
@@ -156,67 +143,67 @@ entries:
             output: web
 
       - title: 부록
-        output: web, pdf
+        output: web
         folderitems:
 
           - title: 1. 결제수단코드(gopaymethod)
-            url: /stdweb04.html#a1-결제수단코드-gopaymethod
-            output: web, pdf
+            url: /stdweb04.html
+            output: web
 
           - title: 2. 결제수단코드(paymethod)
             url: /stdweb04.html#a2-결제수단코드-paymethod
-            output: web, pdf
+            output: web
 
           - title: 3. gopaymethod 옵션
             url: /stdweb04.html#a3-gopaymethod-옵션
-            output: web, pdf
+            output: web
 
           - title: 4. 카드사 승인코드
             url: /stdweb04.html#a4-카드사-승인코드
-            output: web, pdf
+            output: web
 
           - title: 5. 카드사 코드(결제창 호출시 제어코드)
             url: /stdweb04.html#a5-카드사-코드결제창-호출시-제어코드
-            output: web, pdf
+            output: web
 
           - title: 6. 카드 발급사(은행) 코드
             url: /stdweb04.html#a6-카드-발급사은행-코드
-            output: web, pdf
+            output: web
 
           - title: 7. 은행(증권사) 코드
             url: /stdweb04.html#a7-은행증권사-코드
-            output: web, pdf
+            output: web
 
           - title: 8. 신용카드 간편결제 코드
             url: /stdweb04.html#a8-신용카드-간편결제-코드
-            output: web, pdf
+            output: web
 
           - title: 9. 카드 이벤트 적용 코드
             url: /stdweb04.html#a9-카드-이벤트-적용-코드
-            output: web, pdf
+            output: web
 
           - title: 10. 인증 결과코드
             url: /stdweb04.html#a10-인증-결과코드
-            output: web, pdf
+            output: web
 
           - title: 11. 승인 결과코드
             url: /stdweb04.html#a11-승인-결과코드
-            output: web, pdf
+            output: web
 
           - title: 12. 카드결제 직접호출
             url: /stdweb04.html#a12-카드결제-직접호출
-            output: web, pdf
+            output: web
 
           - title: 13. 간편결제 직접호출
             url: /stdweb04.html#a13-간편결제-직접호출
-            output: web, pdf
+            output: web
 
           - title: 14. PHP연동 시 SSL 통신 오류 조치
             url: /stdweb04.html#a14-PHP연동-시-SSL-통신-오류-조치
-            output: web, pdf
+            output: web
 
           - title: 15. 가상계좌 NONE UI 방식 호출
             url: /stdweb04.html#a15-가상계좌-NONE-UI-방식-호출
-            output: web, pdf
+            output: web
 
 # Copyright 2021 Google LLC

@@ -75,18 +75,6 @@ defaults:
       comments: false
       topnav: topnav
 
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: false
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
-      search: true
-      topnav: topnav
-      hide_sidebar: true
-
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
