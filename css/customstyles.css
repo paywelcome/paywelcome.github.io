@@ -493,9 +493,8 @@ span.projectTitle {
     text-align: left;
 }
 
-.footer2{
-    text-align: right;
-    margin-top: 43px;
+.footer > .footer-logo {
+    margin-bottom: 15px;
 }
 
 .footerMeta {
