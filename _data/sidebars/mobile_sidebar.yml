@@ -77,19 +77,19 @@ entries:
                 output: web
                 subfolderitems:
                 - title: 7-1. 에스크로 사용가능 지불수단
-                  url: /mobile02.html#281-에스크로-사용가능-지불수단
+                  url: /mobile02.html#271-에스크로-사용가능-지불수단
                   output: web
                 - title: 7-2. 에스크로 구매결정 연동
-                  url: /mobile02.html#282-에스크로-구매결정-연동
+                  url: /mobile02.html#272-에스크로-구매결정-연동
                   output: web
                 - title: 7-3. 에스크로 상태변경 노티 수신
-                  url: /mobile02.html#283-에스크로-상태변경-노티-수신
+                  url: /mobile02.html#273-에스크로-상태변경-노티-수신
                   output: web
                 - title: 7-4. 에스크로 관련 코드
-                  url: /mobile02.html#284-에스크로-관련-코드
+                  url: /mobile02.html#274-에스크로-관련-코드
                   output: web
           - title: 8. 가상계좌 입금통보 사용방법
-            url: /mobile02.html#29-가상계좌-입금통보-사용방법-안내
+            url: /mobile02.html#28-가상계좌-입금통보-사용방법-안내
             output: web
 
       # mobile03.md
