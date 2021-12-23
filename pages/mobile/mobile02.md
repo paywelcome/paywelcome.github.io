@@ -1328,18 +1328,24 @@ P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사�
 
 - <red>대문자 OK 외 html 및 공백, 개행문자 불허<red>
 
-## 2.6 앱 환경의 설치방법
+## 2.6 안드로이드 / IOS 연동
 
-### 안드로이드
 ### 2.6.1 기본적인 설치방법
 
+### 안드로이드
 >안드로이드 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
 Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
 WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html) 의 방법과 동일합니다.<br>
 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.<br>
 
-### 2.6.2 ISP 연동방법 - 앱 미설치 체크로직 직접구현 or 자동체크
+### ISO
+>IOS 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
+Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
+WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html)) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
 
+### 2.6.2 ISP 연동방법 (안드로이드)
+
+### 앱 미설치 체크로직 직접구현 or 자동체크
 - ISP 앱의 기본정보는 하기와 같습니다.
 
 <table style="width: 100%;">
@@ -1363,7 +1369,8 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
 
 - 상기 Scheme 과 Install Url 정보로 구현가능한 안드로이드 코드는 하기와 같습니다.
 
-1. WebViewClient 를 상속받은 클래스를 구현하시고, shouldOverrideUrlLoading() 을 호출 하십시오.
+**1)** WebViewClient 를 상속받은 클래스를 구현하시고, shouldOverrideUrlLoading() 을 호출 하십시오.
+
 ```java
 private class INIP2PWebView extends WebViewClient {
     @Override     
@@ -1371,9 +1378,7 @@ private class INIP2PWebView extends WebViewClient {
     ….
     }
 ```
-
-2. 상기 shouldOverrideUrlLoading() 함수 내에, try{} catch{e} 를 통해, try 내에서는 startActivity(intent) 를 구현하시고, catch Event 발생 시, 앱 스토어로 이동할 수 있도록 조치하시면 됩니다.
-   하기에 안내되는 소스는 상기 방식에 대한 Full-Source 입니다.<br/>
+**2)** 상기 shouldOverrideUrlLoading() 함수 내에, try{} catch{e} 를 통해, try 내에서는 startActivity(intent) 를 구현하시고, catch Event 발생 시, 앱 스토어로 이동할 수 있도록 조치하시면 됩니다. 하기에 안내되는 소스는 상기 방식에 대한 Full-Source 입니다.<br/>
 
 #### [shouldOverrideUrlLoading 부]
 
@@ -1405,7 +1410,7 @@ catch(ActivityNotFoundException e)
 
 ```
 
-<p style="font-size: 80%">[ISP 앱스토어 이동처리 부] - alertIsp</p>
+<p style="font-size: 80%"> [ISP 앱스토어 이동처리 부] - alertIsp</p>
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
@@ -1436,8 +1441,8 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 
 ```
 
-3. ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 될 것이며,<br/>
-4. ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.
+**3)** ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 됩니다.<br/>
+**4)** ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.<br>
    예시[shouldOverrideUrlLoading 부](/mobile02.html#shouldoverrideurlloading-부) 의 에 대하여 true 혹은 false 를 설정하는 것은 하기의 표를 참고하십시요.
 
 <table style="width: 100%;">
@@ -1482,15 +1487,48 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 - 단, apprun_check 옵션을 통해 설치체크로직이 작동되므로, alertIsp 함수는 구현될 필요가 없습니다.
   apprun_check 로직에 대하여 상세히 확인하시려면 ( [2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved) ) 를 확인하여 주십시오. 또한, Intent 호출에 대하여 예외처리를 반드시 체크하셔야 합니다.
 
-### 2.6.3 ISP 연동방법 - 인증결과 전송
+### 인증결과 전송
 
 - ISP 앱에서 인증과정이 완료되면, 다시 당사 모바일 결제창으로 돌아와서 하기의 이미지와 같이 &#39;확인&#39; 버튼을 클릭해야, 승인과정을 시작하게 됩니다.
 
 - 안드로이드는 운영체제 특성 상, 현재 앱이 종료될 경우, 이 앱을 실행시킨 이전 앱이 다시 자동으로 수행됩니다.
   (LIFO 방식) 따라서, ISP 앱이 종료되면, 가맹점의 앱은 자동으로 다시 활성화될 것입니다.
 
-### 2.6.4 안심클릭 결제 시, 카드사 백신 앱 연동
 
+### 2.6.3 ISP 연동방법 (IOS)
+
+### 신용카드 ISP, 계좌이체 연동방법
+- 신용카드 ISP 및 계좌이체 앱이 종료 된 뒤, 가맹점 앱을 다시 띄우기 위한 조치사항을 안내합니다.
+- IOS 는 Android 계열과 다르게도 ISP 및 계좌이체 앱이 종료된 뒤, 가맹점 앱은 Background 에 머문 채, 바탕화면이 개제됩니다.
+  (IOS의 운영체제 특성에 기반) 이 때문에, 결제 앱이 종료되면서, 가맹점 appScheme 을 호출하도록 구성해야 합니다. 하기와 같이 셋팅 시, 요구사항과 같이 가맹점 앱이 다시 기동 됩니다. ( 신용카드, 계좌이체 동기옵션 사용시에만 설정 가능)
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 45%;">
+  <col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>신용카드</th>
+      <th>계좌이체</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P_RESERVED=app_scheme=가맹점스키마명://</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">P_RESERVED=iosapp=Y&amp;app_scheme=가맹점스키마명://</code><br> <code class="language-plaintext highlighter-rouge">P_RETURN_URL=가맹점스키마명://</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+- P_RESERVED 옵션에 대한 설명은 ([2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved)) 를 참조 부탁 드립니다.<br>
+  더불어 상기 옵션 셋팅 시, 가맹점스키마명 뒤 ://은 필수로 입력해 주셔야 ISP 앱 종료 후 가맹점 앱이 호출 됩니다.<br>
+  (Ex. 가맹점 스키마명이 WelcomeMobile일 경우 app_scheme=WelcomeMobile:// 로 셋팅 해 주시면 됩니다.)
+
+### 2.6.4 안심클릭 결제 시, 카드사 백신 앱 연동
+### 안드로이드
 - Mobile Web 서비스는 BC 계열을 제외한, 나머지 카드사의 결제창은 카드사 페이지에서 결제가 이루어지고 있습니다.
   이에, 카드사에서 개별적으로 사용하는 백신 앱의 경우, 가맹점 앱에서도 하기의 유의사항을 반드시 체크하셔야 합니다.
 
@@ -1601,13 +1639,21 @@ private class SampleWebViewClient extends WebViewClient {
 </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 </details>
 
-### 2.6.5 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
+
+### IOS
+
+- IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니다. 따라서, 해당 부분은 체크하실 부분이 없습니다.
+
+### 2.6.5 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법 
+
+### 안드로이드
 
 - 만약 상점에서의 판매가격이 30만원 이상일 수 있고 카드로 결제할 경우, 사용자는 공인인증서 서명과정을 거쳐야 합니다.<br>
 - 안드로이드의 경우, 개별 카드사 앱에서 공인인증서 서명을 할 수 있습니다. 이에, 카드사 창 내에서 호출하는 intent 혹은 app Scheme 를 허용할 수 있도록 가맹점 앱에서 처리해줘야 합니다.<br>이는 (3.B . 안심클릭 결제 시, 카드사 백신 앱 연동)의 코드를 반영하면 해결됩니다.
 
-### 2.6.6 Android API Level 21  이상 일 때 ,  체크사항
+### 2.6.6 앱 환경 별 체크사항
 
+#### Android API Level 21  이상 일 때
 - Android API Level 21 (Lollipop 출시 때 배포) 부터는 webview 에서 Insecurity Page 에 대한 Access 및 Mixed contents, Third party cookies 사용을 차단할 수 있게 업데이트 되었습니다.
   먼저, Insecurity Page 에 대한 Access 차단으로 P_NEXT_URL 의 Scheme 을 Http 로 하는 경우, 페이지가 호출되지 않아 인증결과가 전달되지 않을 수 있습니다.
   하기의 설정을 확인하십시오.
@@ -1658,148 +1704,7 @@ private class SampleWebViewClient extends WebViewClient {
   </tbody>
 </table>
 
-## IOS
-### 2.6.7 기본적인 설치방법
-
-IOS 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
-Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
-WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html)) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
-
-### 2.6.8 신용카드 ISP, 계좌이체 연동방법
-
-- 신용카드 ISP 및 계좌이체 앱이 종료 된 뒤, 가맹점 앱을 다시 띄우기 위한 조치사항을 안내합니다.
-- IOS 는 Android 계열과 다르게도 ISP 및 계좌이체 앱이 종료된 뒤, 가맹점 앱은 Background 에 머문 채, 바탕화면이 개제됩니다.
-  (IOS의 운영체제 특성에 기반) 이 때문에, 결제 앱이 종료되면서, 가맹점 appScheme 을 호출하도록 구성해야 합니다. 하기와 같이 셋팅 시, 요구사항과 같이 가맹점 앱이 다시 기동 됩니다. ( 신용카드, 계좌이체 동기옵션 사용시에만 설정 가능)
-
-<table style="width: 100%;">
-<colgroup>
-  <col style="width: 45%;">
-  <col style="width: 55%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th>신용카드</th>
-      <th>계좌이체</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">P_RESERVED=app_scheme=가맹점스키마명://</code></td>
-      <td>
-<code class="language-plaintext highlighter-rouge">P_RESERVED=iosapp=Y&amp;app_scheme=가맹점스키마명://</code><br> <code class="language-plaintext highlighter-rouge">P_RETURN_URL=가맹점스키마명://</code>
-</td>
-    </tr>
-  </tbody>
-</table>
-
-- P_RESERVED 옵션에 대한 설명은 ([2.2.6 결제 요청 페이지작성 - 복합필드](/mobile02.html#226-복합-필드-p_reserved)) 를 참조 부탁 드립니다.<br>
-  더불어 상기 옵션 셋팅 시, 가맹점스키마명 뒤 ://은 필수로 입력해 주셔야 ISP 앱 종료 후 가맹점 앱이 호출 됩니다.<br>
-  (Ex. 가맹점 스키마명이 WelcomeMobile일 경우 app_scheme=WelcomeMobile:// 로 셋팅 해 주시면 됩니다.)
-
-### 2.6.9 안심클릭 결제 시, 카드사 백신 앱 연동
-
-IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니다.<br>
-따라서, 해당 부분은 체크하실 부분이 없습니다.
-
-### 2.6.10 카드사 앱 연동 방법
-
-- 안심클릭 결제 진행에 필요한 Application (앱카드 등의) 호출이 필요할 경우 아래 샘플코드를 참고 바랍니다.
-
-<table style="width: 100%;">
-<colgroup>
-  <col style="width: 45%;">
-  <col style="width: 55%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th>주 문 정 보</th>
-      <th>앱 내 소스</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="/mobile02.html#226-복합-필드-p_reserved">[(결제 요청 페이지작성 - 복합필드)</a> 내 참조</td>
-      <td>하기 샘플 참조</td>
-    </tr>
-  </tbody>
-</table>
-
-<details style="cursor:pointer;">
-<summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
-<div markdown="1">
-
-```java
-#pragma mark UIWebViewDelegate 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    //쿠키 강제 허용
-    NSHTTPCookieStorage *cookieSto = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    [cookieSto setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-    
-    //웰컴페이먼츠를 통해 전달되는 URL   
-    NSString *URLString = [NSString stringWithString:[request.URL absoluteString]];
-        
-    
-    //URL을 읽어왔을 때 애플 스토어 주소인 경우 사파리에 해당 URL을 넘겨서 앱스토어에서 설치 할 수 있도록 유도
-    BOOL isStoreURL = ([URLString rangeOfString:@"phobos.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
-    BOOL isStoreURL2 = ([URLString rangeOfString:@"itunes.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
-        
-    //앱스토어 이동
-    if (isStoreURL || isStoreURL2) {
-        [[UIApplication sharedApplication]openURL:request.URL];
-        return NO;
-    }   
-    else if([URLString hasPrefix:@"http"] || [URLString hasPrefix:@"https"] || [URLString hasPrefix:@"about"] )      //일반적인 웹url 형태인 경우 진행
-    {
-        return YES;
-    }    
-    else{     //그 외의 값은 앱스키마로 간주하여 앱 호출
-        
-        NSURL *appURL = [NSURL URLWithString:URLString];    //NSString to NSURL      
- 
-	//앱스키마인 경우 앱 호출
-        BOOL bAppScheme =  [[UIApplication sharedApplication] canOpenURL:appURL];   
-        
-        if (!bAppScheme) {
-//앱이 설치되지 않은 경우 앱스토어로 이동 또는 안내 알럿 표출   
-            
-            return NO;
-            
-        }
-        
-    }
-    
-    return YES;
-}
-
-```
-</div>
-</details>
-
-- 해당 샘플은 참고용으로 각 가맹점 앱에 맞게 구현하시면 됩니다.
-- 또한, 하기의 조건을 충족하는 경우에 결제가 가능하오니, 이점 유의 바랍니다.
-
-    1. 고객 단말기의 OS 버전이 4.x 이상인 경우
-    2. 가맹점 Application 이 Multi switching 이 지원되는 경우
-    3. OS 버전이 9.x 이상일 경우 하기 &#39;[2.7.6 IOS9 버전 Application 구현 시, 주의 사항](/mobile02.html#276-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
-
-### 2.6.11 쿠키 설정
-
-Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서비스를 사용하는 경우,<br>
-세션만료 오류경고가 발생할 수 있습니다. 이에, 하기의 샘플과 같이 쿠키를 허용해야 합니다.
-
-```java
-(BOOL)application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions    
-{
-  [[NSHTTPCookieStorage sharedHTTPCookieStorage]
-  setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];  
-  ...
-  return YES;
-}
-```
-
-### 2.6.12 IOS9 버전 Application 구현 시, 주의 사항
+#### IOS9 버전 Application 구현 시
 
 - IOS9 업데이트 이후, APP 내 보안정책 강화로 canOpenUrl 또는 openUrl 함수 사용 시, info.plist 파일에 LSApplicationQueriesSchemes 배열을 정의하여 호출할 App scheme list를 등록 해주셔야 합니다. (White List 등록)
   아래는 LSApplicationQueriesSchemes 등록 예시이며, 기존 앱 스키마에서 `://` 부분을 제거 후, 등록하시면 됩니다.
@@ -1961,6 +1866,108 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 
 </div>
 </details>
+
+### 2.6.7 카드사 앱 연동 방법
+
+### IOS
+
+- 안심클릭 결제 진행에 필요한 Application (앱카드 등의) 호출이 필요할 경우 아래 샘플코드를 참고 바랍니다.
+
+<table style="width: 100%;">
+<colgroup>
+  <col style="width: 45%;">
+  <col style="width: 55%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>주 문 정 보</th>
+      <th>앱 내 소스</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/mobile02.html#226-복합-필드-p_reserved">[(결제 요청 페이지작성 - 복합필드)</a> 내 참조</td>
+      <td>하기 샘플 참조</td>
+    </tr>
+  </tbody>
+</table>
+
+<details style="cursor:pointer;">
+<summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
+<div markdown="1">
+
+```java
+#pragma mark UIWebViewDelegate 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    //쿠키 강제 허용
+    NSHTTPCookieStorage *cookieSto = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    [cookieSto setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    
+    //웰컴페이먼츠를 통해 전달되는 URL   
+    NSString *URLString = [NSString stringWithString:[request.URL absoluteString]];
+        
+    
+    //URL을 읽어왔을 때 애플 스토어 주소인 경우 사파리에 해당 URL을 넘겨서 앱스토어에서 설치 할 수 있도록 유도
+    BOOL isStoreURL = ([URLString rangeOfString:@"phobos.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    BOOL isStoreURL2 = ([URLString rangeOfString:@"itunes.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
+        
+    //앱스토어 이동
+    if (isStoreURL || isStoreURL2) {
+        [[UIApplication sharedApplication]openURL:request.URL];
+        return NO;
+    }   
+    else if([URLString hasPrefix:@"http"] || [URLString hasPrefix:@"https"] || [URLString hasPrefix:@"about"] )      //일반적인 웹url 형태인 경우 진행
+    {
+        return YES;
+    }    
+    else{     //그 외의 값은 앱스키마로 간주하여 앱 호출
+        
+        NSURL *appURL = [NSURL URLWithString:URLString];    //NSString to NSURL      
+ 
+	//앱스키마인 경우 앱 호출
+        BOOL bAppScheme =  [[UIApplication sharedApplication] canOpenURL:appURL];   
+        
+        if (!bAppScheme) {
+//앱이 설치되지 않은 경우 앱스토어로 이동 또는 안내 알럿 표출   
+            
+            return NO;
+            
+        }
+        
+    }
+    
+    return YES;
+}
+
+```
+</div>
+</details>
+
+- 해당 샘플은 참고용으로 각 가맹점 앱에 맞게 구현하시면 됩니다.
+- 또한, 하기의 조건을 충족하는 경우에 결제가 가능하오니, 이점 유의 바랍니다.
+
+    1. 고객 단말기의 OS 버전이 4.x 이상인 경우
+    2. 가맹점 Application 이 Multi switching 이 지원되는 경우
+    3. OS 버전이 9.x 이상일 경우 하기 &#39;[2.7.6 IOS9 버전 Application 구현 시, 주의 사항](/mobile02.html#276-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
+
+### 2.6.8 쿠키 설정
+
+### IOS
+
+Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서비스를 사용하는 경우,<br>
+세션만료 오류경고가 발생할 수 있습니다. 이에, 하기의 샘플과 같이 쿠키를 허용해야 합니다.
+
+```java
+(BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions    
+{
+  [[NSHTTPCookieStorage sharedHTTPCookieStorage]
+  setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];  
+  ...
+  return YES;
+}
+```
 
 ## 2.7 에스크로 결제
 
