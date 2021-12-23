@@ -75,7 +75,7 @@ Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 �
 </table>
 
 
-## 2.5. 샘플소스
+## 2.5. 샘플코드 구조
 샘플소스는 가맹점의 환경에 맞도록 수정하여 사용할 수 있습니다. Web Standard서비스는 표준 웹 통신만을 사용합니다.<br>
 결제요청시에는 페이지이동(Form POST Action), API통신시에는 httpClient 통신을 이용합니다.<br>
 `POST Action Content-Type : application/x-www-form-urlencoded; charset=UTF-8` <br>
