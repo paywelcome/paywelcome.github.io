@@ -26,6 +26,6 @@ topnav_dropdowns:
 topnav2:
   - title: Topnav2
     items:
-      - title: 공통코드
+      - title: 코드표
         url: /code01.html
 # Copyright 2021 Google LLC
