@@ -4,7 +4,7 @@ permalink: stdweb03.html
 sidebar: stdweb_sidebar
 folder: stdweb
 toc: false
-keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signkey, signKey, mid, 데이터, 신용카드, 공통, 계좌이체, 핸드폰, 스마트폰, 가상계좌, 응답, 공통, 옵션
+keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signkey, signKey, mid, 데이터, 신용카드, 공통, 계좌이체, 핸드폰, 스마트폰, 가상계좌, 응답, 옵션
 ---
 
 <div style="display: inline-block; width: 100%;">
@@ -20,6 +20,8 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
 
 - 내부 처리용 데이터 별도 저장
 - form 데이터 처리가 필요한 경우 페이지 표시전에 별도로 DB 또는 세션 등에 저장해 두시기 바랍니다.
+- mid, signKey는 계약 완료 가맹점에 한해 별도 제공 됨
+
 
 #### mid, signkey 값 설정
 - 웹 표준 결제 이용시 패스워드 기능을 하는 코드로 MID 번호별로 부여됩니다. 
@@ -34,14 +36,14 @@ String signKey = "xxxxx";
 mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 ### signkey 발급 방법
-- 관리자 페이지의 상점정보 > 계약정보 > 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후<br>
+- 관리자 페이지(https://wbiz.paywelcome.co.kr)의 상점정보 > 계약정보 > 부가정보의 웹결제 signkey생성 조회 버튼 클릭 후<br>
   팝업창에서 생성 버튼 클릭 후 해당 값 소스에 반영하시기 바랍니다.
 
 ### 표준결제 스크립트 Import
 - 실서버( 실반영시 반드시 수정)
 
   `<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/WelStdPay.js" charset="UTF-8"></script>`
-- 테스트 서버 연동(샘플로 제공 되는 테스트 MID 전용으로 상용 MID사용불가)
+- 테스트 서버 연동(샘플로 제공 되는 테스트 MID만 사용가능하며 운영 MID 사용 불가)
 
    `<script language="javascript" type="text/javascript" src="HTTPS://tstdpay.paywelcome.co.kr/stdjs/WelStdPay.js" charset="UTF-8"></script>`
 
@@ -221,8 +223,10 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 <td style="text-align:center">signature</td>
 <td style="text-align:center">String</td>
 <td>위변조 방지 SHA256 Hash 값
-<a href="/stdweb04.html#a3-gopaymethod-옵션">
-<strong>[참조-signature 생성 대상 target 필드]</strong></a><br><code class="language-plaintext highlighter-rouge">"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3"</code></td>
+<a href="/prepare01.html#결제-인증요청결제요청시-pc의-signature-생성">
+<strong>[참조-signature 생성 대상 target 필드]</strong></a><br><code class="language-plaintext highlighter-rouge">"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3"</code><br/>
+<p style="color: red;"><strong>signature생성에 대한 자세한 사항은 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
+</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">64 Byte<br>Fixed</td>
 </tr>
@@ -323,8 +327,6 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 
 </div>
 </details>
-
-<p style="color: red;"><strong>signature 생성 방식에 따라서는 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
 
 #### [1-2] acceptmethod 공통 추가 옵션
 
@@ -767,7 +769,8 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <td style="text-align: center">signature</td>
       <td style="text-align: center">String</td>
       <td>위변조 방지 SHA256 Hash 값, 결제요청 동일한 방법으로 signature와 생성<br>
-      <a href="2-3-승인요청-signature-생성-대상target-필드"><strong>[참조-승인요청 signature 생성 대상target필드]</strong></a></td>
+      <a href="/prepare01.html#결제-승인요청시-pc의-signature-생성"><strong>[참조-승인요청 signature 생성 대상target필드]</strong></a><br/>
+      <p style="color: red;"><strong>signature생성에 대한 자세한 사항은 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p></td>
       <td style="text-align: center">Yes</td>
       <td style="text-align: center">64 Byte</td>
     </tr>
@@ -784,7 +787,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
       <td style="text-align: center">리턴 형식</td>
       <td style="text-align: center">String</td>
       <td>결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴</result><br>
-      <a href="2-13-리턴-형식별-승인결과-예시"><strong>[참조-리턴 형식별 승인결과 예시]</strong></a></td>
+      <a href="/stdweb03.html#2-13-리턴-형식별-승인결과-예시"><strong>[참조-리턴 형식별 승인결과 예시]</strong></a></td>
       <td></td>
       <td style="text-align: center">5 Byte</td>
     </tr>
@@ -1134,12 +1137,12 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ## 3.3 에스크로 결제
 - 웹 표준 결제는 에스크로 결제 및 구매 확인만 지원 합니다. 
-- 배송 등록, 결제 취소, 거절 확인는 PayAPI 모듈로 진행 되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.
+- 배송 등록, 결제 취소, 거절 확인는 PAYAPI 모듈로 진행 되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.
 - 가맹점에서 거래에 따라 일반 결제와 에스크로 결제의 구분 결제를 희망하시면 에스크로로 신규 또는 전환계약이 필요합니다. (단, 일부 호스팅 가맹점은 신 에스크로 설정에, 제한이 있을 수 있음)
 - 에스크로 계약에 문의가 있거나 자세한 사항은 계약 담당자에게 문의하여 주시기 바랍니다.
 
 ### 3.3.1 에스크로 결제 요청 연동
-- 표준결제 스크립트 Import
+- 표준결제 스크립트 Import 
 - 실서버( 실 반영시 반드시 수정)
 ```javascript 
 <script language="javascript" type="text/javascript" src="https://stdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
@@ -1148,7 +1151,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 ```javascript
 <script language="javascript" type="text/javascript" src="https://tstdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
 ```
-- 3.1 참조하여결제페이지작성
+- 3.1 참조하여 결제페이지 작성
 - 신용카드, 실시간계좌이체, 무통장입금(가상계좌)
 
 
@@ -1156,8 +1159,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ### 3.3.2 에스크로 구매확인 연동
 
-- 에스크로구매확인은고객이결제를완료하고,배송등록이이뤄진상태에서설정가능하며,구매자가구매확정또는구매거절을선택합니다.
-- 매매보호서비스에서소비자의구매확정은반드시필요한기능입니다.
+- 에스크로 구매확인은 고객이 결제를 완료하고, 배송등록(가맹점관리자나 PAYAPI를 통해 등록 필요)이 이뤄진 상태에서 설정 가능하며, 구매자가 구매확정 또는 구매거절을 선택합니다.
+- 매매보호서비스에서 소비자의 구매확정은 반드시 필요한 기능 입니다.
 
 #### [3-1] 구매확인요청파라미터
 
@@ -1466,7 +1469,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 ## 3.6	 웹표준 결제 취소
 
 웹표준 결제는 거래 취소 기능을 지원하지 않습니다.
-따라서, 결제 취소는 별도의 PayAPI 서비스 연동하시어 취소기능을 활용하셔야 합니다.  
+따라서, 결제 취소는 별도의 PAYAPI 서비스 연동하시어 취소기능을 활용하셔야 합니다.  
 자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.<br>
 기술지원 문의 (mainpg_support@welcomepayments.co.kr)
 

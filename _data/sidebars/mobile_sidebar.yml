@@ -88,7 +88,7 @@ entries:
                 - title: 7-6. IOS9 버전 Application 구현 시, 주의 사항
                   url: /mobile02.html#276-ios9-버전-application-구현-시-주의-사항
                   output: web
-              - title: 8. 에스크로 사용방법 안내
+              - title: 8. 에스크로 결제
                 output: web
                 subfolderitems:
                 - title: 8-1. 에스크로 사용가능 지불수단
@@ -103,8 +103,8 @@ entries:
                 - title: 8-4. 에스크로 관련 코드
                   url: /mobile02.html#284-에스크로-관련-코드
                   output: web
-          - title: 9. 노티 수신 사용방법 안내
-            url: /mobile02.html#29-노티수신p_noti_url-사용방법-안내
+          - title: 9. 가상계좌 입금통보 사용방법
+            url: /mobile02.html#29-가상계좌-입금통보-사용방법-안내
             output: web
 
       # mobile03.md

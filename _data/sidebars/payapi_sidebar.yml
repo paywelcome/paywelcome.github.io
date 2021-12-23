@@ -7,13 +7,13 @@ entries:
     version:
     folders:
 
-      - title: PayAPI서비스
+      - title: PAYAPI서비스
         output: web
         folderitems:
-          - title: 1. PayAPI 서비스 흐름도
+          - title: 1. PAYAPI 서비스 흐름도
             url: /payapi01.html
             output: web
-          - title: 2. PayAPI 서비스 개요
+          - title: 2. PAYAPI 서비스 개요
             url: /payapi01.html#12-payapi-개요
             output: web
 

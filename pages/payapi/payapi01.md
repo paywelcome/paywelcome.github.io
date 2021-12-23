@@ -1,5 +1,5 @@
 ---
-title: PayAPI 서비스
+title: PAYAPI 서비스
 permalink: payapi01.html
 sidebar: payapi_sidebar
 folder: payapi
@@ -10,17 +10,17 @@ toc: false
   <a style="float:right;" href="/payapi02.html">다음페이지▶</a>
 </div>
 
-# 1. PayAPI서비스
+# 1. PAYAPI서비스
 
-PayAPI는 HTTPS 요청으로 활용할 수 있는 다양한 서비스를 제공하고 있으며, 본 문서는 PayAPI에서 지원하는 각각의 서비스들에 대한 기능별 상세 설명을 포함하고 있습니다.
+PAYAPI는 HTTPS 요청으로 활용할 수 있는 다양한 서비스를 제공하고 있으며, 본 문서는 PAYAPI에서 지원하는 각각의 서비스들에 대한 기능별 상세 설명을 포함하고 있습니다.
 
-## 1.1 PayAPI 서비스 흐름도
+## 1.1 PAYAPI 서비스 흐름도
 
 {% include image.html file="payapi_img01.png" %}
 
-## 1.2 PayAPI 개요
+## 1.2 PAYAPI 개요
 
-PayAPI는 다음과 같은 사항을 기본으로 합니다.
+PAYAPI는 다음과 같은 사항을 기본으로 합니다.
 
 #### 1) 공통 HTTPS 통신 규약
 - 프로토콜 : HTTPS

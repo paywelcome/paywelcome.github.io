@@ -4,7 +4,6 @@ permalink: prepare01.html
 sidebar: prepare_sidebar
 folder: prepare
 toc: false
-keywords: signature, 시그니처, 시그니쳐, Signature, 방화벽, 연동, 연동 준비, 연동준비, 시그
 ---
 
 ## 1.1 상점 연동시 주의사항

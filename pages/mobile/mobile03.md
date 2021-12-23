@@ -4,7 +4,7 @@ permalink: mobile03.html
 sidebar: mobile_sidebar
 folder: mobile
 toc: false
-keywords: 계좌이체, 유의사항, 주의사항, 사항, 주의, 
+keywords: 계좌이체, 유의사항, 주의사항, 사항, 주의
 ---
 
 <div style="display: inline-block; width: 100%;">
@@ -297,7 +297,7 @@ IOS 가맹점 앱에서 계좌이체 앱 실행을 위해서는 위의 스키마
 ### 3.2.6 모바일 거래 결제취소 issue
 
 - Mobile Web 서비스는 거래취소기능을 지원하지 않습니다.<br>
-  따라서, 결제 취소는 별도의 PayAPI 서비스 연동하여 활용하시기 바랍니다.<br>
+  따라서, 결제 취소는 별도의 PAYAPI 서비스 연동하여 활용하시기 바랍니다.<br>
   자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.
 
 ### 3.2.7 DNS 설정관련 issue

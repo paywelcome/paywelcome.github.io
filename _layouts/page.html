@@ -3,18 +3,10 @@ layout: default
 ---
 <script>
 addBackToTop({
-    diameter: 40,
-    backgroundColor: '#ddd',
-    textColor: 'red'
+    diameter: 56,
+    backgroundColor: '#f4811f',
+    textColor: '#fff'
 })
-
-function detailEvent(obj){
-    if(obj.hasAttribute("open")){
-        obj.innerText("[ 닫기 ]");
-    } else {
-        obj.innerText("[ 펼치기 ]");
-    }
-}
 </script>
 <div class="post-header">
    <h1 class="post-title-main">{{ page.title }}</h1>
