@@ -924,8 +924,17 @@ span.soft {
 @media (max-width: 767px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: #444;
+        margin-left: 8px;
     }
 }
+
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #444;
+        background-color: #9d9d9d;
+    }
+}
+
 
 @media (max-width: 990px) {
     #mysidebar {
