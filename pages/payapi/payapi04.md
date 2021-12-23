@@ -1,5 +1,5 @@
 ---
-title: PAYAPI 신용카드 키인승인 API
+title: PAYAPI 신용카드 키인결제 API
 permalink: payapi04.html
 sidebar: payapi_sidebar
 folder: payapi
@@ -21,7 +21,7 @@ keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결�
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
 - 키인결제 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
-[//]: # (신용카드 키인결제 API URL)
+[//]: # (신용카드 키인승인 API URL)
 <table class="tg" style="width: 100%">
   <colgroup>
     <col style="width: 20%">

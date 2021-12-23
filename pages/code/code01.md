@@ -6,6 +6,12 @@ folder: code
 toc: false
 ---
 
+<div style="display: inline-block; width: 100%;">
+  <a style="float:right;" href="/code02.html">다음페이지▶</a>
+</div>
+
+# 1. 공통코드
+
 ## 1. 카드사(매입사) 코드
 
 <table style="width: 100%">
@@ -479,3 +485,7 @@ toc: false
     </tr>
   </tbody>
 </table>
+
+<div style="display: inline-block; width: 100%;">
+  <a style="float:right;" href="/code02.html">다음페이지▶</a>
+</div>

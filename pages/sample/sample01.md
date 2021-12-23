@@ -13,44 +13,13 @@ toc: false
 ### java
 
 ```java
-// hash 알고리즘은 sha-256 사용
-String algorithm = "SHA-256"; 
 
-// hash 하기위한 plaintext를 변수에 담아준다.
-String data = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-
-// SHA를 사용하기 위해 MessageDigest 클래스로부터 인스턴스를 얻는다.
-MessageDigest md = MessageDigest.getInstance(algorithm); 
-
-// 해싱할 byte배열을 넘겨준다.
-// SHA-256의 경우 메시지로 전달할 수 있는 최대 bit 수는 2^64-1개 이다.
-md.update(data.getBytes("UTF-8")); 
-
-// 해싱된 byte 배열을 digest메서드의 반환값을 통해 얻는다.
-byte[] hashbytes = md.digest(); 
-
-// 보기 좋게 16진수로 만드는 작업
-StringBuilder signatureStr = new StringBuilder();
-for(int i=0 ; i < hashbytes.length ; i++) { 
-    // %02x 부분은 0 ~ f 값 까지는 한자리 수이므로 두자리 수로 보정하는 역할을 한다. 
-    signatureStr.append(String.format("%02x", hashbytes[i] & 0xff));
-} 
-
-// signature 값 출력
-System.out.println(signatureStr .toString());
 ```
 
 ### node
 
 ```javascript
-// hash 하기위한 plaintext를 변수에 담아준다.
-var plainText = "mid=xxxxxxxxxx&mkey=9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// node.js 내장 암호화 함수 호출
-var crypto = require('crypto'); 
-// sha-256의 알고리즘으로 암호화하여 signature값 생성
-var signature = crypto.createHash('sha256').update(plainText).digest('hex'); 
-// 해당 값 출력시 signature 값 출력
-console.log( signature); 
+
 ```
 
 ### php
@@ -66,7 +35,7 @@ echo $signature;
 
 ### asp
 
-```php
+```hp
 // hash 알고리즘은 sha-256 사용
 plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
 // 샘플소스 ASP_MOBILE\include\signature.asp 내부함수의 MakeSignature(sMessage)를 참고
