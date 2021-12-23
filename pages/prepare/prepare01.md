@@ -12,7 +12,7 @@ keywords: signature, 시그니처, 시그니쳐, Signature, 방화벽, 연동, �
 해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
 
 | 업체명(MID)    | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
-|-------------| --------- | ----------------- | ------------------------ |
+|:-------------:| :---------: | :-----------------: | :------------------------: |
 | 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
 
 ## 1.2 signature 개요
@@ -30,14 +30,18 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 **※ Signature 필드 생성 순서 중요**
 
-### Web Standard(PC) 서비스의 Signature 생성
+### PC(웹표준) Signature 생성
+
+#### 인증 요청 시 Signature 생성
+
+인증 요청 시 signature 필드의 구성은 다음과 같습니다.
 
 #### 결제 인증요청(결제요청)시 PC의 Signature 생성
 
 결제 인증(결제)요청시 signature필드의 구성은 다음과 같습니다.
 
 생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code><br/>
-필드 순서유지(알파벳순)
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
 
 <table>
   <thead>
@@ -58,6 +62,22 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
       </td>
       <td style="text-align: center">Yes</td>
     </tr>
+  </tbody>
+</table>
+
+##### Target 데이터 예시 : `mKey=346eaecb81e3a1629805b9d55f...&oid=xxx_1335247243103&price=1000&timestamp=2020110222`
+
+<br/>
+
+#### 승인 요청 시 Signature 생성
+
+승인 요청 시 signature필드의 구성은 다음과 같습니다.
+
+생성 순서 : <code class="language-plaintext highlighter-rouge">authToken=&timestamp=</code><br/>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
+
+<table>
+  <thead>
     <tr>
       <td style="text-align: center">oid</td>
       <td style="text-align: center">주문번호</td>
