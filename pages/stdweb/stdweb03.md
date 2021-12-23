@@ -221,7 +221,7 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 <td style="text-align:center">signature</td>
 <td style="text-align:center">String</td>
 <td>위변조 방지 SHA256 Hash 값
-<a href="#1-3-signature-생성-대상target-필드">
+<a href="/stdweb04.html#a3-gopaymethod-옵션">
 <strong>[참조-signature 생성 대상 target 필드]</strong></a><br><code class="language-plaintext highlighter-rouge">"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3"</code></td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">64 Byte<br>Fixed</td>
@@ -1144,7 +1144,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 ```javascript 
 <script language="javascript" type="text/javascript" src="https://stdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
 ```
-- 테스트서버연동( 샘플로 제공 되는 테스트 MID 전용으로 상용 MID사용불가)
+- 테스트서버연동( 샘플로 제공 되는 테스트 MID만 사용가능하며 운영 MID 사용 불가 )
 ```javascript
 <script language="javascript" type="text/javascript" src="https://tstdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
 ```
