@@ -1,20 +1,31 @@
 ## Topnav single links
+
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+
 topnav:
-- title: Topnav
-  items:
-    - title: 샘플소스
-      external_url: https://github.com/paywelcome
-    - title: 연동 준비
-      url: /prepare01.html
-    - title: PC
-      url: /stdweb01.html
-    - title: MOBILE
-      url: /mobile01.html
-    - title: PAYAPI
-      url: /payapi01.html
-    - title: 공통코드
-      url: /code01.html
-    - title: 샘플코드
-      url: /sample01.html
+  - title: Topnav
+    items:
+      - title: 샘플소스
+        external_url: https://github.com/paywelcome
+      - title: 연동 준비
+        url: /prepare01.html
+
+#Topnav dropdowns
+topnav_dropdowns:
+  - title: Topnav dropdowns
+    folders:
+      - title: 연동 메뉴얼
+        folderitems:
+          - title: PC
+            url: /stdweb01.html
+          - title: MOBILE
+            url: /mobile01.html
+          - title: PAYAPI
+            url: /payapi01.html
+
+topnav2:
+  - title: Topnav2
+    items:
+      - title: 공통코드
+        url: /code01.html
 # Copyright 2021 Google LLC

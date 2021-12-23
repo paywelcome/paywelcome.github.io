@@ -63,7 +63,6 @@ details[open] summary:before{
     border-color: #ffffff;
 }
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
-    display: inline-flex;
     align-items: center;
     color: black;
 }
