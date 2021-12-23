@@ -98,12 +98,12 @@ mid, signKey는 <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 
 <table style = "table-layout: auto; width: 100%; table-layout: fixed;" >
 <thead>
 <tr>
-<th style="text-align:center; width: 15%">필드명</th>
-<th style="text-align:center; width: 15%">한글명칭</th>
-<th style="text-align:center; width: 10%">Data<br>Type</th>
-<th style="text-align:left; width: 40%">설명 / 예시</th>
-<th style="text-align:center; width: 10%">필수여부</th>
-<th style="text-align:center; width: 10%">크기(최대)</th>
+<th class="center-align" style="width: 15%">필드명</th>
+<th class="center-align" style="width: 15%">한글명칭</th>
+<th class="center-align" style="width: 10%">Data<br>Type</th>
+<th class="center-align" style="width: 40%">설명 / 예시</th>
+<th class="center-align" style="width: 10%">필수여부</th>
+<th class="center-align" style="width: 10%">크기(최대)</th>
 </tr>
 </thead>
 <tbody>
@@ -1142,11 +1142,11 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 - 표준결제 스크립트 Import
 - 실서버( 실 반영시 반드시 수정)
 ```javascript 
-<script language="javascript" type="text/javascript" src="HTTPS://stdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="https://stdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
 ```
 - 테스트서버연동( 샘플로 제공 되는 테스트 MID 전용으로 상용 MID사용불가)
 ```javascript
-<script language="javascript" type="text/javascript" src="HTTPS://tstdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
+<script language="javascript" type="text/javascript" src="https://tstdpay.paywelcome.co.kr/stdjs/ INIStdPay_escrow_conf.js" charset="UTF-8"></script>
 ```
 - 3.1 참조하여결제페이지작성
 - 신용카드, 실시간계좌이체, 무통장입금(가상계좌)
