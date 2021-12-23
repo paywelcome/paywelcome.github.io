@@ -30,11 +30,11 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 **※ Signature 필드 생성 순서 중요**
 
-### Web Standard(PC) 서비스의 Signature 생성
+### 웹표준(PC) 서비스의 Signature 생성
 
-#### 결제 인증요청(결제요청)시 PC의 Signature 생성
+#### 인증 요청 시 Signature 생성
 
-결제 인증(결제)요청시 signature필드의 구성은 다음과 같습니다.
+인증 요청시 signature필드의 구성은 다음과 같습니다.
 
 생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code><br/>
 <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
@@ -85,9 +85,9 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 <br/>
 
-#### 결제 승인요청시 PC의 Signature 생성
+#### 승인 요청 시 Signature 생성
 
-결제 승인시 요청데이터의 signature필드의 구성은 다음과 같습니다.
+승인 요청 시 signature필드의 구성은 다음과 같습니다.
 
 생성 순서 : <code class="language-plaintext highlighter-rouge">authToken=&timestamp=</code><br/>
 <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
