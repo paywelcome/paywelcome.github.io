@@ -257,7 +257,7 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">SIGNATRUE</td>
     <td class="center-align">Char(64)</td>
     <td class="center-align">필수</td>
-    <td>위변조 방지 SHA256 Hash 값(mkey+P_AMT+P_OID+P_TIMESTAMP)<a href="/prepare01.html#mobile-서비스의-signature-생성">&#39;참조 - P_SIGNATURE 필드 처리&#39 </a><br/>
+    <td>위변조 방지 SHA256 Hash 값(mkey+P_AMT+P_OID+P_TIMESTAMP)<a href="/prepare01.html#mobile-서비스의-signature-생성">참조 - P_SIGNATURE 필드 처리</a><br/>
     <p style="color: red;"><strong>P_SIGNATURE의 자세한 생성방식은 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p></td>
   </tr>
 </tbody>
