@@ -143,3 +143,8 @@ li.sidebarTitle {
 .navbar-inverse .navbar-toggle {
     border-color: #EA002C;
 }
+
+/*드롭다운 네비 */
+div.navbar-collapse .dropdown-menu > li > a:hover {
+    background-color: #efdbc0;
+}
