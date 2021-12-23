@@ -1,5 +1,5 @@
 ---
-title: 모바일 결제 연동
+title: MOBILE
 permalink: mobile02.html
 sidebar: mobile_sidebar
 folder: mobile
@@ -81,22 +81,23 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 
 #### 상점 연동을 위한 테스트 MID
 
-mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
+>Test mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 
 [//]: # (MID 연동 table)
 <table class="tg" style="table-layout: fixed; width: 100%">
 <tbody>
   <tr>
-    <th class="center-align">Test MID</th>
-    <th class="center-align">signKey</th>
+    <td class="center-align">Test mid</td>
+    <td class="center-align" rowspan="2"><a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a></td>
   </tr>
   <tr>
-    <td style="text-align: center; vertical-align: middle" colspan="2"><a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a></td>
+    <td class="center-align">signKey</td>
   </tr>
 </tbody>
 </table>
 
-`샘플로 제공되는 테스트 MID 전용으로 상용 MID 사용불가`
+
+`샘플로 제공 되는 테스트 MID만 사용가능하며 운영 MID 사용 불가`
 
 <br/>
 
@@ -721,13 +722,19 @@ function formSubmit(){
 
 {% include image.html file="mobile_img07.png" %}
 
+<br>
+
 승인요청 시에 사용되는 P_REQ_URL(승인요청 Url) 은 Front-End 단에서 Submit 을 하지 않고, Http-Socket 통신을 통해 Back-End 단으로 요청하셔야 합니다.
 당사 P_REQ_URL 은 승인과정을 거친 후, 가맹점의 특정 Url 로 승인결과를 전송하지 않고, 페이지 상에, echo 를 통해 결과를 출력하기만 합니다.
 따라서, 승인결과 메시지는 Http-Socket 의 Receive-Data 로 수신받으셔야 합니다. 인증요청을 받은 후, 승인 요청하는 Flow 는 하기의 방식을 참고 하십시오.
 
+<br>
+
 {% include image.html file="mobile_img08.png" %}
 
-승인요청 시, 사용하는 통신 규격은 하기와 같습니다.
+<br>
+
+- 승인요청 시, 사용하는 통신 규격은 하기와 같습니다.
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -748,7 +755,7 @@ function formSubmit(){
   </tbody>
 </table>
 
-승인요청 시, 하기의 필드를 반드시 첨부하셔야 합니다.
+- 승인요청 시, 하기의 필드를 반드시 첨부하셔야 합니다.
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
@@ -777,8 +784,8 @@ function formSubmit(){
   </tbody>
 </table>
 
-Http-Socket 을 이용한 승인요청의 샘플 코드는 하기와 같습니다.
-_( __하기 코드 내 함수는 직접 구현하셔야 합니다__._ _하기 코드는 로직안내를 위해 작성된 예시입니다__)_
+- Http-Socket 을 이용한 승인요청의 샘플 코드는 하기와 같습니다.<br>
+_( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코드는 로직안내를 위해 작성된 예시입니다.)_
 
 ```php
 $P_STATUS = $_POST[‘P_STATUS’];
@@ -832,30 +839,30 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비 고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_STATUS</td>
-      <td style="text-align: center">거래상태</td>
+      <td class="center-align">P_STATUS</td>
+      <td class="center-align">거래상태</td>
       <td style="text-align: left">성공: 00</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_TID</td>
-      <td style="text-align: center">거래번호</td>
+      <td class="center-align">P_TID</td>
+      <td class="center-align">거래번호</td>
       <td style="text-align: left">char(40)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_TYPE</td>
-      <td style="text-align: center">지불수단</td>
+      <td class="center-align">P_TYPE</td>
+      <td class="center-align">지불수단</td>
       <td style="text-align: left">char(10)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_TYPE</td>
-      <td style="text-align: center">지불수단</td>
+      <td class="center-align">P_TYPE</td>
+      <td class="center-align">지불수단</td>
       <td style="text-align: left">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
     </tr>
     <tr>
@@ -1117,15 +1124,15 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_SRC_CODE</td>
-      <td style="text-align: center">앱연동여부</td>
+      <td class="center-align">P_SRC_CODE</td>
+      <td class="center-align">앱연동여부</td>
       <td style="text-align: left">P : 페이핀<br />K : 국민앱카드<br />C: 페이코<br />B: 삼성페이<br />L: LPAY<br />O: 카카오페이<br />G: SSGPAY</td>
     </tr>
   </tbody>
@@ -1321,11 +1328,12 @@ P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사�
 
 - <red>대문자 OK 외 html 및 공백, 개행문자 불허<red>
 
-## 2.6 앱 환경의 설치방법(안드로이드)
+## 2.6 앱 환경의 설치방법
 
+### 안드로이드
 ### 2.6.1 기본적인 설치방법
 
-안드로이드 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
+>안드로이드 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
 Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
 WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html) 의 방법과 동일합니다.<br>
 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.<br>
@@ -1511,7 +1519,7 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 상기의 유의사항을 고려한 샘플 코드는 하기와 같습니다. (_Kitkat_ _이하 정상구동여부 확인됨_)
 
 <details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
 <div markdown="1">
 
 ```java
@@ -1650,15 +1658,14 @@ private class SampleWebViewClient extends WebViewClient {
   </tbody>
 </table>
 
-## 7. 앱 환경의 설치방법(IOS)
-
-### 2.7.1 기본적인 설치방법
+## IOS
+### 2.6.7 기본적인 설치방법
 
 IOS 어플리케이션 내 WebView (이하 WebView) 에서 Mobile Web 서비스를 구현하는 경우에 해당됩니다.<br>
 Mobile Web 서비스를 WebView 내에 구현하는 경우, 발생할 수 있는 Encoding Issue 는 ( [3.2.2 부록-주의사항 &lt;UrlEncode issue&gt;](/mobile03.html#322-urlencode-issue) ) 를 참조하셔 주십시오.<br>
 WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명한 ([1.기본적인 설치 방법](/mobile01.html)) 의 방법과 동일합니다. 이에 이번 장 에서는 ISP 앱 호출 시 주의사항, 카드사 백신 앱 스키마 호출 및 &quot;미설치 시, 앱스토어 이동 이슈&quot; 등의 내용을 주로 다룹니다.
 
-### 2.7.2 신용카드 ISP, 계좌이체 연동방법
+### 2.6.8 신용카드 ISP, 계좌이체 연동방법
 
 - 신용카드 ISP 및 계좌이체 앱이 종료 된 뒤, 가맹점 앱을 다시 띄우기 위한 조치사항을 안내합니다.
 - IOS 는 Android 계열과 다르게도 ISP 및 계좌이체 앱이 종료된 뒤, 가맹점 앱은 Background 에 머문 채, 바탕화면이 개제됩니다.
@@ -1689,12 +1696,12 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
   더불어 상기 옵션 셋팅 시, 가맹점스키마명 뒤 ://은 필수로 입력해 주셔야 ISP 앱 종료 후 가맹점 앱이 호출 됩니다.<br>
   (Ex. 가맹점 스키마명이 WelcomeMobile일 경우 app_scheme=WelcomeMobile:// 로 셋팅 해 주시면 됩니다.)
 
-### 2.7.3 안심클릭 결제 시, 카드사 백신 앱 연동
+### 2.6.9 안심클릭 결제 시, 카드사 백신 앱 연동
 
 IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니다.<br>
 따라서, 해당 부분은 체크하실 부분이 없습니다.
 
-### 2.7.4 카드사 앱 연동 방법
+### 2.6.10 카드사 앱 연동 방법
 
 - 안심클릭 결제 진행에 필요한 Application (앱카드 등의) 호출이 필요할 경우 아래 샘플코드를 참고 바랍니다.
 
@@ -1718,10 +1725,10 @@ IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니�
 </table>
 
 <details style="cursor:pointer;">
-<summary><strong>[&nbsp;펼치기&nbsp;]</strong></summary>
+<summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
 <div markdown="1">
 
-```
+```java
 #pragma mark UIWebViewDelegate 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -1776,12 +1783,12 @@ IOS 환경에서는 카드사에서 별도로 백신을 구동하지 않습니�
     2. 가맹점 Application 이 Multi switching 이 지원되는 경우
     3. OS 버전이 9.x 이상일 경우 하기 &#39;[2.7.6 IOS9 버전 Application 구현 시, 주의 사항](/mobile02.html#276-ios9-버전-application-구현-시-주의-사항)&#39; 내용을 참고 바랍니다.
 
-### 2.7.5 쿠키 설정
+### 2.6.11 쿠키 설정
 
 Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서비스를 사용하는 경우,<br>
 세션만료 오류경고가 발생할 수 있습니다. 이에, 하기의 샘플과 같이 쿠키를 허용해야 합니다.
 
-```
+```java
 (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions    
 {
@@ -1792,7 +1799,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 }
 ```
 
-### 2.7.6 IOS9 버전 Application 구현 시, 주의 사항
+### 2.6.12 IOS9 버전 Application 구현 시, 주의 사항
 
 - IOS9 업데이트 이후, APP 내 보안정책 강화로 canOpenUrl 또는 openUrl 함수 사용 시, info.plist 파일에 LSApplicationQueriesSchemes 배열을 정의하여 호출할 App scheme list를 등록 해주셔야 합니다. (White List 등록)
   아래는 LSApplicationQueriesSchemes 등록 예시이며, 기존 앱 스키마에서 `://` 부분을 제거 후, 등록하시면 됩니다.
@@ -1955,14 +1962,14 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-## 2.8. 에스크로 결제
+## 2.7 에스크로 결제
 
 >Mobile Web 서비스 화면에서, 에스크로 서비스를 호출하는 옵션입니다.<br>
 >배송 등록, 결제 취소, 거절 확인은 PAYAPI 모듈로 진행되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.<br>
 >가맹점에서 거래에 따라 일반 결제와 에스크로 결제의 구분 결제를 희망하시면 에스크로로 신규 또는 전환계약이 필요합니다. (단, 일부 호스팅 가맹점은 신 에스크로 설정에, 제한이 있을 수 있음)<br>
 >에스크로 계약에 문의가 있거나 자세한 사항은 계약 담당자에게 문의하여 주시기 바랍니다.
 
-### 2.8.1 에스크로 사용가능 지불수단
+### 2.7.1 에스크로 사용가능 지불수단
 
 - 신용카드
 - 계좌이체
@@ -1978,7 +1985,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 
 >예) `<INPUT type=”hidden” name=”P_RESERVED” value=”useescrow=Y”/> `
 
-### 2.8.2 에스크로 구매결정 연동
+### 2.7.2 에스크로 구매결정 연동
 
 - 모바일 결제창을 통한 에스크로 구매결정 연동을 안내합니다.
   가맹점 페이지내에 구매결정 버튼을 클릭하여 에스크로 구매결정 창이 호출되도록 구현하시면 됩니다.
@@ -2120,7 +2127,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-### 2.8.3 에스크로 상태변경 노티 수신
+### 2.7.3 에스크로 상태변경 노티 수신
 
 에스크로 주요 시점(예&gt;구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(NOTI CONFIRM)하여야합니다.<br>
 해당 기능을 이용하려면 계약 담당자를 통해, 수신 받을 상점 측 URL을 등록하셔야 합니다.<br>
@@ -2263,7 +2270,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-### 2.8.4 에스크로 관련 코드
+### 2.7.4 에스크로 관련 코드
 
 [구매결정 상태별 코드]
 
@@ -2397,7 +2404,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-## 2.9 가상계좌 입금통보 사용방법 안내
+## 2.8 가상계좌 입금통보 사용방법 안내
 
 >웰컴페이먼츠 지불서버는 지불 결과를 실시간으로 회원사 측의 가상계좌 입금통보(P_NOTI_URL)를 호출하여 지불 결과를 통보합니다.<br>
 >가상계좌 입금통보(P_NOTI_URL)는 정상적으로 결제 데이터를 받을 때까지 반복 호출됩니다.<br>
