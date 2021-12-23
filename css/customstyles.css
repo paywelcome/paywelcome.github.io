@@ -138,9 +138,10 @@ font-family: OTWelcomeBA;
     color: gray;
 }
 
-/* 표 헤드 왼쪽 정렬 */
+/* 표 헤드 가운데 정렬 */
 table > thead > tr > th.left-align{
-    text-align: left; 
+    text-align: center;  /* 표 헤드 가운데 정렬로 변경 */
+    vertical-align: middle;
 }
 
 /* 표 안의 셀 왼쪽 정렬 */
@@ -151,6 +152,7 @@ table > tbody > tr > td.left-align{
 /* 표 헤드 가운데 정렬 */
 table > thead > tr > th.center-align{
     text-align: center; 
+    
 }
 
 /* 표안의 셀 가운데 정렬 */
