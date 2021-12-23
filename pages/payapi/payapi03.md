@@ -18,7 +18,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
 신용카드 빌링 결제에 필요한 빌키 발급 시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
-- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 [//]: # (신용카드 빌키 발급 API)
 <table class="tg" style="width: 100%">
@@ -358,7 +358,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
 발급 받은 빌키로 승인은 3.3 빌링 승인 API로 진행해 주시기 바랍니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
-- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 [//]: # (신용카드 빌키 발급 API)
 <table class="tg" style="width: 100%">
@@ -666,7 +666,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
 발급된 빌키를 사용하여 승인하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
-- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 [//]: # (신용카드 빌링 승인 API)
 <table class="tg" style="width: 100%">
@@ -974,7 +974,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
 발급된 빌키 삭제 시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
-- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 빌링용 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 [//]: # (신용카드 빌키 삭제 API)
 <table class="tg" style="width: 100%">
@@ -1131,7 +1131,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
 ## 3.5 휴대폰 빌키 승인 API
 휴대폰 빌키 발급은 PC Web이나 Mobile Web을 통해서 진행한 후 발급된 빌키를 사용하여 승인하는 서비스입니다. 휴대폰 빌링은 빌키 발급시에 요청한 일자기준 매월 요청시에 전후 5일 이내(예: 1월 5일 발급시에 2월 5일 전후 5일 이내 요청 필요), 요청한 금액과 동일한 금액으로 승인 요청주셔야 정상 승인 처리 됩니다. (일자 및 금액 변경해서 요청할 경우 별도 심사가 필요하므로 영업담당자에 문의 바랍니다.)
 
-- 휴대폰 빌키 승인 테스트 MID :<a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a> (빌키 발급이후 가능)
+- 휴대폰 빌키 승인 테스트 MID :<a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a> (빌키 발급이후 가능)
 
 [//]: # (휴대폰 빌키 승인 API)
 <table class="tg" style="width: 100%">

@@ -19,7 +19,7 @@ keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결�
 신용카드 수기 승인시 사용하는 서비스입니다.
 
 - 해당 API를 사용하기 위해서는 계약담당자를 통해 별도 사용요청 해주시기 바랍니다.
-- 키인결제 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기</a>
+- 키인결제 테스트 MID : <a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a>
 
 [//]: # (신용카드 키인결제 API URL)
 <table class="tg" style="width: 100%">
