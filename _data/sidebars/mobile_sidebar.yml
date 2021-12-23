@@ -46,17 +46,17 @@ entries:
                 - title: 5.4. P_NOTI_URL  수신 후 ,  처리방법
                   url: /mobile02.html#254-p_noti_url-수신-후-처리방법
                   output: web
-              - title: 6. 앱 환경의 설치방법(안드로이드)
+              - title: 6. 안드로이드 / IOS 연동
                 output: web
                 subfolderitems:
                 - title: 6-1. 기본적인 설치방법
                   url: /mobile02.html#261-기본적인-설치방법
                   output: web
-                - title: 6-2. ISP 연동방법 (1)
-                  url: /mobile02.html#262-isp-연동방법---앱-미설치-체크로직-직접구현-or-자동체크
+                - title: 6-2. ISP 연동방법 (안드로이드)
+                  url: /mobile02.html#262-isp-연동방법-안드로이드
                   output: web
-                - title: 6-3. ISP 연동방법 (2)
-                  url: /mobile02.html#263-isp-연동방법---인증결과-전송
+                - title: 6-3. ISP 연동방법 (IOS)
+                  url: /mobile02.html#263-isp-연동방법-ios
                   output: web
                 - title: 6-4. 안심클릭 결제 시, 카드사 백신 앱 연동
                   url: /mobile02.html#264-안심클릭-결제-시-카드사-백신-앱-연동
@@ -64,46 +64,31 @@ entries:
                 - title: 6-5. 결제 금액이 30 만원 이상일 때의 공인인증 앱 연동 방법
                   url: /mobile02.html#265-결제-금액이-30-만원-이상일-때의-공인인증-앱-연동-방법
                   output: web
-                - title: 6-6. Android API Level 21 이상 체크사항
-                  url: /mobile02.html#266-android-api-level-21--이상-일-때---체크사항
+                - title: 6-6. 앱 환경 별 체크사항
+                  url: /mobile02.html#266-앱-환경-별-체크사항
                   output: web
-              - title: 7. 앱 환경의 설치방법(IOS)
+                - title: 6-7. 카드사 앱 연동 방법
+                  url: /mobile02.html#267-카드사-앱-연동-방법
+                  output: web
+                - title: 6-8. 쿠키 설정
+                  url: /mobile02.html#268-쿠키-설정
+                  output: web
+              - title: 7. 에스크로 결제
                 output: web
                 subfolderitems:
-                - title: 7-1. 기본적인 설치방법
-                  url: /mobile02.html#271-기본적인-설치방법
-                  output: web
-                - title: 7-2. 신용카드 ISP, 계좌이체 연동방법
-                  url: /mobile02.html#272-신용카드-isp-계좌이체-연동방법
-                  output: web
-                - title: 7-3. 안심클릭 결제 시, 카드사 백신 앱 연동
-                  url: /mobile02.html#273-안심클릭-결제-시-카드사-백신-앱-연동
-                  output: web
-                - title: 7-4. 카드사 앱 연동 방법
-                  url: /mobile02.html#274-카드사-앱-연동-방법
-                  output: web
-                - title: 7-5. 쿠키 설정
-                  url: /mobile02.html#275-쿠키-설정
-                  output: web
-                - title: 7-6. IOS9 버전 Application 구현 시, 주의 사항
-                  url: /mobile02.html#276-ios9-버전-application-구현-시-주의-사항
-                  output: web
-              - title: 8. 에스크로 결제
-                output: web
-                subfolderitems:
-                - title: 8-1. 에스크로 사용가능 지불수단
+                - title: 7-1. 에스크로 사용가능 지불수단
                   url: /mobile02.html#281-에스크로-사용가능-지불수단
                   output: web
-                - title: 8-2. 에스크로 구매결정 연동
+                - title: 7-2. 에스크로 구매결정 연동
                   url: /mobile02.html#282-에스크로-구매결정-연동
                   output: web
-                - title: 8-3. 에스크로 상태변경 노티 수신
+                - title: 7-3. 에스크로 상태변경 노티 수신
                   url: /mobile02.html#283-에스크로-상태변경-노티-수신
                   output: web
-                - title: 8-4. 에스크로 관련 코드
+                - title: 7-4. 에스크로 관련 코드
                   url: /mobile02.html#284-에스크로-관련-코드
                   output: web
-          - title: 9. 가상계좌 입금통보 사용방법
+          - title: 8. 가상계좌 입금통보 사용방법
             url: /mobile02.html#29-가상계좌-입금통보-사용방법-안내
             output: web
 
