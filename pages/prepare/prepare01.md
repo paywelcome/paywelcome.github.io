@@ -4,6 +4,7 @@ permalink: prepare01.html
 sidebar: prepare_sidebar
 folder: prepare
 toc: false
+keywords: signature, 시그니처, 시그니쳐, Signature, 방화벽, 연동, 연동 준비, 연동준비, 시그
 ---
 
 ## 1.1 상점 연동시 주의사항
@@ -11,7 +12,7 @@ toc: false
 해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
 
 | 업체명(MID)    | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
-|:-------------:| :---------: | :-----------------: | :------------------------: |
+|-------------| --------- | ----------------- | ------------------------ |
 | 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
 
 ## 1.2 signature 개요
@@ -29,39 +30,53 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 **※ Signature 필드 생성 순서 중요**
 
-### PC(웹표준) Signature 생성
+### Web Standard(PC) 서비스의 Signature 생성
 
-#### 인증 요청 시 Signature 생성
+#### 결제 인증요청(결제요청)시 PC의 Signature 생성
 
-인증 요청 시 signature 필드의 구성은 다음과 같습니다.
+결제 인증(결제)요청시 signature필드의 구성은 다음과 같습니다.
 
 생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code><br/>
-<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
 
-<table style="width: 100%;">
-<colgroup>
-  <col style="width: 10%;">
-  <col style="width: 20%;">
-  <col style="width: 30%;">
-  <col style="width: 30%;">
-  <col style="width: 10%;">
-</colgroup>
+<table>
   <thead>
     <tr>
-      <th>순번</th>
-      <th>필드명</th>
-      <th>승인필드명</th>
-      <th>설명</th>
-      <th>필수</th>
+      <th style="text-align: center; width: 15%">필드명</th>
+      <th style="text-align: center; width: 10%">한글명칭</th>
+      <th style="text-align: left; width: 65%">비고</th>
+      <th style="text-align: center; width: 10%">필수여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>mkey</td>
-      <td></td>
-      <td>sha256(signkey)<br/>(signkey값은 계약가맹점에 한해 별도 전달 예정)</td>
-      <td>필수</td>
+      <td style="text-align: center">mKey</td>
+      <td style="text-align: center">검증값</td>
+      <td>SHA256방식으로 생성한 값 → 제공라이브러리로 생성가능
+      <br><code class="language-plaintext highlighter-rouge">"346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3"
+      </code>
+      </td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">oid</td>
+      <td style="text-align: center">주문번호</td>
+      <td>xxx_1335247243103</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">price</td>
+      <td style="text-align: center">가격</td>
+      <td>가맹점 주문번호 / 결제단위 Unique <br>
+      <code class="language-plaintext highlighter-rouge">"10000"</code>
+      </td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: center">타임스탬프</td>
+      <td>TimeInMillis(Long형) → 제공라이브러리로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
+      <td style="text-align: center">Yes</td>
     </tr>
   </tbody>
 </table>
@@ -70,39 +85,41 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 <br/>
 
-#### 승인 요청 시 Signature 생성
+#### 결제 승인요청시 PC의 Signature 생성
 
-승인 요청 시 signature필드의 구성은 다음과 같습니다.
+결제 승인시 요청데이터의 signature필드의 구성은 다음과 같습니다.
 
 생성 순서 : <code class="language-plaintext highlighter-rouge">authToken=&timestamp=</code><br/>
-<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
 
 <table>
   <thead>
     <tr>
-      <td>2</td>
-      <td>oid</td>
-      <td>oid(주문번호)</td>
-      <td>주문단위 unique한 값</td>
-      <td>필수</td>
+      <th style="text-align:center; width: 15%">필드명</th>
+      <th style="text-align:center; width: 20%">한글명칭</th>
+      <th style="text-align:left; width: 55%">비고</th>
+      <th style="text-align:center; width: 10%">필수 여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">authToken</td>
+      <td style="text-align: left">인증 결과 수신 후 생성된 토큰 값</td>
+      <td>인증결과 수신한 authToken<br>sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu …….</td>
+      <td style="text-align: center">Yes</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>price</td>
-      <td>price(금액)</td>
-      <td>가맹점 주문번호 / 결제단위 Unique</td>
-      <td>필수</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>timestamp</td>
-      <td>timestamp(타임스탬프)</td>
-      <td>TimeInMillis(Long형)</td>
-      <td>필수</td>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: left">타임스탬프</td>
+      <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능<br>1335247243103</td>
+      <td style="text-align: center">Yes</td>
     </tr>
   </tbody>
 </table>
 
+##### Target 데이터 예시 : `authToken=sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/iT……&timestamp=2020110222`
+
+#### Signature 생성방법은 아래의 [3.3 signature 생성] 참조
 >Web Standard 서비스의 모든 요청<br/>
 >결제(인증), 승인APIsignature 생성 대상 필드(Target) 모든 요청의 signature의 생성방법 동일하며, 요청별로 생성 대상 필드가 다름<br/>
 >요청별로 명시된 signature 생성 대상(Target)필드 를 참조<br/>
@@ -165,6 +182,8 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
     </tr>
   </tbody>
 </table>
+
+##### Target 데이터 예시 : `mkey=346eaecb81e3a1629805b9d55f...&P_AMT=1000&P_OID=xxx_1335247243103&P_TIMESTAMP=2020110222`
 
 ### PAYAPI 서비스의 Signature 생성
 
