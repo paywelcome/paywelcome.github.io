@@ -34,13 +34,13 @@ exclude:
   - vendor
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: 1111@gmail.coms
+feedback_email: mainpg_support@welcomepayments.co.kr
 # used as a contact email for the Feedback link in the top navigation bar
 
 # feedback_disable: true
 # if you uncomment the previous line, the Feedback link gets removed
 
-# feedback_text: "Need help?"
+feedback_text: "문의하기"
 # if you uncomment the previous line, it changes the Feedback text
 
 # feedback_link: "http://helpy.io/"
@@ -74,6 +74,7 @@ defaults:
       search: true
       comments: false
       topnav: topnav
+      topnav2: topnav2
 
   - scope:
       path: ""
