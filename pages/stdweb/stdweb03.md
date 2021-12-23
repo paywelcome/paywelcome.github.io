@@ -1471,7 +1471,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 웹표준 결제는 거래 취소 기능을 지원하지 않습니다.
 따라서, 결제 취소는 별도의 PAYAPI 서비스 연동하시어 취소기능을 활용하셔야 합니다.  
 자세한 문의사항은 당사 기술지원팀으로 문의 바랍니다.<br>
-기술지원 문의 (mainpg_support@welcomepayments.co.kr)
+기술지원 문의 (support@welcomepayments.co.kr)
 
 <div style="display: inline-block; width: 100%; margin-top: 50px;">
   <a style="float:left;" href="/stdweb02.html">◀이전페이지</a>
