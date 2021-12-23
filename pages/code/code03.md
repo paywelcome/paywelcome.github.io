@@ -1,18 +1,18 @@
 ---
-title: PAYAPI 부록
-permalink: payapi08.html
-sidebar: payapi_sidebar
-folder: payapi
+title: PAYAPI 코드
+permalink: code03.html
+sidebar: code_siderbar
+folder: code
 toc: false
 ---
 
 <div style="display: inline-block; width: 100%;">
-  <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
+  <a style="float:left;" href="/code03.html">◀이전페이지</a>
 </div>
 
-# 9. 부록
+# 3. 결제 주기 코드
 
-## 9.1 결제 주기 코드
+## 3.1 결제 주기 코드
 
 <table style="width: 100%;">
 <colgroup>
@@ -129,6 +129,6 @@ toc: false
   </tbody>
 </table>
 
-<div style="display: inline-block; width: 100%; margin-top: 50px;">
-  <a style="float:left;" href="/payapi07.html">◀이전페이지</a>
+<div style="display: inline-block; width: 100%;">
+  <a style="float:left;" href="/code03.html">◀이전페이지</a>
 </div>

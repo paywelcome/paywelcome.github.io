@@ -29,3 +29,61 @@ entries:
       url: /code01.html#4-에스크로-배송등록-택배사-코드
       output: web
       type: web
+
+  - title: 웹표준(PC) 코드
+    output: web
+    folderitems:
+
+    - title: 1. 결제수단코드(gopaymethod)
+      url: /code02.html
+      output: web
+
+    - title: 2. 결제수단코드(paymethod)
+      url: /code02.html#22-결제수단코드-paymethod
+      output: web
+
+    - title: 3. gopaymethod 옵션
+      url: /code02.html#23-gopaymethod-옵션
+      output: web
+
+    - title: 4. 카드사 승인코드
+      url: /code02.html#24-카드사-승인코드
+      output: web
+
+    - title: 5. 카드사 코드(결제창 호출시 제어코드)
+      url: /code02.html#25-카드사-코드결제창-호출시-제어코드
+      output: web
+
+    - title: 6. 카드 발급사(은행) 코드
+      url: /code02.html#26-카드-발급사은행-코드
+      output: web
+
+    - title: 7. 은행(증권사) 코드
+      url: /code02.html#27-은행증권사-코드
+      output: web
+
+    - title: 8. 신용카드 간편결제 코드
+      url: /code02.html#28-신용카드-간편결제-코드
+      output: web
+
+    - title: 9. 카드 이벤트 적용 코드
+      url: /code02.html#29-카드-이벤트-적용-코드
+      output: web
+
+    - title: 10. 인증 결과코드
+      url: /code02.html#210-인증-결과코드
+      output: web
+
+    - title: 11. 승인 결과코드
+      url: /code02.html#211-승인-결과코드
+      output: web
+
+  - title: PAYAPI 코드
+    output: web
+    folderitems:
+
+    - title: 1. 카드사(매입사) 코드
+      url: /code03.html#31-결제-주기-코드
+      output: web
+      type: web
+
