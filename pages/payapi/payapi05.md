@@ -4,7 +4,6 @@ permalink: payapi05.html
 sidebar: payapi_sidebar
 folder: payapi
 toc: false
-keywords: 신용카드 조회, 조회, prefix, 앞번호, 신용카드
 ---
 
 <div style="display: inline-block; width: 100%;">

@@ -79,6 +79,27 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 </div>
 </details>
 
+#### 상점 연동을 위한 테스트 MID
+
+mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
+
+[//]: # (MID 연동 table)
+<table class="tg" style="table-layout: fixed; width: 100%">
+<tbody>
+  <tr>
+    <th class="center-align">Test MID</th>
+    <th class="center-align">signKey</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle" colspan="2"><a href="mailto:mainpg_support@welcomepayments.co.kr">메일로 문의하기(support@welcomepayments.co.kr)</a></td>
+  </tr>
+</tbody>
+</table>
+
+`샘플로 제공되는 테스트 MID 전용으로 상용 MID 사용불가`
+
+<br/>
+
 ## 2.2 결제 요청 페이지작성 - 결제페이지 요청필드
 
 >Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 하기 Parameter를 필요로 합니다.
@@ -235,15 +256,14 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">SIGNATRUE</td>
     <td class="center-align">Char(64)</td>
     <td class="center-align">필수</td>
-    <td>위변조 방지 SHA256 Hash 값(mkey+P_AMT+P_OID+P_TIMESTAMP)하단의 &#39;P_SIGNATURE 필드 처리&#39</td>
+    <td>위변조 방지 SHA256 Hash 값(mkey+P_AMT+P_OID+P_TIMESTAMP)<a href="/prepare01.html#mobile-서비스의-signature-생성">&#39;참조 - P_SIGNATURE 필드 처리&#39 </a><br/>
+    <p style="color: red;"><strong>P_SIGNATURE의 자세한 생성방식은 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p></td>
   </tr>
 </tbody>
 </table>
 
 </div>
 </details>
-
-<p style="color: red;"><strong>P_SIGNATURE 생성 방식에 따라서는 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
 
 ### 2.2.2 신용카드 전용 필드
 
@@ -1935,10 +1955,10 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-## 2.8. 에스크로 사용방법 안내
+## 2.8. 에스크로 결제
 
 >Mobile Web 서비스 화면에서, 에스크로 서비스를 호출하는 옵션입니다.<br>
->배송 등록, 결제 취소, 거절 확인은 PayAPI 모듈로 진행되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.<br>
+>배송 등록, 결제 취소, 거절 확인은 PAYAPI 모듈로 진행되므로 (배포본)PAYAPI 연동메뉴얼과 함께 참고하여 개발 진행 부탁드립니다.<br>
 >가맹점에서 거래에 따라 일반 결제와 에스크로 결제의 구분 결제를 희망하시면 에스크로로 신규 또는 전환계약이 필요합니다. (단, 일부 호스팅 가맹점은 신 에스크로 설정에, 제한이 있을 수 있음)<br>
 >에스크로 계약에 문의가 있거나 자세한 사항은 계약 담당자에게 문의하여 주시기 바랍니다.
 
@@ -1961,7 +1981,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 ### 2.8.2 에스크로 구매결정 연동
 
 - 모바일 결제창을 통한 에스크로 구매결정 연동을 안내합니다.
-  가맹점 페이지내에 구며결정 버튼을 클릭하여 에스크로 구매결정 창이 호출되도록 구현하시면 됩니다.
+  가맹점 페이지내에 구매결정 버튼을 클릭하여 에스크로 구매결정 창이 호출되도록 구현하시면 됩니다.
 
 [구매결정 요청 URL]
 <table style="width: 100%;">
@@ -2377,11 +2397,11 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </div>
 </details>
 
-## 2.9 노티수신(P_NOTI_URL) 사용방법 안내
+## 2.9 가상계좌 입금통보 사용방법 안내
 
->웰컴페이먼츠 지불서버는 지불 결과를 실시간으로 회원사 측의 노티페이지를 호출하여 지불 결과를 통보합니다.<br>
->노티페이지(P_NOTI_URL)는 정상적으로 결제 데이터를 받을 때까지 반복 호출됩니다.<br>
->노티페이지(P_NOTI_URL)페이지는 웰컴페이먼츠에서 백엔드(backend)로 호출을 하는 페이지로, 고객이 보는 결제 화면과는 무관합니다.<br>
+>웰컴페이먼츠 지불서버는 지불 결과를 실시간으로 회원사 측의 가상계좌 입금통보(P_NOTI_URL)를 호출하여 지불 결과를 통보합니다.<br>
+>가상계좌 입금통보(P_NOTI_URL)는 정상적으로 결제 데이터를 받을 때까지 반복 호출됩니다.<br>
+>가상계좌 입금통보(P_NOTI_URL)페이지는 웰컴페이먼츠에서 백엔드(backend)로 호출을 하는 페이지로, 고객이 보는 결제 화면과는 무관합니다.<br>
 
 [노티를 받을 때 전달되는 파라미터]
 

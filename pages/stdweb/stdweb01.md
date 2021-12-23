@@ -26,23 +26,22 @@ keywords: 개요, PC, 특징, 웹, 연동
 
 ## 1.3. 지불수단
 >Web Standard서비스는 결제의 약95%를 차지하는 지불수단을 지원합니다.<br>
-- 신용카드 - 안심클릭, ISP, 비인증 신용카드, 해외Visa카드, KPay, 삼성월렛, PayPin
+- 신용카드 - 안심클릭, ISP, 비인증 신용카드
 - 무통장 입금(가상계좌)
 - 실시간 계좌이체
 - 휴대폰 결제
 
 ### 신용카드
 
-국내 또는 해외에서 발급된 모든 신용카드를 사용하실 수 있습니다.
+국내에서 발급된 모든 신용카드를 사용하실 수 있습니다.
 
-<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">해외카드는 해외카드이용특약을 맺은 가맹점에서만 사용하실 수 있으며, 법인카드 및 직불형 신용카드는 할부이용이 불가합니다.</code>
+<img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"> <code class="language-plaintext highlighter-rouge">법인카드 및 직불형 신용카드는 할부이용이 불가합니다.</code>
 
 
 ### ISP(인터넷안전결제)
 
 신용카드사에서 인증서를 발급받아 신용카드 번호를 입력하지 않고 본인확인만으로 결제하는 보다 안전한 결제방식입니다.<br>
   이용금액은 신용카드와 동일하게 청구됩니다.<br>
-  자세한 내용은 [https://service.vp.co.kr/](https://service.vp.co.kr/) 을 참조하십시오.
 
 ### 무통장입금(가상계좌)
 
