@@ -477,6 +477,7 @@ ul#mysidebar {
     border-top:1px solid whitesmoke;
     padding-left:10px;
 }
+
 /* end sidebar */
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
@@ -485,6 +486,11 @@ ul#mysidebar {
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
     border-radius: 5px;
+    background-color: #f4811f;
+    /*
+    color: #EA002C
+    background-color: whitesmoke !important;
+    */
 }
 
 span.projectTitle {

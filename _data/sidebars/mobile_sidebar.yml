@@ -7,7 +7,7 @@ entries:
     version:
     folders:
       # mobile01.md
-      - title: 설치
+      - title: 제품의 개요 및 특징
         output: web
         folderitems:
           - title: 모바일 연동  Flow
