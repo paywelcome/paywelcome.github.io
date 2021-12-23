@@ -104,7 +104,7 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 
 >Mobile Web 서비스 접속 시, 결제페이지를 구성하기 위해서는 하기 Parameter를 필요로 합니다.
 ```javascript
-양식 예시 : <input type="hidden" name="필드명" value="값 예시" />;
+양식 예시 : <input type="hidden" name="필드" value="값 예시" />;
 ```
 
 ### 2.2.1 전 지불수단 공통 필드
@@ -123,8 +123,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr>
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
     <th style="text-align: center;">필수여부</th>
     <th style="text-align: center;">부가설명 및 주의사항</th>
@@ -281,8 +281,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr style="text-align: center">
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
     <th style="text-align: center;">필수여부</th>
     <th style="text-align: center;">부가설명 및 주의사항</th>
@@ -345,8 +345,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr style="text-align: center">
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
     <th style="text-align: center;">필수여부</th>
     <th style="text-align: center;">부가설명 및 주의사항</th>
@@ -382,8 +382,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr style="text-align: center">
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
     <th style="text-align: center;">필수여부</th>
     <th style="text-align: center;">부가설명 및 주의사항</th>
@@ -434,8 +434,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr style="text-align: center">
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
     <th style="text-align: center;">필수여부</th>
     <th style="text-align: center;">부가설명 및 주의사항</th>
@@ -470,8 +470,8 @@ mid와 signkey값은 계약가맹점에 한해 별도 전달 예정입니다.
 </colgroup>
 <thead>
   <tr>
+    <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
-    <th style="text-align: center;">목&nbsp;&nbsp;적</th>
     <th style="text-align: center;">Variable</th>
     <th style="text-align: center;">Value 및 부가설명</th>
   </tr>
@@ -669,7 +669,7 @@ function formSubmit(){
 </colgroup>
 <thead>
   <tr>
-    <th class="center-align">필드명</th>
+    <th class="center-align">필드</th>
     <th class="center-align">목적</th>
     <th class="center-align">비고</th>
   </tr>
@@ -758,7 +758,7 @@ function formSubmit(){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">필드</th>
       <th style="text-align: center">목 적</th>
       <th style="text-align: left">비 고</th>
     </tr>
@@ -1255,7 +1255,7 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">필드</th>
       <th style="text-align: center">목 적</th>
       <th style="text-align: left">비고</th>
     </tr>
@@ -2026,7 +2026,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">필드</th>
       <th style="text-align: center">크 기</th>
       <th style="text-align: center">필수여부</th>
       <th>비고</th>
@@ -2083,7 +2083,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">필드</th>
       <th style="text-align: center">설명</th>
       <th>비고</th>
     </tr>
@@ -2145,7 +2145,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   <thead>
     <tr>
       <th style="text-align: center">필드</th>
-      <th style="text-align: center">필드명</th>
+      <th style="text-align: center">필드</th>
       <th>크 기</th>
       <th>부 가 설 명 및 주 의 사 항</th>
     </tr>
@@ -2421,7 +2421,7 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   <tr>
     <th>순번</th>
     <th>필드</th>
-    <th>필드명</th>
+    <th>필드</th>
     <th>타입</th>
     <th>비고</th>
   </tr>
