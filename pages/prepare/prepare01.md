@@ -6,7 +6,7 @@ folder: prepare
 toc: false
 ---
 
-## 1.1 상점 연동시 주의사항
+## 1. 상점 연동시 주의사항
 
 해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
 
@@ -14,7 +14,80 @@ toc: false
 |:-------------:| :---------: | :-----------------: | :------------------------: |
 | 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
 
-## 1.2 signature 개요
+## 2. 설치
+
+### 2.1. 설치 가능한 운영체제
+>Java, php, asp.net등 HTTPS 통신이 가능한 웹서버 환경의 모든 운영체제에서 사용이 가능합니다. <br>
+다만, 개인용 PC에서는 운영을 권장하지 않습니다.
+
+### 2.2. 소프트웨어 요구사항
+> `Web Server 웹서버 (또는 웹 컨테이너)`<br>
+SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서버<br><br>
+>
+>`DBMS`<br>
+거래내역 및 처리결과를 데이터베이스에 저장하길 원하신다면, 데이터베이스 소프트웨어가 별도로 필요합니다.<br>
+Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 포함되어 있지 않습니다.<br>(데이터베이스 연동을 위한 지불 결과 데이터만 제공)
+
+### 2.3. 하드웨어 요구사항
+>일반적인 서버 운영체제의 운용환경에 준하며, 특별한 하드웨어 요구사항은 없습니다.
+
+
+### 2.4. 방화벽 설정
+>이용 가맹점 서버 앞에 방화벽이 있는 경우 통신이 가능하도록 방화벽 설정을 해야 합니다.<br>
+
+#### 테스트
+
+<table>
+<thead>
+<tr>
+<th class="center-align" style="width: 40%">연결대상</th>
+<th class="center-align" style="width: 15%">프로토콜</th>
+<th class="center-align" style="width: 15%">포트번호</th>
+<th class="center-align" style="width: 30%">연결방향</th>
+</tr>
+</thead>
+    <tr>
+      <td class="center-align">https://tstdpay.paywelcome.co.kr</td>
+      <td class="center-align" rowspan="3">HTTPS</td>
+      <td class="center-align" rowspan="3">443</td>
+      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://tmobile.paywelcome.co.kr</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://tpayapi.paywelcome.co.kr</td>
+    </tr>
+</table>
+
+#### 운영
+
+<table>
+<thead>
+<tr>
+<th class="center-align" style="width: 40%">연결대상</th>
+<th class="center-align" style="width: 15%">프로토콜</th>
+<th class="center-align" style="width: 15%">포트번호</th>
+<th class="center-align" style="width: 30%">연결방향</th>
+</tr>
+</thead>
+    <tr>
+      <td class="center-align">https://stdpay.paywelcome.co.kr</td>
+      <td class="center-align" rowspan="3">HTTPS</td>
+      <td class="center-align" rowspan="3">443</td>
+      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://mobile.paywelcome.co.kr</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://payapi.paywelcome.co.kr</td>
+    </tr>
+</table>
+
+## 3. signature 생성
+
+## 3.1 signature 개요
 
 {% include image.html file="pre_img01.png" %}
 
@@ -22,7 +95,7 @@ toc: false
 
 - signature는 form.submit 시 적용됩니다.signature생성은 Sample Source를 참고하여 작성하시기 바랍니다.
 
-## 1.3 signature 첨부 대상
+## 3.2 signature 첨부 대상
 서비스 별로 Signature생성 방식이 상이하므로 아래의 표를 참고해주시기 바랍니다.<br/>
 
 Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도로 전달됩니다.
@@ -281,13 +354,13 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 </table>
 <strong>※자세한 필드는 각 API명세서를 참고 바랍니다.</strong>
 
-## 1.4 signature 생성 방법
+## 3.3 signature 생성 방법
 - 위변조 방지를 위한 보안조치로서 필수 체크 데이터를 NVP 방식으로 연결한 데이터를SHA256으로 Hash한 값
 - NVP : nameandvalue parameters
   ex) name=value&amp;name=value&amp;name=value&amp;name=value
 - 필드 순서유지(알파벳순), 마지막 &amp;는 생략, 공백생략, 모든대상 필드는 Form에 설정되는 데이터와 동일한 값을 이용
 
-## 1.5 signature 생성 샘플(결제요청)
+## 3.4 signature 생성 샘플(결제요청)
 - 언어별 제공된 라이브러리 소스를 통해서 생성가능합니다.
 
 #### signature 생성 예
@@ -319,75 +392,92 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 | mKey=xxxxxxxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 |
 
+#### 샘플소스
 
-# 2. 설치
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a href="#sigSample1" data-toggle="tab">java</a></li>
+    <li><a href="#sigSample2" data-toggle="tab">node.js</a></li>
+    <li><a href="#sigSample3" data-toggle="tab">PHP</a></li>
+    <li><a href="#sigSample4" data-toggle="tab">ASP</a></li>
+</ul>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="sigSample1">
+<div class="language-java highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>
+// hash 알고리즘은 sha-256 사용
+String algorithm = "SHA-256";
 
-## 2.1. 설치 가능한 운영체제
->Java, php, asp.net등 HTTPS 통신이 가능한 웹서버 환경의 모든 운영체제에서 사용이 가능합니다. <br>
-다만, 개인용 PC에서는 운영을 권장하지 않습니다.
+// hash 하기위한 plaintext를 변수에 담아준다.
+String data = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775";
 
-## 2.2. 소프트웨어 요구사항
-> `Web Server 웹서버 (또는 웹 컨테이너)`<br>
-SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서버<br><br>
->
->`DBMS`<br>
-거래내역 및 처리결과를 데이터베이스에 저장하길 원하신다면, 데이터베이스 소프트웨어가 별도로 필요합니다.<br>
-Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 포함되어 있지 않습니다.<br>(데이터베이스 연동을 위한 지불 결과 데이터만 제공)
+// SHA를 사용하기 위해 MessageDigest 클래스로부터 인스턴스를 얻는다.
+MessageDigest md = MessageDigest.getInstance(algorithm);
 
-## 2.3. 하드웨어 요구사항
->일반적인 서버 운영체제의 운용환경에 준하며, 특별한 하드웨어 요구사항은 없습니다.
+// 해싱할 byte배열을 넘겨준다.
+// SHA-256의 경우 메시지로 전달할 수 있는 최대 bit 수는 2^64-1개 이다.
+md.update(data.getBytes("UTF-8"));
 
+// 해싱된 byte 배열을 digest메서드의 반환값을 통해 얻는다.
+byte[] hashbytes = md.digest();
 
-## 2.4. 방화벽 설정
->이용 가맹점 서버 앞에 방화벽이 있는 경우 통신이 가능하도록 방화벽 설정을 해야 합니다.<br>
+// 보기 좋게 16진수로 만드는 작업
+StringBuilder signatureStr = new StringBuilder();
+for(int i=0 ; i < hashbytes.length ; i++) {
+// %02x 부분은 0 ~ f 값 까지는 한자리 수이므로 두자리 수로 보정하는 역할을 한다.
+signatureStr.append(String.format("%02x", hashbytes[i] & 0xff));
+}
 
-### 테스트
+// signature 값 출력
+System.out.println(signatureStr .toString());
+</code>
+</pre>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="sigSample2">
+<div class="highlight">
+<pre class="highlight">
+<code>
+// hash 하기위한 plaintext를 변수에 담아준다.
+var plainText = "mid=xxxxxxxxxx&mkey=9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
+// node.js 내장 암호화 함수 호출
+var crypto = require('crypto'); 
+// sha-256의 알고리즘으로 암호화하여 signature값 생성
+var signature = crypto.createHash('sha256').update(plainText).digest('hex'); 
+// 해당 값 출력시 signature 값 출력
+console.log( signature); 
+</code>
+</pre>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="sigSample3">
+<div class="highlight">
+<pre class="highlight">
+<code>
+// hash 하기위한 plaintext를 변수에 담아준다.
+$plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
+// sha-256 알고리즘으로 plainText를 암호화 하여 signature값 생성
+$signature = hash("sha256", $plainText); 
+// 해당 값 출력시 signature 값 출력
+echo $signature;
+</code>
+</pre>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="sigSample4">
+<div class="highlight">
+<pre class="highlight">
+<code>
+// hash 알고리즘은 sha-256 사용
+plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
+// 샘플소스 ASP_MOBILE\include\signature.asp 내부함수의 MakeSignature(sMessage)를 참고
+MakeSignature(plainText);
+</code>
+</pre>
+</div>
+</div>
+</div>
 
-<table>
-<thead>
-<tr>
-<th class="center-align" style="width: 40%">연결대상</th>
-<th class="center-align" style="width: 15%">프로토콜</th>
-<th class="center-align" style="width: 15%">포트번호</th>
-<th class="center-align" style="width: 30%">연결방향</th>
-</tr>
-</thead>
-    <tr>
-      <td class="center-align">https://tstdpay.paywelcome.co.kr</td>
-      <td class="center-align" rowspan="3">HTTPS</td>
-      <td class="center-align" rowspan="3">443</td>
-      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
-    </tr>
-    <tr>
-      <td class="center-align">https://tmobile.paywelcome.co.kr</td>
-    </tr>
-    <tr>
-      <td class="center-align">https://tpayapi.paywelcome.co.kr</td>
-    </tr>
-</table>
-
-### 운영
-
-<table>
-<thead>
-<tr>
-<th class="center-align" style="width: 40%">연결대상</th>
-<th class="center-align" style="width: 15%">프로토콜</th>
-<th class="center-align" style="width: 15%">포트번호</th>
-<th class="center-align" style="width: 30%">연결방향</th>
-</tr>
-</thead>
-    <tr>
-      <td class="center-align">https://stdpay.paywelcome.co.kr</td>
-      <td class="center-align" rowspan="3">HTTPS</td>
-      <td class="center-align" rowspan="3">443</td>
-      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
-    </tr>
-    <tr>
-      <td class="center-align">https://mobile.paywelcome.co.kr</td>
-    </tr>
-    <tr>
-      <td class="center-align">https://payapi.paywelcome.co.kr</td>
-    </tr>
-</table>
 

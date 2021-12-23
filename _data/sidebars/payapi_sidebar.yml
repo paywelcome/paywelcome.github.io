@@ -46,10 +46,10 @@ entries:
             url: /payapi03.html#35-휴대폰-빌키-승인-api
             output: web
 
-      - title: 신용카드 키인승인 API
+      - title: 신용카드 키인결제 API
         output: web
         folderitems:
-          - title: 1. 신용카드 키인승인 API
+          - title: 1. 신용카드 키인결제 API
             url: /payapi04.html
             output: web
 
@@ -85,13 +85,6 @@ entries:
         folderitems:
           - title: 1. SMS결제용 단축 URL 생성 API
             url: /payapi07.html
-            output: web
-
-      - title: 부록
-        output: web
-        folderitems:
-          - title: 1. 결제 주기 코드
-            url: /payapi08.html
             output: web
 
 # Copyright 2021 Google LLC
