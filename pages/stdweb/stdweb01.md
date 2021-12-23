@@ -1,5 +1,5 @@
 ---
-title: PC(웹표준)결제 제품의 개요 및 특징
+title: PC(웹표준)
 permalink: stdweb01.html
 sidebar: stdweb_sidebar
 folder: stdweb

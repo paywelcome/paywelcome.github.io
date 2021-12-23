@@ -11,7 +11,7 @@ toc: false
 해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
 
 | 업체명(MID)    | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
-|-------------| --------- | ----------------- | ------------------------ |
+|:-------------:| :---------: | :-----------------: | :------------------------: |
 | 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
 
 ## 1.2 signature 개요
@@ -319,4 +319,75 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 | mKey=xxxxxxxxxx&amp;oid=1231231&amp;price=10000&amp;timestamp=1335247243103 |
 
+
+# 2. 설치
+
+## 2.1. 설치 가능한 운영체제
+>Java, php, asp.net등 HTTPS 통신이 가능한 웹서버 환경의 모든 운영체제에서 사용이 가능합니다. <br>
+다만, 개인용 PC에서는 운영을 권장하지 않습니다.
+
+## 2.2. 소프트웨어 요구사항
+> `Web Server 웹서버 (또는 웹 컨테이너)`<br>
+SHA256 Hash값의 생성 httpClient(http Background) 통신이 가능한 웹서버<br><br>
+>
+>`DBMS`<br>
+거래내역 및 처리결과를 데이터베이스에 저장하길 원하신다면, 데이터베이스 소프트웨어가 별도로 필요합니다.<br>
+Web Standard서비스는 데이터베이스 연동 작업을 위한 기능이 포함되어 있지 않습니다.<br>(데이터베이스 연동을 위한 지불 결과 데이터만 제공)
+
+## 2.3. 하드웨어 요구사항
+>일반적인 서버 운영체제의 운용환경에 준하며, 특별한 하드웨어 요구사항은 없습니다.
+
+
+## 2.4. 방화벽 설정
+>이용 가맹점 서버 앞에 방화벽이 있는 경우 통신이 가능하도록 방화벽 설정을 해야 합니다.<br>
+
+### 테스트
+
+<table>
+<thead>
+<tr>
+<th class="center-align" style="width: 40%">연결대상</th>
+<th class="center-align" style="width: 15%">프로토콜</th>
+<th class="center-align" style="width: 15%">포트번호</th>
+<th class="center-align" style="width: 30%">연결방향</th>
+</tr>
+</thead>
+    <tr>
+      <td class="center-align">https://tstdpay.paywelcome.co.kr</td>
+      <td class="center-align" rowspan="3">HTTPS</td>
+      <td class="center-align" rowspan="3">443</td>
+      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://tmobile.paywelcome.co.kr</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://tpayapi.paywelcome.co.kr</td>
+    </tr>
+</table>
+
+### 운영
+
+<table>
+<thead>
+<tr>
+<th class="center-align" style="width: 40%">연결대상</th>
+<th class="center-align" style="width: 15%">프로토콜</th>
+<th class="center-align" style="width: 15%">포트번호</th>
+<th class="center-align" style="width: 30%">연결방향</th>
+</tr>
+</thead>
+    <tr>
+      <td class="center-align">https://stdpay.paywelcome.co.kr</td>
+      <td class="center-align" rowspan="3">HTTPS</td>
+      <td class="center-align" rowspan="3">443</td>
+      <td class="center-align" rowspan="3">INBOUNT, OUTBOUND</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://mobile.paywelcome.co.kr</td>
+    </tr>
+    <tr>
+      <td class="center-align">https://payapi.paywelcome.co.kr</td>
+    </tr>
+</table>
 
