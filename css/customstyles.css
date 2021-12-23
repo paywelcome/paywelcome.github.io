@@ -431,16 +431,16 @@ background-color: #347DBE;
 }
 
 .nav li a {
-    font-size: 12px;
-    line-height: 18px;
-    padding: 2px 10px;
+    font-size: 14px;
+    line-height: 23px;
+    padding: 4px 10px 0px 10px;
     background-color: #f1f1f1;
 }
 
 .nav > li > a {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 4px 10px;
+    font-size: 16px;
+    line-height: 27px;
+    padding: 7px 10px 0px 10px;
 }
 
 ul#mysidebar {
@@ -493,10 +493,11 @@ span.projectTitle {
 
 .footer {
     text-align: left;
+    font-size: 15px;
 }
 
 .footer > .footer-logo {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .footerMeta {
@@ -627,7 +628,7 @@ hr.shaded {
     margin-top: 30px;
     background: white;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .fa-6x{font-size:900%;}
@@ -936,6 +937,7 @@ span.soft {
 
     ul#mysidebar {
         width: 225px;
+        margin-top : 150px;
     }
 }
 
