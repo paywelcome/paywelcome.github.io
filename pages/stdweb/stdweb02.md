@@ -38,7 +38,6 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
   <span data-tab="tab-3" class="tabs-nav">ASP</span>
   <span data-tab="tab-4" class="tabs-nav">PHP</span>
 </div>
-
 <div class="tabs-content">
   <div id="tab-1" class="b-tab active">
       <h2>Java</h2>
@@ -54,13 +53,11 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
             └───lib
                  └───WelpaySample
     </pre>
-    <code>
     - Welpay0_Sample_v1.4.jar : 해당 라이브러리는 샘플페이지 구동을 위한 라이브러리로 참고만 부탁드리며, 실제 반영시엔 가맹점 환경에 맞게 직접 생성 부탁드립니다.<br/>
     - 샘플 라이브러리만을 이용하여 연동시, 가맹점 환경에 따른 오작동은 당사 확인이 어려울수 있습니다.<br/>
     - WelpayStdSample : HTML, JSP Sample 이 위치하는 폴더 입니다.
-    </code>
 
-</div>
+  </div>
   <div id="tab-2" class="b-tab">
       <h2>ASP.net</h2>
   - WelStdweb_ASP.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.<br/>
@@ -112,7 +109,9 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
     <code>WelStdPaySample</code> : HTML, PHP Sample이 위치하는 폴더입니다.
  </div>
 </div>
-<script src="js/tabs.js"/>
+<script src="js/tabs.js"></script>
+
+
 
 ## 2.2 승인 테스트
 1. 웹 브라우저에서 http://127.0.0.1/WelStdPaySample/WelStdPayRequest.xxx페이지를 호출합니다.<br>

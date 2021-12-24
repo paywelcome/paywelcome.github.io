@@ -136,98 +136,98 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">P_MID</td>
     <td class="center-align">상점아이디</td>
     <td class="center-align">char(10)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td>계약된 당사발급 아이디</td>
   </tr>
   <tr>
     <td class="center-align">P_OID</td>
     <td class="center-align">주문번호</td>
     <td class="center-align">Char(40)</td>
-    <td class="center-align">필수대상 외 선택</td>
+    <td class="center-align">△</td>
     <td>한글을 제외한, 숫자/영문/특수기호의 형태<br>필수대상 : 가상계좌</td>
   </tr>
   <tr>
     <td class="center-align">P_AMT</td>
     <td class="center-align">거래금액</td>
     <td class="center-align">Char(8)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td>단위 표시 기호(콤마) 를 반드시 제거 요망</td>
   </tr>
   <tr>
     <td class="center-align">P_UNAME</td>
     <td class="center-align">고객성명</td>
     <td class="center-align">Char(30)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td></td>
   </tr>
   <tr>
     <td class="center-align">P_MNAME</td>
     <td class="center-align">가맹점 이름</td>
     <td class="center-align">Char(30)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td></td>
   </tr>
   <tr>
     <td class="center-align">P_NOTI</td>
     <td class="center-align">기타주문정보</td>
     <td class="center-align">Char(800)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>이 값은 가맹점에서 이용하는 추가 정보 필드로 전달한 값이 그대로 반환됩니다. 결제처리 시, 꼭 필요한 내용만 사용하세요.<br> 800byte를 초과하는 P_NOTI의 값은 차후 문제가 생길 여지가 있으니 반드시 800byte를 초과하지 않도록 설정해야 합니다.</td>
   </tr>
   <tr>
     <td class="center-align">P_GOODS</td>
     <td class="center-align">결제상품명</td>
     <td class="center-align">Char(80)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td></td>
   </tr>
   <tr>
     <td class="center-align">P_MOBILE</td>
     <td class="center-align">구매자  휴대폰번호</td>
     <td class="center-align">Char(20)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>'-' 를 포함한 번호를 적어주세요.구현 예시 : 000-0000-0000</td>
   </tr>
   <tr>
     <td class="center-align">P_EMAIL</td>
     <td class="center-align">구매자 E-mail</td>
     <td class="center-align">Char(60)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>구현 예시 : abc@abc.com</td>
   </tr>
   <tr>
     <td class="center-align">P_NEXT_URL</td>
     <td class="center-align">인증결과수신</td>
     <td class="center-align">Char(250)</td>
-    <td class="center-align">예외대상 외 필수</td>
-    <td>사용자의 인증이 완료될 때, 이 Url 로 인증결과를 전달합니다.<br> Method : post or get (issue : 1-24보기) <br> Scheme : https (issue : 1-22보기)<br>Parameters : 0.<br>인증결과수신 (only 2 Transaction)참고 <br> 예외대상 : Kpay <br>한글도메인 사용불가 <br>https  권장</td>
+    <td class="center-align">△</td>
+    <td>사용자의 인증이 완료될 때, 이 Url 로 인증결과를 전달합니다.<br> <a href="/mobile03.html#3211-인증결과-수신-시-method-issue">Method : post or get (issue : 3.2.11보기)</a> <br> <a href="/mobile03.html#329-p_next_url의-scheme-issue">Scheme : https (issue : 3.2.9보기)</a><br>Parameters : 0.<br>인증결과수신 (only 2 Transaction)참고 <br> 예외대상 : Kpay <br>한글도메인 사용불가 <br>https  권장<br>예외대상 외 필수</td>
   </tr>
   <tr>
     <td class="center-align">P_NOTI_URL</td>
     <td class="center-align">승인결과통보Url</td>
     <td class="center-align">Char(250)</td>
-    <td class="center-align">적용대상 필수</td>
-    <td>가맹점과 인증/승인과정을 거치지 않고 승인결과를 통보하는 용도로 사용합니다.<br> 단, 가상계좌의 경우, 입금완료시각이 비동기식 이므로, 입금완료 통보를 위해 사용됩니다.<br> Method : post<br> 적용대상 : 가상계좌의 NOTI Url 은 네트워크 사정에 따라 중복전송 될 수 있으니, 중복수신여부 체크루틴을 반드시 구현하시기 바랍니다.<br> * 한글도메인 사용불가</td>
+    <td class="center-align">△</td>
+    <td>가맹점과 인증/승인과정을 거치지 않고 승인결과를 통보하는 용도로 사용합니다.<br> 단, 가상계좌의 경우, 입금완료시각이 비동기식 이므로, 입금완료 통보를 위해 사용됩니다.<br> Method : post<br> 적용대상 : 가상계좌의 NOTI Url 은 네트워크 사정에 따라 중복전송 될 수 있으니, 중복수신여부 체크루틴을 반드시 구현하시기 바랍니다.<br> * 한글도메인 사용불가 <br> 적용대상 외 필수</td>
   </tr>
   <tr>
     <td class="center-align">P_TAX</td>
     <td class="center-align">부가세</td>
     <td class="center-align">Char(8)</td>
-    <td class="center-align">선택</td>
-    <td>영수증에 표기할 부가세 금액<>br</td>
+    <td class="center-align">X</td>
+    <td>영수증에 표기할 부가세 금액</td>
   </tr>
   <tr>
     <td class="center-align">P_TAXFREE</td>
     <td class="center-align">비과세</td>
     <td class="center-align">Char(8)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>과세 되지 않는 금액 대상 : &#39;부가세업체정함&#39; 설정업체에 한함</td>
   </tr>
   <tr>
     <td class="center-align" rowspan="6">P_OFFER_PERIOD</td>
     <td class="center-align" rowspan="6">제공기간</td>
     <td class="center-align" rowspan="6"></td>
-    <td class="center-align" rowspan="6">선택</td>
+    <td class="center-align" rowspan="6">X</td>
     <td>상품의 제공기간을 설정해야 하는 경우, 사용되는 옵션으로, Mobile Web 서비스에 디스플레이 하는 용도로만 사용됩니다.</td>
   </tr>
   <tr>
@@ -249,14 +249,14 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">P_TIMESTAMP</td>
     <td class="center-align">타임스템프</td>
     <td class="center-align">Char(20)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td>TimeInMillis(Long형)</td>
   </tr>
   <tr>
     <td class="center-align">P_SIGNATURE</td>
     <td class="center-align">SIGNATRUE</td>
     <td class="center-align">Char(64)</td>
-    <td class="center-align">필수</td>
+    <td class="center-align">○</td>
     <td>위변조 방지 SHA256 Hash 값(mkey+P_AMT+P_OID+P_TIMESTAMP)<a href="/prepare01.html#mobile-서비스의-signature-생성">참조 - P_SIGNATURE 필드 처리</a><br/>
     <p style="color: red;"><strong>P_SIGNATURE의 자세한 생성방식은 <a href="/prepare01.html#12-signature-개요">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p></td>
   </tr>
@@ -294,34 +294,34 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align" rowspan="2">P_CARD_OPTION</td>
     <td class="center-align">신용카드 우선선택 옵션</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>설정 시, 해당 카드코드에 해당하는 카드가 선택된 채로 Display 됩니다.<br> 간편결제는 불가능(타 카드 선택 가능) <br> 적용 예시 : selcode=14</td>
   </tr>
   <tr>
     <td class="center-align">선택적 표시 옵션</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>설정 시, 안심결제(visa3d), ISP(isp), 간편결제(easypay), 일반카드결제(normal) 중 선택적 표시 됩니다. <br> onlycard=visa3d 적용 예시 : selcode=14:onlycard=visa3d</td>
   </tr>
   <tr>
     <td class="center-align">P_ONLY_CARDCODE</td>
     <td class="center-align">신용카드 노출제한 옵션</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>선택된 카드 리스트만 출력되며, 나머지 카드 리스트는 출력되지 않습니다.<br>적용 예시 : 롯데, 외환, BC 카드만 사용할 경우, <br> 롯데카드코드 : 03, <br>외환카드코드 : 01,<br>  BC카드코드 : 11 이므로, 03:01:11 로 설정</td>
   </tr>
   <tr>
     <td class="center-align">P_ONLY_EASYPAYCODE</td>
     <td class="center-align">간편결제노출제한 옵션</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>선택된 간편결제 리스트만 출력되며, 나머지 간편결제 리스트는 출력되지 않습니다.<br> 적용 예시 : 카카오페이, 엘페이, 페이코만 사용할 경우, <br> 카카오페이 : KAKAOPAY <br> 엘페이 : LPAY<br> 페이코 : PAYCO 이므로<br> KAKAOPAY:LPAY:PAYCO 로 설정(간편결제 코드 대문자 입력 필)</td>
   </tr>
   <tr>
     <td class="center-align">P_QUOTABASE</td>
     <td class="center-align">신용카드 할부기간 지정</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>선50,000원 이상 결제 시, 할부기간 지정 (36개월 MAX)<br> 적용 예시 :  01:02:03:04.. 01은 일시불, 02는 2개월, 99 는 일시불 제거 등등</td>
   </tr>
 </tbody>
@@ -358,8 +358,8 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">P_HPP_METHOD</td>
     <td class="center-align">실물여부</td>
     <td class="center-align">Char(1)</td>
-    <td class="center-align">휴대폰결제 필수</td>
-    <td>컨텐츠 일 경우 : 1<br>실물일 경우 : 2<br> 빌링컨텐츠 일 경우 : 4<br> 빌링실물 일 경우 : 5<br> 컨텐츠/실물/빌링컨텐츠/빌링실물 여부는 계약담당자에게 확인요청</td>
+    <td class="center-align">△</td>
+    <td>컨텐츠 일 경우 : 1<br>실물일 경우 : 2<br> 빌링컨텐츠 일 경우 : 4<br> 빌링실물 일 경우 : 5<br> 컨텐츠/실물/빌링컨텐츠/빌링실물 여부는 계약담당자에게 확인요청<br>* 휴대폰 결제 필수</td>
   </tr>
 </tbody>
 </table>
@@ -395,14 +395,14 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">P_VBANK_DT</td>
     <td class="center-align">가상계좌 입금기한 날짜</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>설정을 하지 않으면,요청일 + 10일로 자동설정 됩니다.<br>적용 예시 : 20151225</td>
   </tr>
   <tr>
     <td class="center-align">P_VBANK_TM</td>
     <td class="center-align">가상계좌 입금기한 시간</td>
     <td class="center-align"></td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>시분까지 설정 가능합니다.(4자리)<br>적용 예시 : 2030</td>
   </tr>
 </tbody>
@@ -438,7 +438,7 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">○</th>
     <th style="text-align: center;">비고</th>
   </tr>
 </thead>
@@ -447,7 +447,7 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <td class="center-align">P_CHARSET</td>
     <td class="center-align">인코딩 설정</td>
     <td class="center-align">char(6)</td>
-    <td class="center-align">선택</td>
+    <td class="center-align">X</td>
     <td>인증, 승인결과 CHARSET 정의 default는 euc-kr이며, 인증·승인 결과를 utf-8로 받기를 원하시면 해당 옵션 설정 값을 utf8로 하시면 됩니다.<br> Ex. utf8동기방식에서 P_CHARSET=utf8 옵션 사용 시,<br>ISP 결제 진행 과정에서 인증결과 중 P_RMESG1 필드 값이 urlencode 되어 내려갈 수 있습니다.<br>인증결과 값에 대해 필요 시, 해당 값에 대해 urldecode 처리하여 사용할 수 있도록 처리 바랍니다.</td>
   </tr>
 </tbody>
@@ -527,42 +527,42 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
   <tr>
     <td class="center-align">신용카드 결제창 직접 호출</td>
     <td class="center-align">d_card=00(코드)d_quota=00(할부개월)</td>
-    <td>신용카드 결제창(안심클릭 / ISP)을 직접 호출하는 옵션 입니다. 설정 방법 : d_card=00(카드코드)d_quota=00(할부개월) Ex. d_card=04&amp;d_quota=03</td>
+    <td>신용카드 결제창(안심클릭 / ISP)을 직접 호출하는 옵션 입니다.<br>설정 방법 : d_card=00(카드코드)d_quota=00(할부개월)<br>Ex. d_card=04&amp;d_quota=03</td>
   </tr>
   <tr>
     <td class="center-align">가맹점 App scheme 설정</td>
     <td class="center-align">app_scheme=스키마 값</td>
-    <td>가맹점 APP및 타사 앱을 통해 결제 진행 시 아래 지불수단을 사용할 경우 설정(IOS 지원)[ISP 2trs](#%EC%9D%B8%EC%A6%9D%EA%B2%B0%EA%B3%BC2trs)Ex. app_scheme=스키마명:// (스키마명 뒤에 "://"는 꼭 입력해 주셔야 합니다.)</td>
+    <td>가맹점 APP및 타사 앱을 통해 결제 진행 시 아래 지불수단을 사용할 경우 설정(IOS 지원)<br>ISP 2trs<br>Ex. app_scheme=스키마명:// (스키마명 뒤에 "://"는 꼭 입력해 주셔야 합니다.)</td>
   </tr>
   <tr>
     <td class="center-align">신용카드 상점무이자</td>
     <td class="center-align">merc_noint=Ynoint_quota=00-00(카드-개월)</td>
-    <td>무이자 이벤트 진행 시, 상점 부담 무이자 옵션 입니다.(대표 무이자 및 분담 무이자 아님) <br>설정 방법 : merc_noint = Ynoint_quota=00-00:00(카드-개월:개월) [카드-월:월]^ 카드는 OO두자리, 할부개월 01→1 카드 추가 시, 구분자는 ^ 입니다. 잘못된 예 11-02:04:06Ex. merc_noint=Y&amp; noint_quota=11-2:3^06-3:6:9:12※ 상점부담 무이자 계약 가맹점만 사용 가능합니다. (영업담당자 문의)</td>
+    <td>무이자 이벤트 진행 시, 상점 부담 무이자 옵션 입니다.<br>(대표 무이자 및 분담 무이자 아님) <br>설정 방법 : merc_noint = Ynoint_quota=00-00:00(카드-개월:개월) [카드-월:월]^ 카드는 OO두자리, 할부개월 01→1 카드 추가 시, 구분자는 ^ 입니다.<br>잘못된 예 11-02:04:06Ex. merc_noint=Y&amp; noint_quota=11-2:3^06-3:6:9:12<br>※ 상점부담 무이자 계약 가맹점만 사용 가능합니다.<br>(영업담당자 문의)</td>
   </tr>
   <tr>
     <td class="center-align">표시될 통신사 리스트</td>
     <td class="center-align">hpp_corp=통신사</td>
-    <td>휴대폰 통신사(SKT, KTF, LGT, MVNO)를 지정할 수 있는 옵션 입니다.<br> Ex. SKT만 사용- hpp_corp=SKTSKT, KTF, LGT 사용 - hpp_corp=SKT:KTF:LGTMVNO중 일부만 설정 시 MVNO 제외 후 CJH(헬로모바일):KCT(티플러스):SKL(SK7mobile) 중 일부만 선택</td>
+    <td>휴대폰 통신사(SKT, KTF, LGT, MVNO)를 지정할 수 있는 옵션 입니다.<br> Ex. SKT만 사용- hpp_corp=SKT <br> SKT, KTF, LGT 사용 - hpp_corp=SKT:KTF:LGT <br> MVNO중 일부만 설정 시 MVNO 제외 후 CJH(헬로모바일):KCT(티플러스):SKL(SK7mobile) 중 일부만 선택</td>
   </tr>
   <tr>
     <td class="center-align">휴대폰 통신사 기본 선택</td>
     <td class="center-align">hpp_default_corp=통신사</td>
-    <td>통신사 리스트에서 입력 통신사가 기본 선택되어 짐SKT, KTF, LGT, MVNO 중 하나만 설정 가능MVNO 중 선택 시 CJH, KCT, SKL로 설정 가능미입력 시나 공백으로 입력 시 선택된 통신사 없음Ex. hpp_default_corp=SKT</td>
+    <td>통신사 리스트에서 입력 통신사가 기본 선택되어 짐 <br> SKT, KTF, LGT, MVNO 중 하나만 설정 가능 <br> MVNO 중 선택 시 CJH, KCT, SKL로 설정 가능미입력 시나 공백으로 입력 시 선택된 통신사 없음 <br> Ex. hpp_default_corp=SKT</td>
   </tr>
   <tr>
     <td class="center-align">휴대폰 번호 수정 불가 여부</td>
     <td class="center-align">hpp_nofix=Y</td>
-    <td>휴대폰 번호를 수정 불가능하게 처리할 경우 설정(Y : 수정 불가, N : 수정가능(default))</td>
+    <td>휴대폰 번호를 수정 불가능하게 처리할 경우 설정 <br> (Y : 수정 불가, N : 수정가능(default))</td>
   </tr>
   <tr>
     <td class="center-align"> 휴대폰 결제 인증 옵션</td>
     <td class="center-align"> hpp_authtype=ARS</td>
-    <td>휴대폰 결제 인증 시 ARS로 인증하도록 처리 할 경우 설정(해당 옵션은 모빌리언스만 가능)</td>
+    <td>휴대폰 결제 인증 시 ARS로 인증하도록 처리 할 경우 설정 <br> (해당 옵션은 모빌리언스만 가능)</td>
   </tr>
   <tr>
     <td class="center-align">휴대폰 빌키 발급</td>
     <td class="center-align">hpp_bill=Y</td>
-    <td>휴대폰 빌키 발급 시 사용상품유형 P_HPP_METHOD=4 또는 P_HPP_METHOD =5 로 설정 필요(휴대폰 빌링 사용은 별도 사용 설정 필요)</td>
+    <td>휴대폰 빌키 발급 시 사용상품유형 P_HPP_METHOD=4 또는 P_HPP_METHOD =5 로 설정 필요 <br> (휴대폰 빌링 사용은 별도 사용 설정 필요)</td>
   </tr>
 </tbody>
 </table>
@@ -694,7 +694,7 @@ function formSubmit(){
   <tr>
     <td class="center-align">P_REQ_URL</td>
     <td class="center-align">승인요청 Url</td>
-    <td class="left-align">가맹점에서 Mobile Web 서비스로 승인요청을 할 때, 사용되는 Url 입니다.<br> 거래 건 마다 상이한 URL 이 전달됩니다.<br><red>따라서, 절대 고정하여 사용하지 마십시오.</red><br> Http Scheme 은 https 를 사용합니다.<br> <red>보안을 위해 https프로토콜 사용을 통한 통신만 지원하며, https 보안 프로토콜 적용이 불가능한IP 기반의 통신은 제공하지 않습니다.</red></td>
+    <td class="left-align">가맹점에서 Mobile Web 서비스로 승인요청을 할 때, 사용되는 Url 입니다.<br> 거래 건 마다 상이한 URL 이 전달됩니다.<br><span style="color: red">따라서, 절대 고정하여 사용하지 마십시오.</span><br> Http Scheme 은 https 를 사용합니다.<br> <span style="color:red;">보안을 위해 https프로토콜 사용을 통한 통신만 지원하며, https 보안 프로토콜 적용이 불가능한IP 기반의 통신은 제공하지 않습니다.</span></td>
   </tr>
   <tr>
     <td class="center-align">P_NOTI</td>
@@ -810,7 +810,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th class="center-align">크기</th>
+      <th class="center-align">타입</th>
       <th class="center-align">비고</th>
     </tr>
   </thead>
@@ -819,7 +819,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
       <td class="center-align">P_STATUS</td>
       <td class="center-align">거래상태</td>
       <td class="center-align">char(4)</td>
-      <td style="text-align: left">성공: 00</td>
+      <td style="text-align: left">성공: 00<br><span style="color: red">"00” 이외 실패 주의 : 반드시 00 이외의 모든 결과는 실패로 처리 하셔야 합니다. <br> (지불수단 및 원천지불사의 에러내용에 따라 2~4자리로 전송될 수 있습니다. 모든 지불수단 공통적으로 결제성공 시 P_STATUS=00으로 전송되나, 결제실패 시에는 상이하게 전송될 수 있습니다.)</span></td>
     </tr>
     <tr>
       <td class="center-align">P_TID</td>
@@ -912,14 +912,16 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 15%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 50%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
+      <th class="center-align">타입</th>
       <th class="center-align">비고</th>
     </tr>
   </thead>
@@ -927,6 +929,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
     <tr>
       <td class="center-align">P_CARD_NUM</td>
       <td class="center-align">카드번호</td>
+      <td class="center-align"></td>
       <td style="text-align: left">계약관계에 따라 틀림</td>
     </tr>
   </tbody>
@@ -943,71 +946,84 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
 <col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 40%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th style="text-align: left">비고</th>
+      <th class="center-align">타입</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">P_CARD_ISSUER_CODE</td>
       <td class="center-align">발급사 코드</td>
-      <td style="text-align: left">char(2)</td>
+      <td class="center-align">char(2)</td>
+      <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_MEMBER_NUM</td>
       <td class="center-align">가맹점번호</td>
+      <td class="center-align"></td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_PURCHASE_CODE</td>
       <td class="center-align">매입사 코드</td>
+      <td class="center-align"></td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_PRTC_CODE</td>
       <td class="center-align">부분취소 가능여부</td>
+      <td class="center-align"></td>
       <td style="text-align: left">부분취소가능 : 1 , 부분취소불가능 : 0</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_INTEREST</td>
       <td class="center-align">무이자 할부여부</td>
+      <td class="center-align"></td>
       <td style="text-align: left">0 : 일반, 1 : 무이자</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_CHECKFLAG</td>
       <td class="center-align">체크카드 여부</td>
+      <td class="center-align"></td>
       <td style="text-align: left">0 : 신용카드,1 : 체크카드2 : 기프트카드</td>
     </tr>
     <tr>
       <td class="center-align">P_RMESG2</td>
       <td class="center-align">메시지2</td>
-      <td style="text-align: left">char(500)<br />신용카드 할부 개월 수</td>
+      <td class="center-align">char(500)</td>
+      <td style="text-align: left">신용카드 할부 개월 수</td>
     </tr>
     <tr>
       <td class="center-align">P_FN_CD1</td>
       <td class="center-align">카드코드</td>
-      <td style="text-align: left">char(4)</td>
+      <td class="center-align">char(4)</td>
+      <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_AUTH_NO</td>
       <td class="center-align">승인번호</td>
-      <td style="text-align: left">char(30)<br />신용카드거래에서만 사용합니다.</td>
+      <td class="center-align">char(30)</td>
+      <td style="text-align: left">신용카드거래에서만 사용합니다.</td>
     </tr>
     <tr>
       <td class="center-align">P_ISP_CARDCODE</td>
       <td class="center-align">VP 카드코드</td>
+      <td class="center-align"></td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td class="center-align">P_FN_NM</td>
       <td class="center-align">결제카드한글명</td>
+      <td class="center-align"></td>
       <td style="text-align: left">BC카드</td>
     </tr>
   </tbody>
@@ -1024,26 +1040,30 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 45%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th style="text-align: left">비고</th>
+      <th class="center-align">타입</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">P_FN_CD1</td>
       <td class="center-align">은행코드</td>
+      <td class="center-align"></td>
       <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_FN_NM</td>
       <td class="center-align">카드번호</td>
+      <td class="center-align"></td>
       <td style="text-align: left">결제은행한글명</td>
     </tr>
   </tbody>
@@ -1060,31 +1080,36 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 45%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th style="text-align: left">비고</th>
+      <th class="center-align">타입</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">P_HPP_CORP</td>
       <td class="center-align">휴대폰통신사</td>
-      <td style="text-align: left">char(3)</td>
+      <td class="center-align">char(3)</td>
+      <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_HPP_NUM</td>
       <td class="center-align">결제 휴대폰 번호</td>
+      <td class="center-align"></td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td class="center-align">P_HPP_BILLKEY</td>
       <td class="center-align">휴대폰 빌키</td>
+      <td class="center-align"></td>
       <td style="text-align: left">휴대폰 빌링 사용시 휴대폰 빌키( 승인은 PAYAPI 통해서 진행)</td>
     </tr>
   </tbody>
@@ -1239,42 +1264,49 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 45%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th style="text-align: left">비고</th>
+      <th class="center-align">타입</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">P_VACT_NUM</td>
       <td class="center-align">입금할 계좌 번호</td>
-      <td style="text-align: left">char(20)</td>
+      <td class="center-align">char(20)</td>
+      <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_VACT_DATE</td>
       <td class="center-align">입금마감일자</td>
-      <td style="text-align: left">char(8) : yyyymmdd</td>
+      <td class="center-align">char(8)</td>
+      <td style="text-align: left">yyyymmdd</td>
     </tr>
     <tr>
       <td class="center-align">P_VACT_TIME</td>
       <td class="center-align">입금마감시간</td>
-      <td style="text-align: left">char(6) hhmmss</td>
+      <td class="center-align">char(6)</td>
+      <td style="text-align: left">hhmmss</td>
     </tr>
     <tr>
       <td class="center-align">P_VACT_NAME</td>
       <td class="center-align">계좌주명</td>
+      <td class="center-align"></td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td class="center-align">P_VACT_BANK_CODE</td>
       <td class="center-align">은행코드</td>
-      <td style="text-align: left">char(2)</td>
+      <td class="center-align">char(2)</td>
+      <td style="text-align: left"></td>
     </tr>
   </tbody>
 </table>
@@ -1297,7 +1329,7 @@ _가상계좌 Flow_ 는 하기와 같습니다.
 
 P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사용방법 안내 내용을 참고하여 주시기 바랍니다.
 
--  <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><red>P_NOTI_URL은 네트워크 사정에 따라 1회 이상 발생될 수 있사오니, 중복호출여부를 체크하는 루틴을 반드시 구현하십시오.</red>
+-  <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><span style="color:red;">P_NOTI_URL은 네트워크 사정에 따라 1회 이상 발생될 수 있사오니, 중복호출여부를 체크하는 루틴을 반드시 구현하십시오.</span>
 -  NOTI 를 통한 결과 송신은 하기의 조건에 따라 수행됩니다.
    24시간 이내 재전송 가능 | 24시간 이후 시퀀스 종료 | 재전송 주기 약 10분
 
@@ -1309,7 +1341,7 @@ P_NOTI_URL 로 전송되는 파라미터 및 값은 하단의 노티 수신 사�
 
 - Noti 수신 후, P_NOTI_URL 에 OK 만 출력 요망.
 
-- <red>대문자 OK 외 html 및 공백, 개행문자 불허<red>
+- <span style="color:red;">대문자 OK 외 html 및 공백, 개행문자 불허<span style="color:red;">
 
 ## 2.6 안드로이드 / IOS 연동
 
@@ -1845,7 +1877,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
   <thead>
     <tr>
       <th class="center-align">필드</th>
-      <th class="center-align">크 기</th>
+      <th class="center-align">타입</th>
       <th class="center-align">필수</th>
       <th>비고</th>
     </tr>
@@ -1854,31 +1886,31 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <tr>
       <td class="center-align">P_MID</td>
       <td class="center-align">Char(10)</td>
-      <td class="center-align">필수</td>
+      <td class="center-align">○</td>
       <td>주문요청시 사용한 P_MID</td>
     </tr>
     <tr>
       <td class="center-align">P_ESCROW_TID</td>
       <td class="center-align">Char(40)</td>
-      <td class="center-align">필수</td>
+      <td class="center-align">○</td>
       <td>에스크로 결제 승인 TID</td>
     </tr>
     <tr>
       <td class="center-align">P_NEXT_URL</td>
       <td class="center-align">Char(800)</td>
-      <td class="center-align">필수</td>
+      <td class="center-align">○</td>
       <td>결과수신 URLhttps(http)가 포함된 전체 URL이며, URL내 get 방식의 파라미터는 사용불가 합니다.</td>
     </tr>
     <tr>
       <td class="center-align">P_NEXT_URL_TAGET</td>
       <td class="center-align">Char(10)</td>
-      <td class="center-align">필수</td>
+      <td class="center-align">○</td>
       <td>결과 수신 URL선택 값 : socket, get, post(미입력 시 기본값:socket)<br>get,post 방식은 완료 후 가맹점 페이지로 해당 방식으로 전환되며, socket 방식은 NOTI로 해당 값을 통보하여, 사용자페이지는 닫힙니다.</td>
     </tr>
     <tr>
       <td class="center-align">P_RESERVED</td>
       <td class="center-align">Char(100)</td>
-      <td class="center-align">선택</td>
+      <td class="center-align">X</td>
       <td>복합파라미터정보P_RESERVED=escrow_purchase_opt=vertify(구매확인버튼만 표시) P_RESERVED=escrow_purchase_opt=deny(구매거절버튼만 표시)옵션 미지정 시 구매확인/거절 모두 표시</td>
     </tr>
   </tbody>
@@ -1964,7 +1996,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th class="center-align">크 기</th>
+      <th class="center-align">타입</th>
       <th class="center-align">비고</th>
     </tr>
   </thead>
@@ -2046,7 +2078,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <tr>
       <th class="center-align">파라미터</th>
       <th class="center-align">설명</th>
-      <th class="center-align">크기</th>
+      <th class="center-align">타입</th>
       <th class="center-align">비고</th>
     </tr>
   </thead>
@@ -2228,7 +2260,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <th class="center-align">순번</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">크기</th>
+    <th class="center-align">타입</th>
     <th class="center-align">비고</th>
   </tr>
 </thead>
