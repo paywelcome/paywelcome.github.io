@@ -32,7 +32,7 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
 |      close.xxx       | 결제창(팝업,오버레이)을 닫을 때 사용 ( **수정금지** ) |
 | WelStdPayReturn.xxx  | 결제 인증결과 수신 / 승인요청 API 연동 샘플페이지     |
 
-<ul id="profileTabs" class="nav nav-tabs">
+<ul class="nav nav-tabs">
     <li class="active"><a href="#sampleJava" data-toggle="tab">Java</a></li>
     <li><a href="#sampleNet" data-toggle="tab">ASP.NET</a></li>
     <li><a href="#sampleAsp" data-toggle="tab">ASP</a></li>
