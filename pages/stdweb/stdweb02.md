@@ -32,14 +32,15 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
 |      close.xxx       | 결제창(팝업,오버레이)을 닫을 때 사용 ( **수정금지** ) |
 | WelStdPayReturn.xxx  | 결제 인증결과 수신 / 승인요청 API 연동 샘플페이지     |
 
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#sampleJava" data-toggle="tab">Java</a></li>
-    <li><a href="#sampleNet" data-toggle="tab">ASP.NET</a></li>
-    <li><a href="#sampleAsp" data-toggle="tab">ASP</a></li>
-    <li><a href="#samplePhp" data-toggle="tab">PHP</a></li>
-</ul>
-<div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="sampleJava">
+<div class="tabs-head">
+  <span data-tab="tab-1" class="tabs-nav active">Java</span>
+  <span data-tab="tab-2" class="tabs-nav">ASP.net</span>
+  <span data-tab="tab-3" class="tabs-nav">ASP</span>
+  <span data-tab="tab-4" class="tabs-nav">PHP</span>
+</div>
+
+<div class="tabs-content">
+  <div id="tab-1" class="b-tab active">
       <h2>Java</h2>
   - WelStdweb_JAVA.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.<br/>
   - WelStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.<br/>
@@ -58,8 +59,9 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
     - 샘플 라이브러리만을 이용하여 연동시, 가맹점 환경에 따른 오작동은 당사 확인이 어려울수 있습니다.<br/>
     - WelpayStdSample : HTML, JSP Sample 이 위치하는 폴더 입니다.
     </code>
+
 </div>
-<div role="tabpanel" class="tab-pane" id="sampleNet">
+  <div id="tab-2" class="b-tab">
       <h2>ASP.net</h2>
   - WelStdweb_ASP.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.<br/>
   - WelStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.
@@ -74,8 +76,8 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
               └── WelpayNet.dll
     </pre>
     <code>Welpaycrypto.dll, WelpayNet.dll</code> : 암복호화에 사용하는 dll 파일
-</div>
-<div role="tabpanel" class="tab-pane" id="sampleAsp">
+  </div>
+  <div id="tab-3" class="b-tab">
       <h2>ASP</h2>
   - WelStdweb_ASP_Sample_v2.x.zip의 압축을 풀어 설치합니다. 이때 설치 절대 경로를 확인합니다.<br/>
   - WelStdweb 결제 연동 프로그램은 다음과 같이 파일과 디렉터리가 생성됩니다.
@@ -91,8 +93,8 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
     </pre>
     <code>function</code> 기본 제공 함수<br/>
     <code>signature</code> 위변조 방지체크 기능의 signature 생성
-</div>
-<div role="tabpanel" class="tab-pane" id="samplePhp">
+  </div>
+  <div id="tab-4" class="b-tab">
     <h2>PHP</h2>
     <pre>
     WelStdweb
@@ -108,11 +110,9 @@ keywords: 결제 취소, 결제취소, 연동, PC, 요청, 승인, 인증, signk
     </pre>
     <code>libs</code> : Welpay 암복호화 및 결제에서 사용하는 library 파일<br/>
     <code>WelStdPaySample</code> : HTML, PHP Sample이 위치하는 폴더입니다.
+ </div>
 </div>
-</div>
-
-
-
+<script src="js/tabs.js"/>
 
 ## 2.2 승인 테스트
 1. 웹 브라우저에서 http://127.0.0.1/WelStdPaySample/WelStdPayRequest.xxx페이지를 호출합니다.<br>

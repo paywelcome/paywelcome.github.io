@@ -1339,7 +1339,7 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
   <thead>
     <tr>
       <th class="center-align">Application Scheme</th>
-      <th class="center-align">iInstallUrl</th>
+      <th class="center-align">InstallUrl</th>
     </tr>
   </thead>
   <tbody>
@@ -2008,26 +2008,14 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <tr>
       <td class="center-align">msg_deny</td>
       <td class="center-align">구매거절사유</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td class="center-align">Char(256)</td>
       <td class="center-align"> </td>
-      <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td class="center-align">price</td>
       <td class="center-align">거래금액</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td class="center-align">Char(12)</td>
       <td class="center-align"> </td>
-      <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td class="center-align">tid_org</td>
