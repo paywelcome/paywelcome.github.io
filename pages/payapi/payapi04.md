@@ -88,7 +88,7 @@ keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결�
     <td class="center-align">○</td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align"></td>
+    <td class="left-align">* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">3</td>
@@ -118,7 +118,7 @@ keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결�
     <td class="center-align"></td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align">생년월일 6자리/사업자번호<br/>구인증(카유생) 설정 업체만<br/>필수(담당자 확인필요)</td>
+    <td class="left-align">생년월일 6자리/사업자번호<br/>구인증(카유생) 설정 업체만<br/>필수(담당자 확인필요)<br/>* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">6</td>
@@ -128,7 +128,7 @@ keywords: 키인, 결제, 수기결제, 수기 결제, 키인 결제, 키인결�
     <td class="center-align"></td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align">앞 2자리<br/>구인증(카유생비) 설정 업체만<br/>필수(담당자 확인 필요)</td>
+    <td class="left-align">앞 2자리<br/>구인증(카유생비) 설정 업체만<br/>필수(담당자 확인 필요)<br/>* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">7</td>

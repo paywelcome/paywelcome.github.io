@@ -137,7 +137,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <td class="center-align">○</td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align"></td>
+    <td class="left-align">* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">8</td>
@@ -167,7 +167,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <td class="center-align">○</td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align">생년월일 6자리/ 사업자번호</td>
+    <td class="left-align">생년월일 6자리/ 사업자번호<br/>* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">11</td>
@@ -177,7 +177,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <td class="center-align">○</td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align">앞 2자리</td>
+    <td class="left-align">앞 2자리<br/>* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">12</td>
@@ -477,7 +477,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <td class="center-align">○</td>
     <td class="center-align">○</td>
     <td class="center-align">String</td>
-    <td class="left-align"></td>
+    <td class="left-align">* 암호화 방법의 경우 담당자에게 문의요청 바랍니다.</td>
   </tr>
   <tr>
     <td class="center-align">8</td>
