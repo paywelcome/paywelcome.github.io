@@ -16,6 +16,9 @@ entries:
           - title: 2. PAYAPI 서비스 개요
             url: /payapi01.html#12-payapi-개요
             output: web
+          - title: 3. 개인정보 암호화
+            url: /payapi01.html#13-개인정보-암호화필드-암호화
+            output: web
 
       - title: 결제취소 API
         output: web
