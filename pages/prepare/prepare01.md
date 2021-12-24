@@ -428,4 +428,4 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
   </div>
 </div>
-<script src="js/tabs.js"/>
+<script src="js/tabs.js"></script>
