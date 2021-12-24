@@ -61,7 +61,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -248,7 +248,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -401,7 +401,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -568,7 +568,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -709,7 +709,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -886,7 +886,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -1017,7 +1017,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -1094,7 +1094,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -1174,7 +1174,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -1311,7 +1311,7 @@ keywords: 빌링, 빌링승인, 승인, 빌링 승인, 빌키, 빌키발급, 빌
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>

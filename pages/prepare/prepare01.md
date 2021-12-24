@@ -106,49 +106,53 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 #### 인증 요청 시 Signature 생성
 
-인증 요청시 signature필드의 구성은 다음과 같습니다.
-
+>인증 요청시 signature필드의 구성은 다음과 같습니다.<br>
 생성 순서 : <code class="language-plaintext highlighter-rouge">mkey=&oid=&price=&timestamp=</code><br/>
 <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center; width: 15%">필드명</th>
-      <th style="text-align: center; width: 10%">한글명칭</th>
-      <th style="text-align: left; width: 65%">비고</th>
-      <th style="text-align: center; width: 10%">필수여부</th>
+      <th class="center-align" style="width: 10%">순번</th>
+      <th class="center-align" style="width: 15%">필드</th>
+      <th class="center-align" style="width: 10%">필드명</th>
+      <th class="center-align" style="width: 55%">비고</th>
+      <th class="center-align" style="width: 10%">필수</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">mKey</td>
-      <td style="text-align: center">검증값</td>
+      <td class="center-align">1</td>
+      <td class="center-align">mKey</td>
+      <td class="center-align">검증값</td>
       <td>SHA256방식으로 생성한 값 → 제공라이브러리로 생성가능
       <br><code class="language-plaintext highlighter-rouge">"346eaecb81e3a1629805b9d55fe0431dc25a06aaa2d48366b404939a3d4330a3"
       </code>
       </td>
-      <td style="text-align: center">Yes</td>
+      <td class="center-align">Yes</td>
     </tr>
     <tr>
-      <td style="text-align: center">oid</td>
-      <td style="text-align: center">주문번호</td>
+      <td class="center-align">2</td>
+      <td class="center-align">oid</td>
+      <td class="center-align">주문번호</td>
       <td>xxx_1335247243103</td>
-      <td style="text-align: center">Yes</td>
+      <td class="center-align">Yes</td>
     </tr>
     <tr>
-      <td style="text-align: center">price</td>
-      <td style="text-align: center">가격</td>
+      <td class="center-align">3</td>
+      <td class="center-align">price</td>
+      <td class="center-align">가격</td>
       <td>가맹점 주문번호 / 결제단위 Unique <br>
       <code class="language-plaintext highlighter-rouge">"10000"</code>
       </td>
       <td style="text-align: center">Yes</td>
     </tr>
     <tr>
-      <td style="text-align: center">timestamp</td>
-      <td style="text-align: center">타임스탬프</td>
+      <td class="center-align">4</td>
+      <td class="center-align">timestamp</td>
+      <td class="center-align">타임스탬프</td>
       <td>TimeInMillis(Long형) → 제공라이브러리로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
-      <td style="text-align: center">Yes</td>
+      <td class="center-align">Yes</td>
     </tr>
   </tbody>
 </table>
@@ -158,33 +162,34 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 <br/>
 
 #### 승인 요청 시 Signature 생성
-
-승인 요청 시 signature필드의 구성은 다음과 같습니다.
-
+>승인 요청 시 signature필드의 구성은 다음과 같습니다.<br>
 생성 순서 : <code class="language-plaintext highlighter-rouge">authToken=&timestamp=</code><br/>
 <img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png"><code class="language-plaintext highlighter-rouge">필드 순서유지(알파벳순)</code>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:center; width: 15%">필드명</th>
-      <th style="text-align:center; width: 20%">한글명칭</th>
-      <th style="text-align:left; width: 55%">비고</th>
-      <th style="text-align:center; width: 10%">필수 여부</th>
+      <th class="center-align" style="width: 10%">순번</th>
+      <th class="center-align" style="width: 15%">필드</th>
+      <th class="center-align" style="width: 15%">필드명</th>
+      <th class="center-align" style="width: 50%">비고</th>
+      <th class="center-align" style="width: 10%">필수</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">authToken</td>
-      <td style="text-align: left">인증 결과 수신 후 생성된 토큰 값</td>
+      <td class="center-align">1</td>
+      <td class="center-align">authToken</td>
+      <td class="center-align">인증 결과 수신 후<br>생성된 토큰 값</td>
       <td>인증결과 수신한 authToken<br>sgnWSY9uZ3c9lbkJItgiP4VdD5L+dM0+dmuv+R707vExQC5XjwjSCUOa/QumiTMW Y8+aLvjFu …….</td>
-      <td style="text-align: center">Yes</td>
+      <td class="center-align">Yes</td>
     </tr>
     <tr>
-      <td style="text-align: center">timestamp</td>
-      <td style="text-align: left">타임스탬프</td>
+      <td class="center-align">2</td>
+      <td class="center-align">timestamp</td>
+      <td class="center-align">타임스탬프</td>
       <td>TimeInMillis(Long)밀리세컨드 타임스템프를 Long형으로 변환한 숫자<br>제공라이브러리로 생성가능<br>1335247243103</td>
-      <td style="text-align: center">Yes</td>
+      <td class="center-align">Yes</td>
     </tr>
   </tbody>
 </table>
@@ -216,41 +221,41 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 </colgroup>
   <thead>
     <tr>
-      <th>순번</th>
-      <th>필드명</th>
-      <th>승인필드명</th>
-      <th>설명</th>
-      <th>필수</th>
+      <th class="center-align">순번</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비고</th>
+      <th class="center-align">필수</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>mkey</td>
-      <td></td>
+      <td class="center-align">1</td>
+      <td class="center-align">mkey</td>
+      <td class="center-align"></td>
       <td>sha256(signkey)<br/>(signkey값은 계약가맹점에 한해 별도 전달 예정)</td>
-      <td>필수</td>
+      <td class="center-align">필수</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>P_AMT</td>
-      <td>P_AMT(금액)</td>
+      <td class="center-align">2</td>
+      <td class="center-align">P_AMT</td>
+      <td class="center-align">금액</td>
       <td>가맹점 주문번호/결제단위 Unique</td>
-      <td>필수</td>
+      <td class="center-align">필수</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>P_OID</td>
-      <td>P_OID(주문번호)</td>
+      <td class="center-align">3</td>
+      <td class="center-align">P_OID</td>
+      <td class="center-align">주문번호</td>
       <td>주문단위 unique한 값</td>
-      <td>필수</td>
+      <td class="center-align">필수</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>P_TIMESTAMP</td>
-      <td>P_TIMESTAMP(타임스탬프)</td>
+      <td class="center-align">4</td>
+      <td class="center-align">P_TIMESTAMP</td>
+      <td class="center-align">타임스탬프</td>
       <td>TimeInMillis(Long형)</td>
-      <td>필수</td>
+      <td class="center-align">필수</td>
     </tr>
   </tbody>
 </table>
@@ -269,85 +274,85 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 </colgroup>
   <thead>
     <tr>
-      <th>순번</th>
-      <th>API명</th>
+      <th class="center-align">순번</th>
+      <th class="center-align">API명</th>
       <th>Signature 생성 필드</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>결제 전체 취소 API</td>
+      <td class="center-align">1</td>
+      <td class="center-align">결제 전체 취소 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>결제 부분 취소 API</td>
+      <td class="center-align">2</td>
+      <td class="center-align">결제 부분 취소 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>신용카드 빌키 발급 API</td>
+      <td class="center-align">3</td>
+      <td class="center-align">신용카드 빌키 발급 API</td>
       <td>mid+mkey+cardNumber+timestamp</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>신용카드 비인증 빌키 발급 API</td>
+      <td class="center-align">4</td>
+      <td class="center-align">신용카드 비인증 빌키 발급 API</td>
       <td>mid+mkey+cardNumber+timestamp</td>
     </tr>
     <tr>
-      <td>5</td>
-      <td>신용카드 빌링 승인 API</td>
+      <td class="center-align">5</td>
+      <td class="center-align">신용카드 빌링 승인 API</td>
       <td>mid+mkey+oid+price+timestamp</td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>신용카드 빌키 삭제 API</td>
+      <td class="center-align">6</td>
+      <td class="center-align">신용카드 빌키 삭제 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>휴대폰 빌키 승인 API</td>
+      <td class="center-align">7</td>
+      <td class="center-align">휴대폰 빌키 승인 API</td>
       <td>mid+mkey+oid+price+timestamp</td>
     </tr>
     <tr>
-      <td>8</td>
-      <td>신용카드 키인결제 API</td>
+      <td class="center-align">8</td>
+      <td class="center-align">신용카드 키인결제 API</td>
       <td>mid+mkey+oid+price+timestamp</td>
     </tr>
     <tr>
-      <td>9</td>
-      <td>신용카드 PREFIX 조회 API</td>
+      <td class="center-align">9</td>
+      <td class="center-align">신용카드 PREFIX 조회 API</td>
       <td>mid+mkey+cardNumber+timestamp</td>
     </tr>
     <tr>
-      <td>10</td>
-      <td>에스크로 배송등록 API</td>
+      <td class="center-align">10</td>
+      <td class="center-align">에스크로 배송등록 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>11</td>
-      <td>에스크로 구매확정 API</td>
+      <td class="center-align">11</td>
+      <td class="center-align">에스크로 구매확정 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>12</td>
-      <td>에스크로 구매거절 API</td>
+      <td class="center-align">12</td>
+      <td class="center-align">에스크로 구매거절 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>13</td>
-      <td>에스크로 구매거절 확인 API</td>
+      <td class="center-align">13</td>
+      <td class="center-align">에스크로 구매거절 확인 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>14</td>
-      <td>에스크로 상태조회 API</td>
+      <td class="center-align">14</td>
+      <td class="center-align">에스크로 상태조회 API</td>
       <td>mid+mkey+timestamp</td>
     </tr>
     <tr>
-      <td>15</td>
-      <td>SMS결제용 단축 URL생성 API</td>
+      <td class="center-align">15</td>
+      <td class="center-align">SMS결제용 단축 URL생성 API</td>
       <td>mid+mkey+P_OID+P_AMT+timestamp</td>
     </tr>
   </tbody>
