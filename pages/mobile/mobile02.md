@@ -357,7 +357,7 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
   <tr>
     <td class="center-align">P_HPP_METHOD</td>
     <td class="center-align">실물여부</td>
-    <td class="center-align"></td>
+    <td class="center-align">Char(1)</td>
     <td class="center-align">휴대폰결제 필수</td>
     <td>컨텐츠 일 경우 : 1<br>실물일 경우 : 2<br> 빌링컨텐츠 일 경우 : 4<br> 빌링실물 일 경우 : 5<br> 컨텐츠/실물/빌링컨텐츠/빌링실물 여부는 계약담당자에게 확인요청</td>
   </tr>
@@ -427,11 +427,11 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 
 <table class="tg" style="table-layout: fixed; width: 100%;">
 <colgroup>
-<col style="width: 25%;">
+<col style="width: 15%;">
 <col style="width: 15%;">
 <col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 35%; text-align: left;">
+<col style="width: 10%;">
+<col style="width: 50%; text-align: left;">
 </colgroup>
 <thead>
   <tr class="center-align">
@@ -445,8 +445,8 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 <tbody>
   <tr>
     <td class="center-align">P_CHARSET</td>
-    <td class="center-align">캐릭터셋 설정</td>
-    <td class="center-align"></td>
+    <td class="center-align">인코딩 설정</td>
+    <td class="center-align">char(6)</td>
     <td class="center-align">선택</td>
     <td>인증, 승인결과 CHARSET 정의 default는 euc-kr이며, 인증·승인 결과를 utf-8로 받기를 원하시면 해당 옵션 설정 값을 utf8로 하시면 됩니다.<br> Ex. utf8동기방식에서 P_CHARSET=utf8 옵션 사용 시,<br>ISP 결제 진행 과정에서 인증결과 중 P_RMESG1 필드 값이 urlencode 되어 내려갈 수 있습니다.<br>인증결과 값에 대해 필요 시, 해당 값에 대해 urldecode 처리하여 사용할 수 있도록 처리 바랍니다.</td>
   </tr>
@@ -801,86 +801,101 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 15%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 50%;">
 </colgroup>
   <thead>
     <tr>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
-      <th class="center-align">비 고</th>
+      <th class="center-align">크기</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">P_STATUS</td>
       <td class="center-align">거래상태</td>
+      <td class="center-align">char(4)</td>
       <td style="text-align: left">성공: 00</td>
     </tr>
     <tr>
       <td class="center-align">P_TID</td>
       <td class="center-align">거래번호</td>
-      <td style="text-align: left">char(40)</td>
+      <td class="center-align">char(40)</td>
+      <td class="center-align"></td>
     </tr>
     <tr>
       <td class="center-align">P_TYPE</td>
       <td class="center-align">지불수단</td>
-      <td style="text-align: left">char(10)</td>
+      <td class="center-align">char(10)</td>
+      <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_TYPE</td>
       <td class="center-align">지불수단</td>
+      <td class="center-align">N/A</td>
       <td style="text-align: left">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
     </tr>
     <tr>
       <td class="center-align">P_AUTH_DT</td>
       <td class="center-align">승인일자</td>
-      <td style="text-align: left">char(14)<br />YYYYmmddHHmmss</td>
+      <td class="center-align">char(14)</td>
+      <td style="text-align: left">YYYYmmddHHmmss</td>
     </tr>
     <tr>
       <td class="center-align">P_MID</td>
       <td class="center-align">상점아이디</td>
-      <td style="text-align: left">char(10)</td>
+      <td class="center-align">char(10)</td>
     </tr>
     <tr>
       <td class="center-align">P_OID</td>
       <td class="center-align">상점주문번호</td>
-      <td style="text-align: left">char(100)</td>
+      <td style="center-align">char(100)</td>
+      <td></td>
     </tr>
     <tr>
       <td class="center-align">P_AMT</td>
       <td class="center-align">거래금액</td>
-      <td style="text-align: left">char(8)</td>
+      <td style="center-align">char(8)</td>
+      <td></td>
     </tr>
     <tr>
       <td class="center-align">P_UNAME</td>
       <td class="center-align">주문자명</td>
-      <td style="text-align: left">char(30)</td>
+      <td style="center-align">char(30)</td>
+      <td></td>
     </tr>
     <tr>
       <td class="center-align">P_MNAME</td>
       <td class="center-align">가맹점 이름</td>
+      <td class="center-align">N/A</td>
       <td style="text-align: left">주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
       <td class="center-align">P_RMESG1</td>
       <td class="center-align">메시지1</td>
-      <td style="text-align: left">char(500)<br />지불 결과 메시지</td>
+       <td class="center-align">char(500)</td>
+      <td style="text-align: left">지불 결과 메시지</td>
     </tr>
     <tr>
       <td class="center-align">P_NOTI</td>
       <td class="center-align">주문정보</td>
-      <td style="text-align: left">char(800)<br />주문정보에 입력한 값 반환</td>
+      <td class="center-align">char(800)</td>
+      <td style="text-align: left">주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
       <td class="center-align">P_NOTEURL</td>
       <td class="center-align">가맹점 전달 NOTI URL</td>
+      <td class="center-align">N/A</td>
       <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
     </tr>
     <tr>
       <td class="center-align">P_NEXT_URL</td>
       <td class="center-align">가맹점 전달 NEXT URL</td>
+      <td class="center-align">N/A</td>
       <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
     </tr>
   </tbody>
@@ -1191,13 +1206,13 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
 </colgroup>
   <thead>
     <tr>
-      <th> </th>
+      <th>항목</th>
       <th>인증완료 후 이동 URL(Front단)</th>
       <th>입금사실 통보 URL(Back 단)</th>
     </tr>
@@ -1206,7 +1221,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
     <tr>
       <td>가상계좌</td>
       <td>P_NEXT_URL(인증결과송신)</td>
-      <td>P_NOTI_URL(,채번정보송신, 입금완료송신)</td>
+      <td>P_NOTI_URL(채번정보송신, 입금완료송신)</td>
     </tr>
   </tbody>
 </table>
