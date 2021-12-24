@@ -5,8 +5,6 @@
 topnav:
   - title: Topnav
     items:
-      - title: 샘플소스
-        external_url: https://github.com/paywelcome
       - title: 연동 준비
         url: /prepare01.html
 
@@ -28,4 +26,6 @@ topnav2:
     items:
       - title: 코드표
         url: /code01.html
+      - title: 샘플소스
+        external_url: https://github.com/paywelcome
 # Copyright 2021 Google LLC
