@@ -215,225 +215,199 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <tr>
 <th class="center-align" style="width: 15%">필드</th>
 <th class="center-align" style="width: 15%">필드명</th>
-<th class="center-align" style="width: 10%">타입</th>
+<th class="center-align" style="width: 20%">타입</th>
 <th class="center-align" style="width: 40%">비고</th>
 <th class="center-align" style="width: 10%">필수</th>
-<th class="center-align" style="width: 10%">크기</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="center-align">version</td>
 <td class="center-align">버전</td>
-<td class="center-align">String</td>
+<td class="center-align">String(20)</td>
 <td>전문 버전<br><code class="language-plaintext highlighter-rouge">"1.0"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">20 Byte</td>
 </tr>
 <tr>
 <td class="center-align">mid</td>
 <td class="center-align">상점아이디</td>
-<td class="center-align">String</td>
+<td class="center-align">String(10,Fixed)</td>
 <td>제공된 mid, 10자리 고정<br><code class="language-plaintext highlighter-rouge">"xxxxxxxxxx"</code></td>
 <td class="center-align">○<br>위변조<br>검증</td>
-<td class="center-align">10 Byte<br>Fixed</td>
 </tr>
 <tr>
 <td class="center-align">oid</td>
 <td class="center-align">주문번호</td>
-<td class="center-align">String</td>
+<td class="center-align">String(40)</td>
 <td>주문단위 unique한 값 ( mid+&quot;_&quot;+timestamp ) <br><code class="language-plaintext highlighter-rouge">"xxx_1335233672723"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">40 Byte</td>
 </tr>
 <tr>
 <td class="center-align">goodname</td>
 <td class="center-align">상품명</td>
-<td class="center-align">String</td>
+<td class="center-align">String(80)</td>
 <td>한글/특수기호 입력가능<br>40Byte 초과 요청시 37Byte + …으로 자동 변환<br><code class="language-plaintext highlighter-rouge">“키보드/마우스”</code></td>
 <td class="center-align">○</td>
-<td class="center-align">80 Byte</td>
 </tr>
 
 <tr>
 <td class="center-align">price</td>
 <td class="center-align">결제금액</td>
-<td class="center-align">Number</td>
+<td class="center-align">Number(8)</td>
 <td>숫자만 입력, 1달러는 100으로 시작<br><code class="language-plaintext highlighter-rouge">1004</code></td>
 <td class="center-align">○<br>위변조<br>검증</td>
-<td class="center-align">8Byte</td>
 </tr>
 
 <tr>
 <td class="center-align">tax</td>
 <td class="center-align">부가세</td>
-<td class="center-align">Number</td>
+<td class="center-align">Number(8)</td>
 <td>숫자만 입력<br>대상: <code class="language-plaintext highlighter-rouge">부가세업체정함</code>설정업체에 한함
 <br>주의: 전체금액의 10%이하로 설정, 가맹점에서 등록시 VAT가 총 상품가격의 10% 초과할 경우는 거절됨
 <br><code class="language-plaintext highlighter-rouge">1004</code></td>
 <td class="center-align">X</td>
-<td class="center-align">8Byte</td>
 </tr>
 
 <tr>
 <td class="center-align">taxfree</td>
 <td class="center-align">비과세</td>
-<td class="center-align">Number</td>
+<td class="center-align">Number(8)</td>
 <td>숫자만 입력<br>대상: &#39;부가세업체정함&#39; 설정업체에 한함과세되지 않는 금액 <br><code class="language-plaintext highlighter-rouge">1004</code></td>
 <td class="center-align">X</td>
-<td class="center-align">8Byte</td>
 </tr>
 <tr>
 <td class="center-align">currency</td>
 <td class="center-align">통화구분</td>
-<td class="center-align">String</td>
+<td class="center-align">String(3)</td>
 <td>USD는 카드 결제만 가능(ISP는 결제안됨)<br><code class="language-plaintext highlighter-rouge">“WON”</code>[WON:한화,USD:달러]</td>
 <td class="center-align">○</td>
-<td class="center-align">3 Byte</td>
 </tr>
 <tr>
 <td class="center-align">buyername</td>
 <td class="center-align">구매자명</td>
-<td class="center-align">String</td>
+<td class="center-align">String(30)</td>
 <td class="left-align">한글/특수기호 입력가능* 30Byte 초과 요청시 27Byte + …으로 자동 변환<br><code class="language-plaintext highlighter-rouge">"홍길동"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">30 Byte</td>
 </tr>
 <tr>
 <td class="center-align">buyertel</td>
 <td class="center-align">구매자Mobile번호</td>
-<td class="center-align">String</td>
+<td class="center-align">String(20)</td>
 <td>숫자와 "-"만 허용 <br><code class="language-plaintext highlighter-rouge">010-2000-1234</code></td>
 <td class="center-align">○</td>
-<td class="center-align">20 Byte</td>
 </tr>
 <tr>
 <td class="center-align">buyeremail</td>
 <td class="center-align">구매자Email</td>
-<td class="center-align">String</td>
+<td class="center-align">String(60)</td>
 <td>이메일 형식에 맞도록 <br><code class="language-plaintext highlighter-rouge">buyer@example.com</code></td>
 <td class="center-align">X</td>
-<td class="center-align">60 Byte</td>
 </tr>
 <tr>
 <td class="center-align">parentemail</td>
 <td class="center-align">보호자Email</td>
-<td class="center-align">String</td>
+<td class="center-align">String(60)</td>
 <td>14세 미만 필수 <code class="language-plaintext highlighter-rouge">parent@example.com</code></td>
 <td></td>
-<td class="center-align">60 Byte</td>
 </tr>
 <tr>
 <td class="center-align">timestamp</td>
 <td class="center-align">타임스탬프</td>
-<td class="center-align">Number</td>
+<td class="center-align">Number(20)</td>
 <td>TimeInMillis(Long형) → 제공라이브러로 생성가능(샘플소스참조)<br><code class="language-plaintext highlighter-rouge">1335233672723</code></td>
 <td class="center-align">○<br>위변조<br>검증</td>
-<td class="center-align">20 Byte</td>
 </tr>
 <tr>
 <td class="center-align">signature</td>
 <td class="center-align">signature</td>
-<td class="center-align">String</td>
+<td class="center-align">String(64,Fixed)</td>
 <td>위변조 방지 SHA256 Hash 값
 <a href="/prepare01.html#인증-요청-시-signature-생성">
 <strong>[참조-signature 생성 대상 target 필드]</strong></a><br><code class="language-plaintext highlighter-rouge">"8ca9e064777ea2fc0d4b79a5c891f3bdf30edd45c129dcfc226ba5e7e85cd5f3"</code><br/>
 <p style="color: red;"><strong>signature생성에 대한 자세한 사항은 <a href="/prepare01.html#3-signature-생성">연동 준비하기 - 1.2 Signature</a>를 참고 바랍니다.</strong></p>
 </td>
 <td class="center-align">○</td>
-<td class="center-align">64 Byte<br>Fixed</td>
 </tr>
 <tr>
 <td class="center-align">returnUrl</td>
 <td class="center-align">리턴Url(인증결과수신Url)</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>결제창을 통해 인증완료된 결과를 수신받고 승인요청을 해서 결과를 표시할 페이지 URL
 <a href="/stdweb02.html#24-리턴-페이지-인증수신승인-api-작성-payreturn">
 <strong>[참조-리턴 페이지 인증수신/승인api 작성 payreturn]</strong></a><br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/INIpayStandardSample/INIpayResult.jsp"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">mKey</td>
 <td class="center-align">signkey에 대한<br>hash값</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>signkey에 대한 검증값<br><code class="language-plaintext highlighter-rouge">"3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">gopaymethod</td>
 <td class="center-align">요청결제수단표시</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>결제 수단 중 선택적 표시<br>옵션생략시 전체 결제 수단 표시<br>
 <a href="/code02.html#23-gopaymethod-옵션">
 <strong>[참조-gopaymethod 옵션]</strong></a></td>
 <td class="center-align">X</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">offerPeriod</td>
 <td class="center-align">제공기간</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>가맹점에서 판매상품에 대한 제공기한 설정<br><code class="language-plaintext highlighter-rouge">"20130101-20130331"</code><br>[Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일]</td>
 <td class="center-align">X</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">languageView</td>
 <td class="center-align">초기 표시 언어</td>
-<td class="center-align">String</td>
+<td class="center-align">String(2)</td>
 <td>결제창 표시 언어, PC는 결제창내 언어변경 버튼 존재<br><code class="language-plaintext highlighter-rouge">"ko"</code> / [ko:한국어, en:영어]</td>
 <td class="center-align">X</td>
-<td class="center-align">2Byte</td>
 </tr>
 <tr>
 <td class="center-align">charset</td>
 <td class="center-align">결과 인코딩</td>
-<td class="center-align">String</td>
+<td class="center-align">String(5)</td>
 <td>결과 수신 charset <br><code class="language-plaintext highlighter-rouge">"UTF-8"</code>/ [UTF-8, EUC-KR]</td>
 <td class="center-align">X</td>
-<td class="center-align">5Byte</td>
 </tr>
 <tr>
 <td class="center-align">payViewType</td>
 <td class="center-align">결제창 표시방법</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>Default:overlay</td>
 <td class="center-align">X</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">closeUrl</td>
 <td class="center-align">결제창 닫기처리Url</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>close.jsp 샘플사용(소스 수정 불필요)<br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/inipaysmart/close.jsp"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">popupUrl</td>
 <td class="center-align">팝업처리Url</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>popup.jsp 샘플사용(소스 수정 불필요 : 비권장)<br><code class="language-plaintext highlighter-rouge">"HTTPS://www.exsample.com/inipaysmart/popup.jsp"</code></td>
 <td class="center-align">○</td>
-<td class="center-align">N/A</td>
 </tr>
 <tr>
 <td class="center-align">merchantData</td>
 <td class="center-align">가맹점데이터</td>
-<td class="center-align">String</td>
+<td class="center-align">String(2000)</td>
 <td>인증 성공시 가맹점으로 리턴 <br> <code class="language-plaintext highlighter-rouge">"a=A&b=B"</code></td>
 <td class="center-align">X</td>
-<td class="center-align">2000<br>Byte</td>
 </tr>
 <tr>
 <td class="center-align">acceptmethod</td>
 <td class="center-align">acceptmethod</td>
-<td class="center-align">String</td>
+<td class="center-align">String(N/A)</td>
 <td>결제수단별 추가 옵션값<br><code class="language-plaintext highlighter-rouge">CARDPOINT:va_receipt:vbank(20150425):SKIN(ORIGINAL):FONT(ORIGINAL): poptargetself</code></td>
 <td class="center-align">X</td>
-<td class="center-align">N/A</td>
 </tr>
 </tbody>
 </table>
@@ -669,11 +643,11 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
   </thead>
   <tbody>
     <tr>
-      <td>acceptmethod</td>
-      <td>no_receipt</td>
-      <td>현금영수증 미발행</td>
-      <td>String</td>
-      <td>현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 <br><code class="language-plaintext highlighter-rouge">“no_receipt”</code></td>
+      <td class="center-align">acceptmethod</td>
+      <td class="center-align">no_receipt</td>
+      <td class="center-align">현금영수증 미발행</td>
+      <td class="center-align">String</td>
+      <td class="left-align">현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 <br><code class="language-plaintext highlighter-rouge">“no_receipt”</code></td>
     </tr>
   </tbody>
 </table>
@@ -706,18 +680,16 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
   </thead>
   <tbody>
     <tr>
-      <td class="center-align">INIregXno</td>
+      <td class="center-align">INIregno</td>
       <td></td>
       <td class="center-align">주민번호 설정 기능</td>
       <td class="center-align">String</td>
       <td>13자리:주민번호,10자리:사업자번호,미입력시:화면에서 입력가능<br><code class="language-plaintext highlighter-rouge">“201504161111111”</code></td>
     </tr>
     <tr>
-      <td rowspan="3">acceptmethod
-<br><br>
-</td>
+      <td class="center-align" rowspan="3">acceptmethod</td>
       <td class="center-align">vbank</td>
-      <td  class="center-align">입금기한 및<br>입금시간</td>
+      <td class="center-align">입금기한 및<br>입금시간</td>
       <td class="center-align">String</td>
       <td>입금기한 및 입금 시간 설정 옵션<br>vbank(20211216) 또는 vbank(202112261900) 시분까지 지정(초 설정 불가)<br><code class="language-plaintext highlighter-rouge">"vbank(20150416)"</code></td>
     </tr>
@@ -756,9 +728,8 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <colgroup>
 <col style="text-align: center; width: 15%">
 <col style="text-align: center; width: 15%">
-<col style="text-align: center; width: 10%">
-<col style="text-align: center; width: 45%">
 <col style="text-align: center; width: 15%">
+<col style="text-align: center; width: 55%">
 </colgroup>
   <thead>
     <tr>
@@ -766,37 +737,32 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th class="center-align">필드명</th>
       <th class="center-align">타입</th>
       <th class="center-align">비고</th>
-      <th class="center-align">크기</th>   
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">resultCode</td>
       <td class="center-align">결과코드</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(10)</td>
       <td>[<code class="language-plaintext highlighter-rouge">0000</code> : 정상, 기타 : 실패]</td>
-      <td class="center-align">10 Byte</td>
     </tr>
     <tr>
       <td class="center-align">resultMsg</td>
       <td class="center-align">결과메세지</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(100)</td>
       <td>성공시 : <code class="language-plaintext highlighter-rouge">OK</code>, 실패시 : 기타 오류 메시지</td>
-      <td class="center-align">100 Byte</td>
     </tr>
     <tr>
       <td class="center-align">mid</td>
       <td class="center-align">가맹점 ID</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(10)</td>
       <td> </td>
-      <td class="center-align">10 Byte</td>
     </tr>
     <tr>
       <td class="center-align">orderNumber</td>
       <td class="center-align">가맹점 주문번호</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(40)</td>
       <td> </td>
-      <td class="center-align">40 Byte</td>
     </tr>
     <tr>
       <td class="center-align">authToken</td>
@@ -809,7 +775,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <td class="center-align">authUrl</td>
       <td class="center-align">승인요청 Url</td>
       <td class="center-align">String</td>
-      <td>해당 URL로 HTTPS API Request(httpClient 통신)<br> 승인 요청(POST)</td>
+      <td>해당 URL로 HTTPS API Request(httpClient 통신) 승인 요청(POST)</td>
       <td class="center-align"> </td>
     </tr>
     <tr>
@@ -822,16 +788,14 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
     <tr>
       <td class="center-align">charset</td>
       <td class="center-align">인증결과 인코딩</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(5)</td>
       <td>가맹점에서 결제요청시 전달한 charset값 생략시 UTF-8</td>
-      <td class="center-align">5 Byte</td>
     </tr>
     <tr>
       <td class="center-align">merchantData</td>
       <td class="center-align">가맹점 데이터</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(2000)</td>
       <td>가맹점 관리데이터</td>
-      <td class="center-align">2000Byte</td>
     </tr>
   </tbody>
 </table>
@@ -859,20 +823,18 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
     <tr>
       <th style="text-align: center; width: 15%">필드</th>
       <th style="text-align: center; width: 15%">필드명</th>
-      <th style="text-align: center; width: 10%">타입</th>
-      <th style="text-align: left; width: 40%">비고</th>
+      <th style="text-align: center; width: 15%">타입</th>
+      <th style="text-align: left; width: 45%">비고</th>
       <th style="text-align: center; width: 10%">필수</th>
-      <th style="text-align: center; width: 10%">크기</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">mid</td>
       <td class="center-align">가맹점 id</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(10,fixed)</td>
       <td>가맹점 아이디</td>
       <td class="center-align">○</td>
-      <td class="center-align">10 Byte<br>fixed</td>
     </tr>
     <tr>
       <td class="center-align">authToken</td>
@@ -885,45 +847,40 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
     <tr>
       <td class="center-align">price</td>
       <td class="center-align">인증가격</td>
-      <td class="center-align">Number</td>
+      <td class="center-align">Number(64)</td>
       <td>인증 가격 결과에 대한 위변조 확인용</td>
       <td class="center-align">○<br>위변조<br>검증</td>
-      <td class="center-align">64Bytes</td>
     </tr>
     <tr>
       <td class="center-align">timestamp</td>
       <td class="center-align">타임스템프</td>
-      <td class="center-align">Number</td>
+      <td class="center-align">Number(20)</td>
       <td>TimeInMillis(Long형)→제공라이브러리로 생성가능</td>
       <td class="center-align">○<br>위변조<br>검증</td>
-      <td class="center-align">20 Byte</td>
     </tr>
     <tr>
       <td class="center-align">signature</td>
       <td class="center-align">signature</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(64)</td>
       <td>위변조 방지 SHA256 Hash 값, 결제요청 동일한 방법으로 signature와 생성<br>
       <a href="/prepare01.html#승인-요청-시-signature-생성"><strong>[참조-승인요청 signature 생성 대상target필드]</strong></a><br/>
       <p style="color: red;"><strong>signature생성에 대한 자세한 사항은 <a href="/prepare01.html#3-signature-생성">연동 준비하기 - 3 Signature</a>를 참고 바랍니다.</strong></p></td>
       <td class="center-align">○</td>
-      <td class="center-align">64 Byte</td>
     </tr>
     <tr>
       <td class="center-align">charset</td>
       <td class="center-align">리턴 인코딩</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(5)</td>
       <td>결과 수신 charset</td>
       <td></td>
-      <td class="center-align">5 Byte</td>
     </tr>
     <tr>
       <td class="center-align">format</td>
       <td class="center-align">리턴 형식</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(5)</td>
       <td>결과 수신 형태XML : <result>내의 XML 결과 리턴<br>JSON : root 없이 json 결과 리턴<br>NVP : name=value&amp;name=value으로 결과 리턴</result><br>
       <a href="/stdweb02.html#2-13-리턴-형식별-승인결과-예시"><strong>[참조-리턴 형식별 승인결과 예시]</strong></a></td>
       <td></td>
-      <td class="center-align">5 Byte</td>
     </tr>
   </tbody>
 </table>
@@ -948,104 +905,90 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <table>
   <thead>
     <tr>
-      <th style="text-align: center; width: 15%">필드</th>
-      <th style="text-align: center; width: 16%">필드명</th>
-      <th style="text-align: center; width: 10%">타입</th>
-      <th style="text-align: left; width: 39%">비고</th>
-      <th style="text-align: center; width: 10%">크기</th>
+      <th class="center-align" style="width: 15%">필드</th>
+      <th class="center-align" style="width: 16%">필드명</th>
+      <th class="center-align" style="width: 15%">타입</th>
+      <th class="center-align" style="width: 44%">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="center-align">tid</td>
       <td class="center-align">거래번호</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(40)</td>
       <td>거래 번호</td>
-      <td class="center-align">40 Byte</td>
     </tr>
     <tr>
       <td class="center-align">resultCode</td>
       <td class="center-align">결과코드</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(10)</td>
       <td>[0000 : 정상, 기타 : 실패]승인결과코드 참조</td>
-      <td class="center-align">10 Byte</td>
     </tr>
     <tr>
       <td class="center-align">resultMsg</td>
       <td class="center-align">결과메세지</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(100)</td>
       <td>결과 메세지</td>
-      <td class="center-align">100 Byte</td>
     </tr>
     <tr>
       <td class="center-align">EventCode</td>
       <td class="center-align">이벤트코드</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(3)</td>
       <td>카드 할부 및 행사 적용 코드<a href="code02.html#29-카드-이벤트-적용-코드"><strong>[참조-카드 이벤트 적용 코드]</strong></a></td>
-      <td class="center-align">3 Byte</td>
     </tr>
     <tr>
       <td class="center-align">TotPrice</td>
       <td class="center-align">거래금액</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(20)</td>
       <td>결제결과 금액</td>
-      <td class="center-align">20 Byte</td>
     </tr>
     <tr>
       <td class="center-align">MOID</td>
       <td class="center-align">주문번호</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(12)</td>
       <td>상점주문번호, 결제 요청시 "oid"필드에 설정된값</td>
-      <td class="center-align">12 Byte</td>
     </tr>
     <tr>
       <td class="center-align">payMethod</td>
       <td class="center-align">지불수단</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(10)</td>
       <td>결제 방법</td>
-      <td class="center-align">10 Byte</td>
     </tr>
     <tr>
       <td class="center-align">applNum</td>
       <td class="center-align">승인번호</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(16)</td>
       <td>결제수단에 따리 미전송</td>
-      <td class="center-align">16 Byte</td>
     </tr>
     <tr>
       <td class="center-align">applDate</td>
       <td class="center-align">승인일자</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(8)</td>
       <td>YYYYMMDD</td>
-      <td class="center-align">8 Byte</td>
     </tr>
     <tr>
       <td class="center-align">applTime</td>
       <td class="center-align">승인시간</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(6)</td>
       <td>hh24miss</td>
-      <td class="center-align">6 Byte</td>
     </tr>
     <tr>
       <td class="center-align">buyerEmail</td>
       <td class="center-align">구매자Email</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(60)</td>
       <td>“buyer@example.com”</td>
-      <td class="center-align">60 Byte</td>
     </tr>
     <tr>
       <td class="center-align">buyerTel</td>
-      <td class="center-align">구매자Mobile번호</td>
-      <td class="center-align">String</td>
+      <td class="center-align">구매자Mobile<br>번호</td>
+      <td class="center-align">String(20)</td>
       <td>“010-2000-1234”</td>
-      <td class="center-align">20 Byte</td>
     </tr>
     <tr>
       <td class="center-align">buyerName</td>
       <td class="center-align">구매자명</td>
-      <td class="center-align">String</td>
+      <td class="center-align">String(30)</td>
       <td>“홍길동”</td>
-      <td class="center-align">30 Byte</td>
     </tr>
   </tbody>
 </table>
