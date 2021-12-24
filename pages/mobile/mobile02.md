@@ -127,8 +127,8 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수여부</th>
-    <th style="text-align: center;">부가설명 및 주의사항</th>
+    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -281,12 +281,12 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
+  <tr class="center-align">
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수여부</th>
-    <th style="text-align: center;">부가설명 및 주의사항</th>
+    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -345,12 +345,12 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 <col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
+  <tr class="center-align">
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수여부</th>
-    <th style="text-align: center;">부가설명 및 주의사항</th>
+    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -382,12 +382,12 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 <col style="width: 40%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
+  <tr class="center-align">
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수여부</th>
-    <th style="text-align: center;">부가설명 및 주의사항</th>
+    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -434,12 +434,12 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
 <col style="width: 35%; text-align: left;">
 </colgroup>
 <thead>
-  <tr style="text-align: center">
+  <tr class="center-align">
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">크&nbsp;&nbsp;기</th>
-    <th style="text-align: center;">필수여부</th>
-    <th style="text-align: center;">부가설명 및 주의사항</th>
+    <th style="text-align: center;">필수</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -474,7 +474,7 @@ keywords: 승인, 요청, 응답, 카드, 모바일, 계좌이체, 핸드폰, �
     <th style="text-align: center;">필드</th>
     <th style="text-align: center;">필드명</th>
     <th style="text-align: center;">Variable</th>
-    <th style="text-align: center;">Value 및 부가설명</th>
+    <th style="text-align: center;">비고</th>
   </tr>
 </thead>
 <tbody>
@@ -671,7 +671,7 @@ function formSubmit(){
 <thead>
   <tr>
     <th class="center-align">필드</th>
-    <th class="center-align">목적</th>
+    <th class="center-align">필드명</th>
     <th class="center-align">비고</th>
   </tr>
 </thead>
@@ -743,14 +743,14 @@ function formSubmit(){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">통신수단</th>
-      <th style="text-align: center">통신방식</th>
+      <th class="center-align">통신수단</th>
+      <th class="center-align">통신방식</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">Http-Socket</td>
-      <td style="text-align: center">post</td>
+      <td class="center-align">Http-Socket</td>
+      <td class="center-align">post</td>
     </tr>
   </tbody>
 </table>
@@ -765,20 +765,20 @@ function formSubmit(){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_TID</td>
-      <td style="text-align: center">인증거래번호</td>
+      <td class="center-align">P_TID</td>
+      <td class="center-align">인증거래번호</td>
       <td style="text-align: left">인증결과 수신 시, 포함된 인증거래번호(P_TID)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_MID</td>
-      <td style="text-align: center">상점아이디</td>
+      <td class="center-align">P_MID</td>
+      <td class="center-align">상점아이디</td>
       <td style="text-align: left">거래 시 사용된, 당사발급 아이디</td>
     </tr>
   </tbody>
@@ -866,53 +866,53 @@ if($P_STATUS=="00" && chkTid($P_TID)){
       <td style="text-align: left">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_AUTH_DT</td>
-      <td style="text-align: center">승인일자</td>
+      <td class="center-align">P_AUTH_DT</td>
+      <td class="center-align">승인일자</td>
       <td style="text-align: left">char(14)<br />YYYYmmddHHmmss</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_MID</td>
-      <td style="text-align: center">상점아이디</td>
+      <td class="center-align">P_MID</td>
+      <td class="center-align">상점아이디</td>
       <td style="text-align: left">char(10)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_OID</td>
-      <td style="text-align: center">상점주문번호</td>
+      <td class="center-align">P_OID</td>
+      <td class="center-align">상점주문번호</td>
       <td style="text-align: left">char(100)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_AMT</td>
-      <td style="text-align: center">거래금액</td>
+      <td class="center-align">P_AMT</td>
+      <td class="center-align">거래금액</td>
       <td style="text-align: left">char(8)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_UNAME</td>
-      <td style="text-align: center">주문자명</td>
+      <td class="center-align">P_UNAME</td>
+      <td class="center-align">주문자명</td>
       <td style="text-align: left">char(30)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_MNAME</td>
-      <td style="text-align: center">가맹점 이름</td>
+      <td class="center-align">P_MNAME</td>
+      <td class="center-align">가맹점 이름</td>
       <td style="text-align: left">주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_RMESG1</td>
-      <td style="text-align: center">메시지1</td>
+      <td class="center-align">P_RMESG1</td>
+      <td class="center-align">메시지1</td>
       <td style="text-align: left">char(500)<br />지불 결과 메시지</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_NOTI</td>
-      <td style="text-align: center">주문정보</td>
+      <td class="center-align">P_NOTI</td>
+      <td class="center-align">주문정보</td>
       <td style="text-align: left">char(800)<br />주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_NOTEURL</td>
-      <td style="text-align: center">가맹점 전달 NOTI URL</td>
+      <td class="center-align">P_NOTEURL</td>
+      <td class="center-align">가맹점 전달 NOTI URL</td>
       <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_NEXT_URL</td>
-      <td style="text-align: center">가맹점 전달 NEXT URL</td>
+      <td class="center-align">P_NEXT_URL</td>
+      <td class="center-align">가맹점 전달 NEXT URL</td>
       <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
     </tr>
   </tbody>
@@ -935,15 +935,15 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_CARD_NUM</td>
-      <td style="text-align: center">카드번호</td>
+      <td class="center-align">P_CARD_NUM</td>
+      <td class="center-align">카드번호</td>
       <td style="text-align: left">계약관계에 따라 틀림</td>
     </tr>
   </tbody>
@@ -966,65 +966,65 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th style="text-align: left">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_CARD_ISSUER_CODE</td>
-      <td style="text-align: center">발급사 코드</td>
+      <td class="center-align">P_CARD_ISSUER_CODE</td>
+      <td class="center-align">발급사 코드</td>
       <td style="text-align: left">char(2)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CARD_MEMBER_NUM</td>
-      <td style="text-align: center">가맹점번호</td>
+      <td class="center-align">P_CARD_MEMBER_NUM</td>
+      <td class="center-align">가맹점번호</td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CARD_PURCHASE_CODE</td>
-      <td style="text-align: center">매입사 코드</td>
+      <td class="center-align">P_CARD_PURCHASE_CODE</td>
+      <td class="center-align">매입사 코드</td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CARD_PRTC_CODE</td>
-      <td style="text-align: center">부분취소 가능여부</td>
+      <td class="center-align">P_CARD_PRTC_CODE</td>
+      <td class="center-align">부분취소 가능여부</td>
       <td style="text-align: left">부분취소가능 : 1 , 부분취소불가능 : 0</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CARD_INTEREST</td>
-      <td style="text-align: center">무이자 할부여부</td>
+      <td class="center-align">P_CARD_INTEREST</td>
+      <td class="center-align">무이자 할부여부</td>
       <td style="text-align: left">0 : 일반, 1 : 무이자</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CARD_CHECKFLAG</td>
-      <td style="text-align: center">체크카드 여부</td>
+      <td class="center-align">P_CARD_CHECKFLAG</td>
+      <td class="center-align">체크카드 여부</td>
       <td style="text-align: left">0 : 신용카드,1 : 체크카드2 : 기프트카드</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_RMESG2</td>
-      <td style="text-align: center">메시지2</td>
+      <td class="center-align">P_RMESG2</td>
+      <td class="center-align">메시지2</td>
       <td style="text-align: left">char(500)<br />신용카드 할부 개월 수</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_FN_CD1</td>
-      <td style="text-align: center">카드코드</td>
+      <td class="center-align">P_FN_CD1</td>
+      <td class="center-align">카드코드</td>
       <td style="text-align: left">char(4)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_AUTH_NO</td>
-      <td style="text-align: center">승인번호</td>
+      <td class="center-align">P_AUTH_NO</td>
+      <td class="center-align">승인번호</td>
       <td style="text-align: left">char(30)<br />신용카드거래에서만 사용합니다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_ISP_CARDCODE</td>
-      <td style="text-align: center">VP 카드코드</td>
+      <td class="center-align">P_ISP_CARDCODE</td>
+      <td class="center-align">VP 카드코드</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_FN_NM</td>
-      <td style="text-align: center">결제카드한글명</td>
+      <td class="center-align">P_FN_NM</td>
+      <td class="center-align">결제카드한글명</td>
       <td style="text-align: left">BC카드</td>
     </tr>
   </tbody>
@@ -1047,20 +1047,20 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th style="text-align: left">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_FN_CD1</td>
-      <td style="text-align: center">은행코드</td>
+      <td class="center-align">P_FN_CD1</td>
+      <td class="center-align">은행코드</td>
       <td style="text-align: left"></td>
     </tr>
     <tr>
-      <td style="text-align: center">P_FN_NM</td>
-      <td style="text-align: center">카드번호</td>
+      <td class="center-align">P_FN_NM</td>
+      <td class="center-align">카드번호</td>
       <td style="text-align: left">결제은행한글명</td>
     </tr>
   </tbody>
@@ -1083,25 +1083,25 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th style="text-align: left">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_HPP_CORP</td>
-      <td style="text-align: center">휴대폰통신사</td>
+      <td class="center-align">P_HPP_CORP</td>
+      <td class="center-align">휴대폰통신사</td>
       <td style="text-align: left">char(3)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_HPP_NUM</td>
-      <td style="text-align: center">결제 휴대폰 번호</td>
+      <td class="center-align">P_HPP_NUM</td>
+      <td class="center-align">결제 휴대폰 번호</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_HPP_BILLKEY</td>
-      <td style="text-align: center">휴대폰 빌키</td>
+      <td class="center-align">P_HPP_BILLKEY</td>
+      <td class="center-align">휴대폰 빌키</td>
       <td style="text-align: left">휴대폰 빌링 사용시 휴대폰 빌키( 승인은 PAYAPI 통해서 진행)</td>
     </tr>
   </tbody>
@@ -1155,55 +1155,55 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필 드 명</th>
-      <th style="text-align: center">목 적</th>
-      <th style="text-align: left">비 고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th style="text-align: left">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_CSHR_CODE</td>
-      <td style="text-align: center">처리상태</td>
+      <td class="center-align">P_CSHR_CODE</td>
+      <td class="center-align">처리상태</td>
       <td style="text-align: left">220000 : 정상, 그 외 : 오류</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_MSG</td>
-      <td style="text-align: center">처리메시지</td>
+      <td class="center-align">P_CSHR_MSG</td>
+      <td class="center-align">처리메시지</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_AMT</td>
-      <td style="text-align: center">현금영수증 총 금액</td>
+      <td class="center-align">P_CSHR_AMT</td>
+      <td class="center-align">현금영수증 총 금액</td>
       <td style="text-align: left">총금액 = 공급가액+세금+봉사료</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_SUP_AMT</td>
-      <td style="text-align: center">공급가액</td>
+      <td class="center-align">P_CSHR_SUP_AMT</td>
+      <td class="center-align">공급가액</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_TAX</td>
-      <td style="text-align: center">세금</td>
+      <td class="center-align">P_CSHR_TAX</td>
+      <td class="center-align">세금</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_SRVC_AMT</td>
-      <td style="text-align: center">봉사료</td>
+      <td class="center-align">P_CSHR_SRVC_AMT</td>
+      <td class="center-align">봉사료</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_TYPE</td>
-      <td style="text-align: center">용도구분</td>
+      <td class="center-align">P_CSHR_TYPE</td>
+      <td class="center-align">용도구분</td>
       <td style="text-align: left">0:소득공제용, 1:지출증빙용</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_DT</td>
-      <td style="text-align: center">발행시간</td>
+      <td class="center-align">P_CSHR_DT</td>
+      <td class="center-align">발행시간</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CSHR_AUTH_NO</td>
-      <td style="text-align: center">발행번호</td>
+      <td class="center-align">P_CSHR_AUTH_NO</td>
+      <td class="center-align">발행번호</td>
       <td style="text-align: left">가상계좌의 경우,입금 완료 시, 생성되어 모바일 내 채번시에는 전달되지 않습니다.</td>
     </tr>
   </tbody>
@@ -1262,35 +1262,35 @@ if($P_STATUS=="00" && chkTid($P_TID)){
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드</th>
-      <th style="text-align: center">목 적</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
       <th style="text-align: left">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_VACT_NUM</td>
-      <td style="text-align: center">입금할 계좌 번호</td>
+      <td class="center-align">P_VACT_NUM</td>
+      <td class="center-align">입금할 계좌 번호</td>
       <td style="text-align: left">char(20)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_VACT_DATE</td>
-      <td style="text-align: center">입금마감일자</td>
+      <td class="center-align">P_VACT_DATE</td>
+      <td class="center-align">입금마감일자</td>
       <td style="text-align: left">char(8) : yyyymmdd</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_VACT_TIME</td>
-      <td style="text-align: center">입금마감시간</td>
+      <td class="center-align">P_VACT_TIME</td>
+      <td class="center-align">입금마감시간</td>
       <td style="text-align: left">char(6) hhmmss</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_VACT_NAME</td>
-      <td style="text-align: center">계좌주명</td>
+      <td class="center-align">P_VACT_NAME</td>
+      <td class="center-align">계좌주명</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_VACT_BANK_CODE</td>
-      <td style="text-align: center">은행코드</td>
+      <td class="center-align">P_VACT_BANK_CODE</td>
+      <td class="center-align">은행코드</td>
       <td style="text-align: left">char(2)</td>
     </tr>
   </tbody>
@@ -1355,8 +1355,8 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
 </colgroup>
   <thead>
     <tr>
-      <th>Application Scheme</th>
-      <th>iInstallUrl</th>
+      <th class="center-align">Application Scheme</th>
+      <th class="center-align">iInstallUrl</th>
     </tr>
   </thead>
   <tbody>
@@ -1454,24 +1454,24 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">apprun_check</th>
-      <th style="text-align: center">작동방식</th>
-      <th>앱 미설치 시, 앱스토어 이동 후 결제페이지 잔존여부</th>
-      <th style="text-align: center">true / false 설정</th>
+      <th class="center-align">apprun_check</th>
+      <th class="center-align">작동방식</th>
+      <th class="center-align">앱 미설치 시, 앱스토어 이동 후<br>결제페이지 잔존여부</th>
+      <th class="center-align">true / false 설정</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">Y</td>
-      <td style="text-align: center">ISP,  계좌이체앱<br>- intent  작동</td>
+      <td class="center-align">Y</td>
+      <td class="center-align">ISP,  계좌이체앱<br>- intent  작동</td>
       <td>상태 유지</td>
-      <td style="text-align: center">true</td>
+      <td class="center-align">true</td>
     </tr>
     <tr>
-      <td style="text-align: center">N or  미설정</td>
-      <td style="text-align: center">ISP,  계좌이체앱<br>- appScheme  작동</td>
+      <td class="center-align">N or  미설정</td>
+      <td class="center-align">ISP,  계좌이체앱<br>- appScheme  작동</td>
       <td>하기 [그림 1]  과 같이  Display  됨</td>
-      <td style="text-align: center">false</td>
+      <td class="center-align">false</td>
     </tr>
   </tbody>
 </table>
@@ -2040,41 +2040,41 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드</th>
-      <th style="text-align: center">크 기</th>
-      <th style="text-align: center">필수여부</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">크 기</th>
+      <th class="center-align">필수</th>
       <th>비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_MID</td>
-      <td style="text-align: center">Char(10)</td>
-      <td style="text-align: center">필수</td>
+      <td class="center-align">P_MID</td>
+      <td class="center-align">Char(10)</td>
+      <td class="center-align">필수</td>
       <td>주문요청시 사용한 P_MID</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_ESCROW_TID</td>
-      <td style="text-align: center">Char(40)</td>
-      <td style="text-align: center">필수</td>
+      <td class="center-align">P_ESCROW_TID</td>
+      <td class="center-align">Char(40)</td>
+      <td class="center-align">필수</td>
       <td>에스크로 결제 승인 TID</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_NEXT_URL</td>
-      <td style="text-align: center">Char(800)</td>
-      <td style="text-align: center">필수</td>
+      <td class="center-align">P_NEXT_URL</td>
+      <td class="center-align">Char(800)</td>
+      <td class="center-align">필수</td>
       <td>결과수신 URLhttps(http)가 포함된 전체 URL이며, URL내 get 방식의 파라미터는 사용불가 합니다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_NEXT_URL_TAGET</td>
-      <td style="text-align: center">Char(10)</td>
-      <td style="text-align: center">필수</td>
+      <td class="center-align">P_NEXT_URL_TAGET</td>
+      <td class="center-align">Char(10)</td>
+      <td class="center-align">필수</td>
       <td>결과 수신 URL선택 값 : socket, get, post(미입력 시 기본값:socket)<br>get,post 방식은 완료 후 가맹점 페이지로 해당 방식으로 전환되며, socket 방식은 NOTI로 해당 값을 통보하여, 사용자페이지는 닫힙니다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_RESERVED</td>
-      <td style="text-align: center">Char(100)</td>
-      <td style="text-align: center">선택</td>
+      <td class="center-align">P_RESERVED</td>
+      <td class="center-align">Char(100)</td>
+      <td class="center-align">선택</td>
       <td>복합파라미터정보P_RESERVED=escrow_purchase_opt=vertify(구매확인버튼만 표시) P_RESERVED=escrow_purchase_opt=deny(구매거절버튼만 표시)옵션 미지정 시 구매확인/거절 모두 표시</td>
     </tr>
   </tbody>
@@ -2097,35 +2097,35 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드</th>
-      <th style="text-align: center">설명</th>
-      <th>비고</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">P_ESCROW_TID</td>
-      <td style="text-align: center">전달된 에스크로 TID</td>
+      <td class="center-align">P_ESCROW_TID</td>
+      <td class="center-align">전달된 에스크로 TID</td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">P_CL_STATUS</td>
-      <td style="text-align: center">구매결정/구매거절여부</td>
+      <td class="center-align">P_CL_STATUS</td>
+      <td class="center-align">구매결정/구매거절여부</td>
       <td>buyComplete / denyComplete</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_STATUS</td>
-      <td style="text-align: center">상태값</td>
+      <td class="center-align">P_STATUS</td>
+      <td class="center-align">상태값</td>
       <td>구매결정, 구매거절에 대한 코드값(하단 코드표 참조)</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_RMESG1</td>
-      <td style="text-align: center">처리결과메세지</td>
+      <td class="center-align">P_RMESG1</td>
+      <td class="center-align">처리결과메세지</td>
       <td>urlEncode 전달</td>
     </tr>
     <tr>
-      <td style="text-align: center">P_PG_IP</td>
-      <td style="text-align: center">처리된 승인서버 IP</td>
+      <td class="center-align">P_PG_IP</td>
+      <td class="center-align">처리된 승인서버 IP</td>
       <td> </td>
     </tr>
   </tbody>
@@ -2158,76 +2158,76 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">필드</th>
-      <th style="text-align: center">필드</th>
-      <th>크 기</th>
-      <th>부 가 설 명 및 주 의 사 항</th>
+      <th class="center-align">필드</th>
+      <th class="center-align">필드명</th>
+      <th class="center-align">크 기</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">id_merchant</td>
-      <td style="text-align: center">상점아이디</td>
+      <td class="center-align">id_merchant</td>
+      <td class="center-align">상점아이디</td>
       <td>Char(10)</td>
       <td>P_MID로 전달한 값</td>
     </tr>
     <tr>
-      <td style="text-align: center">no_oid</td>
-      <td style="text-align: center">주문번호</td>
+      <td class="center-align">no_oid</td>
+      <td class="center-align">주문번호</td>
       <td>Char(40)</td>
       <td>가맹점주문번호</td>
     </tr>
     <tr>
-      <td style="text-align: center">no_tid</td>
-      <td style="text-align: center">거래번호</td>
+      <td class="center-align">no_tid</td>
+      <td class="center-align">거래번호</td>
       <td>Char(40)</td>
       <td>승인 시 전달된 TID</td>
     </tr>
     <tr>
-      <td style="text-align: center">cl_status</td>
-      <td style="text-align: center">에스크로 상태</td>
+      <td class="center-align">cl_status</td>
+      <td class="center-align">에스크로 상태</td>
       <td>Char(2)</td>
       <td>배송등록(2), 구매확인(3), 자동구매확인(31), 강제구매확인(32), 구매거절(4), 거래취소(8), 거절확인(10)</td>
     </tr>
     <tr>
-      <td style="text-align: center">dt_req</td>
-      <td style="text-align: center">요청일자</td>
+      <td class="center-align">dt_req</td>
+      <td class="center-align">요청일자</td>
       <td>Char(14)</td>
       <td>YYYYMMDDhhmmss</td>
     </tr>
     <tr>
-      <td style="text-align: center">cl_paymethod</td>
-      <td style="text-align: center">결제수단</td>
+      <td class="center-align">cl_paymethod</td>
+      <td class="center-align">결제수단</td>
       <td>Char(2)</td>
       <td>신용카드(0), ISP(1), 계좌이체(16), 가상계좌(17)</td>
     </tr>
     <tr>
-      <td style="text-align: center">msg_deny</td>
-      <td style="text-align: center">구매거절사유</td>
+      <td class="center-align">msg_deny</td>
+      <td class="center-align">구매거절사유</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">Char(256)</td>
-      <td style="text-align: center"> </td>
+      <td class="center-align">Char(256)</td>
+      <td class="center-align"> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">price</td>
-      <td style="text-align: center">거래금액</td>
+      <td class="center-align">price</td>
+      <td class="center-align">거래금액</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">Char(12)</td>
-      <td style="text-align: center"> </td>
+      <td class="center-align">Char(12)</td>
+      <td class="center-align"> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">tid_org</td>
-      <td style="text-align: center">원거래 거래번호</td>
+      <td class="center-align">tid_org</td>
+      <td class="center-align">원거래 거래번호</td>
       <td>Char(40)</td>
       <td>부분취소시 원거래 거래번호</td>
     </tr>
@@ -2260,16 +2260,16 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">cd_rslt</td>
-      <td style="text-align: center">결과코드</td>
+      <td class="center-align">cd_rslt</td>
+      <td class="center-align">결과코드</td>
       <td>Char(4)</td>
-      <td style="text-align: center">0000:정상처리, 9999:처리실패</td>
+      <td class="center-align">0000:정상처리, 9999:처리실패</td>
     </tr>
     <tr>
-      <td style="text-align: center">msg_rslt</td>
-      <td style="text-align: center">결과메세지</td>
+      <td class="center-align">msg_rslt</td>
+      <td class="center-align">결과메세지</td>
       <td>Char(1000)</td>
-      <td style="text-align: center">처리실패시 상세 오류 메세지</td>
+      <td class="center-align">처리실패시 상세 오류 메세지</td>
     </tr>
   </tbody>
 </table>
@@ -2292,46 +2292,46 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">P_STATUS</th>
-      <th style="text-align: center">P_RMESGI</th>
+      <th class="center-align">P_STATUS</th>
+      <th class="center-align">P_RMESGI</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">정상처리완료</td>
+      <td class="center-align">00</td>
+      <td class="center-align">정상처리완료</td>
     </tr>
     <tr>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">기 구매거절 거래</td>
+      <td class="center-align">00</td>
+      <td class="center-align">기 구매거절 거래</td>
     </tr>
     <tr>
-      <td style="text-align: center">310004</td>
-      <td style="text-align: center">결제 기통보 거래</td>
+      <td class="center-align">310004</td>
+      <td class="center-align">결제 기통보 거래</td>
     </tr>
     <tr>
-      <td style="text-align: center">310006</td>
-      <td style="text-align: center">취소 불가 지불수단</td>
+      <td class="center-align">310006</td>
+      <td class="center-align">취소 불가 지불수단</td>
     </tr>
     <tr>
-      <td style="text-align: center">310014</td>
-      <td style="text-align: center">기 구매확인 거래</td>
+      <td class="center-align">310014</td>
+      <td class="center-align">기 구매확인 거래</td>
     </tr>
     <tr>
-      <td style="text-align: center">310015</td>
-      <td style="text-align: center">구매확인 불가 거래상태</td>
+      <td class="center-align">310015</td>
+      <td class="center-align">구매확인 불가 거래상태</td>
     </tr>
     <tr>
-      <td style="text-align: center">310017</td>
-      <td style="text-align: center">구매거절 불가 거래상태</td>
+      <td class="center-align">310017</td>
+      <td class="center-align">구매거절 불가 거래상태</td>
     </tr>
     <tr>
-      <td style="text-align: center">310020</td>
-      <td style="text-align: center">구매결정 할 수 없는 상태</td>
+      <td class="center-align">310020</td>
+      <td class="center-align">구매결정 할 수 없는 상태</td>
     </tr>
     <tr>
-      <td style="text-align: center">310026</td>
-      <td style="text-align: center">원거래 없음</td>
+      <td class="center-align">310026</td>
+      <td class="center-align">원거래 없음</td>
     </tr>
   </tbody>
 </table>
@@ -2355,55 +2355,55 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">기존상태</th>
-      <th style="text-align: center">처리 요청 상태</th>
-      <th style="text-align: center">P_STATUS</th>
-      <th style="text-align: center">P_CL_STATUS</th>
-      <th style="text-align: center">P_RMESG1</th>
+      <th class="center-align">기존상태</th>
+      <th class="center-align">처리 요청 상태</th>
+      <th class="center-align">P_STATUS</th>
+      <th class="center-align">P_CL_STATUS</th>
+      <th class="center-align">P_RMESG1</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">미정</td>
-      <td style="text-align: center">구매결정 성공</td>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">buyComplete</td>
-      <td style="text-align: center">정상처리완료</td>
+      <td class="center-align">미정</td>
+      <td class="center-align">구매결정 성공</td>
+      <td class="center-align">00</td>
+      <td class="center-align">buyComplete</td>
+      <td class="center-align">정상처리완료</td>
     </tr>
     <tr>
-      <td style="text-align: center">미정</td>
-      <td style="text-align: center">구매결정실패, 구매거부실패</td>
-      <td style="text-align: center">에러코드</td>
-      <td style="text-align: center">buyComplete, denyComplete</td>
-      <td style="text-align: center">에러메세지, 가변적</td>
+      <td class="center-align">미정</td>
+      <td class="center-align">구매결정실패, 구매거부실패</td>
+      <td class="center-align">에러코드</td>
+      <td class="center-align">buyComplete, denyComplete</td>
+      <td class="center-align">에러메세지, 가변적</td>
     </tr>
     <tr>
-      <td style="text-align: center">미정</td>
-      <td style="text-align: center">구매거부성공</td>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">denyComplete</td>
-      <td style="text-align: center">정상처리완료</td>
+      <td class="center-align">미정</td>
+      <td class="center-align">구매거부성공</td>
+      <td class="center-align">00</td>
+      <td class="center-align">denyComplete</td>
+      <td class="center-align">정상처리완료</td>
     </tr>
     <tr>
-      <td style="text-align: center">기 구매거부</td>
-      <td style="text-align: center">구매결정성공</td>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">buyComplete</td>
-      <td style="text-align: center">기 구매거절 거래</td>
+      <td class="center-align">기 구매거부</td>
+      <td class="center-align">구매결정성공</td>
+      <td class="center-align">00</td>
+      <td class="center-align">buyComplete</td>
+      <td class="center-align">기 구매거절 거래</td>
     </tr>
     <tr>
-      <td style="text-align: center">기 구매거부</td>
-      <td style="text-align: center">구매결정실패, 구매거부실패</td>
-      <td style="text-align: center">에러코드</td>
-      <td style="text-align: center">buyComplete, denyComplete</td>
-      <td style="text-align: center">에러메세지, 가변적</td>
+      <td class="center-align">기 구매거부</td>
+      <td class="center-align">구매결정실패, 구매거부실패</td>
+      <td class="center-align">에러코드</td>
+      <td class="center-align">buyComplete, denyComplete</td>
+      <td class="center-align">에러메세지, 가변적</td>
     </tr>
     <tr>
-      <td style="text-align: center">기 구매거부</td>
-      <td style="text-align: center">구매거부성공</td>
-      <td style="text-align: center">00</td>
-      <td style="text-align: center">denyComplete</td>
-      <td style="text-align: center">기 구매거절 거래</td>
+      <td class="center-align">기 구매거부</td>
+      <td class="center-align">구매거부성공</td>
+      <td class="center-align">00</td>
+      <td class="center-align">denyComplete</td>
+      <td class="center-align">기 구매거절 거래</td>
     </tr>
   </tbody>
 </table>
@@ -2426,18 +2426,18 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 <table style="width: 100%;">
 <colgroup>
     <col style="width: 10%;">
+    <col style="width: 15%;">
     <col style="width: 20%;">
-    <col style="width: 20%;">
-    <col style="width: 10%;">
+    <col style="width: 15%;">
     <col style="width: 40%;">
 </colgroup>
 <thead>
   <tr>
-    <th>순번</th>
-    <th>필드</th>
-    <th>필드</th>
-    <th>타입</th>
-    <th>비고</th>
+    <th class="center-align">순번</th>
+    <th class="center-align">필드</th>
+    <th class="center-align">필드명</th>
+    <th class="center-align">크기</th>
+    <th class="center-align">비고</th>
   </tr>
 </thead>
 <tbody>

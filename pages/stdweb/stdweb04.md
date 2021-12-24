@@ -156,7 +156,7 @@ keywords: 코드, 결제수단, 옵션
   <thead>
     <tr>
       <th style="text-align: center; width:20%">코드</th>
-      <th style="text-align: left; width:80%">설명</th>
+      <th style="text-align: left; width:80%">비고</th>
     </tr>
   </thead>
   <tbody>
@@ -325,7 +325,7 @@ keywords: 코드, 결제수단, 옵션
     <tr>
       <th style="text-align: center; width:30%">필드명</th>
       <th style="text-align: center; width:15%">코드</th>
-      <th style="text-align: left; width:55%">설명</th>
+      <th style="text-align: left; width:55%">비고</th>
     </tr>
   </thead>
   <tbody>
@@ -373,7 +373,7 @@ keywords: 코드, 결제수단, 옵션
 - 간편 결제 직접 호출 연동 시,전자금융거래 이용약관은 가맹점 페이지에서 동의 받아주셔야 합니다.
 - 이 외 정보는 상기 본 매뉴얼과 동일합니다.
 
-| 필드명                  | 코드           | 설명        |
+| 필드명                  | 코드           | 비고        |
 | :--------------------: | :------------: | :--------- |
 | gopaymethod(간편결제 택1) | onlykakaopay | 카카오페이 결제창 |
 | onlylpay             | 엘페이 결제창      |           |
@@ -397,7 +397,7 @@ keywords: 코드, 결제수단, 옵션
     <tr>
       <th style="text-align: center; width:20%">필드명</th>
       <th style="text-align: center; width:20%">코드</th>
-      <th style="text-align: left; width:60%">설명</th>
+      <th style="text-align: left; width:60%">비고</th>
     </tr>
   </thead>
   <tbody>
