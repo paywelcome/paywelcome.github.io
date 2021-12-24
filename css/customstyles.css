@@ -499,6 +499,7 @@ span.projectTitle {
 }
 
 .footer {
+    padding-left: 90px;
     text-align: left;
     font-size: 15px;
 }
@@ -952,7 +953,7 @@ span.soft {
 @media (min-width: 1000px) {
 
     ul#mysidebar {
-        width: 225px;
+        width: 235px;
         /*margin-top : 150px;*/
     }
 }

@@ -407,81 +407,16 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 </ul>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="sigSample1">
-<div class="language-java highlighter-rouge">
-<div class="highlight">
-<pre class="highlight">
-<code>
-// hash 알고리즘은 sha-256 사용
-String algorithm = "SHA-256";
-
-// hash 하기위한 plaintext를 변수에 담아준다.
-String data = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775";
-
-// SHA를 사용하기 위해 MessageDigest 클래스로부터 인스턴스를 얻는다.
-MessageDigest md = MessageDigest.getInstance(algorithm);
-
-// 해싱할 byte배열을 넘겨준다.
-// SHA-256의 경우 메시지로 전달할 수 있는 최대 bit 수는 2^64-1개 이다.
-md.update(data.getBytes("UTF-8"));
-
-// 해싱된 byte 배열을 digest메서드의 반환값을 통해 얻는다.
-byte[] hashbytes = md.digest();
-
-// 보기 좋게 16진수로 만드는 작업
-StringBuilder signatureStr = new StringBuilder();
-for(int i=0 ; i < hashbytes.length ; i++) {
-// %02x 부분은 0 ~ f 값 까지는 한자리 수이므로 두자리 수로 보정하는 역할을 한다.
-signatureStr.append(String.format("%02x", hashbytes[i] & 0xff));
-}
-
-// signature 값 출력
-System.out.println(signatureStr .toString());
-</code>
-</pre>
-</div>
-</div>
+<script src="https://gist.github.com/paywelcome/f5385130876ede2d6664082f5c09b63e.js"></script>
 </div>
 <div role="tabpanel" class="tab-pane" id="sigSample2">
-<div class="highlight">
-<pre class="highlight">
-<code>
-// hash 하기위한 plaintext를 변수에 담아준다.
-var plainText = "mid=xxxxxxxxxx&mkey=9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// node.js 내장 암호화 함수 호출
-var crypto = require('crypto'); 
-// sha-256의 알고리즘으로 암호화하여 signature값 생성
-var signature = crypto.createHash('sha256').update(plainText).digest('hex'); 
-// 해당 값 출력시 signature 값 출력
-console.log( signature); 
-</code>
-</pre>
-</div>
+<script src="https://gist.github.com/paywelcome/281af4c8a0aa6354404613bf6f721f94.js"></script>
 </div>
 <div role="tabpanel" class="tab-pane" id="sigSample3">
-<div class="highlight">
-<pre class="highlight">
-<code>
-// hash 하기위한 plaintext를 변수에 담아준다.
-$plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// sha-256 알고리즘으로 plainText를 암호화 하여 signature값 생성
-$signature = hash("sha256", $plainText); 
-// 해당 값 출력시 signature 값 출력
-echo $signature;
-</code>
-</pre>
-</div>
+<script src="https://gist.github.com/paywelcome/4c9d4eebe8984b070ad7ac2dc18043ad.js"></script>
 </div>
 <div role="tabpanel" class="tab-pane" id="sigSample4">
-<div class="highlight">
-<pre class="highlight">
-<code>
-// hash 알고리즘은 sha-256 사용
-plainText = "mid=xxxxxxxxxx&mkey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timestamp=1639118638775"; 
-// 샘플소스 ASP_MOBILE\include\signature.asp 내부함수의 MakeSignature(sMessage)를 참고
-MakeSignature(plainText);
-</code>
-</pre>
-</div>
+<script src="https://gist.github.com/paywelcome/d4f365be16b76619a53e81c2e7bfc13c.js"></script>
 </div>
 </div>
 

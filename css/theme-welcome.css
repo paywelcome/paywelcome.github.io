@@ -60,11 +60,13 @@ details[open] summary:before{
 
 .navbar-inverse {
     background-color: #ffffff;
-    border-color: #ffffff;
+    border-color: #b3b3b3;
+    border-bottom-width: 2px;
 }
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
     align-items: center;
     color: black;
+    font-size: 17px;
 }
 .navbar-inverse .navbar-nav>li>a:focus, a.navbar-brand:focus,
 .navbar-inverse .navbar-nav>li>a:hover, a.navbar-brand:hover {

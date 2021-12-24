@@ -787,39 +787,7 @@ function formSubmit(){
 - Http-Socket 을 이용한 승인요청의 샘플 코드는 하기와 같습니다.<br>
 _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코드는 로직안내를 위해 작성된 예시입니다.)_
 
-```php
-$P_STATUS = $_POST[‘P_STATUS’];
-$P_REQ_URL = $_POST[‘P_REQ_URL’];
-$P_TID = $_POST[‘P_TID’];
-$P_MID = $_POST[‘P_MID’];
-
-function makeParam($P_TID, $P_MID){ 
-return “P_TID=”.$P_TID.”&P_MID=”.$P_MID;
-}
-function parseData($receiveMsg) { //승인결과 Parse
-	$returnArr = explode(“&”,$receiveMsg);
-	foreach($returnArr as $value){
-		$tmpArr = explode(“=”,$value);
-		$returnArr[] = $tmpArr;
-	}
-}
-function chkTid($P_TID);		//기승인 TID 여부 확인
-function saveTid($P_TID);		//승인된 TID 를 DB 에 저장
-function setSocket($host, $port); 	//소켓 생성
-function connectSocket($sock);		//소켓 연결
-function requestSocket($sock,$param);		//데이터 송신
-function responseSocket();		//데이터 수신
-
-if($P_STATUS=="00" && chkTid($P_TID)){
-    $sock = setSocket($P_REQ_URL,443);	//https connection
-    connectSocket($sock);
-    requestSocket($sock,makeParam($P_TID, $P_MID));
-    $returnData = responseSocket();
-    $returnDataArr = parseData($returnData);	//$returnDataArr 에 승인결과 저장
-    saveTid($P_TID);
-}
-?>
-```
+<script src="https://gist.github.com/paywelcome/14fba8e0b2fba9a4dcb464febc44d439.js"></script>
 
 ### 2.5.2 승인 결과 수신
 
@@ -1382,64 +1350,11 @@ private class INIP2PWebView extends WebViewClient {
 
 #### [shouldOverrideUrlLoading 부]
 
-```java
-private class INIP2PWebView extends WebViewClient {
-@Override     
-public boolean shouldOverrideUrlLoading(WebView view, String url) {
-  ...   
-  Uri uri = Uri.parse(url);     
-  Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-  try{     
-    startActivity(intent); 
-    //삼성카드 안심클릭을 위해 추가
-    if( url.startsWith("ispmobile://")) finish();
-}
-catch(ActivityNotFoundException e)
-  {
-     //url prefix가 ispmobile 일겨우만 alert를 띄움
-     if( url.startsWith("ispmobile://"))
-     {
-        view.loadData("<html><body></body></html>", "text/html", "euc-kr"); 
-        alertIsp.show();
-        return true; //----------------------------------------------①
-     }
-  }
-  ...
-  return true;     
-  }
-
-```
+<script src="https://gist.github.com/paywelcome/2dc5e80c26a09944b1298ae8ba915a07.js"></script>
 
 <p style="font-size: 80%"> [ISP 앱스토어 이동처리 부] - alertIsp</p>
 
-```java
-protected void onCreate(Bundle savedInstanceState) {
-...
-alertIsp = new AlertDialog.Builder(PaymentView.this)
-.setIcon(android.R.drawable.ic_dialog_alert) 
-.setTitle("알림")
-.setMessage("모바일 ISP 어플리케이션이 설치되어 있지 않습니다. \n설치를 
-눌러 진행 해 주십시요.\n취소를 누르면 결제가 취소 됩니다.")     
-.setPositiveButton("설치", new DialogInterface.OnClickListener() { 
-     @Override
-     public void onClick(DialogInterface dialog, int which) { 
-            //ISP 설치 페이지 URL     
-            paymentView.loadUrl("http://mobile.vpay.co.kr/jsp/MISP/andown.jsp");
-            finish();
-        }
- 
-})     
-  .setNegativeButton("취소", new DialogInterface.OnClickListener() {
-     @Override
-     public void onClick(DialogInterface dialog, int which) {     
-        Toast.makeText(PaymentView.this, "(-1)결제를 취소 하셨습니다." , Toast.LENGTH_SHORT).show();     
-        finish();     
-     }
-}).create();     
-...
-}
-
-```
+<script src="https://gist.github.com/paywelcome/4a26f9d2c478d4d95735bb26da35f077.js"></script>
 
 **3)** ISP 가 단말기에 기 설치되어 있는 경우, ISP 가 정상구동 됩니다.<br/>
 **4)** ISP 가 단말기에 미 설치되어 있는 경우, 설치 후, Mobile Web 서비스를 다시 띄워주시면 됩니다.<br>
@@ -1560,82 +1475,8 @@ alertIsp = new AlertDialog.Builder(PaymentView.this)
 <summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
 <div markdown="1">
 
-```java
-private class SampleWebViewClient extends WebViewClient {
-  @Override
-  public boolean shouldOverrideUrlLoading(WebView view, String url) {
-    Log.d("<INICIS_TEST>","URL : "+url);
-    /*
-    * URL별로 분기가 필요합니다. 어플리케이션을 로딩하는 것과
-    * WEB PAGE를 로딩하는 것을 분리하여 처리해야 합니다.
-    * 만일 가맹점 특정 어플 URL이 들어온다면 
-    * 조건을 더 추가하여 처리해 주십시요.
-    */
-    if( !url.startsWith("http://") && !url.startsWith("https://") && !url.startsWith("javascript:") )
-    {    		
-      Intent intent; 
-      try{
-        intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-        Log.d("<INICIS_TEST>", "intent getDataString : " + intent.getDataString());
-      } catch (URISyntaxException ex) {
-        Log.e("<INICIS_TEST>", "URI syntax error : " + url + ":" + ex.getMessage());
-        return false;
-      } 
-      try{ 
-        startActivity(intent); 
-      }catch(ActivityNotFoundException e){
-        /* ISP어플이 현재 폰에 없다면 아래 처리에서 
-        * 알림을 통해 처리하도록 하였습니다.
-        * 삼성카드 및 기타 안심클릭에서는 
-        * 카드사 웹페이지에서 알아서 처리하기때문에
-        * WEBVIEW에서는 별다른 처리를 하지 않아도 처리됩니다.
-        */
-        if( url.startsWith("ispmobile://"))
-        { 
-        //onCreateDialog에서 정의한 ISP 어플리케이션 알럿을 띄워줍니다.
-        //(ISP 어플리케이션이 없을 경우)
-          showDialog(DIALOG_ISP);
-          return false;
-        }else if (url.startsWith("intent")) {
-            //일부카드사의 경우 ,intent:// 형식의 intent 스키마를 내려주지 않음
-          //ex) 현대카드 intent:hdcardappcardansimclick://
-          try {
-            Intent tempIntent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-            String strParams = tempIntent.getDataString();
-            
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(strParams));
-            
-            startActivity(intent);
-            
-            return true;
-          } catch (Exception e) {
-            e.printStackTrace();
-            
-            Intent intent = null;
-            
-            try {
-              intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-              Intent marketIntent = new Intent(Intent.ACTION_VIEW);
-              marketIntent.setData(Uri.parse("market://details?id=" + intent.getPackage()));
-              startActivity(marketIntent);
-            } catch (Exception e1) {
-               e1.printStackTrace();
-            }
-            return true;
-          } 
-        }
-      } 
-    }
-    else
-    {	
-      view.loadUrl(url);
-      return false;
-    }
-    return true;
-  }
-}
-```
+<script src="https://gist.github.com/paywelcome/22184803212ce6b83acd4651d8fe87c3.js"></script>
+
 </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 </details>
 
@@ -1896,51 +1737,8 @@ private class SampleWebViewClient extends WebViewClient {
 <summary><strong>[&nbsp;상세보기&nbsp;]</strong></summary>
 <div markdown="1">
 
-```java
-#pragma mark UIWebViewDelegate 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    //쿠키 강제 허용
-    NSHTTPCookieStorage *cookieSto = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    [cookieSto setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-    
-    //웰컴페이먼츠를 통해 전달되는 URL   
-    NSString *URLString = [NSString stringWithString:[request.URL absoluteString]];
-        
-    
-    //URL을 읽어왔을 때 애플 스토어 주소인 경우 사파리에 해당 URL을 넘겨서 앱스토어에서 설치 할 수 있도록 유도
-    BOOL isStoreURL = ([URLString rangeOfString:@"phobos.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
-    BOOL isStoreURL2 = ([URLString rangeOfString:@"itunes.apple.com" options:NSCaseInsensitiveSearch].location != NSNotFound);
-        
-    //앱스토어 이동
-    if (isStoreURL || isStoreURL2) {
-        [[UIApplication sharedApplication]openURL:request.URL];
-        return NO;
-    }   
-    else if([URLString hasPrefix:@"http"] || [URLString hasPrefix:@"https"] || [URLString hasPrefix:@"about"] )      //일반적인 웹url 형태인 경우 진행
-    {
-        return YES;
-    }    
-    else{     //그 외의 값은 앱스키마로 간주하여 앱 호출
-        
-        NSURL *appURL = [NSURL URLWithString:URLString];    //NSString to NSURL      
- 
-	//앱스키마인 경우 앱 호출
-        BOOL bAppScheme =  [[UIApplication sharedApplication] canOpenURL:appURL];   
-        
-        if (!bAppScheme) {
-//앱이 설치되지 않은 경우 앱스토어로 이동 또는 안내 알럿 표출   
-            
-            return NO;
-            
-        }
-        
-    }
-    
-    return YES;
-}
+<script src="https://gist.github.com/paywelcome/c3638db97912e0eda559feaedeb11d7f.js"></script>
 
-```
 </div>
 </details>
 
@@ -1958,16 +1756,7 @@ private class SampleWebViewClient extends WebViewClient {
 Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서비스를 사용하는 경우,<br>
 세션만료 오류경고가 발생할 수 있습니다. 이에, 하기의 샘플과 같이 쿠키를 허용해야 합니다.
 
-```java
-(BOOL)application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions    
-{
-  [[NSHTTPCookieStorage sharedHTTPCookieStorage]
-  setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];  
-  ...
-  return YES;
-}
-```
+<script src="https://gist.github.com/paywelcome/098accb2576a71ce69a5c83532bdcdcc.js"></script>
 
 ## 2.7 에스크로 결제
 
