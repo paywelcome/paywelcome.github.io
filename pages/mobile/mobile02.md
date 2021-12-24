@@ -1829,7 +1829,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
 </tbody>
 </table>
 
-#### [구매결정 요청 파라메터]
+#### [구매결정 요청 파라미터]
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -1887,7 +1887,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
 </div>
 </details>
 
-#### [구매결정 응답 파라메터]
+#### [구매결정 응답 파라미터]
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
