@@ -59,7 +59,7 @@ keywords: 결제, 결제취소, 취소, 결제 취소, 부분 취소, 부분, �
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -176,7 +176,7 @@ keywords: 결제, 결제취소, 취소, 결제 취소, 부분 취소, 부분, �
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -314,7 +314,7 @@ keywords: 결제, 결제취소, 취소, 결제 취소, 부분 취소, 부분, �
     <th class="center-align" >구분</th>
     <th class="center-align" >필드</th>
     <th class="center-align" >필드명</th>
-    <th class="center-align" >길이</th>
+    <th class="center-align" >크기</th>
     <th class="center-align" >필수</th>
     <th class="center-align" >암호화</th>
     <th class="center-align" >타입</th>
@@ -451,7 +451,7 @@ keywords: 결제, 결제취소, 취소, 결제 취소, 부분 취소, 부분, �
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>

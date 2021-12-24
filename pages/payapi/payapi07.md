@@ -61,7 +61,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>
@@ -238,7 +238,7 @@ SMS 결제용 단축 URL을 생성하는 서비스입니다.
     <th class="center-align">구분</th>
     <th class="center-align">필드</th>
     <th class="center-align">필드명</th>
-    <th class="center-align">길이</th>
+    <th class="center-align">크기</th>
     <th class="center-align">필수</th>
     <th class="center-align">암호화</th>
     <th class="center-align">타입</th>

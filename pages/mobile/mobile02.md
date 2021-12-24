@@ -2252,10 +2252,10 @@ didFinishLaunchingWithOptions:(NSDictionary  *)launchOptions
 </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center">파라미터</th>
-      <th style="text-align: center">설명</th>
-      <th>크기</th>
-      <th style="text-align: center">비고</th>
+      <th class="center-align">파라미터</th>
+      <th class="center-align">설명</th>
+      <th class="center-align">크기</th>
+      <th class="center-align">비고</th>
     </tr>
   </thead>
   <tbody>

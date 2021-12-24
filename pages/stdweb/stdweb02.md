@@ -218,7 +218,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <th class="center-align" style="width: 10%">타입</th>
 <th class="center-align" style="width: 40%">비고</th>
 <th class="center-align" style="width: 10%">필수</th>
-<th class="center-align" style="width: 10%">길이</th>
+<th class="center-align" style="width: 10%">크기</th>
 </tr>
 </thead>
 <tbody>
@@ -766,7 +766,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th class="center-align">필드명</th>
       <th class="center-align">타입</th>
       <th class="center-align">비고</th>
-      <th class="center-align">길이</th>   
+      <th class="center-align">크기</th>   
     </tr>
   </thead>
   <tbody>
@@ -862,7 +862,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th style="text-align: center; width: 10%">타입</th>
       <th style="text-align: left; width: 40%">비고</th>
       <th style="text-align: center; width: 10%">필수</th>
-      <th style="text-align: center; width: 10%">길이</th>
+      <th style="text-align: center; width: 10%">크기</th>
     </tr>
   </thead>
   <tbody>
@@ -952,7 +952,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th style="text-align: center; width: 16%">필드명</th>
       <th style="text-align: center; width: 10%">타입</th>
       <th style="text-align: left; width: 39%">비고</th>
-      <th style="text-align: center; width: 10%">길이</th>
+      <th style="text-align: center; width: 10%">크기</th>
     </tr>
   </thead>
   <tbody>
@@ -1075,7 +1075,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th class="center-align">필드명</th>
       <th class="center-align">타입</th>
       <th class="center-align">비고</th>
-      <th class="center-align">길이</th>
+      <th class="center-align">크기</th>
     </tr>
   </thead>
   <tbody>
@@ -1161,7 +1161,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
-|       필드       |  필드명  | 타입 | 비고                                                                     | 길이  |
+|       필드       |  필드명  | 타입 | 비고                                                                     | 크기  |
 | :-------------: | :----: | :-------: |:-----------------------------------------------------------------------| :-------: |
 |    VACT_Num    | 입금계좌번호 |  String   | 무통장입금 가상계좌번호                                                           | 20 Byte |
 | VACT_BankCode  | 입금은행코드 |  String   | <a href="/code02.html#27-은행증권사-코드"><strong>[참조-은행(증권사)코드]</strong></a> | 2 Byte  |
@@ -1194,7 +1194,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
           <th class="center-align">필드명</th>
           <th class="center-align">타입</th>
           <th class="center-align">비고</th>
-          <th class="center-align">길이</th>
+          <th class="center-align">크기</th>
         </tr>
       </thead>
       <tbody>
@@ -1232,7 +1232,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
 <summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
-| 필드          | 필드명   | 타입 | 비고               | 길이  |
+| 필드          | 필드명   | 타입 | 비고               | 크기  |
 | :------------: | :------: | :---------: | :---------------- | :-------: |
 | HPP_Num     | 휴대폰번호  | String    | 휴대폰번호            | 14 Byte |
 | payDevice    | 결제장치   | String    | PC               | 6 Byte  |
@@ -1358,7 +1358,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
       <th style="text-align: center; width: 10%">타입</th>
       <th style="width: 40%">비고</th>
       <th style="text-align: center; width: 10%">필수</th>
-      <th style="text-align: center; width: 10%">길이</th>
+      <th style="text-align: center; width: 10%">크기</th>
     </tr>
   </thead>
   <tbody>
