@@ -82,8 +82,8 @@ PAYAPI의 주요 응답 코드는 아래와 같습니다.
       <td class="left-align">처리 실패</td>
     </tr>
     <tr>
-      <td class="center-align" style="text-align: center; vertical-align: middle">4XX</td>
-      <td class="center-align" style="text-align: center;">잘못된 요청</td>
+      <td class="center-align">4XX</td>
+      <td class="center-align">잘못된 요청</td>
       <td class="left-align">API 요청 URL의 프로토콜, 파라미터 등에 오류가 있는지 확인합니다.</td>
     </tr>
     <tr>
