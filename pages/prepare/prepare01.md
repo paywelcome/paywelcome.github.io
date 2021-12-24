@@ -399,40 +399,11 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
 
 #### 샘플소스
 
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#sigSample1" data-toggle="tab">java</a></li>
-    <li><a href="#sigSample2" data-toggle="tab">node.js</a></li>
-    <li><a href="#sigSample3" data-toggle="tab">PHP</a></li>
-    <li><a href="#sigSample4" data-toggle="tab">ASP</a></li>
-</ul>
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="sigSample1">
-  
-  <script src="https://gist.github.com/paywelcome/f5385130876ede2d6664082f5c09b63e.js"></script>
-  
-  </div>
-  <div role="tabpanel" class="tab-pane" id="sigSample2">
-  
-  <script src="https://gist.github.com/paywelcome/281af4c8a0aa6354404613bf6f721f94.js"></script>
-  
-  </div>
-  <div role="tabpanel" class="tab-pane" id="sigSample3">
-  
-  <script src="https://gist.github.com/paywelcome/4c9d4eebe8984b070ad7ac2dc18043ad.js"></script>
-  
-  </div>
-  <div role="tabpanel" class="tab-pane" id="sigSample4">
-  
-  <script src="https://gist.github.com/paywelcome/d4f365be16b76619a53e81c2e7bfc13c.js"></script>
-  
-  </div>
-</div>
-
-
 <div class="tabs-head">
-  <span data-tab="tab-1" class="tabs-nav active" onclick="Tabs();">Tab 1</span>
-  <span data-tab="tab-2" class="tabs-nav" onclick="Tabs();">Tab 2</span>
-  <span data-tab="tab-3" class="tabs-nav" onclick="Tabs();">Tab 3</span>
+  <span data-tab="tab-1" class="tabs-nav active">java</span>
+  <span data-tab="tab-2" class="tabs-nav">node.js</span>
+  <span data-tab="tab-3" class="tabs-nav">PHP</span>
+  <span data-tab="tab-4" class="tabs-nav">ASP</span>
 </div>
 
 <div class="tabs-content">
@@ -448,18 +419,13 @@ Signature생성에 필요한 mid와 signkey는 계약 가맹점에 한해 별도
   </div>
   <div id="tab-3" class="b-tab">
 
+   <script src="https://gist.github.com/paywelcome/4c9d4eebe8984b070ad7ac2dc18043ad.js"></script>
+
+  </div>
+  <div id="tab-4" class="b-tab">
+
    <script src="https://gist.github.com/paywelcome/d4f365be16b76619a53e81c2e7bfc13c.js"></script>
 
   </div>
 </div>
-
-<style>
-.tabs-head{display:flex;border-bottom:1px solid #ebeced;margin-bottom:30px;font-size:13px}
-.tabs-head > *:not(:last-child){margin-right:7px}
-.tabs-head > *{padding:8px 15px;border:1px solid #ebeced;border-bottom:0;border-radius:4px 4px 0 0;position:relative;color:inherit;cursor:default}
-.tabs-head > *:after{content:'';display:block;width:100%;height:2px;background-color:#fafafc;position:absolute;left:0;bottom:-1px;visibility:hidden;opacity:0}
-.tabs-head > .active:after{opacity:1;visibility:visible}
-.tabs-content{position:relative}
-.tabs-content .b-tab{display:none;width:100%}
-.tabs-content .b-tab.active{display:block}
-</style>
+<script src="js/tabs.js"/>

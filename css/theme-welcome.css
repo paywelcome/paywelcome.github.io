@@ -67,6 +67,7 @@ details[open] summary:before{
     align-items: center;
     color: black;
     font-size: 19px;
+    margin-left: 25px;
 }
 .navbar-inverse .navbar-nav>li>a:focus, a.navbar-brand:focus,
 .navbar-inverse .navbar-nav>li>a:hover, a.navbar-brand:hover {
@@ -150,3 +151,14 @@ li.sidebarTitle {
 div.navbar-collapse .dropdown-menu > li > a:hover {
     background-color: #efdbc0;
 }
+
+/* nav-tab css */
+.tabs-head{display:flex;border-bottom:1px solid #ebeced;margin-bottom:30px;font-size:13px}
+.tabs-head > *:not(:last-child){margin-right:7px}
+.tabs-head > *{padding:8px 15px;border:1px solid #ebeced;border-bottom:0;border-radius:4px 4px 0 0;position:relative;color:inherit;cursor:default}
+.tabs-head > *:after{content:'';display:block;width:100%;height:2px;background-color:#fafafc;position:absolute;left:0;bottom:-1px;visibility:hidden;opacity:0}
+.tabs-head > .active:after{opacity:1;visibility:visible}
+.tabs-content{position:relative}
+.tabs-content .b-tab{display:none;width:100%}
+.tabs-content .b-tab.active{display:block}
+.tabs-nav {cursor: pointer}
