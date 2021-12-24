@@ -589,7 +589,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <th style="text-align: center; width: 15%">하위필드</th>
       <th style="text-align: center; width: 15%">필드명</th>
       <th style="text-align: center; width: 10%">타입</th>
-      <th style="text-align: center; width: 45%" >비고</th>
+      <th style="text-align: center; width: 45%">비고</th>
     </tr>
   </thead>
   <tbody>
@@ -670,10 +670,10 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
   <tbody>
     <tr>
       <td>acceptmethod</td>
-      <td>X_receipt</td>
+      <td>no_receipt</td>
       <td>현금영수증 미발행</td>
       <td>String</td>
-      <td>현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 <br><code class="language-plaintext highlighter-rouge">“X_receipt”</code></td>
+      <td>현금영수증 발행 차단 옵션<br>계좌이체 시 사용하는 현금영수증 미발행 여부 확인 필드 – 옵션을 사용시 현금 영수증 UI 출력하지 않음 <br><code class="language-plaintext highlighter-rouge">“no_receipt”</code></td>
     </tr>
   </tbody>
 </table>
@@ -706,7 +706,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
   </thead>
   <tbody>
     <tr>
-      <td class="center-align">INIregX</td>
+      <td class="center-align">INIregXno</td>
       <td></td>
       <td class="center-align">주민번호 설정 기능</td>
       <td class="center-align">String</td>
@@ -1262,7 +1262,7 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
   <buyerTel>010-1111-1111</buyerTel>
   <cardBankCode>81</cardBankCode>
   <cardCode>17</cardCode>
-  <cardXInterest>0</cardXInterest>
+  <cardNoInterest>0</cardNoInterest>
   <cardNum>532092000175</cardNum>
   <cardQuota>0</cardQuota>
   <clEvent/>
@@ -1502,13 +1502,13 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ### 2.5.3 에스크로 상태변경 노티 수신
 
-- 에스크로 주요 시점 (예 >구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(XTI CONFIRM)하여야합니다.
+- 에스크로 주요 시점 (예 >구매자가 구매결정을 완료 등)에 가맹점 측으로 해당 내역을 통보해주는 기능입니다. 상점 측에서는 정상수신 여부를 응답(NOTI CONFIRM)하여야합니다.
 - 해당 기능을 이용하려면 계약 담당자를 통해,수신 받을 상점 측 URL을 등록하셔야 합니다.
 - 지불 수단 별,승인요청 시점의 주문번호를 기준으로 응답하며,배송등록 시점에 사용되는 주문번호와 동일하게 설정을 권장합니다.
 - 거래금액은 에스크로 상태에 따라 거래취소 시에는 취소금액,그 외는 승인금액입니다.
 - 원거래TID는 부분취소거래만 설정됩니다.
 
-##### [노티발송 웰컴페이먼츠 &gt; 가맹점]
+##### [노티발송 웰컴페이먼츠 > 가맹점]
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -1517,8 +1517,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 |     필드      |  필드명   |    크기     | 비고                                       |
 | :----------: | :-----: | :-------: | ---------------------------------------- |
 | id_merchant  |  상점아이디  | Char(10)  | P_MID로전달한값                               |
-|    X_oid    |  주문번호   | Char(40)  | 가맹점주문번호                                  |
-|    X_tid    |  거래번호   | Char(40)  | 승인시전달된TID                                |
+|    no_oid    |  주문번호   | Char(40)  | 가맹점주문번호                                  |
+|    no_tid    |  거래번호   | Char(40)  | 승인시전달된TID                                |
 |  cl_status   | 에스크로상태  |  Char(2)  | 배송등록(2), 구매확인(3), 자동구매확인(31), 강제구매확인(32), 구매거절(4), 거래취소(8), 거절확인(10) |
 |    dt_req    |  요청일자   | Char(14)  | YYYYMMDDhhmmss                           |
 | cl_paymethod |  결제수단   |  Char(2)  | 신용카드(0), ISP(1), 계좌이체(16), 가상계좌(17)      |
@@ -1548,7 +1548,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 ### 2.6.1 노티를 받을 때 전달되는 파라미터
 
-#### [3-1] 이체결과파라미터
+#### [3-1] 이체결과 파라미터
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -1556,13 +1556,13 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 |      필드      | 필드명                      |     크기      |
 | :-----------: | :------------------------: | :---------: |
-|    X_tid     | 거래번호                      | VARCHAR(40) |
-|    X_oid     | 상점 주문번호                   | VARCHAR(40) |
+|    no_tid     | 거래번호                      | VARCHAR(40) |
+|    no_oid     | 상점 주문번호                   | VARCHAR(40) |
 |    cd_bank    | 계좌를 발급한 은행 코드             | VARCHAR(8)  |
 |    cd_deal    | 거래 취급 기관 코드 (실제 입금 은행)    | VARCHAR(8)  |
 |   dt_trans    | 금융기관발생 거래일자               | VARCHAR(8)  |
 |   tm_trans    | 금융기관발생 거래 시각              | VARCHAR(6)  |
-|   X_vacct    | 계좌번호                      | VARCHAR(20) |
+|   no_vacct    | 계좌번호                      | VARCHAR(20) |
 |   amt_input   | 입금금액                      | NUMBER(13)  |
 |   flg_close   | 마감구분 (0:당일마감전, 1:당일마감후)   |   CHAR(1)   |
 |   cl_close    | 마감구분코드 (0:당일마감전, 1:당일마감후) |   CHAR(1)   |
@@ -1576,8 +1576,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 |    cl_kor     | 한글구분코드                    |  NUMBER(1)  |
 |    dt_cshr    | 현금영수증 발급일자                |  NUMBER(8)  |
 |    tm_cshr    | 현금영수증 발급시간                |  NUMBER(6)  |
-| X_cshr\_appl | 현금영수증 발급번호                |  NUMBER(9)  |
-| X_cshr\_tid  | 현금영수증 발급TID               | VARCHAR(40) |
+| no_cshr_appl | 현금영수증 발급번호                |  NUMBER(9)  |
+| no_cshr_tid  | 현금영수증 발급TID               | VARCHAR(40) |
 
 </div>
 </details>
