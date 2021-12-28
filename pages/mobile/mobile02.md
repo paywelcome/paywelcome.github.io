@@ -1922,7 +1922,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
 </div>
 </details>
 
-[노티응답 가맹점 &gt; 웰컴페이먼츠]
+[노티응답 가맹점 > 웰컴페이먼츠]
 
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
@@ -2035,8 +2035,8 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
   <col style="width: 15%;">
   <col style="width: 25%;">
   <col style="width: 15%;">
-  <col style="width: 25%;">
-  <col style="width: 20%;">
+  <col style="width: 30%;">
+  <col style="width: 15%;">
 </colgroup>
   <thead>
     <tr>
