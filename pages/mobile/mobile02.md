@@ -802,21 +802,21 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 
 ### 승인결과 수신필드 상세 (only 2 Transaction)
 
-#### 1) 공통 지불 수신 필드
-
 <details style="cursor:pointer;" open>
 <summary><strong>&nbsp;상세보기</strong></summary>
 <div markdown="1">
 
 <table style="table-layout: fixed; width: 100%; text-align: center">
 <colgroup>
-<col style="width: 15%;">
+<col style="width: 10%;">
+<col style="width: 25%;">
 <col style="width: 20%;">
 <col style="width: 15%;">
-<col style="width: 50%;">
+<col style="width: 30%;">
 </colgroup>
   <thead>
     <tr>
+      <th class="center-align">지불수단</th>
       <th class="center-align">필드</th>
       <th class="center-align">필드명</th>
       <th class="center-align">타입</th>
@@ -825,34 +825,35 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
   </thead>
   <tbody>
     <tr>
+      <td class="center-align" rowspan="14">공통</td>
       <td class="center-align">P_STATUS</td>
       <td class="center-align">거래상태</td>
       <td class="center-align">String(4)</td>
-      <td style="text-align: left">성공: 00</td>
+      <td class="left-align">성공: 00</td>
     </tr>
     <tr>
       <td class="center-align">P_TID</td>
       <td class="center-align">거래번호</td>
       <td class="center-align">String(40)</td>
-      <td class="center-align"></td>
+      <td class="left-align"></td>
     </tr>
     <tr>
       <td class="center-align">P_TYPE</td>
       <td class="center-align">지불수단</td>
       <td class="center-align">String(10)</td>
-      <td style="text-align: left"></td>
+      <td class="left-align"></td>
     </tr>
     <tr>
       <td class="center-align">P_TYPE</td>
       <td class="center-align">지불수단</td>
       <td class="center-align">String(N/A)</td>
-      <td style="text-align: left">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
+      <td class="left-align">CARD(ISP,안심클릭,국민앱카드)<br />VBANK(가상계좌)<br />MOBILE(휴대폰)<br />BANK(계좌이체)</td>
     </tr>
     <tr>
       <td class="center-align">P_AUTH_DT</td>
       <td class="center-align">승인일자</td>
       <td class="center-align">String(14)</td>
-      <td style="text-align: left">YYYYmmddHHmmss</td>
+      <td class="left-align">YYYYmmddHHmmss</td>
     </tr>
     <tr>
       <td class="center-align">P_MID</td>
@@ -881,235 +882,129 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
       <td class="center-align">P_MNAME</td>
       <td class="center-align">가맹점 이름</td>
       <td class="center-align">String(N/A)</td>
-      <td style="text-align: left">주문정보에 입력한 값 반환</td>
+      <td class="left-align">주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
       <td class="center-align">P_RMESG1</td>
       <td class="center-align">메시지1</td>
        <td class="center-align">String(500)</td>
-      <td style="text-align: left">지불 결과 메시지</td>
+      <td class="left-align">지불 결과 메시지</td>
     </tr>
     <tr>
       <td class="center-align">P_NOTI</td>
       <td class="center-align">주문정보</td>
       <td class="center-align">String(800)</td>
-      <td style="text-align: left">주문정보에 입력한 값 반환</td>
+      <td class="left-align">주문정보에 입력한 값 반환</td>
     </tr>
     <tr>
       <td class="center-align">P_NOTEURL</td>
       <td class="center-align">가맹점 전달 NOTI URL</td>
       <td class="center-align">String(N/A)</td>
-      <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
+      <td class="left-align">거래요청 시 입력한 값을 <strong>그대로 반환</strong></td>
     </tr>
     <tr>
       <td class="center-align">P_NEXT_URL</td>
       <td class="center-align">가맹점 전달 NEXT URL</td>
       <td class="center-align">String(N/A)</td>
-      <td style="text-align: left">거래요청 시 입력한 값을 <strong>그대로 반환</strong> 합니다.</td>
+      <td class="left-align">거래요청 시 입력한 값을 <strong>그대로 반환</strong></td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 2) 신용카드U포인트 지불 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 15%;">
-<col style="width: 50%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">타입</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+     <tr>
+     <td class="center-align">신용카드<br>U포인트</td>
       <td class="center-align">P_CARD_NUM</td>
       <td class="center-align">카드번호</td>
-      <td class="center-align"></td>
-      <td style="text-align: left">계약관계에 따라 틀림</td>
+      <td class="center-align">String(16)</td>
+      <td class="left-align">계약관계에 따라 틀림</td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 3) 신용카드 지불 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 20%;">
-<col style="width: 15%;">
-<col style="width: 40%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">타입</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+     <tr>
+     <td class="center-align" rowspan="11">신용카드</td>
       <td class="center-align">P_CARD_ISSUER_CODE</td>
       <td class="center-align">발급사 코드</td>
-      <td style="text-align: left">String(2)</td>
+      <td style="center-align">String(2)</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_MEMBER_NUM</td>
       <td class="center-align">가맹점번호</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(15)</td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_PURCHASE_CODE</td>
       <td class="center-align">매입사 코드</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(2)</td>
       <td style="text-align: left">자체 가맹점 일 경우만 해당</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_PRTC_CODE</td>
       <td class="center-align">부분취소 가능여부</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(1)</td>
       <td style="text-align: left">부분취소가능 : 1 , 부분취소불가능 : 0</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_INTEREST</td>
       <td class="center-align">무이자 할부여부</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(1)</td>
       <td style="text-align: left">0 : 일반, 1 : 무이자</td>
     </tr>
     <tr>
       <td class="center-align">P_CARD_CHECKFLAG</td>
-      <td class="center-align">체크카드 여부</td>
-      <td class="center-align"></td>
-      <td style="text-align: left">0 : 신용카드,1 : 체크카드2 : 기프트카드</td>
+      <td class="center-align">카드 구분</td>
+      <td class="center-align">String(1)</td>
+      <td style="text-align: left">0 : 신용카드,1 : 체크카드,2 : 기프트카드</td>
     </tr>
     <tr>
       <td class="center-align">P_RMESG2</td>
       <td class="center-align">메시지2</td>
-      <td style="text-align: left">String(500)<br />신용카드 할부 개월 수</td>
+      <td class="center-align">String(500)</td>
+      <td class="left-align">신용카드 할부 개월 수</td>
     </tr>
     <tr>
       <td class="center-align">P_FN_CD1</td>
       <td class="center-align">카드코드</td>
-      <td class="center-align">char(4)</td>
+      <td class="center-align">String(4)</td>
       <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_AUTH_NO</td>
       <td class="center-align">승인번호</td>
-      <td class="center-align">char(30)</td>
+      <td class="center-align">String(30)</td>
       <td style="text-align: left">신용카드거래에서만 사용합니다.</td>
     </tr>
     <tr>
       <td class="center-align">P_ISP_CARDCODE</td>
       <td class="center-align">VP 카드코드</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(25)</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td class="center-align">P_FN_NM</td>
-      <td class="center-align">결제카드한글명</td>
-      <td class="center-align"></td>
+      <td class="center-align">결제카드사 한글명</td>
+      <td class="center-align">String(N/A)</td>
       <td style="text-align: left">BC카드</td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 4) 계좌이체 지불 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">타입</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+     <tr>
+      <td class="center-align" rowspan="2">계좌이체</td>
       <td class="center-align">P_FN_CD1</td>
       <td class="center-align">은행코드</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(4)</td>
       <td style="text-align: left"></td>
     </tr>
     <tr>
       <td class="center-align">P_FN_NM</td>
-      <td class="center-align">카드번호</td>
-      <td class="center-align"></td>
-      <td style="text-align: left">결제은행한글명</td>
+      <td class="center-align">결제은행 한글명</td>
+      <td class="center-align">String(N/A)</td>
+      <td style="text-align: left"></td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 5) 휴대폰 지불 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
-</colgroup>
-  <thead>
     <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">타입</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+      <td class="center-align" rowspan="3">휴대폰</td>
       <td class="center-align">P_HPP_CORP</td>
       <td class="center-align">휴대폰통신사</td>
-      <td style="text-align: left">String(3)</td>
+      <td class="center-align">String(3)</td>
+      <td class="left-align"></td>
     </tr>
     <tr>
       <td class="center-align">P_HPP_NUM</td>
       <td class="center-align">결제 휴대폰 번호</td>
-      <td class="center-align"></td>
+      <td class="center-align">String(11)</td>
       <td style="text-align: left"> </td>
     </tr>
     <tr>
@@ -1118,66 +1013,15 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
       <td class="center-align"></td>
       <td style="text-align: left">휴대폰 빌링 사용시 휴대폰 빌키( 승인은 PAYAPI 통해서 진행)</td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 6) 앱연동 결제구분 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
-</colgroup>
-  <thead>
-    <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+     <tr>
+      <td class="center-align">앱연동<br>결제구분</td>
       <td class="center-align">P_SRC_CODE</td>
       <td class="center-align">앱연동여부</td>
+      <td class="center-align">String(3)</td>
       <td style="text-align: left">P : 페이핀<br />K : 국민앱카드<br />C: 페이코<br />B: 삼성페이<br />L: LPAY<br />O: 카카오페이<br />G: SSGPAY</td>
     </tr>
-  </tbody>
-</table>
-
-</div>
-</details>
-
-#### 7) 현금영수증 수신 필드
-
-<details style="cursor:pointer;" open>
-<summary><strong>&nbsp;상세보기</strong></summary>
-<div markdown="1">
-
-<table style="table-layout: fixed; width: 100%; text-align: center">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 15%;">
-<col style="width: 40%;">
-</colgroup>
-  <thead>
     <tr>
-      <th class="center-align">필드</th>
-      <th class="center-align">필드명</th>
-      <th class="center-align">타입</th>
-      <th class="center-align">비고</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+      <td class="center-align" rowspan="9">현금<br>영수증</td>
       <td class="center-align">P_CSHR_CODE</td>
       <td class="center-align">처리상태</td>
       <td class="center-align">String(6)</td>
@@ -1237,7 +1081,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
 </div>
 </details>
 
-#### 8) 가상계좌 수신 필드 및 상세안내
+### 가상계좌 수신 필드 및 상세안내
 
 "가상계좌 방식" 과 "계좌이체 방식" 은 입금 통보 등의 과정을 필요로 하기 때문에, 상기에 안내한 방식과 다소 다른 점이 있습니다.
 하기에는 가상계좌와 계좌이체에서 각기 사용하는 "인증완료 후, 이동페이지" 와, "입금통보 혹은 승인완료 통보" 방식에 대하여 안내합니다.
@@ -2380,7 +2224,7 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <td class="center-align">P_CARD_ISSUER_CODE</td>
     <td class="center-align">발급사 코드</td>
     <td class="center-align">String(4)</td>
-    <td></td>
+    <td class="center-align"></td>
   </tr>
   <tr>
     <td class="center-align">P_CARD_NUM</td>
