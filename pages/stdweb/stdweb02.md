@@ -1525,55 +1525,55 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
         <tr>
           <td class="center-align">id_merchant</td>
           <td class="center-align">상점아이디</td>
-          <td class="center-align">Char(10)</td>
+          <td class="center-align">String(10)</td>
           <td class="left-align">P_MID로전달한값</td>
         </tr>
         <tr>
           <td class="center-align">no_oid</td>
           <td class="center-align">주문번호</td>
-          <td class="center-align">Char(40)</td>
+          <td class="center-align">String(40)</td>
           <td class="left-align">가맹점주문번호</td>
         </tr>
         <tr>
           <td class="center-align">no_tid</td>
           <td class="center-align">거래번호</td>
-          <td class="center-align">Char(40)</td>
+          <td class="center-align">String(40)</td>
           <td class="left-align">승인시전달된TID</td>
         </tr>
         <tr>
           <td class="center-align">cl_status</td>
           <td class="center-align">에스크로상태</td>
-          <td class="center-align">Char(2)</td>
+          <td class="center-align">String(2)</td>
           <td class="left-align">배송등록(2), 구매확인(3), 자동구매확인(31), 강제구매확인(32), 구매거절(4), 거래취소(8), 거절확인(10)</td>
         </tr>
         <tr>
           <td class="center-align">dt_req</td>
           <td class="center-align">요청일자</td>
-          <td class="center-align">Char(14)</td>
+          <td class="center-align">String(14)</td>
           <td class="left-align">YYYYMMDDhhmmss</td>
         </tr>
         <tr>
           <td class="center-align">cl_paymethod</td>
           <td class="center-align">결제수단</td>
-          <td class="center-align">Char(2)</td>
+          <td class="center-align">String(2)</td>
           <td class="left-align">신용카드(0), ISP(1), 계좌이체(16), 가상계좌(17)</td>
         </tr>
         <tr>
           <td class="center-align">msg_deny</td>
           <td class="center-align">구매거절사유</td>
-          <td class="center-align">Char(256)</td>
+          <td class="center-align">String(256)</td>
           <td class="left-align"> </td>
         </tr>
         <tr>
           <td class="center-align">price</td>
           <td class="center-align">거래금액</td>
-          <td class="center-align">Char(12)</td>
+          <td class="center-align">String(12)</td>
           <td class="left-align"> </td>
         </tr>
         <tr>
           <td class="center-align">tid_org</td>
           <td class="center-align">원거래거래번호</td>
-          <td class="center-align">Char(40)</td>
+          <td class="center-align">String(40)</td>
           <td class="left-align">부분취소시원거래거래번호</td>
         </tr>
       </tbody>
@@ -1590,8 +1590,8 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 
 |   필드    | 필드명  |     크기     | 비고                   |
 | :------: | :---: | :--------: | -------------------- |
-| cd_rslt  | 결과코드  |  Char(4)   | 0000:정상처리, 9999:처리실패 |
-| msg_rslt | 결과메세지 | Char(1000) | 처리실패시 상세 오류 메세지      |
+| cd_rslt  | 결과코드  |  String(4)   | 0000:정상처리, 9999:처리실패 |
+| msg_rslt | 결과메세지 | String(1000) | 처리실패시 상세 오류 메세지      |
 
 </div>
 </details>
@@ -1620,42 +1620,42 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
         <tr>
           <td style="text-align: center">no_tid</td>
           <td style="text-align: center">거래번호</td>
-          <td style="text-align: center">VARCHAR(40)</td>
+          <td style="text-align: center">String(40)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
           <td style="text-align: center">no_oid</td>
           <td style="text-align: center">상점 주문번호</td>
-          <td style="text-align: center">VARCHAR(40)</td>
+          <td style="text-align: center">String(40)</td>
         </tr>
         <tr>
           <td style="text-align: center">cd_bank</td>
           <td style="text-align: center">계좌를 발급한 은행 코드</td>
-          <td style="text-align: center">VARCHAR(8)</td>
+          <td style="text-align: center">String(8)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
           <td style="text-align: center">cd_deal</td>
           <td style="text-align: center">거래 취급 기관 코드</td>
-          <td style="text-align: center">VARCHAR(8)</td>
+          <td style="text-align: center">String(8)</td>
           <td class="left-align">실제 입금 은행</td>
         </tr>
         <tr>
           <td style="text-align: center">dt_trans</td>
           <td style="text-align: center">금융기관발생 거래일자</td>
-          <td style="text-align: center">VARCHAR(8)</td>
+          <td style="text-align: center">String(8)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
           <td style="text-align: center">tm_trans</td>
           <td style="text-align: center">금융기관발생 거래 시각</td>
-          <td style="text-align: center">VARCHAR(6)</td>
+          <td style="text-align: center">String(6)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
           <td style="text-align: center">no_vacct</td>
           <td style="text-align: center">계좌번호</td>
-          <td style="text-align: center">VARCHAR(20)</td>
+          <td style="text-align: center">String(20)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
@@ -1667,31 +1667,31 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
         <tr>
           <td style="text-align: center">flg_close</td>
           <td style="text-align: center">마감구분</td>
-          <td style="text-align: center">CHAR(1)</td>
+          <td style="text-align: center">String(1)</td>
           <td class="left-align">0:당일마감전, 1:당일마감후</td>
         </tr>
         <tr>
           <td style="text-align: center">cl_close</td>
           <td style="text-align: center">마감구분코드</td>
-          <td style="text-align: center">CHAR(1)</td>
+          <td style="text-align: center">String(1)</td>
           <td class="left-align">0:당일마감전, 1:당일마감후</td>
         </tr>
         <tr>
           <td style="text-align: center">type_msg</td>
           <td style="text-align: center">거래구분</td>
-          <td style="text-align: center">VARCHAR(4)</td>
+          <td style="text-align: center">String(4)</td>
           <td class="left-align">0200:정상, 0400:취소</td>
         </tr>
         <tr>
           <td style="text-align: center">nm_inputbank</td>
           <td style="text-align: center">입금은행명</td>
-          <td style="text-align: center">VARCHAR(10)</td>
+          <td style="text-align: center">String(10)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
           <td style="text-align: center">nm_input</td>
           <td style="text-align: center">입금자명</td>
-          <td style="text-align: center">VARCHAR(20)</td>
+          <td style="text-align: center">String(20)</td>
           <td class="left-align"></td>
         </tr>
         <tr>
@@ -1715,7 +1715,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
         <tr>
           <td style="text-align: center">cl_trans</td>
           <td style="text-align: center">거래구분코드</td>
-          <td style="text-align: center">VARCHAR(4)</td>
+          <td style="text-align: center">String(4)</td>
           <td class="left-align">EX ) 1100</td>
         </tr>
         <tr>
@@ -1745,7 +1745,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
         <tr>
           <td style="text-align: center">no_cshr_tid</td>
           <td style="text-align: center">현금영수증 발급TID</td>
-          <td style="text-align: center">VARCHAR(40)</td>
+          <td style="text-align: center">String(40)</td>
           <td class="left-align"></td>
         </tr>
       </tbody>
@@ -1821,7 +1821,7 @@ applDate=20130219&applTime=164631&buyerEmail=ehbang@welcomepg.co.kr&buyerName=�
 상점 내 수신 로그 및 DB상태를 확인하세요.
 
 
-## 2.7	 웹표준 결제 취소
+## 2.7 웹표준 결제 취소
 
 웹표준 결제는 거래 취소 기능을 지원하지 않습니다.
 따라서, 결제 취소는 별도의 PAYAPI 서비스 연동하시어 취소기능을 활용하셔야 합니다.  
