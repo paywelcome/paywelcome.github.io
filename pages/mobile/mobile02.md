@@ -1165,7 +1165,7 @@ _( __하기 코드 내 함수는 직접 구현하셔야 합니다__ 하기 코�
     </tr>
     <tr>
       <td class="center-align">P_VACT_BANK_CODE</td>
-      <td class="center-align">은행코드</td>
+      <td class="center-align">채번은행코드</td>
       <td class="center-align">String(2)</td>
       <td class="left-align"> <a href="/code02.html#26-카드-발급사은행-코드"><strong>[참조-카드 발급사(은행) 코드]</strong></a></td>
     </tr>
@@ -1237,8 +1237,8 @@ WebView 에서 Mobile Web 서비스를 띄우는 방식은 앞 장에서 설명�
   </thead>
   <tbody>
     <tr>
-      <td>ispmobile://</td>
-      <td>http://mobile.vpay.co.kr/jsp/MISP/andown.jsp</td>
+      <td class="center-align">ispmobile://</td>
+      <td class="center-align">http://mobile.vpay.co.kr/jsp/MISP/andown.jsp</td>
     </tr>
   </tbody>
 </table>
@@ -1287,13 +1287,13 @@ private class INIP2PWebView extends WebViewClient {
     <tr>
       <td class="center-align">Y</td>
       <td class="center-align">ISP,  계좌이체앱<br>- intent  작동</td>
-      <td>상태 유지</td>
+      <td class="center-align">상태 유지</td>
       <td class="center-align">true</td>
     </tr>
     <tr>
       <td class="center-align">N or  미설정</td>
       <td class="center-align">ISP,  계좌이체앱<br>- appScheme  작동</td>
-      <td>하기 [그림 1]  과 같이  Display  됨</td>
+      <td class="center-align">하기 [그림 1]  과 같이  Display  됨</td>
       <td class="center-align">false</td>
     </tr>
   </tbody>
@@ -1332,14 +1332,14 @@ private class INIP2PWebView extends WebViewClient {
 </colgroup>
   <thead>
     <tr>
-      <th>신용카드</th>
-      <th>계좌이체</th>
+      <th class="center-align">신용카드</th>
+      <th class="center-align">계좌이체</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">P_RESERVED=app_scheme=가맹점스키마명://</code></td>
-      <td>
+      <td class="center-align"><code class="language-plaintext highlighter-rouge">P_RESERVED=app_scheme=가맹점스키마명://</code></td>
+      <td class="center-align">
 <code class="language-plaintext highlighter-rouge">P_RESERVED=iosapp=Y&amp;app_scheme=가맹점스키마명://</code><br> <code class="language-plaintext highlighter-rouge">P_RETURN_URL=가맹점스키마명://</code>
 </td>
     </tr>
@@ -1365,14 +1365,14 @@ private class INIP2PWebView extends WebViewClient {
 </colgroup>
   <thead>
     <tr>
-      <th>App Url  일 경우</th>
-      <th>Web Url 일 경우</th>
+      <th class="center-align">App Url  일 경우</th>
+      <th class="center-align">Web Url 일 경우</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>activity 호출</td>
-      <td>WebView 에서 Loading</td>
+      <td class="center-align">activity 호출</td>
+      <td class="center-align">WebView 에서 Loading</td>
     </tr>
   </tbody>
 </table>
@@ -1462,7 +1462,7 @@ private class INIP2PWebView extends WebViewClient {
 ```javascript
 <key> LSApplicationQueriesSchemes </key>
      <array>
-           <string> fbapi </string>
+<string> fbapi </string>
 <string> fbauth2 </string>
 <string> fbshareextension </string>
 <string> fb-messenger-api </string>
@@ -1629,14 +1629,14 @@ private class INIP2PWebView extends WebViewClient {
 </colgroup>
   <thead>
     <tr>
-      <th>주 문 정 보</th>
-      <th>앱 내 소스</th>
+      <th class="center-align">주 문 정 보</th>
+      <th class="center-align">앱 내 소스</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="/mobile02.html#226-복합-필드-p_reserved">[(결제 요청 페이지작성 - 복합필드)</a> 내 참조</td>
-      <td>하기 샘플 참조</td>
+      <td class="center-align"><a href="/mobile02.html#226-복합-필드-p_reserved">[(결제 요청 페이지작성 - 복합필드)</a> 내 참조</td>
+      <td class="center-align">하기 샘플 참조</td>
     </tr>
   </tbody>
 </table>
@@ -2033,8 +2033,8 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
 <table style="width: 100%;">
 <colgroup>
   <col style="width: 15%;">
-  <col style="width: 30%;">
-  <col style="width: 10%;">
+  <col style="width: 25%;">
+  <col style="width: 15%;">
   <col style="width: 25%;">
   <col style="width: 20%;">
 </colgroup>
