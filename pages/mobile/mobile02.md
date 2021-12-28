@@ -2308,19 +2308,19 @@ Mobile Web 서비스를 IOS WebView 에서 호출하고, 안심클릭 계열 서
     <td class="center-align">P_CSHR_TYPE</td>
     <td class="center-align">현금영수증 거래자 구분</td>
     <td class="center-align">String(1)</td>
-    <td>0 : 소비자 소득공제용 / 1 : 사업자 지출증빙용계좌이체, 가상계좌 현금영수증 거래자 구분<br>※ 가상계좌 채번 결과에 전달</td>
+    <td>0 : 소비자 소득공제용 / 1 : 사업자 지출증빙용계좌이체, 가상계좌 현금영수증 거래자 구분<br><strong>※ 가상계좌 채번 결과에 전달</strong></td>
   </tr>
   <tr>
     <td class="center-align">P_CSHR_DT</td>
     <td class="center-align">현금영수증 발행일자</td>
     <td class="center-align">String(14)</td>
-    <td>YYYYmmddHHmmss계좌이체, 가상계좌 현금영수증 발행일자※ 가상계좌 입금 결과에 전달</td>
+    <td>YYYYmmddHHmmss계좌이체, 가상계좌 현금영수증 발행일자<br><strong>※ 가상계좌 입금 결과에 전달</strong></td>
   </tr>
   <tr>
     <td class="center-align">P_CSHR_AUTH_NO</td>
     <td class="center-align">현금영수증 발행승인번호</td>
     <td class="center-align">String(9)</td>
-    <td>계좌이체, 가상계좌 현금영수증 발행승인번호※ 가상계좌 입금 결과에 전달</td>
+    <td>계좌이체, 가상계좌 현금영수증 발행승인번호<br><strong>※ 가상계좌 입금 결과에 전달</strong></td>
   </tr>
 </tbody>
 </table>
