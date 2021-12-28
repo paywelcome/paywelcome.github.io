@@ -23,60 +23,60 @@ toc: false
 </colgroup>
   <thead>
     <tr>
-      <th>코드</th>
-      <th>카드사 이름</th>
-      <th>코드</th>
-      <th>카드사 이름</th>
+      <th class="center-align">코드</th>
+      <th class="center-align">카드사 이름</th>
+      <th class="center-align">코드</th>
+      <th class="center-align">카드사 이름</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>01</td>
-      <td>하나(외한)</td>
-      <td>03</td>
-      <td>롯데</td>
+      <td class="center-align">01</td>
+      <td class="center-align">하나(외한)</td>
+      <td class="center-align">03</td>
+      <td class="center-align">롯데</td>
     </tr>
     <tr>
-      <td>04</td>
-      <td>현대</td>
-      <td>06</td>
-      <td>국민</td>
+      <td class="center-align">04</td>
+      <td class="center-align">현대</td>
+      <td class="center-align">06</td>
+      <td class="center-align">국민</td>
     </tr>
     <tr>
-      <td>11</td>
-      <td>BC</td>
-      <td>12</td>
-      <td>삼성</td>
+      <td class="center-align">11</td>
+      <td class="center-align">BC</td>
+      <td class="center-align">12</td>
+      <td class="center-align">삼성</td>
     </tr>
     <tr>
-      <td>14</td>
-      <td>신한</td>
-      <td>15</td>
-      <td>한미</td>
+      <td class="center-align">14</td>
+      <td class="center-align">신한</td>
+      <td class="center-align">15</td>
+      <td class="center-align">한미</td>
     </tr>
     <tr>
-      <td>16</td>
-      <td>NH</td>
-      <td>17</td>
-      <td>하나카드</td>
+      <td class="center-align">16</td>
+      <td class="center-align">NH</td>
+      <td class="center-align">17</td>
+      <td class="center-align">하나카드</td>
     </tr>
     <tr>
-      <td>21</td>
-      <td>해외비자</td>
-      <td>22</td>
-      <td>해외마스터</td>
+      <td class="center-align">21</td>
+      <td class="center-align">해외비자</td>
+      <td class="center-align">22</td>
+      <td class="center-align">해외마스터</td>
     </tr>
     <tr>
-      <td>23</td>
-      <td>JCB</td>
-      <td>24</td>
-      <td>해외아멕스</td>
+      <td class="center-align">23</td>
+      <td class="center-align">JCB</td>
+      <td class="center-align">24</td>
+      <td class="center-align">해외아멕스</td>
     </tr>
     <tr>
-      <td>25</td>
-      <td>해외다이너스</td>
-      <td> </td>
-      <td> </td>
+      <td class="center-align">25</td>
+      <td class="center-align">해외다이너스</td>
+      <td class="center-align"> </td>
+      <td class="center-align"> </td>
     </tr>
   </tbody>
 </table>
