@@ -580,14 +580,14 @@ Web Standard 서비스는 Form Post로 결제 요청되며, <form> 태그에 act
       <td class="center-align">hppablecorp</td>
       <td class="center-align">표시될 통신사<br>리스트</td>
       <td class="center-align">String</td>
-      <td class="left-align">SKT : S텔레콤, KTF : KT, LGT : LG U+, MVX : 알뜰폰<br>MVX중일부만 설정 시 MVX 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택
-      <br><code class="language-plaintext highlighter-rouge">“hppablecorp(SKT:KTF:LGT:MVX)”</code></td>
+      <td class="left-align">SKT : S텔레콤, KTF : KT, LGT : LG U+, MVNO : 알뜰폰<br>MVNO중일부만 설정 시 MVNO 제외 후 CJH(헬로모바일),KCT(티플러스),SKL(SK7mobile) 중 일부만 선택
+      <br><code class="language-plaintext highlighter-rouge">“hppablecorp(SKT:KTF:LGT:MVNO)”</code></td>
     </tr>
     <tr>
       <td class="center-align">hppdefaultcorp</td>
       <td class="center-align">휴대폰통신사<br>기본선택</td>
       <td class="center-align">String</td>
-      <td class="left-align">통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVX 중 하나만 설정 가능<br>MVX 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음
+      <td class="left-align">통신사 리스트에서 입력 통신사가 기본 선택 되어짐<br>SKT, KTF, LGT, MVNO 중 하나만 설정 가능<br>MVNO 중 선택 시 CJH, KCT, SKL로 설정가능<br>미입력시나 공백으로 입력시 선택된 통신사 없음
       <br><code class="language-plaintext highlighter-rouge">“hppdefaultcorp(SKT)”</code></td>
     </tr>
     <tr>
