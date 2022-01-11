@@ -8,12 +8,28 @@ toc: false
 
 ## 1. 상점 연동시 주의사항
 
-해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다 .
+해킹시도 및 불법접속 차단 등의 보안을 위해 해외에서 접속 시에는 당사 서비스가 제한이 되며, 해외IP 차단해제를 위해서는 [ip-block@welcomepayments.co.kr](mailto:ip-block@welcomepayments.co.kr)로 아래 내용 작성해서 요청 주시기 바랍니다.
 
-| 업체명(MID)    | 접속 국가 | 접속 공인IP(대역) | 요청사항                 |
-|:-------------:| :---------: | :-----------------: | :------------------------: |
-| 계약가맹점 별도 전달 | 중국      | 111.111.111.111   | 해외아이피 차단해제 요청 |
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">서비스명</th>
+      <th style="text-align: center">업체명(MID)</th>
+      <th style="text-align: center">접속 국가</th>
+      <th style="text-align: center">접속 공인IP(대역)</th>
+      <th style="text-align: center">요청사항</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">paywelcome.co.kr</td>
+      <td style="text-align: center">계약가맹점 별도 전달</td>
+      <td style="text-align: center">중국</td>
+      <td style="text-align: center">111.111.111.111</td>
+      <td style="text-align: center">해외아이피 차단해제 요청</td>
+    </tr>
+  </tbody>
+</table>
 ## 2. 설치
 
 ### 2.1. 설치 가능한 운영체제
