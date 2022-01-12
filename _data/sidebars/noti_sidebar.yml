@@ -1,0 +1,40 @@
+
+entries:
+- title: sidebar
+  product:
+  version:
+  folders:
+
+  - title: 실시간 거래알림
+    output: web
+    folderitems:
+
+    - title: 거래알림(노티)
+      url: /noti01.html
+      output: web
+      type: web
+
+    - title: 설치
+      url: /prepare01.html#2-설치
+      output: web
+      type: web
+
+    - title: signature 개요
+      url: /prepare01.html#31-signature-개요
+      output: web
+      type: web
+
+    - title: signature 첨부 대상
+      url: /prepare01.html#32-signature-첨부-대상
+      output: web
+      type: web
+
+    - title: signature 생성 방법
+      url: /prepare01.html#33-signature-생성-방법
+      output: web
+      type: web
+
+    - title: signature 생성 샘플(결제요청)
+      url: /prepare01.html#34-signature-생성-샘플결제요청
+      output: web
+      type: web
